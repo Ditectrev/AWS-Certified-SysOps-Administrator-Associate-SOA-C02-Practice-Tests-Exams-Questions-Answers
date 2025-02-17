@@ -108,7 +108,7 @@ Configure the rule to invoke an AWS Lambda function to enable CloudTrail.
 VPC resources. Assign the policy to a cross-account IAM role. Ask the security administrator to assume the role from their account.
 - [x] Create an IAM policy in each developer account that has read-only access related to VPC resources. Assign the policy to a cross-account IAM role. Ask the security administrator to assume the role from their account.
 
-### A company migrated an I/O intensive application to an Amazon EC2 general purpose instance. The EC2 instance has a single General Purpose SSD Amazon Elastic Block Store (Amazon EBS) volume attached.Application users report that certain actions that require intensive reading and writing to the disk are taking much longer than normal or are failing completely. After reviewing the performance metrics of the EBS volume, a SysOps administrator notices that the VolumeQueueLength metric is consistently high during the same times in which the users are reporting issues. The SysOps administrator needs to resolve this problem to restore full performance to the application. Which action will meet these requirements?
+### A company migrated an I/O intensive application to an Amazon EC2 general purpose instance. The EC2 instance has a single General Purpose SSD Amazon Elastic Block Store (Amazon EBS) volume attached. Application users report that certain actions that require intensive reading and writing to the disk are taking much longer than normal or are failing completely. After reviewing the performance metrics of the EBS volume, a SysOps administrator notices that the VolumeQueueLength metric is consistently high during the same times in which the users are reporting issues. The SysOps administrator needs to resolve this problem to restore full performance to the application. Which action will meet these requirements?
 
 - [ ] Modify the instance type to be storage optimized.
 - [ ] Modify the volume properties by deselecting Auto-Enable Volume 10.
@@ -221,7 +221,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Add additional 12 large instances to the application.
 - [ ] Purchase Reserved Instances.
 
-### ...
+### A company recently migrated its application to a VPC on AWS. An AWS Site-to-Site VPN connection connects the company’s on-premises network to the VPC. The application retrieves customer data from another system that resides on premises. The application uses an on-premises DNS server to resolve domain records. After the migration, the application is not able to connect to the customer data because of name resolution errors. Which solution will give the application the ability to resolve the internal domain names?
+
+- [ ] Launch EC2 instances in the VPC. On the EC2 instances, deploy a custom DNS forwarder that forwards all DNS requests to the on-premises DNS server. Create an Amazon Route 53 private hosted zone that uses the EC2 instances for name servers.
+- [x] Create an Amazon Route 53 Resolver outbound endpoint. Configure the outbound endpoint to forward DNS queries against the on-premises domain to the on-premises DNS server.
+- [ ] Set up two AWS Direct Connect connections between the AWS environment and the on-premises network. Set up a link aggregation group (LAG) that includes the two connections. Change the VPC resolver address to point to the on-premises DNS server.
+- [ ] Create an Amazon Route 53 public hosted zone for the on-premises domain. Configure the network ACLs to forward DNS requests against the on-premises domain to the Route 53 public hosted zone.
 
 ### A SysOps administrator is trying to set up an Amazon Route 53 domain name to route traffic to a website hosted on Amazon S3. The domain name of the website is <www.anycompany.com> and the S3 bucket name is anycompany-static. After the record set is set up in Route 53, the domain name <www.anycompany.com> does not seem to work, and the static website is not displayed in the browser. Which of the following is a cause of this?
 
@@ -773,12 +778,7 @@ Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90
 - [ ] Create an Amazon RDS for MySQL Single-AZ DB instance with a read replica. Use a MySQL native backup that is stored in Amazon S3 to restore the data to the new database. Update the connection string in the web application.
 - [ ] Use Amazon Data Lifecycle Manager (Amazon DLM) to take a snapshot of the Amazon Elastic Block Store (Amazon EBS) volume every hour. In the event of an EC2 instance failure, restore the EBS volume from a snapshot.
 
-### A company migrated an I/O intensive application to an Amazon EC2 general purpose instance. The EC2 instance has a single General Purpose SSD Amazon Elastic Block Store (Amazon EBS) volume attached. Application users report that certain actions that require intensive reading and writing to the disk are taking much longer than normal or are failing completely. After reviewing the performance metrics of the EBS volume, a SysOps administrator notices that the VolumeQueueLength metric is consistently high during the same times in which the users are reporting issues. The SysOps administrator needs to resolve this problem to restore full performance to the application. Which action will meet these requirements?
-
-- [ ] Modify the instance type to be storage optimized.
-- [ ] Modify the volume properties by deselecting Auto-Enable Volume 10.
-- [x] Modify the volume properties to increase the IOPS.
-- [ ] Modify the instance to enable enhanced networking.
+### ...
 
 ### An Amazon EC2 instance needs to be reachable from the internet. The EC2 instance is in a subnet with the following route table: Which entry must a SysOps administrator add to the route table to meet this requirement?
 
@@ -853,7 +853,7 @@ Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90
 policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decrypt permissions to the AWS accounts that the AMI will be shared with. Create a copy of the AMI. and specify the CMK. Modify the permissions on the copied AMI to make it public.
 - [ ] In the account where the AMI was created, modify the key policy of the AWS managed key to provide kms:DescnbeKey. kms:ReEncrypt kms:CreateGrant, and kms:Decrypt permissions to the AWS accounts that the AMI will be shared with. Modify the AMI permissions to specify the AWS account numbers that the AMI will be shared with.
 
-### A company has an application that uses an Amazon Elastic File System (Amazon EFS) file system. A recent incident that involved an application logic error corrupted several files. The company wants to improve its ability to back up and recover the EFS file system. The company must be able to recover individual files rapidly.Which solution meets these requirements MOST cost-effectively?
+### A company has an application that uses an Amazon Elastic File System (Amazon EFS) file system. A recent incident that involved an application logic error corrupted several files. The company wants to improve its ability to back up and recover the EFS file system. The company must be able to recover individual files rapidly. Which solution meets these requirements MOST cost-effectively?
 
 - [ ] Configure Amazon Data Lifecycle Manager (Amazon DLM) to archive a copy of the data to an Amazon S3 Glacier vault. Use S3 Glacier retrieval requests to retrieve individual files.
 - [ ] Create a second EFS file system in another AWS Region. Configure AWS DataSync to copy the data to the backup file system. Recover files by copying them from the backup EFS file system.
@@ -1467,12 +1467,12 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [x] Move all of the EC2 instances into a single Availability Zone and provide the Availability Zone IP address to the service.
 - [ ] Move all of the EC2 instances to a peered VPC and provide the VPC IP address to the service.
 
-### A company hosts its web applications in the AWS Cloud. The company configures Elastic Load Balancers to use certificates that are imported into AWS Certificate Manager (ACM). The company's security team must be notified 30 days before the expiration of each certificate. What should a solutions architect recommend to meet this requirement?
+### A company runs hundreds of Amazon EC2 instances in a single AWS Region. Each EC2 instance has two attached 1 GiB General Purpose SSD (gp2) Amazon Elastic Block Store (Amazon EBS) volumes. A critical workload is using all the available IOPS capacity on the EBS volumes. According to company policy, the company cannot change instance types or EBS volume types without completing lengthy acceptance tests to validate that the company’s applications will function properly. A SysOps administrator needs to increase the I/O performance of the EBS volumes as quickly as possible. Which action should the SysOps administrator take to meet these requirements?
 
-- [ ] Add a rule in ACM to publish a custom message to an Amazon Simple Notification Service (Amazon SNS) topic every day, beginning 30 days before any certificate will expire.
-- [x] Create an AWS Config rule that checks for certificates that will expire within 30 days. Configure Amazon EventBridge (Amazon CloudWatch Events) to invoke a custom alert by way of Amazon Simple Notification Service (Amazon SNS) when AWS Config reports a noncompliant resource.
-- [ ] Use AWS Trusted Advisor to check for certificates that will expire within 30 days. Create an Amazon CloudWatch alarm that is based on Trusted Advisor metrics for check status changes. Configure the alarm to send a custom alert by way of Amazon Simple Notification Service (Amazon SNS).
-- [ ] Create an Amazon EventBridge (Amazon CloudWatch Events) rule to detect any certificates that will expire within 30 days. Configure the rule to invoke an AWS Lambda function. Configure the Lambda function to send a custom alert by way of Amazon Simple Notification Service (Amazon SNS).
+- [x] Increase the size of the 1 GiB EBS volumes.
+- [ ] Add two additional elastic network interfaces on each EC2 instance.
+- [ ] Turn on Transfer Acceleration on the EBS volumes in the Region.
+- [ ] Add all the EC2 instances to a cluster placement group.
 
 ### An organization created an Amazon Elastic File System (Amazon EFS) volume with a file system ID of fs-85ba41fc, and it is actively used by 10 Amazon EC2 hosts. The organization has become concerned that the file system is not encrypted. How can this be resolved?
 
