@@ -75,9 +75,9 @@ Configure the rule to invoke an AWS Lambda function to enable CloudTrail.
 ### A SysOps administrator needs to give users the ability to upload objects to an Amazon S3 bucket. The SysOps administrator creates a presigned URL and provides the URL to a user, but the user cannot upload an object to the S3 bucket. The presigned URL has not expired, and no bucket policy is applied to the S3 bucket. Which of the following could be the cause of this problem?
 
 - [ ] The user has not properly configured the AWS CLI with their access key and secret access key.
-- [x] The SysOps administrator does not have the necessary permissions to upload the object to the S3 bucket.
+- [ ] The SysOps administrator does not have the necessary permissions to upload the object to the S3 bucket.
 - [ ] The SysOps administrator must apply a bucket policy to the S3 bucket to allow the user to upload the object.
-- [ ] The object already has been uploaded through the use of the presigned URL, so the presigned URL is no longer valid.
+- [x] The object already has been uploaded through the use of the presigned URL, so the presigned URL is no longer valid.
 
 ### A company runs a web application on three Amazon EC2 instances behind an Application Load Balancer (ALB). The company notices that random periods of increased traffic cause a degradation in the application's performance. A SysOps administrator must scale the application to meet the increased traffic. Which solution meets these requirements?
 
@@ -86,17 +86,17 @@ Configure the rule to invoke an AWS Lambda function to enable CloudTrail.
 - [x] Deploy the application to an Auto Scaling group of EC2 instances with a target tracking scaling policy. Attach the ALB to the Auto Scaling group.
 - [ ] Deploy the application to an Auto Scaling group of EC2 instances with a scheduled scaling policy. Attach the ALB to the Auto Scaling group.
 
-### A company uses an Amazon Elastic File System (Amazon EFS) file system to share files across many Linux Amazon EC2 instances. A SysOps administrator notices that the file system's PercentIOLimit metric is consistently at 100% for 15 minutes or longer. The SysOps administrator also notices that the application that reads and writes to that file system is performing poorly. They application requires high throughput and IOPS while accessing the file system. What should the SysOps administrator do to remediate the consistently high PercentIOLimit metric?
+### A company uses an Amazon Elastic File System (Amazon EFS) file system to share files across many Linux Amazon EC2 instances. A SysOps administrator notices that the file system's `PercentIOLimit` metric is consistently at 100% for 15 minutes or longer. The SysOps administrator also notices that the application that reads and writes to that file system is performing poorly. They application requires high throughput and IOPS while accessing the file system. What should the SysOps administrator do to remediate the consistently high `PercentIOLimit` metric?
 
 - [ ] Create a new EFS file system that uses Max I/O performance mode. Use AWS DataSync to migrate data to the new EFS file system.
 - [ ] Create an EFS lifecycle policy to transition future files to the Infrequent Access (IA) storage class to improve performance. Use AWS DataSync to migrate existing data to IA storage.
-- [x] Modify the existing EFS file system and activate Max I/O performance mode.
-- [ ] Modify the existing EFS file system and activate Provisioned Throughput mode.
+- [ ] Modify the existing EFS file system and activate Max I/O performance mode.
+- [x] Modify the existing EFS file system and activate Provisioned Throughput mode.
 
 ### A company needs to restrict access to an Amazon S3 bucket to Amazon EC2 instances in a VPC only. All traffic must be over the AWS private network. What actions should the SysOps administrator take to meet these requirements?
 
 - [ ] Create a VPC endpoint for the S3 bucket, and create an IAM policy that conditionally limits all S3 actions on the bucket to the VPC endpoint as the source.
-- [ ] Create a VPC endpoint for the S3 bucket, and create an S3 bucket policy that conditionally limits all S3 actions on the bucket to the VPC endpoint as the source.
+- [x] Create a VPC endpoint for the S3 bucket, and create an S3 bucket policy that conditionally limits all S3 actions on the bucket to the VPC endpoint as the source.
 - [ ] Create a service-linked role for Amazon EC2 that allows the EC2 instances to interact directly with Amazon S3, and attach an IAM policy to the role that allows the EC2 instances full access to the S3 bucket.
 - [ ] Create a NAT gateway in the VPC, and modify the VPC route table to route all traffic destined for Amazon S3 through the NAT gateway.
 
@@ -106,7 +106,7 @@ Configure the rule to invoke an AWS Lambda function to enable CloudTrail.
 - [ ] Create an IAM policy in each developer account that has administrator access to all Amazon EC2 actions, including VPC actions. Assign the policy to an IAM user. Share the user credentials with the security administrator.
 - [ ] Create an IAM policy in each developer account that has administrator access related to
 VPC resources. Assign the policy to a cross-account IAM role. Ask the security administrator to assume the role from their account.
-- [x] Create an IAM policy in each developer account that has read-only access related to VPC resources Assign the policy to a cross-account IAM role Ask the security administrator to assume the role from their account.
+- [x] Create an IAM policy in each developer account that has read-only access related to VPC resources. Assign the policy to a cross-account IAM role. Ask the security administrator to assume the role from their account.
 
 ### A company migrated an I/O intensive application to an Amazon EC2 general purpose instance. The EC2 instance has a single General Purpose SSD Amazon Elastic Block Store (Amazon EBS) volume attached.Application users report that certain actions that require intensive reading and writing to the disk are taking much longer than normal or are failing completely. After reviewing the performance metrics of the EBS volume, a SysOps administrator notices that the VolumeQueueLength metric is consistently high during the same times in which the users are reporting issues. The SysOps administrator needs to resolve this problem to restore full performance to the application. Which action will meet these requirements?
 
@@ -221,12 +221,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Add additional 12 large instances to the application.
 - [ ] Purchase Reserved Instances.
 
-### A company is managing multiple AWS accounts in AWS Organizations The company is reviewing internal security of Its AWS environment The company's security administrator has their own AWS account and wants to review the VPC configuration of developer AWS accounts. Which solution will meet these requirements in the MOST secure manner?
-
-- [ ] Create an IAM policy in each developer account that has read-only access related to VPC resources Assign the policy to an IAM user Share the user credentials with the security administrator.
-- [ ] Create an IAM policy in each developer account that has administrator access to all Amazon EC2 actions, including VPC actions Assign the policy to an IAM user Share the user credentials with the security administrator.
-- [ ] Create an IAM policy in each developer account that has administrator access related to VPC resources Assign the policy to a cross-account IAM role Ask the security administrator to assume the role from their account.
-- [x] Create an IAM policy m each developer account that has read-only access related to VPC resources Assign the policy to a cross-account IAM role Ask the security administrator to assume the role from their account.
+### ...
 
 ### A SysOps administrator is trying to set up an Amazon Route 53 domain name to route traffic to a website hosted on Amazon S3. The domain name of the website is <www.anycompany.com> and the S3 bucket name is anycompany-static. After the record set is set up in Route 53, the domain name <www.anycompany.com> does not seem to work, and the static website is not displayed in the browser. Which of the following is a cause of this?
 
@@ -558,13 +553,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Launch new EC2 instances in another VPC.
 - [x] Use Service Quotas to request an EC2 quota increase.
 
-### SysOps administrator is provisioning an Amazon Elastic File System (Amazon EFS) file system to provide shared storage across multiple Amazon EC2 instances The instances all exist in the same VPC across multiple Availability Zones. There are two instances In each Availability Zone. The SysOps administrator must make the file system accessible to each instance with the lowest possible latency. Which solution will meet these requirements?
+### A SysOps administrator is provisioning an Amazon Elastic File System (Amazon EFS) file system to provide shared storage across multiple Amazon EC2 instances The instances all exist in the same VPC across multiple Availability Zones. There are two instances In each Availability Zone. The SysOps administrator must make the file system accessible to each instance with the lowest possible latency. Which solution will meet these requirements?
 
 - [ ] Create a mount target for the EFS file system in the VPC. Use the mount target to mount the file system on each of the instances.
 - [ ] Create a mount target for the EFS file system in one Availability Zone of the VPC. Use the mount target to mount the file system on the instances in that Availability Zone. Share the directory with the other instances.
 - [ ] Create a mount target for each instance. Use each mount target to mount the EFS file system on each respective instance.
-- [x] Create a mount target in each Availability Zone of the VPC Use the mount target to mount the EFS file system on the Instances in the respective
-Availability Zone.
+- [x] Create a mount target in each Availability Zone of the VPC Use the mount target to mount the EFS file system on the Instances in the respective Availability Zone.
 
 ### A compliance team requires all administrator passwords tor Amazon RDS DB instances to be changed at toast annually. Which solution meets this requirement in the MOST operationally efficient manned?
 
@@ -587,7 +581,12 @@ Availability Zone.
 - [ ] CloudFormation will prompt the user to roll back the stack or continue.
 - [ ] CloudFormation will successfully complete the stack but will report a failed status for the DB instance.
 
-### ...
+### A SysOps administrator manages a company's Amazon S3 buckets. The SysOps administrator has identified 5 GB of incomplete multipart uploads in an S3 bucket in the company's AWS account. The SysOps administrator needs to reduce the number of incomplete multipart upload objects in the S3 bucket. Which solution will meet this requirement?
+
+- [x] Create an S3 Lifecycle rule on the S3 bucket to delete expired markers or incomplete multipart uploads.
+- [ ] Require users that perform uploads of files into Amazon S3 to use the S3 TransferUtility.
+- [ ] Enable S3 Versioning on the S3 bucket that contains the incomplete multipart uploads.
+- [ ] Create an S3 Object Lambda Access Point to delete incomplete multipart uploads.
 
 ### A company is using Amazon Elastic File System (Amazon EFS) to share a file system among several Amazon EC2 instances. As usage increases, users report that file retrieval from the EFS file system is slower than normal. Which action should a SysOps administrator take to improve the performance of the file system?
 
@@ -790,7 +789,12 @@ Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90
 - [x] A route for `0.0.0.0/0` that points to an internet gateway.
 - [ ] A route for `0.0.0.0/0` that points to an elastic network interface.
 
-### ...
+### An Amazon S3 bucket in a SysOps Administrator's account can be accesses by users in other SWS accounts. How can the Administrator ensure that the bucket is only accessible to members of the Administrator's AWS account?
+
+- [ ] Move the S3 bucket from a public subnet to a private subnet in the Amazon VPC.
+- [x] Change the bucket access control list (ACL) to restrict access to the bucket owner.
+- [ ] Enable server-side encryption for all objects in the bucket.
+- [ ] Use only Amazon S3 presigned URLs for accessing objects in the bucket.
 
 ### A company has a stateless application that runs on four Amazon EC2 instances. The application requires tour instances at all times to support all traffic. A SysOps administrator must design a highly available, fault-tolerant architecture that continually supports all traffic if one Availability Zone becomes unavailable. Which configuration meets these requirements?
 
@@ -849,12 +853,12 @@ Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90
 policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decrypt permissions to the AWS accounts that the AMI will be shared with. Create a copy of the AMI. and specify the CMK. Modify the permissions on the copied AMI to make it public.
 - [ ] In the account where the AMI was created, modify the key policy of the AWS managed key to provide kms:DescnbeKey. kms:ReEncrypt kms:CreateGrant, and kms:Decrypt permissions to the AWS accounts that the AMI will be shared with. Modify the AMI permissions to specify the AWS account numbers that the AMI will be shared with.
 
-### A SysOps administrator is provisioning an Amazon Elastic File System (Amazon EFS) file system to provide shared storage across multiple Amazon EC2 instances The instances all exist in the same VPC across multiple Availability Zones. There are two instances In each Availability Zone. The SysOps administrator must make the file system accessible to each instance with the lowest possible latency. Which solution will meet these requirements?
+### A company has an application that uses an Amazon Elastic File System (Amazon EFS) file system. A recent incident that involved an application logic error corrupted several files. The company wants to improve its ability to back up and recover the EFS file system. The company must be able to recover individual files rapidly.Which solution meets these requirements MOST cost-effectively?
 
-- [ ] Create a mount target for the EFS file system in the VPC. Use the mount target to mount the file system on each of the instances.
-- [ ] Create a mount target for the EFS file system in one Availability Zone of the VPC. Use the mount target to mount the file system on the instances in that Availability Zone. Share the directory with the other instances.
-- [ ] Create a mount target for each instance. Use each mount target to mount the EFS file system on each respective instance.
-- [x] Create a mount target in each Availability Zone of the VPC Use the mount target to mount the EFS file system on the Instances in the respective Availability Zone.
+- [ ] Configure Amazon Data Lifecycle Manager (Amazon DLM) to archive a copy of the data to an Amazon S3 Glacier vault. Use S3 Glacier retrieval requests to retrieve individual files.
+- [ ] Create a second EFS file system in another AWS Region. Configure AWS DataSync to copy the data to the backup file system. Recover files by copying them from the backup EFS file system.
+- [ ] Enable AWS Backup in Amazon EFS to back up the file system to an Amazon S3 Glacier vault. Use S3 Glacier retrieval requests to retrieve individual files.
+- [x] Enable AWS Backup in Amazon EFS to back up the file system to a backup vault. Use a partial restore job to retrieve individual files.
 
 ### A SysOps administrator Is troubleshooting an AWS Cloud Formation template whereby multiple Amazon EC2 instances are being created. The template is working In `us-east-1`. but it is failing. In us-west-2 with the error code: `AMI [ami-12345678] does not exist`. How should the administrator ensure that the AWS Cloud Formation template is working in every region?
 
@@ -1047,7 +1051,12 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 - [ ] Increase the value in the max_connect_errors parameter in the parameter group that the database uses.
 - [ ] Update the Lambda function's reserved concurrency to a higher value.
 
-### ...
+### A web application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances run in an Auto Scaling group across multiple Availability Zones. A SysOps administrator notices that some of these EC2 instances show up as healthy in the Auto Scaling group but show up as unhealthy in the ALB target group. What is a possible reason for this issue?
+
+- [ ] Security groups are not allowing traffic between the ALB and the failing EC2 instances.
+- [ ] The Auto Scaling group health check is configured for EC2 status checks.
+- [ ] The EC2 instances are failing to launch and failing EC2 status checks.
+- [x] The target group health check is configured with an incorrect port or path.
 
 ### A company uses AWS CloudFormation to deploy its application infrastructure Recently, a user accidentally changed a property of a database in a CloudFormation template and performed a stack update that caused an interruption to the application A SysOps administrator must determine how to modify the deployment process to allow the DevOps team to continue to deploy the infrastructure, but prevent against accidental modifications to specific resources. Which solution will meet these requirements?
 
@@ -1160,7 +1169,12 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [x] Add additional t3. large instances to the application.
 - [ ] Purchase Reserved Instances.
 
-### ...
+### A SysOps administrator is investigating a company’s web application for performance problems. The application runs on Amazon EC2 instances that are in an Auto Scaling group. The application receives large traffic increases at random times throughout the day. During periods of rapid traffic increases, the Auto Scaling group is not adding capacity fast enough. As a result, users are experiencing poor performance. The company wants to minimize costs without adversely affecting the user experience when web traffic surges quickly. The company needs a solution that adds more capacity to the Auto Scaling group for larger traffic increases than for smaller traffic increases. How should the SysOps administrator configure the Auto Scaling group to meet these requirements?
+
+- [ ] Create a simple scaling policy with settings to make larger adjustments in capacity when the system is under heavy load.
+- [x] Create a step scaling policy with settings to make larger adjustments in capacity when the system is under heavy load.
+- [ ] Create a target tracking scaling policy with settings to make larger adjustments in capacity when the system is under heavy load.
+- [ ] Use Amazon EC2 Auto Scaling lifecycle hooks. Adjust the Auto Scaling group’s maximum number of instances after every scaling event.
 
 ### A company's financial department needs to view the cost details of each project in an AWS account A SysOps administrator must perform the initial configuration that is required to view cost for each project in Cost Explorer Which solution will meet this requirement?
 
@@ -1219,12 +1233,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Edit the AWS CloudFormation template to offer a drop-down list of all AMIs to the user by using the AWS::EC2::AMI::ImageID control.
 - [x] Modify the AWS CloudFormation template by including the AMI IDs in the ג€Mappingsג€ section. Refer to the proper mapping within the template for the proper AMI ID.
 
-### A SysOps administrator is provisioning an Amazon Elastic File System (Amazon EFS) file system to provide shared storage across multiple Amazon EC2 instances. The instances all exist in the same VPC across multiple Availability Zones. There are two instances in each Availability Zone. The SysOps administrator must make the file system accessible to each instance with the lowest possible latency. Which solution will meet these requirements?
-
-- [ ] Create a mount target for the EFS file system in the VPC. Use the mount target to mount the file system on each of the instances.
-- [ ] Create a mount target for the EFS file system in the VPC. Use the mount target to mount the file system on each of the instances.
-- [ ] Create a mount target for the EFS file system in the VPC. Use the mount target to mount the file system on each of the instances.
-- [x] Create a mount target in each Availability Zone of the VPC. Use the mount target to mount the EFS file system on the instances in the respective Availability Zone.
+### ...
 
 ### A SysOps administrator has successfully deployed a VPC with an AWS CloudFormation template. The SysOps administrator wants to deploy the same template across multiple accounts that are managed through AWS Organizations. Which solution will meet this requirement with the LEAST operational overhead?
 
