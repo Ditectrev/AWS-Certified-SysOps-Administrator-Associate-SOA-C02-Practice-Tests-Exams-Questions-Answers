@@ -7,12 +7,7 @@
 - [x] A route for `0.0.0.0/0` that points to an internet gateway.
 - [ ] A route for `0.0.0.0/0` that points to an elastic network interface.
 
-### A company uses an Amazon CloudFront distribution to deliver its website Traffic togs for the website must be centrally stored and all data must be encrypted at rest. Which solution will meet these requirements?
-
-- [ ] Create an Amazon OpenSearch Service (Amazon Elasttcsearch Service) domain with internet access and server-side encryption that uses the default AWS managed key. Configure CloudFront to use the Amazon OpenSearch Service (Amazon Elasticsearch Service) domain as a log destination.
-- [ ] Create an Amazon OpenSearch Service (Amazon Elasticsearch Service) domain with VPC access and server-side encryption that uses AES-256. Configure CloudFront to use the Amazon OpenSearch Service (Amazon Elastcsearch Service) domain as a log destination.
-- [x] Create an Amazon S3 bucket that is configured with default server side encryption that uses AES-256. Configure CloudFront to use the S3 bucket as a log destination.
-- [ ] Create an Amazon S3 bucket that is configured with no default encryption. Enable encryption in the CloudFront dtstnbubon and use the S3 bucket as a log destination.
+### ...
 
 ### A company's public website is hosted in an Amazon S3 bucket in the `us-east-1` Region behind an Amazon CloudFront distribution. The company wants to ensure that the website is protected from DDoS attacks. A SysOps administrator needs to deploy a solution that gives the company the ability to maintain control over the rate limit at which DDoS protections are applied. Which solution will meet these requirements?
 
@@ -44,9 +39,9 @@ B. Create a new KMS key. Create a new IAM user. Add the vendor's IAM role ARN to
 
 ### A database is running on an Amazon RDS Multi-AZ DB instance. A recent security audit found the database to be out of compliance because it was not encrypted. Which approach will resolve the encryption requirement?
 
-- [ ] Configure encryption on the existing DB instance. Take a snapshot of the DB instance. Encrypt the snapshot. Restore the snapshot to the same DB instance.
-- [ ] Ecrypt the standby replica in a secondary Availability Zone. Promote the standby replica to the primary DB instance.
-- [ ] Take a snapshot of the DB instance. Copy and encrypt the snapshot. Create a new DB instance by restoring the encrypted copy.
+- [ ] Log in to the RDS console and select the encryption box to encrypt the database.
+- [ ] Create a new encrypted Amazon EBS volume and attach it to the instance.
+- [ ] Encrypt the standby replica in the secondary Availability Zone and promote it to the primary instance.
 - [x] Take a snapshot of the RDS instance, copy and encrypt the snapshot, and then restore to the new RDS instance.
 
 ### A SysOps administrator receives an alert from Amazon GuardDuty about suspicious network activity on an Amazon FC2 instance. The GuardDuty finding lists a new external IP address as a traffic destination. The SysOps administrator does not recognize the external IP address. The SysOps administrator must block traffic to the external IP address that GuardDuty identified Which solution will meet this requirement?
@@ -56,12 +51,12 @@ B. Create a new KMS key. Create a new IAM user. Add the vendor's IAM role ARN to
 - [x] Create a network ACL Add an outbound deny rule tor traffic to the external IP address.
 - [ ] Create a new security group to block traffic to the external IP address Assign the new security group to the entire VPC.
 
-### A company stores files on 50 Amazon S3 buckets in the same AWS Region The company wants to connect to the S3 buckets securely over a private connection from its Amazon EC2 instances The company needs a solution that produces no additional cost. Which solution will meet these requirements?
+### A web application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances run in an Auto Scaling group across multiple Availability Zones. A SysOps administrator notices that some of these EC2 instances show up as healthy in the Auto Scaling group but show up as unhealthy in the ALB target group. What is a possible reason for this issue?
 
-- [ ] Create a gateway VPC endpoint lor each S3 bucket. Attach the gateway VPC endpoints to each subnet inside the VPC.
-- [ ] Create an interface VPC endpoint or each S3 bucket. Attach the interface VPC endpoints to each subnet inside the VPC.
-- [x] Create one gateway VPC endpoint for all the S3 buckets. Add the gateway VPC endpoint to the VPC route table.
-- [ ] Create one interface VPC endpoint for all the S3 buckets. Add the interface VPC endpoint to the VPC route table.
+- [ ] Security groups are not allowing traffic between the ALB and the failing EC2 instances.
+- [ ] The Auto Scaling group health check is configured for EC2 status checks.
+- [ ] The EC2 instances are failing to launch and failing EC2 status checks.
+- [x] The target group health check is configured with an incorrect port or path.
 
 ### A SysOps administrator has enabled AWS CloudTrail in an AWS account. If CloudTrail is disabled, it must be re-enabled immediately. What should the SysOps administrator do to meet these requirements WITHOUT writing custom code?
 
@@ -171,11 +166,11 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Modify the instance security group to allow inbound SSH traffic from the SysOps administrator's IP address.
 - [ ] Modify the instance security group to allow outbound SSH traffic to the SysOps administrator's IP address.
 
-### A SysOps administrator has used AWS Cloud Formal ion to deploy a serverless application Into a production VPC. The application consists of an AWS Lambda function an Amazon DynamoDB table, and an Amazon API Gateway API. The SysOps administrator must delete the AWS Cloud Formation stack without deleting the DynamoDB table. Which action should the SysOps administrator take before deleting the AWS Cloud Formation stack?
+### A SysOps administrator has used AWS Cloud Formal ion to deploy a serverless application Into a production VPC. The application consists of an AWS Lambda function an Amazon DynamoDB table, and an Amazon API Gateway API. The SysOps administrator must delete the AWS CloudFormation stack without deleting the DynamoDB table. Which action should the SysOps administrator take before deleting the AWS CloudFormation stack?
 
 - [x] Add a Retain deletion policy to the DynamoDB resource in the AWS CloudFormation stack.
 - [ ] Add a Snapshot deletion policy to the DynamoDB resource in the AWS CloudFormation stack.
-- [ ] Enable termination protection on the AWS Cloud Formation stack.
+- [ ] Enable termination protection on the AWS CloudFormation stack.
 - [ ] Update the application's IAM policy with a Deny statement for the dynamodb:DeleteTabie action.
 
 ### A SysOps administrator wants to manage a web server application with AWS Elastic Beanstalk. The Elastic Beanstalk service must maintain full capacity for new deployments at all times. Which deployment policies satisfy this requirement? (Select TWO.)
@@ -272,7 +267,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Increase the EBS volume to a 2 TB General Purpose SSD (gp2) volume.
 - [ ] Move the data that resides on the EBS volume to the instance store.
 
-### A company runs workloads on 90 Amazon EC2 instances in the eu-west-1 Region in an AWS account. In 2 months, the company will migrate the workloads from eu-west-1 to the eu-west-3 Region. The company needs to reduce the cost of the EC2 instances. The company is willing to make a 1-year commitment that will begin next week. The company must choose an EC2 Instance purchasing option that will provide discounts for the 90 EC2 Instances regardless of Region during the 1-year period. Which solution will meet these requirements?
+### A company runs workloads on 90 Amazon EC2 instances in the `eu-west-1` Region in an AWS account. In 2 months, the company will migrate the workloads from `eu-west-1` to the eu-west-3 Region. The company needs to reduce the cost of the EC2 instances. The company is willing to make a 1-year commitment that will begin next week. The company must choose an EC2 Instance purchasing option that will provide discounts for the 90 EC2 Instances regardless of Region during the 1-year period. Which solution will meet these requirements?
 
 - [ ] Purchase EC2 Standard Reserved Instances.
 - [ ] Purchase an EC2 Instance Savings Plan.
@@ -299,8 +294,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] `0.0.0.0/0` IGW.
 - [x] `0.0.0.0/0` NAT.
-- [ ] 10.0.1.0/24 IGW.
-- [ ] 10.0.1.0/24 NAT.
+- [ ] `10.0.1.0/24` IGW.
+- [ ] `10.0.1.0/24` NAT.
 
 ### A company has a stateless application that is hosted on a fleet of 10 Amazon EC2 On-Demand Instances in an Auto Scaling group. A minimum of 6 instances are needed to meet service requirements. Which action will maintain uptime for the application MOST cost-effectively?
 
@@ -338,12 +333,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Filter the S3 Inventory report by using S3 Select to find all objects that are not encrypted Send each object name as a message to an Amazon Simple Queue Service (Amazon SQS) queue Use the SQS queue to invoke an AWS Lambda function to tag each object with a key of "Encryption" and a value of "SSE-KMS"
 - [ ] Use S3 Event Notifications to invoke an AWS Lambda function on all new object-created events for the S3 bucket Configure the Lambda function to check whether the object is encrypted and to run an AWS Systems Manager Automation document to encrypt the object in place when an unencrypted object is found.
 
-### A company has an internal web application that runs on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto Scaling group in a single Availability Zone. A SysOps administrator must make the application highly available. Which action should the SysOps administrator take to meet this requirement?
+### A web application runs on Amazon EC2 instances behind an Elastic Load Balancing Application Load Balancer (ALB). The instances run in an Auto Scaling group across multiple Availability Zones. A SysOps Administrator has notice that some EC2 instances show up healthy in the Auto Scaling console but show up as unhealthy in the ALB target console. What could be the issue?
 
-- [ ] Increase the maximum number of instances in the Auto Scaling group to meet the capacity that is required at peak usage.
-- [ ] Increase the minimum number of instances in the Auto Scaling group to meet the capacity that is required at peak usage.
-- [x] Update the Auto Scaling group to launch new instances in a second Availability Zone in the same AWS Region.
-- [ ] Update the Auto Scaling group to launch new instances in an Availability Zone in a second AWS Region.
+- [ ] The health check grace period for the Auto Scaling group is set too low; increase it.
+- [ ] The target group health check is incorrectly configured and needs to be adjusted.
+- [ ] The user data or AMI used for the Auto Scaling group launch configuration is incorrect.
+- [x] The Auto Scaling group health check type is based on EC2 instance health instead of Elastic Load Balancing health checks.
 
 ### An application accesses data through a file system interface. The application runs on Amazon EC2 instances in multiple Availability Zones, all of which must share the same data. While the amount of data is currently small, the company anticipates that it will grow to tens of terabytes over the lifetime of the application. What is the MOST scalable storage solution to fulfill this requirement?
 
@@ -361,10 +356,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company hosts a web portal on Amazon EC2 instances. The web portal uses an Elastic Load Balancer (ELB) and Amazon Route 53 for its public DNS service. The ELB and the EC2 instances are deployed by way of a single AWS CloudFormation stack in the `us-east-1` Region. The web portal must be highly available across multiple Regions. Which configuration will meet these requirements?
 
-- [ ] Deploy a copy of the stack in the us-west-2 Region. Create a single start of authority (SOA) record in Route 53 that includes the IP address from each ELB. Configure the SOA record with health checks. Use the ELB in `us-east-1` as the primary record and the ELB in us-west-2 as the secondary record.
-- [x] Deploy a copy of the stack in the us-west-2 Region. Create an additional A record in Route 53 that includes the ELB in us-west-2 as an alias target. Configure the A records with a failover routing policy and health checks. Use the ELB in `us-east-1` as the primary record and the ELB in us-west-2 as the secondary record.
-- [ ] Deploy a new group of EC2 instances in the us-west-2 Region. Associate the new EC2 instances with the existing ELB, and configure load balancer health checks on all EC2 instances. Configure the ELB to update Route 53 when EC2 instances in us-west-2 fail health checks.
-- [ ] Deploy a new group of EC2 instances in the us-west-2 Region. Configure EC2 health checks on all EC2 instances in each Region. Configure a peering connection between the VPCs. Use the VPC in `us-east-1` as the primary record and the VPC in us-west-2 as the secondary record.
+- [ ] Deploy a copy of the stack in the `us-west-2` Region. Create a single start of authority (SOA) record in Route 53 that includes the IP address from each ELB. Configure the SOA record with health checks. Use the ELB in `us-east-1` as the primary record and the ELB in `us-west-2` as the secondary record.
+- [x] Deploy a copy of the stack in the `us-west-2` Region. Create an additional A record in Route 53 that includes the ELB in `us-west-2` as an alias target. Configure the A records with a failover routing policy and health checks. Use the ELB in `us-east-1` as the primary record and the ELB in `us-west-2` as the secondary record.
+- [ ] Deploy a new group of EC2 instances in the `us-west-2` Region. Associate the new EC2 instances with the existing ELB, and configure load balancer health checks on all EC2 instances. Configure the ELB to update Route 53 when EC2 instances in `us-west-2` fail health checks.
+- [ ] Deploy a new group of EC2 instances in the `us-west-2` Region. Configure EC2 health checks on all EC2 instances in each Region. Configure a peering connection between the VPCs. Use the VPC in `us-east-1` as the primary record and the VPC in `us-west-2` as the secondary record.
 
 ### A company needs to view a list of security groups that are open to the internet on port 3389. What should a SysOps administrator do to meet this requirement?
 
@@ -447,7 +442,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Amazon RDS DescribeDBInstances action in the `us-east-1` Region.
 - [ ] Amazon S3 Putobject operation in a bucket named testbucket.
 - [x] Amazon EC2 Describe Instances action in the `us-east-1` Region.
-- [ ] Amazon EC2 AttachNetworkinterf ace action in the eu-west-1 Region.
+- [ ] Amazon EC2 AttachNetworkinterf ace action in the `eu-west-1` Region.
 
 ### A company has launched a social media website that gives users the ability to upload images directly to a centralized Amazon S3 bucket. The website is popular in areas that are geographically distant from the AWS Region where the S3 bucket is located. Users are reporting that uploads are slow. A SysOps administrator must improve the upload speed. What should the SysOps administrator do to meet these requirements?
 
@@ -521,14 +516,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Enable group-level stickiness on the ALB listener rule.
 - [x] Enable sticky sessions on the ALB target group.
 
-### A SysOps administrator Is troubleshooting an AWS Cloud Formation template whereby multiple Amazon EC2 instances are being created. The template is working In `us-east-1`. but it is failing In us-west-2 with the error code. How should the administrator ensure that the AWS Cloud Formation template is working in every region?
+### A SysOps administrator is investigating a company’s web application for performance problems. The application runs on Amazon EC2 instances that are in an Auto Scaling group. The application receives large traffic increases at random times throughout the day. During periods of rapid traffic increases, the Auto Scaling group is not adding capacity fast enough. As a result, users are experiencing poor performance. The company wants to minimize costs without adversely affecting the user experience when web traffic surges quickly. The company needs a solution that adds more capacity to the Auto Scaling group for larger traffic increases than for smaller traffic increases. How should the SysOps administrator configure the Auto Scaling group to meet these requirements?
 
-![Question 73](images/question73.jpg)
-
-- [ ] Copy the source region's Amazon Machine Image (AMI) to the destination region and assign it the same ID.
-- [ ] Edit the AWS CloudFormatton template to specify the region code as part of the fully qualified AMI ID.
-- [ ] Edit the AWS CloudFormatton template to offer a drop-down list of all AMIs to the user by using the aws :: EC2:: ami :: imageiD control.
-- [x] Modify the AWS CloudFormation template by including the AMI IDs in the "Mappings" section. Refer to the proper mapping within the template for the proper AMI ID.
+- [ ] Create a simple scaling policy with settings to make larger adjustments in capacity when the system is under heavy load.
+- [x] Create a step scaling policy with settings to make larger adjustments in capacity when the system is under heavy load.
+- [ ] Create a target tracking scaling policy with settings to make larger adjustments in capacity when the system is under heavy load.
+- [ ] Use Amazon EC2 Auto Scaling lifecycle hooks. Adjust the Auto Scaling group’s maximum number of instances after every scaling event.
 
 ### A company has a critical serverless application that uses multiple AWS Lambda functions. Each Lambda function generates 1 GB of log data daily in tts own Amazon CloudWatch Logs log group. The company's security team asks for a count of application errors, grouped by type, across all of the log groups. What should a SysOps administrator do to meet this requirement?
 
@@ -558,12 +551,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Launch new EC2 instances in another VPC.
 - [x] Use Service Quotas to request an EC2 quota increase.
 
-### A SysOps administrator is provisioning an Amazon Elastic File System (Amazon EFS) file system to provide shared storage across multiple Amazon EC2 instances The instances all exist in the same VPC across multiple Availability Zones. There are two instances In each Availability Zone. The SysOps administrator must make the file system accessible to each instance with the lowest possible latency. Which solution will meet these requirements?
-
-- [ ] Create a mount target for the EFS file system in the VPC. Use the mount target to mount the file system on each of the instances.
-- [ ] Create a mount target for the EFS file system in one Availability Zone of the VPC. Use the mount target to mount the file system on the instances in that Availability Zone. Share the directory with the other instances.
-- [ ] Create a mount target for each instance. Use each mount target to mount the EFS file system on each respective instance.
-- [x] Create a mount target in each Availability Zone of the VPC Use the mount target to mount the EFS file system on the Instances in the respective Availability Zone.
+### ...
 
 ### A compliance team requires all administrator passwords tor Amazon RDS DB instances to be changed at toast annually. Which solution meets this requirement in the MOST operationally efficient manned?
 
@@ -579,7 +567,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Modify the queue type from SQS standard to SQS FIFO Turn off content-based deduplication on the queue Update the application to include a message group ID in the messages.
 - [ ] Modify the queue type from SQS standard to SQS FIFO Update the application to send messages with identical message bodies and to include the DelaySeconds parameter in the messages.
 
-### A SysOps administrator created an AWS Cloud Formation template that provisions Amazon EC2 instances, an Elastic Load Balancer (ELB), and an Amazon RDS DB instance. During stack creation, the creation of the EC2 instances and the creation of the ELB are successful. However, the creation of the DB instance fails.. What is the default behavior of CloudFormation in this scenario?
+### A SysOps administrator created an AWS CloudFormation template that provisions Amazon EC2 instances, an Elastic Load Balancer (ELB), and an Amazon RDS DB instance. During stack creation, the creation of the EC2 instances and the creation of the ELB are successful. However, the creation of the DB instance fails.. What is the default behavior of CloudFormation in this scenario?
 
 - [ ] CloudFormation will roll back the stack and delete the stack.
 - [x] CloudFormation will roll back the stack but will not delete the stack.
@@ -860,12 +848,12 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 - [ ] Enable AWS Backup in Amazon EFS to back up the file system to an Amazon S3 Glacier vault. Use S3 Glacier retrieval requests to retrieve individual files.
 - [x] Enable AWS Backup in Amazon EFS to back up the file system to a backup vault. Use a partial restore job to retrieve individual files.
 
-### A SysOps administrator Is troubleshooting an AWS Cloud Formation template whereby multiple Amazon EC2 instances are being created. The template is working In `us-east-1`. but it is failing. In us-west-2 with the error code: `AMI [ami-12345678] does not exist`. How should the administrator ensure that the AWS Cloud Formation template is working in every region?
+### A SysOps administrator Is troubleshooting an AWS CloudFormation template whereby multiple Amazon EC2 instances are being created. The template is working In `us-east-1`, but it is failing. In `us-west-2` with the error code: `AMI [ami-12345678] does not exist`. How should the administrator ensure that the AWS CloudFormation template is working in every region?
 
 - [ ] Copy the source region's Amazon Machine Image (AMI) to the destination region and assign it the same ID.
 - [ ] Edit the AWS CloudFormatton template to specify the region code as part of the fully qualified AMI ID.
-- [ ] Edit the AWS CloudFormatton template to offer a drop-down list of all AMIs to the user by using the aws :: EC2:: ami :: imageiD control.
-- [x] Modify the AWS CloudFormation template by including the AMI IDs in the "Mappings" section. Refer to the proper mapping within the template for the proper AMI ID.
+- [ ] Edit the AWS CloudFormatton template to offer a drop-down list of all AMIs to the user by using the `AWS::EC2::AMI::ImageID` control.
+- [x] Modify the AWS CloudFormation template by including the AMI IDs in the 'Mappings' section. Refer to the proper mapping within the template for the proper AMI ID.
 
 ### A company runs us Infrastructure on Amazon EC2 Instances that run In an Auto Scaling group. Recently, the company promoted faulty code to the entire EC2 fleet. This faulty code caused the Auto Scaling group to scale the instances before any of the application logs could be retrieved. What should a SysOps administrator do to retain the application logs after instances are terminated?
 
@@ -888,7 +876,7 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 - [ ] Create a bastion host with an EC2 Instance, and associate the bastion host with the VPC. Add a statement to the IAM role policy to allow the ec2:CreateVpnConnection action on the bastion host. Instruct the team to use the bastion host endpoint to connect to the instances.
 - [ ] Create an internet-facing Network Load Balancer. Use two listeners. Forward port 22 to a target group of Linux instances. Forward port 3389 to a target group of Windows Instances. Add a statement to the IAM role policy to allow the ec2:CreateRoute action so that the team can connect to the Instances.
 
-### A company has an AWS Cloud Formation template that creates an Amazon S3 bucket. A user authenticates to the corporate AWS account with their Active Directory credentials and attempts to deploy the Cloud Formation template. However, the stack creation fails. Which factors could cause this failure? (Select TWO.)
+### A company has an AWS CloudFormation template that creates an Amazon S3 bucket. A user authenticates to the corporate AWS account with their Active Directory credentials and attempts to deploy the CloudFormation template. However, the stack creation fails. Which factors could cause this failure? (Select TWO.)
 
 - [x] The user's IAM policy does not allow the cloudformation:CreateStack action.
 - [ ] The user's IAM policy does not allow the cloudformation:CreateStackSet action.
@@ -931,7 +919,7 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 - [ ] Install the unified Amazon CloudWatch agent on each EC2 instance, and enable the Basic level predefined metric set. Log CPU utilization every 60 minutes, and initiate an instance shutdown if CPU utilization is less than 10%.
 - [ ] Use AWS Systems Manager Run Command to get CPU utilization from each EC2 instance every 60 minutes. Initiate an instance shutdown if CPU utilization is less than 10%.
 
-### A company uses AWS Cloud Formation templates to deploy cloud infrastructure. An analysis of all the company's templates shows that the company has declared the same components in multiple templates. A SysOps administrator needs to create dedicated templates that have their own parameters and conditions for these common components. Which solution will meet this requirement?
+### A company uses AWS CloudFormation templates to deploy cloud infrastructure. An analysis of all the company's templates shows that the company has declared the same components in multiple templates. A SysOps administrator needs to create dedicated templates that have their own parameters and conditions for these common components. Which solution will meet this requirement?
 
 - [ ] Develop a CloudFormaiion change set.
 - [ ] Develop CloudFormation macros.
@@ -945,12 +933,7 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 - [x] AWS Organizations service control policies (SCPs).
 - [ ] AWS Security Hub conformance packs.
 
-### A SysOps administrator has used AWS Cloud Formation to deploy a sereness application into a production VPC. The application consists of an AWS Lambda function, an Amazon DynamoOB table, and an Amazon API Gateway API. The SysOps administrator must delete the AWS Cloud Formation stack without deleting the DynamoOB table. Which action should the SysOps administrator take before deleting the AWS Cloud Formation stack?
-
-- [x] Add a Retain deletion policy to the DynamoOB resource in the AWS CloudFormation stack.
-- [ ] Add a Snapshot deletion policy to the DynamoOB resource In the AWS CloudFormation stack.
-- [ ] Enable termination protection on the AWS Cloud Formation stack.
-- [ ] Update the application's IAM policy with a Deny statement for the dynamodb:DeleteTabie action.
+### ...
 
 ### A SysOps administrator is notified that an Amazon EC2 instance has stopped responding The AWS Management Console indicates that the system status checks are failing. What should the administrator do first to resolve this issue?
 
@@ -1041,12 +1024,12 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 - [ ] Increase the value in the max_connect_errors parameter in the parameter group that the database uses.
 - [ ] Update the Lambda function's reserved concurrency to a higher value.
 
-### A web application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances run in an Auto Scaling group across multiple Availability Zones. A SysOps administrator notices that some of these EC2 instances show up as healthy in the Auto Scaling group but show up as unhealthy in the ALB target group. What is a possible reason for this issue?
+### A company stores files on 50 Amazon S3 buckets in the same AWS Region The company wants to connect to the S3 buckets securely over a private connection from its Amazon EC2 instances. The company needs a solution that produces no additional cost. Which solution will meet these requirements?
 
-- [ ] Security groups are not allowing traffic between the ALB and the failing EC2 instances.
-- [ ] The Auto Scaling group health check is configured for EC2 status checks.
-- [ ] The EC2 instances are failing to launch and failing EC2 status checks.
-- [x] The target group health check is configured with an incorrect port or path.
+- [ ] Create a gateway VPC endpoint for each S3 bucket. Attach the gateway VPC endpoints to each subnet inside the VPC.
+- [ ] Create an interface VPC endpoint for each S3 bucket. Attach the interface VPC endpoints to each subnet inside the VPC.
+- [x] Create one gateway VPC endpoint for all the S3 buckets. Add the gateway VPC endpoint to the VPC route table.
+- [ ] Create one interface VPC endpoint for all the S3 buckets. Add the interface VPC endpoint to the VPC route table.
 
 ### A company uses AWS CloudFormation to deploy its application infrastructure Recently, a user accidentally changed a property of a database in a CloudFormation template and performed a stack update that caused an interruption to the application A SysOps administrator must determine how to modify the deployment process to allow the DevOps team to continue to deploy the infrastructure, but prevent against accidental modifications to specific resources. Which solution will meet these requirements?
 
@@ -1076,12 +1059,12 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 - [ ] Create an Amazon EC2 instance based on the snapshot, then save the instance's Amazon EBS volume as a snapshot and share it with the other accounts. Require each account owner to create a new volume from that snapshot and encrypt it.
 - [ ] Create a new unencrypted RDS instance from the encrypted snapshot, connect to the instance using SSH/RDP. export the database contents into a file, then share this file with the other accounts.
 
-### A SysOps administrator has an AWS CloudFormation template of the company's existing infrastructure in us-west-2. The administrator attempts to use the template to launch a new stack in eu-west-1, but the stack only partially deploys, receives an error message, and then rolls back. Why would this template fail to deploy? (Select TWO.)
+### A SysOps administrator has an AWS CloudFormation template of the company's existing infrastructure in `us-west-2`. The administrator attempts to use the template to launch a new stack in `eu-west-1`, but the stack only partially deploys, receives an error message, and then rolls back. Why would this template fail to deploy? (Select TWO.)
 
-- [ ] The template referenced an IAM user that is not available in eu-west-1.
-- [x] The template referenced an Amazon Machine Image (AMI) that is not available in eu-west-1.
+- [ ] The template referenced an IAM user that is not available in `eu-west-1`.
+- [x] The template referenced an Amazon Machine Image (AMI) that is not available in `eu-west-1`.
 - [x] The template did not have the proper level of permissions to deploy the resources.
-- [ ] The template requested services that do not exist in eu-west-1.
+- [ ] The template requested services that do not exist in `eu-west-1`.
 - [ ] CloudFormation templates can be used only to update existing services.
 
 ### A company is using an Amazon DynamoDB table for data. A SysOps administrator must configure replication of the table to another AWS Region for disaster recovery. What should the SysOps administrator do to meet this requirement?
@@ -1119,8 +1102,8 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 
 - [ ] Amazon RDS DescribeDBInstances action in the `us-east-1` Region.
 - [ ] Amazon S3 Putobject operation in a bucket named testbucket.
-- [x] Amazon EC2 Describe Instances action in the `us-east-1` Region.
-- [ ] Amazon EC2 AttachNetworkinterf ace action in the eu-west-1 Region.
+- [x] Amazon EC2 Describe Instances action in the `us-east-1`Region.
+- [ ] Amazon EC2 AttachNetworkinterf ace action in the `eu-west-1` Region.
 
 ### A company hosts an internal application on Amazon EC2 instances. All application data and requests route through an AWS Site-to-Site VPN connection between the on-premises network and AWS. The company must monitor the application for changes that allow network access outside of the corporate network. Any change that exposes the application externally must be restricted automatically. Which solution meets these requirements in the MOST operationally efficient manner?
 
@@ -1130,48 +1113,17 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation document to remove any noncorporate CIDR ranges from the application security groups.
 - [ ] Configure AWS Config and the managed rule for monitoring public IP associations with the EC2 instances by tag. Tag the EC2 instances with an identifier. Create an AWS Systems Manager Automation document to remove the public IP association from the EC2 instances.
 
-### A company website contains a web tier and a database tier on AWS. The web tier consists of Amazon EC2 instances that run in an Auto Scaling group across two Availability Zones. The database tier runs on an Amazon ROS for MySQL Multi-AZ DB instance. The database subnet network ACLs are restricted to only the web subnets that need access to the database. The web subnets use the default network ACL with the default rules. The company's operations team has added a third subnet to the Auto Scaling group configuration. After an Auto Scaling event occurs, some users report that they intermittently receive an error message. The error message states that the server cannot connect to the database. The operations team has confirmed that the route tables are correct and that the required ports are open on all security groups. Which combination of actions should a SysOps administrator take so that the web servers can communicate with the DB instance? (Select TWO.)
+### ...
 
-- [ ] On the default ACL. create inbound Allow rules of type TCP with the ephemeral port range and the source as the database subnets.
-- [ ] On the default ACL, create outbound Allow rules of type MySQL/Aurora (3306). Specify the destinations as the database subnets.
-- [ ] On the network ACLs for the database subnets, create an inbound Allow rule of type MySQL/Aurora (3306). Specify the source as the third web subnet.
-- [ ] On the network ACLs for the database subnets, create an outbound Allow rule of type TCP with the ephemeral port range and the destination as the third web subnet.
-- [ ] On the network ACLs for the database subnets, create an outbound Allow rule of type MySQL/Aurora (3306). Specify the destination as the third web subnet.
+### ...
 
-### A SysOps administrator Is troubleshooting an AWS Cloud Formation template whereby multiple Amazon EC2 instances are being created. The template is working In `us-east-1`. but it is failing In us-west-2 with the error code: How should the administrator ensure that the AWS Cloud Formation template is working in every region?
+### ...
 
-- [ ] Copy the source region's Amazon Machine Image (AMI) to the destination region and assign it the same ID.
-- [ ] Edit the AWS CloudFormatton template to specify the region code as part of the fully qualified AMI ID.
-- [ ] Edit the AWS CloudFormatton template to offer a drop-down list of all AMIs to the user by using the aws :: EC2:: ami :: imageiD control.
-- [x] Modify the AWS CloudFormation template by including the AMI IDs in the "Mappings" section. Refer to the proper mapping within the template for the proper AMI ID.
+### ...
 
-### A team of On-call engineers frequently needs to connect to Amazon EC2 Instances In a private subnet to troubleshoot and run commands. The Instances use either the latest AWS-provided Windows Amazon Machine Images (AMIs) or Amazon Linux AMIs. The team has an existing IAM role for authorization. A SysOps administrator must provide the team with access to the Instances by granting IAM permissions to this Which solution will meet this requirement?
+### ...
 
-- [x] Add a statement to the IAM role policy to allow the ssm:StartSession action on the instances. Instruct the team to use AWS Systems Manager Session Manager to connect to the Instances by using the assumed IAM role.
-- [ ] Associate an Elastic IP address and a security group with each instance. Add the engineers' IP addresses to the security group inbound rules. Add a statement to the IAM role policy to allow the ec2:AuthoflzeSecurityGroupIngress action so that the team can connect to the Instances.
-- [ ] Create a bastion host with an EC2 Instance, and associate the bastion host with the VPC. Add a statement to the IAM role policy to allow the ec2:CreateVpnConnection action on the bastion host. Instruct the team to use the bastion host endpoint to connect to the instances.
-- [ ] Create an internet-facing Network Load Balancer. Use two listeners. Forward port 22 to a target group of Linux instances. Forward port 3389 to a target group of Windows Instances. Add a statement to the IAM role policy to allow the ec2:CreateRoute action so that the team can connect to the Instances.
-
-### A SysOps administrator is responsible for a legacy. CPU-heavy application The application can only be scaled vertically Currently, the application is deployed on a single t2 large Amazon EC2 instance The system is showing 90% CPU usage and significant performance latency after a few minutes What change should be made to alleviate the performance problem?
-
-- [ ] Change the Amazon EBS volume to Provisioned lOPs.
-- [ ] Upgrade to a compute-optimized instance.
-- [x] Add additional t3. large instances to the application.
-- [ ] Purchase Reserved Instances.
-
-### A SysOps administrator is investigating a company’s web application for performance problems. The application runs on Amazon EC2 instances that are in an Auto Scaling group. The application receives large traffic increases at random times throughout the day. During periods of rapid traffic increases, the Auto Scaling group is not adding capacity fast enough. As a result, users are experiencing poor performance. The company wants to minimize costs without adversely affecting the user experience when web traffic surges quickly. The company needs a solution that adds more capacity to the Auto Scaling group for larger traffic increases than for smaller traffic increases. How should the SysOps administrator configure the Auto Scaling group to meet these requirements?
-
-- [ ] Create a simple scaling policy with settings to make larger adjustments in capacity when the system is under heavy load.
-- [x] Create a step scaling policy with settings to make larger adjustments in capacity when the system is under heavy load.
-- [ ] Create a target tracking scaling policy with settings to make larger adjustments in capacity when the system is under heavy load.
-- [ ] Use Amazon EC2 Auto Scaling lifecycle hooks. Adjust the Auto Scaling group’s maximum number of instances after every scaling event.
-
-### A company's financial department needs to view the cost details of each project in an AWS account A SysOps administrator must perform the initial configuration that is required to view cost for each project in Cost Explorer Which solution will meet this requirement?
-
-- [x] Activate cost allocation tags Add a project tag to the appropriate resources.
-- [ ] Configure consolidated billing Create AWS Cost and Usage Reports.
-- [ ] Use AWS Budgets Create AWS Budgets reports.
-- [ ] Use cost categories to define custom groups that are based on AWS cost and usage dimensions.
+### ...
 
 ### A company has an infernal web application that runs on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto. Scaling group in a single Availability Zone. A SysOps administrator must make the application highly available. Which action should the SysOps administrator take to meet this requirement?
 
@@ -1216,14 +1168,14 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Increase the value in the max_connect_errors parameter in the parameter group that the database uses.
 - [ ] Update the Lambda function's reserved concurrency to a higher value.
 
-### A SysOps administrator is troubleshooting an AWS CloudFormation template whereby multiple Amazon EC2 instances are being created. The template is working in `us-east-1`, but it is failing in us-west-2 with the error code: AMI [ami-12345678] does not exist. How should the Administrator ensure that the AWS CloudFormation template is working in every region?
-
-- [ ] Copy the source region's Amazon Machine Image (AMI) to the destination region and assign it the same ID.
-- [ ] Edit the AWS CloudFormation template to specify the region code as part of the fully qualified AMI ID.
-- [ ] Edit the AWS CloudFormation template to offer a drop-down list of all AMIs to the user by using the AWS::EC2::AMI::ImageID control.
-- [x] Modify the AWS CloudFormation template by including the AMI IDs in the ג€Mappingsג€ section. Refer to the proper mapping within the template for the proper AMI ID.
-
 ### ...
+
+### A SysOps administrator is provisioning an Amazon Elastic File System (Amazon EFS) file system to provide shared storage across multiple Amazon EC2 instances. The instances all exist in the same VPC across multiple Availability Zones. There are two instances in each Availability Zone. The SysOps administrator must make the file system accessible to each instance with the lowest possible latency. Which solution will meet these requirements?
+
+- [ ] Create a mount target for the EFS file system in the VPC. Use the mount target to mount the file system on each of the instances.
+- [ ] Create a mount target for the EFS file system in the VPC. Use the mount target to mount the file system on each of the instances.
+- [ ] Create a mount target for the EFS file system in the VPC. Use the mount target to mount the file system on each of the instances.
+- [x] Create a mount target in each Availability Zone of the VPC. Use the mount target to mount the EFS file system on the instances in the respective Availability Zone.
 
 ### A SysOps administrator has successfully deployed a VPC with an AWS CloudFormation template. The SysOps administrator wants to deploy the same template across multiple accounts that are managed through AWS Organizations. Which solution will meet this requirement with the LEAST operational overhead?
 
@@ -1457,12 +1409,12 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [x] Move all of the EC2 instances into a single Availability Zone and provide the Availability Zone IP address to the service.
 - [ ] Move all of the EC2 instances to a peered VPC and provide the VPC IP address to the service.
 
-### A company runs hundreds of Amazon EC2 instances in a single AWS Region. Each EC2 instance has two attached 1 GiB General Purpose SSD (gp2) Amazon Elastic Block Store (Amazon EBS) volumes. A critical workload is using all the available IOPS capacity on the EBS volumes. According to company policy, the company cannot change instance types or EBS volume types without completing lengthy acceptance tests to validate that the company’s applications will function properly. A SysOps administrator needs to increase the I/O performance of the EBS volumes as quickly as possible. Which action should the SysOps administrator take to meet these requirements?
+### A company uses an Amazon CloudFront distribution to deliver its website. Traffic logs for the website must be centrally stored, and all data must be encrypted at rest. Which solution will meet these requirements?
 
-- [x] Increase the size of the 1 GiB EBS volumes.
-- [ ] Add two additional elastic network interfaces on each EC2 instance.
-- [ ] Turn on Transfer Acceleration on the EBS volumes in the Region.
-- [ ] Add all the EC2 instances to a cluster placement group.
+- [ ] Create an Amazon OpenSearch Service (Amazon Elasticsearch Service) domain with internet access and server-side encryption that uses the default AWS managed customer master key (CMK). Configure CloudFront to use the Amazon OpenSearch Service (Amazon Elasticsearch Service) domain as a log destination.
+- [ ] Create an Amazon OpenSearch Service (Amazon Elasticsearch Service) domain with VPC access and server-side encryption that uses AES-256. Configure CloudFront to use the Amazon OpenSearch Service (Amazon Elasticsearch Service) domain as a log destination.
+- [x] Create an Amazon S3 bucket that is configured with default server-side encryption that uses AES-256. Configure CloudFront to use the S3 bucket as a log destination.
+- [ ] Create an Amazon S3 bucket that is configured with no default encryption. Enable encryption in the CloudFront distribution, and use the S3 bucket as a log destination.
 
 ### An organization created an Amazon Elastic File System (Amazon EFS) volume with a file system ID of fs-85ba41fc, and it is actively used by 10 Amazon EC2 hosts. The organization has become concerned that the file system is not encrypted. How can this be resolved?
 
@@ -1560,14 +1512,14 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Configure encryption using the KMS managed S3 key. Add the vendor's IAM role ARN to the KMS key policy. Provide the KMS managed S3 key ARN to the vendor.
 - [ ] Configure encryption using the KMS managed S3 key. Create an S3 bucket. Add the vendor's IAM role ARN to the S3 bucket policy. Provide the S3 bucket ARN to the vendor.
 
-### A SysOps administrator is using AWS Systems Manager Patch Manager to patch a fleet of Amazon EC2 instances. The SysOps administrator has configured a patch baseline and a maintenance window. The SysOps administrator also has used an instance tag to identify which instances to patch. The SysOps administrator must give Systems Manager the ability to access the EC2 instances. Which additional action must the SysOps administrator perform to meet this requirement?
+### A company runs hundreds of Amazon EC2 instances in a single AWS Region. Each EC2 instance has two attached 1 GiB General Purpose SSD (gp2) Amazon Elastic Block Store (Amazon EBS) volumes. A critical workload is using all the available IOPS capacity on the EBS volumes. According to company policy, the company cannot change instance types or EBS volume types without completing lengthy acceptance tests to validate that the company’s applications will function properly. A SysOps administrator needs to increase the I/O performance of the EBS volumes as quickly as possible. Which action should the SysOps administrator take to meet these requirements?
 
-- [ ] Add an inbound rule to the instances' security group.
-- [x] Attach an IAM instance profile with access to Systems Manager to the instances.
-- [ ] Create a Systems Manager activation. Then activate the fleet of instances.
-- [ ] Manually specify the instances to patch instead of using tag-based selection.
+- [x] Increase the size of the 1 GiB EBS volumes.
+- [ ] Add two additional elastic network interfaces on each EC2 instance.
+- [ ] Turn on Transfer Acceleration on the EBS volumes in the Region.
+- [ ] Add all the EC2 instances to a cluster placement group.
 
-### A company hosts its website on Amazon EC2 instances in the `us-east-1` Region. The company is preparing to extend its website into the eu-central-1 Region, but the database must remain only in `us-east-1`. After deployment, the EC2 instances in eu-central-1 are unable to connect to the database in `us-east-1`. What is the MOST operationally efficient solution that will resolve this connectivity issue?
+### A company hosts its website on Amazon EC2 instances in the `us-east-1` Region. The company is preparing to extend its website into the eu-central-1 Region, but the database must remain only in us-east-1. After deployment, the EC2 instances in eu-central-1 are unable to connect to the database in us-east-1. What is the MOST operationally efficient solution that will resolve this connectivity issue?
 
 - [x] Create a VPC peering connection between the two Regions. Add the private IP address range of the instances to the inbound rule of the database security group.
 - [ ] Create a VPC peering connection between the two Regions. Add the security group of the instances in eu-central-1 to the outbound rule of the database security group.
@@ -1611,7 +1563,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 ### A global company operates out of five AWS Regions. A SysOps administrator wants to identify all the company's tagged and untagged Amazon EC2 instances. The company requires the output to display the instance ID and tags. What is the MOST operationally efficient way for the SysOps administrator to meet these requirements?
 
-- [ ]. Create a tag-based resource group in AWS Resource Groups.
+- [ ] Create a tag-based resource group in AWS Resource Groups.
 - [ ] Use AWS Trusted Advisor. Export the EC2 On-Demand Instances check results from Trusted Advisor.
 - [ ] Use Cost Explorer. Choose a service type of EC2-Instances, and group by Resource.
 - [x] Use Tag Editor in AWS Resource Groups. Select all Regions, and choose a resource type of AWS::EC2::Instance.
@@ -1637,13 +1589,13 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Configure an S3 origin access identity (OAI) to display only the updated files to users.
 - [ ] Disable S3 Versioning on the S3 bucket so that the updated files can replace the old files.
 
-### A company has two VPC networks named VPC A and VPC B. The VPC A CIDR block is 10.0.0.0/16 and the VPC B CIDR block is 172.31.0.0/16. The company wants to establish a VPC peering connection named pcx-12345 between both VPCs. Which rules should appear in the route table of VPC A after configuration? (Choose two.)
+### A company has two VPC networks named VPC A and VPC B. The VPC A CIDR block is `10.0.0.0/16` and the VPC B CIDR block is `172.31.0.0/16`. The company wants to establish a VPC peering connection named `pcx-12345` between both VPCs. Which rules should appear in the route table of VPC A after configuration? (Choose two.)
 
-- [x] Destination: 10.0.0.0/16, Target: Local.
-- [ ] Destination: 172.31.0.0/16, Target: Local.
-- [ ] Destination: 10.0.0.0/16, Target: pcx-12345.
-- [x] Destination: 172.31.0.0/16, Target: pcx-12345.
-- [ ] Destination: 10.0.0.0/16, Target: 172.31.0.0/16.
+- [x] Destination: `10.0.0.0/16`, Target: `Local`.
+- [ ] Destination: `172.31.0.0/16`, Target: `Local`.
+- [ ] Destination: `10.0.0.0/16`, Target: `pcx-12345`.
+- [x] Destination: `172.31.0.0/16`, Target: `pcx-12345`.
+- [ ] Destination: `10.0.0.0/16`, Target: `172.31.0.0/16`.
 
 ### A company analyzes sales data for its customers. Customers upload files to one of the company's Amazon S3 buckets, and a message is posted to an Amazon. Simple Queue Service (Amazon SQS) queue that contains the object Amazon Resource Name (ARN). An application that runs on an Amazon EC2 instance polls the queue and processes the messages. The processing time depends on the size of the file. Customers are reporting delays in the processing of their files. A SysOps administrator decides to configure Amazon EC2 Auto Scaling as the first step. The SysOps administrator creates an Amazon Machine Image (AMI) that is based on the existing EC2 instance. The SysOps administrator also creates a launch template that references the AMI. How should the SysOps administrator configure the Auto Scaling policy to improve the response time?
 
@@ -1724,12 +1676,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Use EBS snapshot restore to create a new General Purpose SSD EBS volume from the production snapshot.
 - [ ] Use EBS snapshot restore to create a new Provisioned IOPS SSD EBS volume from the production snapshot.
 
-### A team of on-call engineers frequently needs to connect to Amazon EC2 instances in a private subnet to troubleshoot and run commands. The instances use either the latest AWS-provided Windows Amazon Machine Images (AMIs) or Amazon Linux AMIs. The team has an existing 1AM role for authorization. A SysOps administrator must provide the team with access to the instances by granting IAM permissions to this role. Which solution will meet this requirement?
-
-- [x] Add a statement to the 1AM role policy to allow the ssm:StartSession action on the instances. Instruct the team to use AWS Systems Manager Session Manager to connect to the instances by using the assumed IAM role.
-- [ ] Associate an Elastic IP address and a security group with each instance. Add the engineers' IP addresses to the security group inbound rules. Add a statement to the IAM role policy to allow the ec2:AuthorizeSecurityGrouplngress action so that the team can connect to the instances.
-- [ ] Create a bastion host with an EC2 instance, and associate the bastion host with the VPC. Add a statement to the 1AM role policy to allow the ec2:CreateVpnConnection action on the bastion host. Instruct the team to use the bastion host endpoint to connect to the instances.
-- [ ] Create an internet-facing Network Load Balancer. Use two listeners. Forward port 22 to a target group of Linux instances. Forward port 3389 to a target group of Windows instances. Add a statement to the IAM role policy to allow the ec2:CreateRoute action so that the team can connect to the instances.
+### ...
 
 ### A company needs to ensure strict adherence to a budget for 25 applications deployed on AWS. Separate teams are responsible for storage, compute, and database costs. A SysOps administrator must implement an automated solution to alert each team when their projected spend will exceed a quarterly amount that has been set by the finance department. The solution cannot incur additional compute, storage, or database costs. Which solution will meet these requirements?
 
@@ -1745,20 +1692,9 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Disable bucket versioning in the S3 bucket configuration.
 - [ ] Enable content compression in the CloudFront configuration.
 
-### A company has a policy that requires all Amazon EC2 instances to have a specific set of tags. If an EC2 instance does not have the required tags, the noncompliant instance should be terminated. What is the MOST operationally efficient solution that meets these requirement?
+### ...
 
-- [ ] Create an Amazon EventBridge (Amazon CloudWatch Events) rule to send all EC2 instance state changes to an AWS Lambda function to determine if each instance is compliant. Terminate any noncompliant instances.
-- [ ] Create an IAM policy that enforces all EC2 instance tag requirements. If the required tags are not in place for an instance, the policy will terminate noncompliant instance.
-- [ ] Create an AWS Lambda function to determine if each EC2 instance is compliant and terminate an instance if it is noncompliant. Schedule the Lambda function to invoke every 5 minutes.
-- [x] Create an AWS Config rule to check if the required tags are present. If an EC2 instance is noncompliant, invoke an AWS Systems Manager Automation document to terminate the instance.
-
-### A SysOps administrator wants to manage a web server application with AWS Elastic Beanstalk. The Elastic Beanstalk service must maintain full capacity for new deployments at all times. Which deployment policies satisfy this requirement? (Choose two.)
-
-- [ ] All at once.
-- [x] Immutable.
-- [ ] Rebuild.
-- [ ] Rolling.
-- [x] Rolling with additional batch .
+### ...
 
 ### A company has an Auto Scaling group of Amazon EC2 instances that scale based on average CPU utilization. The Auto Scaling group events log indicates an InsufficientInstanceCapacity error. Which actions should a SysOps administrator take to remediate this issue? (Choose two.)
 
