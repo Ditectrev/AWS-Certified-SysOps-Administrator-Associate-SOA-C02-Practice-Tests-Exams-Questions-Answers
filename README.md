@@ -7,7 +7,12 @@
 - [x] A route for `0.0.0.0/0` that points to an internet gateway.
 - [ ] A route for `0.0.0.0/0` that points to an elastic network interface.
 
-### ...
+### A SysOps administrator launches an Amazon EC2 instance in a private subnet of a VPC. When the SysOps administrator attempts a curl command from the command line of the EC2 instance, the SysOps administrator cannot connect to https:www.example.com. What should the SysOps administrator do to resolve this issue?
+
+- [x] Ensure that there is an outbound security group for port 443 to 0.0.0.0/0.
+- [ ] Ensure that there is an inbound security group for port 443 from 0.0.0.0/0.
+- [ ] Ensure that there is an outbound network ACL for ephemeral ports 1024-66535 to 0.0.0.0/0.
+- [ ] Ensure that there is an outbound network ACL for port 80 to 0.0.0.0/0.
 
 ### A company's public website is hosted in an Amazon S3 bucket in the `us-east-1` Region behind an Amazon CloudFront distribution. The company wants to ensure that the website is protected from DDoS attacks. A SysOps administrator needs to deploy a solution that gives the company the ability to maintain control over the rate limit at which DDoS protections are applied. Which solution will meet these requirements?
 
@@ -166,7 +171,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Modify the instance security group to allow inbound SSH traffic from the SysOps administrator's IP address.
 - [ ] Modify the instance security group to allow outbound SSH traffic to the SysOps administrator's IP address.
 
-### ...
+### A company wants to use only IPv6 for all its Amazon EC2 instances. The EC2 instances must not be accessible from the internet, but the EC2 instances must be able to access the internet. The company creates a dual-stack VPC and IPv6-only subnets. How should a SysOps administrator configure the VPC to meet these requirements?
+
+- [ ] Create and attach a NAT gateway. Create a custom route table that includes an entry to point all IPv6 traffic to the NAT gateway. Attach the custom route table to the IPv6-only subnets.
+- [ ] Create and attach an internet gateway. Create a custom route table that includes an entry to point all IPv6 traffic to the internet gateway. Attach the custom route table to the IPv6-only subnets.
+- [x] Create and attach an egress-only internet gateway. Create a custom route table that includes an entry to point all IPv6 traffic to the egress-only internet gateway. Attach the custom route table to the IPv6-only subnets.
+- [ ] Create and attach an internet gateway and a NAT gateway. Create a custom route table that includes an entry to point all IPv6 traffic to the internet gateway and all IPv4 traffic to the NAT gateway. Attach the custom route table to the IPv6-only subnets.
 
 ### A SysOps administrator wants to manage a web server application with AWS Elastic Beanstalk. The Elastic Beanstalk service must maintain full capacity for new deployments at all times. Which deployment policies satisfy this requirement? (Select TWO.)
 
@@ -546,7 +556,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Launch new EC2 instances in another VPC.
 - [x] Use Service Quotas to request an EC2 quota increase.
 
-### ...
+### A SysOps Administrator maintains several Amazon EC2 instances that do not have access to the public internet. To patch operating systems, the instances require outbound internet connectivity. For security reasons, the instances should not be reachable from the public Internet. The Administrator deploys a NAT instance, updates the security groups, and configures the appropriate routes within the route table. However, the instances are still unable to reach the Internet. What should be done to resolve the issue?
+
+- [ ] Assign Elastic IP addresses to the instances and create a route from the private subnets to the internet gateway.
+- [ ] Delete the NAT instance and replace it with AWS WAF.
+- [x] Disable source/destination checks on the NAT instance.
+- [ ] Start/stop the NAT instance so it is launched on a different host.
 
 ### A compliance team requires all administrator passwords tor Amazon RDS DB instances to be changed at toast annually. Which solution meets this requirement in the MOST operationally efficient manned?
 
@@ -659,7 +674,7 @@ Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90
 ### A company has an application that customers use to search for records on a website. The application's data is stored in an Amazon Aurora DB cluster. The application's usage varies by season and by day of the week. The website's popularity is increasing, and the website is experiencing slower performance because of increased load on the DB cluster during periods of peak activity. The application logs show that the performance issues occur when users are searching for information. The same search is rarely performed multiple times. A SysOps administrator must improve the performance of the platform by using a solution that maximizes resource efficiency. Which solution will meet these requirements?
 
 - [ ] Deploy an Amazon ElastiCache for Redis cluster in front of the DB cluster. Modify the application to check the cache before the application issues new queries to the database. Add the results of any queries to the cache.
-- [x] Deploy an Aurora Replica for the DB cluster. Modify the application to use the reader endpoint for search operations. Use Aurora Auto Scaling to scale the number of replicas based on load. Most Voted.
+- [x] Deploy an Aurora Replica for the DB cluster. Modify the application to use the reader endpoint for search operations. Use Aurora Auto Scaling to scale the number of replicas based on load.
 - [ ] Use Provisioned IOPS on the storage volumes that support the DB cluster to improve performance sufficiently to support the peak load on the application.
 - [ ] Increase the instance size in the DB cluster to a size that is sufficient to support the peak load on the application. Use Aurora Auto Scaling to scale the instance size based on load.
 
