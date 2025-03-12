@@ -24,8 +24,8 @@
 ### A company hosts an online shopping portal in the AWS Cloud. The portal provides HTTPS security by using a TLS certificate on an Elastic Load Balancer (ELB). Recently, the portal suffered an outage because the TLS certificate expired. A SysOps administrator must create a solution to automatically renew certificates to avoid this issue in the future. What is the MOST operationally efficient solution that meets these requirements?
 
 - [ ] Request a public certificate by using AWS Certificate Manager (ACM). Associate the certificate from ACM with the ELB. Write a scheduled AWS Lambda function to renew the certificate every 18 months.
-- [x] Request a public certificate by using AWS Certificate Manager (ACM). Associate the certificate from ACM with the ELB. ACM will automatically manage the renewal of the certificate.
-- [ ] Register a certificate with a third-party certificate authority (CA). Import this certificate into AWS Certificate Manager (ACM). Associate the certificate from ACM with the ELB. ACM will automatically manage the renewal of the certificate.
+- [ ] Request a public certificate by using AWS Certificate Manager (ACM). Associate the certificate from ACM with the ELB. ACM will automatically manage the renewal of the certificate.
+- [x] Register a certificate with a third-party certificate authority (CA). Import this certificate into AWS Certificate Manager (ACM). Associate the certificate from ACM with the ELB. ACM will automatically manage the renewal of the certificate.
 - [ ] Register a certificate with a third-party certificate authority (CA). Configure the ELB to import the certificate directly from the CA. Set the certificate refresh cycle on the ELB to refresh when the certificate is within 3 months of the expiration date.
 
 ### With the threat of ransomware viruses encrypting and holding company data hostage, which action should be taken to protect an Amazon S3 bucket?
@@ -75,9 +75,9 @@ Configure the rule to invoke an AWS Lambda function to enable CloudTrail.
 ### A SysOps administrator needs to give users the ability to upload objects to an Amazon S3 bucket. The SysOps administrator creates a presigned URL and provides the URL to a user, but the user cannot upload an object to the S3 bucket. The presigned URL has not expired, and no bucket policy is applied to the S3 bucket. Which of the following could be the cause of this problem?
 
 - [ ] The user has not properly configured the AWS CLI with their access key and secret access key.
-- [ ] The SysOps administrator does not have the necessary permissions to upload the object to the S3 bucket.
+- [x] The SysOps administrator does not have the necessary permissions to upload the object to the S3 bucket.
 - [ ] The SysOps administrator must apply a bucket policy to the S3 bucket to allow the user to upload the object.
-- [x] The object already has been uploaded through the use of the presigned URL, so the presigned URL is no longer valid.
+- [ ] The object already has been uploaded through the use of the presigned URL, so the presigned URL is no longer valid.
 
 ### A company runs a web application on three Amazon EC2 instances behind an Application Load Balancer (ALB). The company notices that random periods of increased traffic cause a degradation in the application's performance. A SysOps administrator must scale the application to meet the increased traffic. Which solution meets these requirements?
 
@@ -202,8 +202,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company creates custom AMI images by launching new Amazon EC2 instances from an AWS CloudFormation template it installs and configure necessary software through AWS OpsWorks and takes images of each EC2 instance. The process of installing and configuring software can take between 2 to 3 hours but at limes the process stalls due to installation errors. The SysOps administrator must modify the CloudFormation template so if the process stalls, the entire stack will tail and roil back. Based on these requirements what should be added to the template?
 
-- [x] Conditions with a timeout set to 4 hours.
-- [ ] CreationPolicy with timeout set to 4 hours.
+- [ ] Conditions with a timeout set to 4 hours.
+- [x] CreationPolicy with timeout set to 4 hours.
 - [ ] DependsOn a timeout set to 4 hours.
 - [ ] Metadata with a timeout set to 4 hours.
 
@@ -232,8 +232,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] The S3 bucket must be configured with Amazon CloudFront first.
 - [ ] The Route 53 record set must have an IAM role that allows access to the S3 bucket.
-- [x] The Route 53 record set must be in the same region as the S3 bucket.
-- [ ] The S3 bucket name must match the record set name in Route 53.
+- [ ] The Route 53 record set must be in the same region as the S3 bucket.
+- [x] The S3 bucket name must match the record set name in Route 53.
 
 ### A company has a critical serverless application that uses multiple AWS Lambda functions. Each Lambda function generates 1 GB of log data daily in its own Amazon CloudWatch Logs log group. The company's security team asks for a count of application errors, grouped by type, across all of the log groups. What should a SysOps administrator do to meet this requirement?
 
@@ -262,8 +262,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Reduce the scaling thresholds so that instances are added before traffic increases.
 - [ ] Purchase Reserved Instances to cover 100% of the maximum capacity of the Auto Scaling group.
-- [ ] Update the Auto Scaling group to launch instances that have a storage optimized instance type.
-- [x] Use EC2 Image Builder to prepare an Amazon Machine Image (AMI) that has pre-installed software.
+- [x] Update the Auto Scaling group to launch instances that have a storage optimized instance type.
+- [ ] Use EC2 Image Builder to prepare an Amazon Machine Image (AMI) that has pre-installed software.
 
 ### A SysOps administrator has launched a large general purpose Amazon EC2 instance to regularly process large data files. The instance has an attached 1 TB General Purpose SSD (gp2) Amazon Elastic Block Store (Amazon EBS) volume. The instance also is EBS-optimized. To save costs, the SysOps administrator stops the instance each evening and restarts the instance each morning. When data processing is active, Amazon CloudWatch metrics on the instance show a consistent 3.000 VolumeReadOps. The SysOps administrator must improve the I/O performance while ensuring data integrity. Which action will meet these requirements?
 
@@ -348,16 +348,16 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### An application accesses data through a file system interface. The application runs on Amazon EC2 instances in multiple Availability Zones, all of which must share the same data. While the amount of data is currently small, the company anticipates that it will grow to tens of terabytes over the lifetime of the application. What is the MOST scalable storage solution to fulfill this requirement?
 
 - [ ] Connect a large Amazon EBS volume to multiple instances and schedule snapshots.
-- [ ] Deploy Amazon EFS in the VPC and create mount targets in multiple subnets.
+- [x] Deploy Amazon EFS in the VPC and create mount targets in multiple subnets.
 - [ ] Launch an EC2 instance and share data using SMB/CIFS or NFS.
-- [x] Deploy an AWS Storage Gateway cached volume on Amazon EC2.
+- [ ] Deploy an AWS Storage Gateway cached volume on Amazon EC2.
 
 ### A company is expanding its use of AWS services across its portfolios The company wants to provision AWS accounts for each team to ensure a separation of business processes for security compliance and billing Account creation and bootstrapping should be completed m a scalable and efficient way so new accounts are created with a defined baseline and governance guardrails in place A SysOps administrator needs to design a provisioning process that saves time and resources Which action should be taken to meet these requirements?
 
-- [x] Automate using AWS Elastic Beanstalk to provision the AWS accounts set up infrastructure and integrate with AWS Organizations.
+- [ ] Automate using AWS Elastic Beanstalk to provision the AWS accounts set up infrastructure and integrate with AWS Organizations.
 - [ ] Create bootstrapping scripts in AWS OpsWorks and combine them with AWS CloudFormation templates to provision accounts and infrastructure.
 - [ ] Use AWS Config to provision accounts and deploy instances using AWS Service Catalog.
-- [ ] Use AWS Control Tower to create a template in Account Factory and use the template to provision new accounts.
+- [x] Use AWS Control Tower to create a template in Account Factory and use the template to provision new accounts.
 
 ### A company hosts a web portal on Amazon EC2 instances. The web portal uses an Elastic Load Balancer (ELB) and Amazon Route 53 for its public DNS service. The ELB and the EC2 instances are deployed by way of a single AWS CloudFormation stack in the `us-east-1` Region. The web portal must be highly available across multiple Regions. Which configuration will meet these requirements?
 
@@ -404,11 +404,11 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A SysOps administrator is investigating why a user has been unable to use RDP to connect over the internet from their home computer to a bastion server running on an Amazon EC2 Windows instance. Which of the following are possible causes of this issue? (Choose two.)
 
-- [ ] A network ACL associated with the bastion's subnet is blocking the network traffic.
+- [x] A network ACL associated with the bastion's subnet is blocking the network traffic.
 - [ ] The instance does not have a private IP address.
 - [x] The route table associated with the bastion's subnet does not have a route to the internet gateway.
 - [ ] The security group for the instance does not have an inbound rule on port 22.
-- [x] The security group for the instance does not have an outbound rule on port 3389.
+- [ ] The security group for the instance does not have an outbound rule on port 3389.
 
 ### 31.16.139. When the SysOps administrator tries to ping the instance's public IP address from the remote IP address 203.0.113.12, the response is "request timed out." The flow logs contain the following information. What is one cause of the problem?
 
@@ -607,9 +607,9 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A SysOps administrator is evaluating Amazon Route 53 DNS options to address concerns about high availability for an on-premises website. The website consists of two servers: a primary active server and a secondary passive server. Route 53 should route traffic to the primary server if the associated health check returns 2xx or 3xx HTTP codes. All other traffic should be directed to the secondary passive server. The failover record type, set ID. and routing policy have been set appropriately for both primary and secondary servers. Which next step should be taken to configure Route 53?
 
-- [ ] Create an A record for each server. Associate the records with the Route 53 HTTP health check.
+- [x] Create an A record for each server. Associate the records with the Route 53 HTTP health check.
 - [ ] Create an A record for each server. Associate the records with the Route 53 TCP health check.
-- [x] Create an alias record for each server with evaluate target health set to yes. Associate the records with the Route 53 HTTP health check.
+- [ ] Create an alias record for each server with evaluate target health set to yes. Associate the records with the Route 53 HTTP health check.
 - [ ] Create an alias record for each server with evaluate target health set to yes. Associate the records with the Route 53 TCP health check.
 
 ### A company must ensure that any objects uploaded to an S3 bucket are encrypted. Which of the following actions will meet this requirement? (Choose two.)
@@ -734,11 +734,11 @@ Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90
 
 ### A company's IT department noticed an increase in the spend of their developer AWS account. There are over 50 developers using the account, and the finance team wants to determine the service costs incurred by each developer. What should a SysOps administrator do to collect this information? (Select TWO.)
 
-- [ ] Activate the createdBy tag in the account.
+- [x] Activate the createdBy tag in the account.
 - [ ] Analyze the usage with Amazon CloudWatch dashboards.
-- [ ] Analyze the usage with Cost Explorer.
-- [x] Configure AWS Trusted Advisor to track resource usage.
-- [x] Create a billing alarm in AWS Budgets.
+- [x] Analyze the usage with Cost Explorer.
+- [ ] Configure AWS Trusted Advisor to track resource usage.
+- [ ] Create a billing alarm in AWS Budgets.
 
 ### A company website contains a web tier and a database tier on AWS. The web tier consists of Amazon EC2 instances that run in an Auto Scaling group across two Availability Zones. The database tier runs on an Amazon ROS for MySQL Multi-AZ DB instance. The database subnet network ACLs are restricted to only the web subnets that need access to the database. The web subnets use the default network ACL with the default rules. The company's operations team has added a third subnet to the Auto Scaling group configuration. After an Auto Scaling event occurs, some users report that they intermittently receive an error message. The error message states that the server cannot connect to the database. The operations team has confirmed that the route tables are correct and that the required ports are open on all security groups. Which combination of actions should a SysOps administrator take so that the web servers can communicate with the DB instance? (Select TWO.)
 
@@ -1022,8 +1022,8 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 
 ### A company is using an AWS KMS customer master key (CMK) with imported key material The company references the CMK by its alias in the Java application to encrypt data The CMK must be rotated every 6 months. What is the process to rotate the key?
 
-- [x] Enable automatic key rotation for the CMK and specify a period of 6 months.
-- [ ] Create a new CMK with new imported material, and update the key alias to point to the new CMK.
+- [ ] Enable automatic key rotation for the CMK and specify a period of 6 months.
+- [X] Create a new CMK with new imported material, and update the key alias to point to the new CMK.
 - [ ] Delete the current key material, and import new material into the existing CMK.
 - [ ] Import a copy of the existing key material into a new CMK as a backup, and set the rotation schedule for 6 months.
 
@@ -1073,8 +1073,8 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 
 - [ ] The template referenced an IAM user that is not available in `eu-west-1`.
 - [x] The template referenced an Amazon Machine Image (AMI) that is not available in `eu-west-1`.
-- [x] The template did not have the proper level of permissions to deploy the resources.
-- [ ] The template requested services that do not exist in `eu-west-1`.
+- [ ] The template did not have the proper level of permissions to deploy the resources.
+- [x] The template requested services that do not exist in `eu-west-1`.
 - [ ] CloudFormation templates can be used only to update existing services.
 
 ### A company is using an Amazon DynamoDB table for data. A SysOps administrator must configure replication of the table to another AWS Region for disaster recovery. What should the SysOps administrator do to meet this requirement?
@@ -1391,10 +1391,9 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 ### A new application runs on Amazon EC2 instances and accesses data in an Amazon RDS database instance. When fully deployed in production, the application fails. The database can be queried from a console on a bastion host. When looking at the web server logs, the following error is repeated multiple times: *** Error Establishing a Database Connection Which of the following may be causes of the connectivity problems? (Choose two.)
 
-- [ ] The security group for the database does not have the appropriate egress rule from the database to the web server.
+- [x] The security group for the database does not have the appropriate egress rule from the database to the web server.
 - [ ] The certificate used by the web server is not trusted by the RDS instance.
 - [x] The security group for the database does not have the appropriate ingress rule from the web server to the database.
-- [x] The port used by the application developer does not match the port specified in the RDS configuration.
 - [ ] The database is still being created and is not available for connectivity.
 
 ### A compliance team requires all administrator passwords for Amazon RDS DB instances to be changed at least annually. Which solution meets this requirement in the MOST operationally efficient manner?
@@ -1406,9 +1405,9 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 ### A SysOps administrator is responsible for managing a fleet of Amazon EC2 instances. These EC2 instances upload build artifacts to a third-party service. The third-party service recently implemented a strict IP allow list that requires all build uploads to come from a single IP address. What change should the systems administrator make to the existing build fleet to comply with this new requirement?
 
-- [ ] Move all of the EC2 instances behind a NAT gateway and provide the gateway IP address to the service.
+- [x] Move all of the EC2 instances behind a NAT gateway and provide the gateway IP address to the service.
 - [ ] Move all of the EC2 instances behind an internet gateway and provide the gateway IP address to the service.
-- [x] Move all of the EC2 instances into a single Availability Zone and provide the Availability Zone IP address to the service.
+- [ ] Move all of the EC2 instances into a single Availability Zone and provide the Availability Zone IP address to the service.
 - [ ] Move all of the EC2 instances to a peered VPC and provide the VPC IP address to the service.
 
 ### A company uses an Amazon CloudFront distribution to deliver its website. Traffic logs for the website must be centrally stored, and all data must be encrypted at rest. Which solution will meet these requirements?
@@ -1474,8 +1473,8 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 ### A company is using an AWS KMS customer master key (CMK) with imported key material. The company references the CMK by its alias in the Java application to encrypt data. The CMK must be rotated every 6 months. What is the process to rotate the key?
 
-- [x] Enable automatic key rotation for the CMK, and specify a period of 6 months.
-- [ ] Create a new CMK with new imported material, and update the key alias to point to the new CMK.
+- [ ] Enable automatic key rotation for the CMK, and specify a period of 6 months.
+- [x] Create a new CMK with new imported material, and update the key alias to point to the new CMK.
 - [ ] Delete the current key material, and import new material into the existing CMK.
 - [ ] Import a copy of the existing key material into a new CMK as a backup, and set the rotation schedule for 6 months.
 
@@ -1483,8 +1482,8 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 - [ ] The S3 bucket must be configured with Amazon CloudFront first.
 - [ ] The Route 53 record set must have an IAM role that allows access to the S3 bucket.
-- [x] The Route 53 record set must be in the same region as the S3 bucket.
-- [ ] The S3 bucket name must match the record set name in Route 53.
+- [ ] The Route 53 record set must be in the same region as the S3 bucket.
+- [x] The S3 bucket name must match the record set name in Route 53.
 
 ### A SysOps administrator has used AWS CloudFormation to deploy a serverless application into a production VPC. The application consists of an AWS Lambda function, an Amazon DynamoDB table, and an Amazon API Gateway API. The SysOps administrator must delete the AWS CloudFormation stack without deleting the DynamoDB table. Which action should the SysOps administrator take before deleting the AWS CloudFormation stack?
 
@@ -1708,8 +1707,8 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 ### A SysOps administrator needs to control access to groups of Amazon EC2 instances using AWS Systems Manager Session Manager. Specific tags on the EC2 instances have already been added. Which additional actions should the administrator take to control access? (Choose two.)
 
-- [x] Attach an IAM policy to the users or groups that require access to the EC2 instances.
-- [ ] Attach an IAM role to control access to the EC2 instances.
+- [ ] Attach an IAM policy to the users or groups that require access to the EC2 instances.
+- [x] Attach an IAM role to control access to the EC2 instances.
 - [ ] Create a placement group for the EC2 instances and add a specific tag.
 - [ ] Create a service account and attach it to the EC2 instances that need to be controlled.
 - [x] Create an IAM policy that grants access to any EC2 instances with a tag specified in the Condition element.
