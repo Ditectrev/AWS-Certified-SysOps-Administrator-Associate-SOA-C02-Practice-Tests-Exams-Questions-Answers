@@ -35,7 +35,7 @@
 - [ ] Enable Amazon S3 versioning on the bucket.
 - [ ] Enable snapshots on the bucket.
 
-### A company is partnering with an external vendor to provide data processing services. For this integration, the vendor must host the company's data in an Amazon S3 bucket in the vendor's AWS account. The vendor is allowing the company to provide an AWS Key Management Service (AWS KMS) key to encrypt the company's data. The vendor has provided an IAM role Amazon Resource Name (ARN) to the company for this integration. What should a SysOps administrator do to configure this integration?
+### A company is partnering with an external vendor to provide data processing services. For this integration, the vendor must host the company's data in an Amazon S3 bucket in the vendor's AWS account. The vendor is allowing the company to provide an AWS Key Management Service (AWS KMS) key to encrypt the company's data. The vendor has provided an IAM role Amazon Resources Name (ARN) to the company for this integration. What should a SysOps administrator do to configure this integration?
 
 - [x] Create a new KMS key. Add the vendor's IAM role ARN to the KMS key policy. Provide the new KMS key ARN to the vendor.
 - [ ] Create a new KMS key. Create a new IAM user. Add the vendor's IAM role ARN to an inline policy that is attached to the IAM user. Provide the new IAM user ARN to the vendor.
@@ -228,12 +228,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Set up two AWS Direct Connect connections between the AWS environment and the on-premises network. Set up a link aggregation group (LAG) that includes the two connections. Change the VPC resolver address to point to the on-premises DNS server.
 - [ ] Create an Amazon Route 53 public hosted zone for the on-premises domain. Configure the network ACLs to forward DNS requests against the on-premises domain to the Route 53 public hosted zone.
 
-### A SysOps administrator is trying to set up an Amazon Route 53 domain name to route traffic to a website hosted on Amazon S3. The domain name of the website is <www.anycompany.com> and the S3 bucket name is anycompany-static. After the record set is set up in Route 53, the domain name <www.anycompany.com> does not seem to work, and the static website is not displayed in the browser. Which of the following is a cause of this?
-
-- [ ] The S3 bucket must be configured with Amazon CloudFront first.
-- [ ] The Route 53 record set must have an IAM role that allows access to the S3 bucket.
-- [ ] The Route 53 record set must be in the same region as the S3 bucket.
-- [x] The S3 bucket name must match the record set name in Route 53.
+### ...
 
 ### A company has a critical serverless application that uses multiple AWS Lambda functions. Each Lambda function generates 1 GB of log data daily in its own Amazon CloudWatch Logs log group. The company's security team asks for a count of application errors, grouped by type, across all of the log groups. What should a SysOps administrator do to meet this requirement?
 
@@ -258,7 +253,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Launch the instances into a spread placement group in multiple AWS Regions.
 - [x] Launch the instances into a spread placement group in single AWS Region.
 
-### A company is tunning a website on Amazon EC2 instances thai are in an Auto Scaling group When the website traffic increases, additional instances lake several minutes to become available because ot a long-running user data script that installs software A SysOps administrator must decrease the time that is required (or new instances to become available. Which action should the SysOps administrator take to meet this requirement?
+### A company is running a website on Amazon EC2 instances that are in an Auto Scaling group When the website traffic increases, additional instances lake several minutes to become available because ot a long-running user data script that installs software A SysOps administrator must decrease the time that is required or new instances to become available. Which action should the SysOps administrator take to meet this requirement?
 
 - [ ] Reduce the scaling thresholds so that instances are added before traffic increases.
 - [ ] Purchase Reserved Instances to cover 100% of the maximum capacity of the Auto Scaling group.
@@ -373,12 +368,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Use AWS Identity and Access Management Access Analyzer to find any instances that have unrestricted access on port 3389.
 - [x] Use AWS Trusted Advisor to find security groups that allow unrestricted access on port 3389.
 
-### A company is planning to host its stateful web-based applications on AWS A SysOps administrator is using an Auto Scaling group of Amazon EC2 instances The web applications will run 24 hours a day 7 days a week throughout the year The company must be able to change the instance type within the same instance family later in the year based on the traffic and usage patterns. Which EC2 instance purchasing option will meet these requirements MOST cost-effectively?
-
-- [x] Convertible Reserved Instances.
-- [ ] On-Demand instances.
-- [ ] Spot instances.
-- [ ] Standard Reserved instances.
+### ...
 
 ### A recent organizational audit uncovered an existing Amazon RDS database that is not currently configured for high availability. Given the critical nature of this database, it must be configured for high availability as soon as possible. How can this requirement be met?
 
@@ -528,12 +518,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create a target tracking scaling policy with settings to make larger adjustments in capacity when the system is under heavy load.
 - [ ] Use Amazon EC2 Auto Scaling lifecycle hooks. Adjust the Auto Scaling group's maximum number of instances after every scaling event.
 
-### A company has a critical serverless application that uses multiple AWS Lambda functions. Each Lambda function generates 1 GB of log data daily in tts own Amazon CloudWatch Logs log group. The company's security team asks for a count of application errors, grouped by type, across all of the log groups. What should a SysOps administrator do to meet this requirement?
-
-- [x] Perform a CloudWatch Logs Insights query that uses the stats command and count function.
-- [ ] Perform a CloudWatch Logs search that uses the groupby keyword and count function.
-- [ ] Perform an Amazon Athena query that uses the SELECT and GROUP BY keywords.
-- [ ] Perform an Amazon RDS query that uses the SELECT and GROUP BY keywords.
+### ...
 
 ### A company's financial department needs to view the cost details of each project in an AWS account A SysOps administrator must perform the initial configuration that is required to view cost for each project in Cost Explorer. Which solution will meet this requirement?
 
@@ -1055,7 +1040,7 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 - [ ] AWS Lambda function logs.
 - [ ] RDS database logs.
 
-### An AWS Lambda function is intermittently failing several times a day A SysOps administrator must find out how often this error has occurred in the last 7 days. Which action will meet this requirement in the MOST operationally efficient manner?
+### An AWS Lambda function is intermittently failing several times a day. A SysOps administrator must find out how often this error has occurred in the last 7 days. Which action will meet this requirement in the MOST operationally efficient manner?
 
 - [ ] Use Amazon Athena to query the Amazon CloudWatch logs that are associated with the Lambda function.
 - [ ] Use Amazon Athena to query the AWS CloudTrail logs that are associated with the Lambda function.
@@ -1155,13 +1140,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] A CNAME record for the domain's zone apex.
 - [x] An alias record for the domain's zone apex.
 
-### A company has a stateful web application that is hosted on Amazon EC2 instances in an Auto Scaling group. The instances run behind an Application Load. Balancer (ALB) that has a single target group. The ALB is configured as the origin in an Amazon CloudFront distribution. Users are reporting random logouts from the web application. Which combination of actions should a SysOps administrator take to resolve this problem? (Choose two.)
-
-- [ ] Change to the least outstanding requests algorithm on the ALB target group.
-- [x] Configure cookie forwarding in the CloudFront distribution cache behavior.
-- [ ] Configure header forwarding in the CloudFront distribution cache behavior.
-- [ ] Enable group-level stickiness on the ALB listener rule.
-- [x] Enable sticky sessions on the ALB target group.
+### ...
 
 ### A company is running a serverless application on AWS Lambda. The application stores data in an Amazon RDS for MySQL DB instance. Usage has steadily increased, and recently there have been numerous "too many connections" errors when the Lambda function attempts to connect to the database. The company already has configured the database to use the maximum max_connections value that is possible. What should a SysOps administrator do to resolve these errors?
 
@@ -1457,12 +1436,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Change to one xlarge general purpose Spot Instance.
 - [ ] Change to two large general purpose On-Demand Instances.
 
-### A company asks a SysOps administrator to ensure that AWS CloudTrail files are not tampered with after they are created. Currently, the company uses AWS. Identity and Access Management (IAM) to restrict access to specific trails. The company's security team needs the ability to trace the integrity of each file. What is the MOST operationally efficient solution that meets these requirements?
-
-- [ ] Create an Amazon EventBridge (Amazon CloudWatch Events) rule that invokes an AWS Lambda function when a new file is delivered. Configure the Lambda function to compute an MD5 hash check on the file and store the result in an Amazon DynamoDB table. The security team can use the values that are stored in DynamoDB to verify the integrity of the delivered files.
-- [ ] Create an AWS Lambda function that is invoked each time a new file is delivered to the CloudTrail bucket. Configure the Lambda function to compute an MD5 hash check on the file and store the result as a tag in an Amazon 53 object. The security team can use the information in the tag to verify the integrity of the delivered files.
-- [ ] Enable the CloudTrail file integrity feature on an Amazon S3 bucket. Create an IAM policy that grants the security team access to the file integrity logs that are stored in the S3 bucket.
-- [x] Enable the CloudTrail file integrity feature on the trail. The security team can use the digest file that is created by CloudTrail to verify the integrity of the delivered files.
+### ...
 
 ### When the AWS Cloud infrastructure experiences an event that may impact an organization, which AWS service can be used to see which of the organization's resources are affected?
 
@@ -1506,12 +1480,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Provide developers with CLI commands so that they can provision their own development environment when necessary. Schedule a nightly Amazon EventBridge (Amazon CloudWatch Events) rule to invoke an AWS Lambda function to terminate all EC2 instances and the DB instance.
 - [ ] Provide developers with CLI commands so that they can provision their own development environment when necessary. Schedule a nightly Amazon EventBridge (Amazon CloudWatch Events) rule to cause AWS CloudFormation to delete all of the development environment resources.
 
-### A company is partnering with an external vendor to provide data processing services. For this integration, the vendor must host the company's data in an Amazon. S3 bucket in the vendor's AWS account. The vendor is allowing the company to provide an AWS Key Management Service (AWS KMS) key to encrypt the company's data. The vendor has provided an IAM role Amazon Resources Name (ARN) to the company for this integration. What should a SysOps administrator do to configure this integration?
-
-- [x]  Create a new KMS key. Add the vendor's IAM role ARN to the KMS key policy. Provide the new KMS key ARN to the vendor.
-- [ ]  Create a new KMS key. Create a new IAM key. Add the vendor's IAM role ARN to an inline policy that is attached to the IAM user. Provide the new IAM user ARN to the vendor.
-- [ ] Configure encryption using the KMS managed S3 key. Add the vendor's IAM role ARN to the KMS key policy. Provide the KMS managed S3 key ARN to the vendor.
-- [ ] Configure encryption using the KMS managed S3 key. Create an S3 bucket. Add the vendor's IAM role ARN to the S3 bucket policy. Provide the S3 bucket ARN to the vendor.
+### ...
 
 ### A company runs hundreds of Amazon EC2 instances in a single AWS Region. Each EC2 instance has two attached 1 GiB General Purpose SSD (gp2) Amazon Elastic Block Store (Amazon EBS) volumes. A critical workload is using all the available IOPS capacity on the EBS volumes. According to company policy, the company cannot change instance types or EBS volume types without completing lengthy acceptance tests to validate that the company's applications will function properly. A SysOps administrator needs to increase the I/O performance of the EBS volumes as quickly as possible. Which action should the SysOps administrator take to meet these requirements?
 
@@ -1720,12 +1689,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] In Account A, create a role that the function can assume. In Account B, create a Lambda execution role that provides access to the S3 bucket.
 - [ ] In Account A. create a role that the function can assume to gain access to the S3 bucket. In Account B, create a Lambda execution role to assume the role in Account A.
 
-### An AWS Lambda function is intermittently failing several times a day. A SysOps administrator must find out how often this error has occurred in the last 7 days. Which action will meet this requirement in the MOST operationally efficient manner?
-
-- [ ] Use Amazon Athena to query the Amazon CloudWatch logs that are associated with the Lambda function.
-- [ ] Use Amazon Athena to query the AWS CloudTrail logs that are associated with the Lambda function.
-- [x] Use Amazon CloudWatch Logs Insights to query the associated Lambda function logs.
-- [ ] Use Amazon OpenSearch Service (Amazon Elasticsearch Service) to stream the Amazon CloudWatch logs for the Lambda function.
+### ...
 
 ### A company is using Amazon CloudFront to serve static content for its web application to its users. The CloudFront distribution uses an existing on-premises website as a custom origin. The company requires the use of TLS between CloudFront and the origin server. This configuration has worked as expected for several months. However, users are now experiencing HTTP 502 (Bad Gateway) errors when they view webpages that include content from the CloudFront distribution. What should a SysOps administrator do to resolve this problem?
 
