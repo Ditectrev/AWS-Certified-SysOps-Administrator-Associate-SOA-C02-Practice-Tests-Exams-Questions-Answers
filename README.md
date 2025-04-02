@@ -200,7 +200,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create an Amazon CloudWatch metric to stop the EC2 instances when the VolumeReadBytes metric is lower than 500 for a 30-minute period.
 - [ ] Use AWS Config to invoke an AWS Lambda function to stop the EC2 instances based on resource configuration changes.
 
-### A company creates custom AMI images by launching new Amazon EC2 instances from an AWS CloudFormation template it installs and configure necessary software through AWS OpsWorks and takes images of each EC2 instance. The process of installing and configuring software can take between 2 to 3 hours but at times the process stalls due to installation errors. The SysOps administrator must modify the CloudFormation template so if the process stalls, the entire stack will tail and roil back. Based on these requirements what should be added to the template?
+### A company creates custom AMI images by launching new Amazon EC2 instances from an AWS CloudFormation template it installs and configure necessary software through AWS OpsWorks and takes images of each EC2 instance. The process of installing and configuring software can take between 2 to 3 hours but at times the process stalls due to installation errors. The SysOps administrator must modify the CloudFormation template so if the process stalls, the entire stack will fail and roil back. Based on these requirements what should be added to the template?
 
 - [ ] Conditions with a timeout set to 4 hours.
 - [x] CreationPolicy with timeout set to 4 hours.
