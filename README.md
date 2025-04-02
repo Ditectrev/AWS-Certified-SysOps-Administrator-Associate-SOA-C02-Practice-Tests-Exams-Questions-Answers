@@ -363,7 +363,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company needs to view a list of security groups that are open to the internet on port 3389. What should a SysOps administrator do to meet this requirement?
 
-- [ ] Configure Amazon GuardDuly to scan security groups and report unrestricted access on port 3389.
+- [ ] Configure Amazon GuardDuty to scan security groups and report unrestricted access on port 3389.
 - [ ] Configure a service control policy (SCP) to identify security groups that allow unrestricted access on port 3389.
 - [ ] Use AWS Identity and Access Management Access Analyzer to find any instances that have unrestricted access on port 3389.
 - [x] Use AWS Trusted Advisor to find security groups that allow unrestricted access on port 3389.
@@ -1154,8 +1154,8 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 ### A SysOps administrator is provisioning an Amazon Elastic File System (Amazon EFS) file system to provide shared storage across multiple Amazon EC2 instances. The instances all exist in the same VPC across multiple Availability Zones. There are two instances in each Availability Zone. The SysOps administrator must make the file system accessible to each instance with the lowest possible latency. Which solution will meet these requirements?
 
 - [ ] Create a mount target for the EFS file system in the VPC. Use the mount target to mount the file system on each of the instances.
-- [ ] Create a mount target for the EFS file system in the VPC. Use the mount target to mount the file system on each of the instances.
-- [ ] Create a mount target for the EFS file system in the VPC. Use the mount target to mount the file system on each of the instances.
+- [ ]  Create a mount target for the EFS file system in one Availability Zone of the VPC. Use the mount target to mount the file system on the instances in that Availability Zone. Share the directory with the other instances.
+- [ ] Create a mount target for each instance. Use each mount target to mount the EFS file system on each respective instance.
 - [x] Create a mount target in each Availability Zone of the VPC. Use the mount target to mount the EFS file system on the instances in the respective Availability Zone.
 
 ### A SysOps administrator has successfully deployed a VPC with an AWS CloudFormation template. The SysOps administrator wants to deploy the same template across multiple accounts that are managed through AWS Organizations. Which solution will meet this requirement with the LEAST operational overhead?
@@ -1452,7 +1452,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Delete the current key material, and import new material into the existing CMK.
 - [ ] Import a copy of the existing key material into a new CMK as a backup, and set the rotation schedule for 6 months.
 
-### A SysOps administrator is trying to set up an Amazon Route 53 domain name to route traffic to a website hosted on Amazon S3. The domain name of the website is <www.example.com> and the S3 bucket name DOC-EXAMPLE-BUCKET. After the record set is set up in Route 53, the domain name <www.anycompany.com> does not seem to work, and the static website is not displayed in the browser. Which of the following is a cause of this?
+### A SysOps administrator is trying to set up an Amazon Route 53 domain name to route traffic to a website hosted on Amazon S3. The domain name of the website is www.example.com and the S3 bucket name DOC-EXAMPLE-BUCKET. After the record set is set up in Route 53, the domain name www.anycompany.com does not seem to work, and the static website is not displayed in the browser. Which of the following is a cause of this?
 
 - [ ] The S3 bucket must be configured with Amazon CloudFront first.
 - [ ] The Route 53 record set must have an IAM role that allows access to the S3 bucket.
@@ -1595,7 +1595,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [x] Create an Amazon Route 53 Resolver outbound endpoint. Add a forwarding rule for the domain example.com. Associate the forwarding rule with the VPC.
 - [ ] Create an Amazon Route 53 Resolver outbound endpoint. Add a system rule for the domain example.com. Associate the system rule with the VPC
 
-### A company's application is hosted by an internet provider at app.example.com. The company wants to access the application by using <www.company.com>, which the company owns and manages with Amazon Route 53. Which Route 53 record should be created to address this?
+### A company's application is hosted by an internet provider at app.example.com. The company wants to access the application by using www.company.com, which the company owns and manages with Amazon Route 53. Which Route 53 record should be created to address this?
 
 - [ ] A record.
 - [ ] Alias record.
