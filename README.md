@@ -200,7 +200,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create an Amazon CloudWatch metric to stop the EC2 instances when the VolumeReadBytes metric is lower than 500 for a 30-minute period.
 - [ ] Use AWS Config to invoke an AWS Lambda function to stop the EC2 instances based on resource configuration changes.
 
-### A company creates custom AMI images by launching new Amazon EC2 instances from an AWS CloudFormation template it installs and configure necessary software through AWS OpsWorks and takes images of each EC2 instance. The process of installing and configuring software can take between 2 to 3 hours but at times the process stalls due to installation errors. The SysOps administrator must modify the CloudFormation template so if the process stalls, the entire stack will fail and roil back. Based on these requirements what should be added to the template?
+### A company creates custom AMI images by launching new Amazon EC2 instances from an AWS CloudFormation template it installs and configure necessary software through AWS OpsWorks and takes images of each EC2 instance. The process of installing and configuring software can take between 2 to 3 hours but at times the process stalls due to installation errors. The SysOps administrator must modify the CloudFormation template so if the process stalls, the entire stack will fail and roll back. Based on these requirements what should be added to the template?
 
 - [ ] Conditions with a timeout set to 4 hours.
 - [x] CreationPolicy with timeout set to 4 hours.
@@ -214,7 +214,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create an Application Load Balancer that has two TCP listeners on port 80 and port 443. Attach an SSL/TLS certificate to listener port 443. Create a rule to redirect requests from port 80 to port 443.
 - [ ] Create a Network Load Balancer that has two TCP listeners on port 80 and port 443. Attach an SSL/TLS certificate to listener port 443. Create a rule to redirect requests from port 80 to port 443.
 
-### A SysOps administrator is responsible for a legacy. CPU-heavy application The application can only be scaled vertically Currently, the application is deployed on a single t2 large Amazon EC2 instance The system is showing 90% CPU usage and significant performance latency after a few minutes. What change should be made to alleviate the performance problem?
+### A SysOps administrator is responsible for a legacy CPU-heavy application. The application can only be scaled vertically. Currently, the application is deployed on a single t2 large Amazon EC2 instance. The system is showing 90% CPU usage and significant performance latency after a few minutes. What change should be made to alleviate the performance problem?
 
 - [ ] Change the Amazon EBS volume to Provisioned IOPS.
 - [ ] Upgrade to a compute-optimized instance.
