@@ -38,7 +38,7 @@
 ### A company is partnering with an external vendor to provide data processing services. For this integration, the vendor must host the company's data in an Amazon S3 bucket in the vendor's AWS account. The vendor is allowing the company to provide an AWS Key Management Service (AWS KMS) key to encrypt the company's data. The vendor has provided an IAM role Amazon Resource Name (ARN) to the company for this integration. What should a SysOps administrator do to configure this integration?
 
 - [x] Create a new KMS key. Add the vendor's IAM role ARN to the KMS key policy. Provide the new KMS key ARN to the vendor.
-B. Create a new KMS key. Create a new IAM user. Add the vendor's IAM role ARN to an inline policy that is attached to the IAM user. Provide the new IAM user ARN to the vendor.
+- [ ] Create a new KMS key. Create a new IAM user. Add the vendor's IAM role ARN to an inline policy that is attached to the IAM user. Provide the new IAM user ARN to the vendor.
 - [ ] Configure encryption using the KMS managed S3 key. Add the vendor's IAM role ARN to the KMS managed S3 key policy. Provide the KMS managed S3 key ARN to the vendor.
 - [ ] Configure encryption using the KMS managed S3 key. Create an S3 bucket. Add the vendor's IAM role ARN to the S3 bucket policy. Provide the S3 bucket ARN to the vendor.
 
@@ -200,14 +200,14 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create an Amazon CloudWatch metric to stop the EC2 instances when the VolumeReadBytes metric is lower than 500 for a 30-minute period.
 - [ ] Use AWS Config to invoke an AWS Lambda function to stop the EC2 instances based on resource configuration changes.
 
-### A company creates custom AMI images by launching new Amazon EC2 instances from an AWS CloudFormation template it installs and configure necessary software through AWS OpsWorks and takes images of each EC2 instance. The process of installing and configuring software can take between 2 to 3 hours but at limes the process stalls due to installation errors. The SysOps administrator must modify the CloudFormation template so if the process stalls, the entire stack will tail and roil back. Based on these requirements what should be added to the template?
+### A company creates custom AMI images by launching new Amazon EC2 instances from an AWS CloudFormation template it installs and configure necessary software through AWS OpsWorks and takes images of each EC2 instance. The process of installing and configuring software can take between 2 to 3 hours but at times the process stalls due to installation errors. The SysOps administrator must modify the CloudFormation template so if the process stalls, the entire stack will tail and roil back. Based on these requirements what should be added to the template?
 
 - [ ] Conditions with a timeout set to 4 hours.
 - [x] CreationPolicy with timeout set to 4 hours.
 - [ ] DependsOn a timeout set to 4 hours.
 - [ ] Metadata with a timeout set to 4 hours.
 
-### A company plans to run a public web application on Amazon EC2 instances behind an Elastic Load Balancer (ELB). The company’s security team wants to protect the website by using AWS Certificate Manager (ACM) certificates. The ELB must automatically redirect any HTTP requests to HTTPS. Which solution will meet these requirements?
+### A company plans to run a public web application on Amazon EC2 instances behind an Elastic Load Balancer (ELB). The company's security team wants to protect the website by using AWS Certificate Manager (ACM) certificates. The ELB must automatically redirect any HTTP requests to HTTPS. Which solution will meet these requirements?
 
 - [ ] Create an Application Load Balancer that has one HTTPS listener on port 80. Attach an SSL/TLS certificate to listener port 80. Create a rule to redirect requests from HTTP to HTTPS.
 - [x] Create an Application Load Balancer that has one HTTP listener on port 80 and one HTTPS protocol listener on port 443. Attach an SSL/TLS certificate to listener port 443. Create a rule to redirect requests from port 80 to port 443.
@@ -221,7 +221,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Add additional 12 large instances to the application.
 - [ ] Purchase Reserved Instances.
 
-### A company recently migrated its application to a VPC on AWS. An AWS Site-to-Site VPN connection connects the company’s on-premises network to the VPC. The application retrieves customer data from another system that resides on premises. The application uses an on-premises DNS server to resolve domain records. After the migration, the application is not able to connect to the customer data because of name resolution errors. Which solution will give the application the ability to resolve the internal domain names?
+### A company recently migrated its application to a VPC on AWS. An AWS Site-to-Site VPN connection connects the company's on-premises network to the VPC. The application retrieves customer data from another system that resides on premises. The application uses an on-premises DNS server to resolve domain records. After the migration, the application is not able to connect to the customer data because of name resolution errors. Which solution will give the application the ability to resolve the internal domain names?
 
 - [ ] Launch EC2 instances in the VPC. On the EC2 instances, deploy a custom DNS forwarder that forwards all DNS requests to the on-premises DNS server. Create an Amazon Route 53 private hosted zone that uses the EC2 instances for name servers.
 - [x] Create an Amazon Route 53 Resolver outbound endpoint. Configure the outbound endpoint to forward DNS queries against the on-premises domain to the on-premises DNS server.
@@ -521,12 +521,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Enable group-level stickiness on the ALB listener rule.
 - [x] Enable sticky sessions on the ALB target group.
 
-### A SysOps administrator is investigating a company’s web application for performance problems. The application runs on Amazon EC2 instances that are in an Auto Scaling group. The application receives large traffic increases at random times throughout the day. During periods of rapid traffic increases, the Auto Scaling group is not adding capacity fast enough. As a result, users are experiencing poor performance. The company wants to minimize costs without adversely affecting the user experience when web traffic surges quickly. The company needs a solution that adds more capacity to the Auto Scaling group for larger traffic increases than for smaller traffic increases. How should the SysOps administrator configure the Auto Scaling group to meet these requirements?
+### A SysOps administrator is investigating a company's web application for performance problems. The application runs on Amazon EC2 instances that are in an Auto Scaling group. The application receives large traffic increases at random times throughout the day. During periods of rapid traffic increases, the Auto Scaling group is not adding capacity fast enough. As a result, users are experiencing poor performance. The company wants to minimize costs without adversely affecting the user experience when web traffic surges quickly. The company needs a solution that adds more capacity to the Auto Scaling group for larger traffic increases than for smaller traffic increases. How should the SysOps administrator configure the Auto Scaling group to meet these requirements?
 
 - [ ] Create a simple scaling policy with settings to make larger adjustments in capacity when the system is under heavy load.
 - [x] Create a step scaling policy with settings to make larger adjustments in capacity when the system is under heavy load.
 - [ ] Create a target tracking scaling policy with settings to make larger adjustments in capacity when the system is under heavy load.
-- [ ] Use Amazon EC2 Auto Scaling lifecycle hooks. Adjust the Auto Scaling group’s maximum number of instances after every scaling event.
+- [ ] Use Amazon EC2 Auto Scaling lifecycle hooks. Adjust the Auto Scaling group's maximum number of instances after every scaling event.
 
 ### A company has a critical serverless application that uses multiple AWS Lambda functions. Each Lambda function generates 1 GB of log data daily in tts own Amazon CloudWatch Logs log group. The company's security team asks for a count of application errors, grouped by type, across all of the log groups. What should a SysOps administrator do to meet this requirement?
 
@@ -643,7 +643,7 @@ Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90
 - [x] Use AWS Secrets Manager to store credentials for the database. Create a Secrets Manager secret, and select the database so that Secrets Manager will use a Lambda function to update the database password automatically. Specify an automatic rotation schedule of 30 days. Update each Lambda function to access the database password from SecretsManager.
 - [ ] Use AWS Systems Manager Parameter Store to create a secure string to store credentials for the database. Create a new Lambda function called PasswordRotate. Use Amazon EventBridge (Amazon CloudWatch Events) to schedule the PasswordRotate function every 30 days to change the database password and to update the secret within Parameter Store. Update each Lambda function to access the database password from Parameter Store.
 
-### A Sysops administrator creates an Amazon Elastic Kubernetes Service (Amazon EKS) cluster that uses AWS Fargate. The cluster is deployed successfully. The Sysops administrator needs to manage the cluster by using the kubect1 command line tool. Which of the following must be configured on the Sysops administrator's machine so that kubect1 can communicate with the cluster API server?
+### A Sysops administrator creates an Amazon Elastic Kubernetes Service (Amazon EKS) cluster that uses AWS Fargate. The cluster is deployed successfully. The Sysops administrator needs to manage the cluster by using the kubectl command line tool. Which of the following must be configured on the Sysops administrator's machine so that kubectl can communicate with the cluster API server?
 
 - [x] The kubeconfig file.
 - [ ] The kube-proxy Amazon EKS add-on.
@@ -965,8 +965,8 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 
 ### A company uses an AWS CloudFormation template to provision an Amazon EC2 instance and an Amazon RDS DB instance A SysOps administrator must update the template to ensure that the DB instance is created before the EC2 instance is launched. What should the SysOps administrator do to meet this requirement?
 
-- [ ] Add a wait condition to the template Update the EC2 instance user data script to send a signal after the EC2 instance is started.
-- [x] Add the DependsOn attribute to the EC2 instance resource, and provide the logical name of the RDS resource
+- [ ] Add a wait condition to the template. Update the EC2 instance user data script to send a signal after the EC2 instance is started.
+- [x] Add the DependsOn attribute to the EC2 instance resource, and provide the logical name of the RDS resource.
 - [ ] Change the order of the resources in the template so that the RDS resource is listed before the EC2 instance resource.
 - [ ] Create multiple templates Use AWS CloudFormation StackSets to wait for one stack to complete before the second stack is created.
 
@@ -1513,7 +1513,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Configure encryption using the KMS managed S3 key. Add the vendor's IAM role ARN to the KMS key policy. Provide the KMS managed S3 key ARN to the vendor.
 - [ ] Configure encryption using the KMS managed S3 key. Create an S3 bucket. Add the vendor's IAM role ARN to the S3 bucket policy. Provide the S3 bucket ARN to the vendor.
 
-### A company runs hundreds of Amazon EC2 instances in a single AWS Region. Each EC2 instance has two attached 1 GiB General Purpose SSD (gp2) Amazon Elastic Block Store (Amazon EBS) volumes. A critical workload is using all the available IOPS capacity on the EBS volumes. According to company policy, the company cannot change instance types or EBS volume types without completing lengthy acceptance tests to validate that the company’s applications will function properly. A SysOps administrator needs to increase the I/O performance of the EBS volumes as quickly as possible. Which action should the SysOps administrator take to meet these requirements?
+### A company runs hundreds of Amazon EC2 instances in a single AWS Region. Each EC2 instance has two attached 1 GiB General Purpose SSD (gp2) Amazon Elastic Block Store (Amazon EBS) volumes. A critical workload is using all the available IOPS capacity on the EBS volumes. According to company policy, the company cannot change instance types or EBS volume types without completing lengthy acceptance tests to validate that the company's applications will function properly. A SysOps administrator needs to increase the I/O performance of the EBS volumes as quickly as possible. Which action should the SysOps administrator take to meet these requirements?
 
 - [x] Increase the size of the 1 GiB EBS volumes.
 - [ ] Add two additional elastic network interfaces on each EC2 instance.
