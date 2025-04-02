@@ -216,7 +216,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A SysOps administrator is responsible for a legacy. CPU-heavy application The application can only be scaled vertically Currently, the application is deployed on a single t2 large Amazon EC2 instance The system is showing 90% CPU usage and significant performance latency after a few minutes. What change should be made to alleviate the performance problem?
 
-- [ ] Change the Amazon EBS volume to Provisioned lOPs.
+- [ ] Change the Amazon EBS volume to Provisioned IOPS.
 - [ ] Upgrade to a compute-optimized instance.
 - [x] Add additional 12 large instances to the application.
 - [ ] Purchase Reserved Instances.
@@ -253,7 +253,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Launch the instances into a spread placement group in multiple AWS Regions.
 - [x] Launch the instances into a spread placement group in single AWS Region.
 
-### A company is running a website on Amazon EC2 instances that are in an Auto Scaling group When the website traffic increases, additional instances lake several minutes to become available because ot a long-running user data script that installs software A SysOps administrator must decrease the time that is required or new instances to become available. Which action should the SysOps administrator take to meet this requirement?
+### A company is running a website on Amazon EC2 instances that are in an Auto Scaling group. When the website traffic increases, additional instances take several minutes to become available because of a long-running user data script that installs software. A SysOps administrator must decrease the time that is required for new instances to become available. Which action should the SysOps administrator take to meet this requirement?
 
 - [ ] Reduce the scaling thresholds so that instances are added before traffic increases.
 - [ ] Purchase Reserved Instances to cover 100% of the maximum capacity of the Auto Scaling group.
@@ -1145,7 +1145,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 ### A company is running a serverless application on AWS Lambda. The application stores data in an Amazon RDS for MySQL DB instance. Usage has steadily increased, and recently there have been numerous "too many connections" errors when the Lambda function attempts to connect to the database. The company already has configured the database to use the maximum max_connections value that is possible. What should a SysOps administrator do to resolve these errors?
 
 - [ ] Create a read replica of the database. Use Amazon Route 53 to create a weighted DNS record that contains both databases.
-- [x] Create a read replica of the database. Use Amazon Route 53 to create a weighted DNS record that contains both databases.
+- [x] Use Amazon RDS Proxy to create a proxy. Update the connection string in the Lambda function.
 - [ ] Increase the value in the max_connect_errors parameter in the parameter group that the database uses.
 - [ ] Update the Lambda function's reserved concurrency to a higher value.
 
@@ -1685,7 +1685,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 ### A company has an AWS Lambda function in Account A. The Lambda function needs to read the objects in an Amazon S3 bucket in Account B. A SysOps administrator must create corresponding IAM roles in both accounts. Which solution will meet these requirements?
 
 - [x] In Account A, create a Lambda execution role to assume the role in Account B. In Account B. create a role that the function can assume to gain access to the S3 bucket.
-- [ ] In Account A, create a Lambda execution role to assume the role in Account B. In Account B. create a role that the function can assume to gain access to the S3 bucket.
+- [ ] In Account A, create a Lambda execution role that provides access to the S3 bucket. In Account B, create a role that the function can assume.
 - [ ] In Account A, create a role that the function can assume. In Account B, create a Lambda execution role that provides access to the S3 bucket.
 - [ ] In Account A. create a role that the function can assume to gain access to the S3 bucket. In Account B, create a Lambda execution role to assume the role in Account A.
 
