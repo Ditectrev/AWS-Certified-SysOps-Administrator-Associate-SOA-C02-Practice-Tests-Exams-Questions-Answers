@@ -9,10 +9,10 @@
 
 ### A SysOps administrator launches an Amazon EC2 instance in a private subnet of a VPC. When the SysOps administrator attempts a curl command from the command line of the EC2 instance, the SysOps administrator cannot connect to https:www.example.com. What should the SysOps administrator do to resolve this issue?
 
-- [x] Ensure that there is an outbound security group for port 443 to 0.0.0.0/0.
-- [ ] Ensure that there is an inbound security group for port 443 from 0.0.0.0/0.
-- [ ] Ensure that there is an outbound network ACL for ephemeral ports 1024-66535 to 0.0.0.0/0.
-- [ ] Ensure that there is an outbound network ACL for port 80 to 0.0.0.0/0.
+- [x] Ensure that there is an outbound security group for port `443` to `0.0.0.0/0`.
+- [ ] Ensure that there is an inbound security group for port `443` from `0.0.0.0/0`.
+- [ ] Ensure that there is an outbound network ACL for ephemeral ports `1024-66535` to `0.0.0.0/0`.
+- [ ] Ensure that there is an outbound network ACL for port `80` to `0.0.0.0/0`.
 
 ### A company's public website is hosted in an Amazon S3 bucket in the `us-east-1` Region behind an Amazon CloudFront distribution. The company wants to ensure that the website is protected from DDoS attacks. A SysOps administrator needs to deploy a solution that gives the company the ability to maintain control over the rate limit at which DDoS protections are applied. Which solution will meet these requirements?
 
@@ -24,8 +24,8 @@
 ### A company hosts an online shopping portal in the AWS Cloud. The portal provides HTTPS security by using a TLS certificate on an Elastic Load Balancer (ELB). Recently, the portal suffered an outage because the TLS certificate expired. A SysOps administrator must create a solution to automatically renew certificates to avoid this issue in the future. What is the MOST operationally efficient solution that meets these requirements?
 
 - [ ] Request a public certificate by using AWS Certificate Manager (ACM). Associate the certificate from ACM with the ELB. Write a scheduled AWS Lambda function to renew the certificate every 18 months.
-- [ ] Request a public certificate by using AWS Certificate Manager (ACM). Associate the certificate from ACM with the ELB. ACM will automatically manage the renewal of the certificate.
-- [x] Register a certificate with a third-party certificate authority (CA). Import this certificate into AWS Certificate Manager (ACM). Associate the certificate from ACM with the ELB. ACM will automatically manage the renewal of the certificate.
+- [x] Request a public certificate by using AWS Certificate Manager (ACM). Associate the certificate from ACM with the ELB. ACM will automatically manage the renewal of the certificate.
+- [ ] Register a certificate with a third-party certificate authority (CA). Import this certificate into AWS Certificate Manager (ACM). Associate the certificate from ACM with the ELB. ACM will automatically manage the renewal of the certificate.
 - [ ] Register a certificate with a third-party certificate authority (CA). Configure the ELB to import the certificate directly from the CA. Set the certificate refresh cycle on the ELB to refresh when the certificate is within 3 months of the expiration date.
 
 ### With the threat of ransomware viruses encrypting and holding company data hostage, which action should be taken to protect an Amazon S3 bucket?
@@ -124,17 +124,17 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company is managing many accounts by using a single organization in AWS Organizations. The organization has all features enabled. The company wants to turn on AWS Config in all the accounts of the organization and in all AWS Regions. What should a Sysops administrator do to meet these requirements in the MOST operationally efficient way?
 
-- [ ] Use AVVS CloudFormation StackSets to deploy stack instances that turn on AWS Config in all accounts and in all Regions.
+- [x] Use AWS CloudFormation StackSets to deploy stack instances that turn on AWS Config in all accounts and in all Regions.
 - [ ] Use AWS CloudFormation StackSets to deploy stack policies that turn on AWS Config in all accounts and in all Regions.
-- [x] Use service control policies (SCPs) to configure AWS Config in all accounts and in all Regions.
+- [ ] Use service control policies (SCPs) to configure AWS Config in all accounts and in all Regions.
 - [ ] Create a script that uses the AWS CLI to turn on AWS Config in all accounts in the organization. Run the script from the organization's management account.
 
 ### A company's SysOps administrator deploys four new Amazon EC2 instances by using the standard Amazon Linux 2 Amazon Machine Image (AMI). The company needs to be able to use AWS Systems Manager to manage the instances The SysOps administrator notices that the instances do not appear in the Systems Manager console. What must the SysOps administrator do to resolve this issue?
 
-- [ ] Connect to each instance by using SSH Install Systems Manager Agent on each instance Configure Systems Manager Agent to start automatically when the instances start up.
-- [ ] Use AWS Certificate Manager (ACM) to create a TLS certificate Import the certificate into each instance Configure Systems Manager Agent to use the TLS certificate for secure communications.
-- [ ] Connect to each instance by using SSH Create an ssm-user account Add the ssm-user account to the /etcsudoers d directory.
-- [x] Attach an IAM instance profile to the instances Ensure that the instance profile contains the AmazonSSMManagedinstanceCore policy.
+- [ ] Connect to each instance by using SSH. Install Systems Manager Agent on each instance. Configure Systems Manager Agent to start automatically when the instances start up.
+- [ ] Use AWS Certificate Manager (ACM) to create a TLS certificate. Import the certificate into each instance. Configure Systems Manager Agent to use the TLS certificate for secure communications.
+- [ ] Connect to each instance by using SSH. Create an `ssm-user` account. Add the `ssm-user` account to the `/etcsudoers` directory.
+- [x] Attach an IAM instance profile to the instances. Ensure that the instance profile contains the `AmazonSSMManagedinstanceCore` policy.
 
 ### A development team recently deployed a new version of a web application to production. After the release, penetration testing revealed a cross-site scripting vulnerability that could expose user data. Which AWS service will mitigate this issue?
 
@@ -209,16 +209,16 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company plans to run a public web application on Amazon EC2 instances behind an Elastic Load Balancer (ELB). The company's security team wants to protect the website by using AWS Certificate Manager (ACM) certificates. The ELB must automatically redirect any HTTP requests to HTTPS. Which solution will meet these requirements?
 
-- [ ] Create an Application Load Balancer that has one HTTPS listener on port 80. Attach an SSL/TLS certificate to listener port 80. Create a rule to redirect requests from HTTP to HTTPS.
-- [x] Create an Application Load Balancer that has one HTTP listener on port 80 and one HTTPS protocol listener on port 443. Attach an SSL/TLS certificate to listener port 443. Create a rule to redirect requests from port 80 to port 443.
-- [ ] Create an Application Load Balancer that has two TCP listeners on port 80 and port 443. Attach an SSL/TLS certificate to listener port 443. Create a rule to redirect requests from port 80 to port 443.
-- [ ] Create a Network Load Balancer that has two TCP listeners on port 80 and port 443. Attach an SSL/TLS certificate to listener port 443. Create a rule to redirect requests from port 80 to port 443.
+- [ ] Create an Application Load Balancer that has one HTTPS listener on port `80`. Attach an SSL/TLS certificate to listener port `80`. Create a rule to redirect requests from HTTP to HTTPS.
+- [x] Create an Application Load Balancer that has one HTTP listener on port `80` and one HTTPS protocol listener on port `443`. Attach an SSL/TLS certificate to listener port `443`. Create a rule to redirect requests from port `80` to port `443`.
+- [ ] Create an Application Load Balancer that has two TCP listeners on port `80` and port `443`. Attach an SSL/TLS certificate to listener port `443`. Create a rule to redirect requests from port `80` to port `443`.
+- [ ] Create a Network Load Balancer that has two TCP listeners on port `80` and port `443`. Attach an SSL/TLS certificate to listener port `443`. Create a rule to redirect requests from port `80` to port `443`.
 
 ### A SysOps administrator is responsible for a legacy CPU-heavy application. The application can only be scaled vertically. Currently, the application is deployed on a single t2 large Amazon EC2 instance. The system is showing 90% CPU usage and significant performance latency after a few minutes. What change should be made to alleviate the performance problem?
 
 - [ ] Change the Amazon EBS volume to Provisioned IOPS.
-- [ ] Upgrade to a compute-optimized instance.
-- [x] Add additional 12 large instances to the application.
+- [x] Upgrade to a compute-optimized instance.
+- [ ] Add additional `t2.large` instances to the application.
 - [ ] Purchase Reserved Instances.
 
 ### A company recently migrated its application to a VPC on AWS. An AWS Site-to-Site VPN connection connects the company's on-premises network to the VPC. The application retrieves customer data from another system that resides on premises. The application uses an on-premises DNS server to resolve domain records. After the migration, the application is not able to connect to the customer data because of name resolution errors. Which solution will give the application the ability to resolve the internal domain names?
@@ -228,7 +228,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Set up two AWS Direct Connect connections between the AWS environment and the on-premises network. Set up a link aggregation group (LAG) that includes the two connections. Change the VPC resolver address to point to the on-premises DNS server.
 - [ ] Create an Amazon Route 53 public hosted zone for the on-premises domain. Configure the network ACLs to forward DNS requests against the on-premises domain to the Route 53 public hosted zone.
 
-### ...
+### A SysOps administrator creates a new VPC that includes a public subnet and a private subnet. The SysOps administrator successfully launches 11 Amazon EC2 instances in the private subnet. The SysOps administrator attempts to launch one more EC2 instance in the same subnet. However, the SysOps administrator receives an error message that states that not enough free IP addresses are available. What must the SysOps administrator do to deploy more EC2 instances?
+
+- [ ] Edit the private subnet to change the CIDR block to /27.
+- [ ] Edit the private subnet to extend across a second Availability Zone.
+- [ ] Assign additional Elastic IP addresses to the private subnet.
+- [x] Create a new private subnet to hold the required EC2 instances.
 
 ### A company has a critical serverless application that uses multiple AWS Lambda functions. Each Lambda function generates 1 GB of log data daily in its own Amazon CloudWatch Logs log group. The company's security team asks for a count of application errors, grouped by type, across all of the log groups. What should a SysOps administrator do to meet this requirement?
 
@@ -368,7 +373,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Use AWS Identity and Access Management Access Analyzer to find any instances that have unrestricted access on port 3389.
 - [x] Use AWS Trusted Advisor to find security groups that allow unrestricted access on port 3389.
 
-### ...
+### A company has an AWS Site-to-Site VPN connection between on-premises resources and resources that are hosted in a VPC. A SysOps administrator launches an Amazon EC2 instance that has only a private IP address into a private subnet in the VPC. The EC2 instance runs Microsoft Windows Server. A security group for the EC2 instance has rules that allow inbound traffic from the on-premises network over the VPN connection. The on-premises environment contains a third-party network firewall. Rules in the third-party network firewall allow Remote Desktop Protocol (RDP) traffic to flow between the on-premises users over the VPN connection. The on-premises users are unable to connect to the EC2 instance and receive a timeout error. What should the SysOps administrator do to troubleshoot this issue?
+
+- [ ] Create Amazon CloudWatch logs for the EC2 instance to check for blocked traffic.
+- [ ] Create Amazon CloudWatch logs for the Site-to-Site VPN connection to check for blocked traffic.
+- [x] Create VPC flow logs for the EC2 instance's elastic network interface to check for rejected traffic.
+- [ ] Instruct users to use EC2 Instance Connect as a connection method.
 
 ### A recent organizational audit uncovered an existing Amazon RDS database that is not currently configured for high availability. Given the critical nature of this database, it must be configured for high availability as soon as possible. How can this requirement be met?
 
@@ -400,7 +410,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] The security group for the instance does not have an inbound rule on port 22.
 - [ ] The security group for the instance does not have an outbound rule on port 3389.
 
-### 31.16.139. When the SysOps administrator tries to ping the instance's public IP address from the remote IP address 203.0.113.12, the response is "request timed out." The flow logs contain the following information. What is one cause of the problem?
+### 31.16.139. When the SysOps administrator tries to ping the instance's public IP address from the remote IP address `203.0.113.12`, the response is "request timed out." The flow logs contain the following information. What is one cause of the problem?
 
 ![Question 58](images/question58.jpg)
 
@@ -518,7 +528,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create a target tracking scaling policy with settings to make larger adjustments in capacity when the system is under heavy load.
 - [ ] Use Amazon EC2 Auto Scaling lifecycle hooks. Adjust the Auto Scaling group's maximum number of instances after every scaling event.
 
-### ...
+### A VPC is connected to a company data center by a VPN. An Amazon EC2 instance with the IP address `172.31.16.139` is within a private subnet of the VPC. A SysOps Administrator issued a ping command to the EC2 instance from an on-premises computer with the IP address `203.0.113.12` and did not receive an acknowledgment. VPC Flow Logs were enabled and showed the following. What action will resolve the issue?
+
+- [ ] Modify the EC2 security group rules to allow inbound traffic from the on-premises computer.
+- [ ] Modify the EC2 security group rules to allow outbound traffic to the on-premises computer.
+- [ ] Modify the VPC network ACL rules to allow inbound traffic from the on-premises computer.
+- [x] Modify the VPC network ACL rules to allow outbound traffic to the on-premises computer.
 
 ### A company's financial department needs to view the cost details of each project in an AWS account A SysOps administrator must perform the initial configuration that is required to view cost for each project in Cost Explorer. Which solution will meet this requirement?
 
@@ -761,7 +776,12 @@ Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90
 - [ ] Create an Amazon RDS for MySQL Single-AZ DB instance with a read replica. Use a MySQL native backup that is stored in Amazon S3 to restore the data to the new database. Update the connection string in the web application.
 - [ ] Use Amazon Data Lifecycle Manager (Amazon DLM) to take a snapshot of the Amazon Elastic Block Store (Amazon EBS) volume every hour. In the event of an EC2 instance failure, restore the EBS volume from a snapshot.
 
-### ...
+### A company has an application that runs on a fleet of Amazon EC2 instances behind an Elastic Load Balancer. The instances run in an Auto Scaling group. The application's performance remains consistent throughout most of each day. However, an increase in user traffic slows the performance during the same 4-hour period of time each day. What is the MOST operationally efficient solution that will resolve this issue?
+
+- [ ] Configure a second Elastic Load Balancer in front of the Auto Scaling group with a weighted routing policy.
+- [ ] Configure the fleet of EC2 instances to run on larger instance types to support the increase in user traffic.
+- [x] Create a scheduled scaling action to scale out the number of EC2 instances shortly before the increase in user traffic occurs.
+- [ ] Manually add a few more EC2 instances to the Auto Scaling group to support the increase in user traffic.
 
 ### An Amazon EC2 instance needs to be reachable from the internet. The EC2 instance is in a subnet with the following route table: Which entry must a SysOps administrator add to the route table to meet this requirement?
 
@@ -772,7 +792,7 @@ Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90
 - [x] A route for `0.0.0.0/0` that points to an internet gateway.
 - [ ] A route for `0.0.0.0/0` that points to an elastic network interface.
 
-### An Amazon S3 bucket in a SysOps Administrator's account can be accesses by users in other SWS accounts. How can the Administrator ensure that the bucket is only accessible to members of the Administrator's AWS account?
+### An Amazon S3 bucket in a SysOps Administrator's account can be accesses by users in other AWS accounts. How can the Administrator ensure that the bucket is only accessible to members of the Administrator's AWS account?
 
 - [ ] Move the S3 bucket from a public subnet to a private subnet in the Amazon VPC.
 - [x] Change the bucket access control list (ACL) to restrict access to the bucket owner.
@@ -928,7 +948,12 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 - [x] AWS Organizations service control policies (SCPs).
 - [ ] AWS Security Hub conformance packs.
 
-### ...
+### A company runs a worker process on three Amazon EC2 instances. The instances are in an Auto Scaling group that is configured to use a simple scaling policy. The instances process messages from an Amazon Simple Queue Service (Amazon SQS) queue. Random periods of increased messages are causing a decrease in the performance of the worker process. A SysOps administrator must scale the instances to accommodate the increased number of messages. Which solution will meet these requirements?
+
+- [ ] Use CloudWatch to create a metric math expression to calculate the approximate age of the oldest message in the SQS queue. Create a target tracking scaling policy for the metric math expression to modify the Auto Scaling group.
+- [x] Use CloudWatch to create a metric math expression to calculate the approximate number of messages visible in the SQS queue for each instance. Create a target tracking scaling policy for the metric math expression to modify the Auto Scaling group.
+- [ ] Create an Application Load Balancer (ALB). Attach the ALB to the Auto Scaling group. Create a target tracking scaling policy for the ALBRequestCountPerTarget metric to modify the Auto Scaling group.
+- [ ] Create an Application Load Balancer (ALB). Attach the ALB to the Auto Scaling group. Create a scheduled scaling policy for the Auto Scaling group.
 
 ### A SysOps administrator is notified that an Amazon EC2 instance has stopped responding The AWS Management Console indicates that the system status checks are failing. What should the administrator do first to resolve this issue?
 
@@ -944,9 +969,19 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 - [ ] AWS Trusted Advisor.
 - [x] AWS Systems Manager.
 
-### ...
+### A SysOps administrator has many Windows Amazon EC2 instances that need to share a file system between nodes. The SysOps administrator creates an Amazon Elastic File System (Amazon EFS) file share. After creation of the file share, the SysOps administrator is having trouble mounting the file share to the EC2 instances. Which action should the SysOps administrator take so that the EC2 instances can share the files?
 
-### ...
+- [x] Delete the EFS file share. Create an Amazon FSx for Windows File Server file share for the EC2 instances.
+- [ ] Use the correct IAM credentials to mount the EFS file share.
+- [ ] Configure NFSv4 support on the Windows operating system that is running on the EC2 instances.
+- [ ] Allow the correct port for NFS through the security group and network ACL.
+
+### An existing, deployed solution uses Amazon EC2 instances with Amazon EBS General Purpose SSD volumes, am Amazon RDS PostgreSQL database, an Amazon EFS file system, and static objects stored in an Amazon S3 bucket. The Security team now mandates that at-rest encryption be turned on immediately for all aspects of the application, without creating new resources and without any downtime. To satisfy the requirements, which one of these services can the SysOps Administrator enable at-rest encryption on?
+
+- [ ] EBS General Purpose SSD volumes.
+- [ ] RDS PostgreSQL database.
+- [ ] Amazon EFS file systems.
+- [x] S3 objects within a bucket.
 
 ### A company uses an AWS CloudFormation template to provision an Amazon EC2 instance and an Amazon RDS DB instance A SysOps administrator must update the template to ensure that the DB instance is created before the EC2 instance is launched. What should the SysOps administrator do to meet this requirement?
 
@@ -1076,7 +1111,7 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 - [ ] In the payer account: Enable billing alerts in the Billing and Cost Management console; set up a billing alarm in the Billing and Cost Management console to publish an SNS message when the alarm triggers.
 - [x] In the payer account: Enable billing alerts in the Billing and Cost Management console; set up a billing alarm in Amazon CloudWatch; publish an SNS message when the alarm triggers.
 
-### A SysOps administrator is troubleshooting connection timeouts to an Amazon EC2 instance that has a public IP address. The instance has a private IP address of 172.31.16.139. When the SysOps administrator tries to ping the instance's public IP address from the remote IP address 203.0.113.12, the response is "request timed out." The flow logs contain the following information: What is one cause of the problem?
+### A SysOps administrator is troubleshooting connection timeouts to an Amazon EC2 instance that has a public IP address. The instance has a private IP address of `172.31.16.139`. When the SysOps administrator tries to ping the instance's public IP address from the remote IP address `203.0.113.12`, the response is "request timed out." The flow logs contain the following information: What is one cause of the problem?
 
 - [ ] Inbound security group deny rule.
 - [ ] Outbound security group deny rule.
@@ -1090,7 +1125,12 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 - [ ] Store the digital content in an Amazon S3 bucket that has public access blocked. Use an origin access identity (OAI) to deliver the content through CloudFront. Enable field-level encryption.
 - [ ] Store the digital content in an Amazon S3 bucket that does not have public access blocked. Use signed cookies for restricted delivery of the content through CloudFront.
 
-### ...
+### A company has a high-performance Windows workload. The workload requires a storage volume that provides consistent performance of 10,000 IOPS. The company does not want to pay for additional unneeded capacity to achieve this performance. Which solution will meet these requirements with the LEAST cost?
+
+- [ ] Use a Provisioned IOPS SSD (io1) Amazon Elastic Block Store (Amazon EBS) volume that is configured with 10,000 provisioned IOPS.
+- [x] Use a General Purpose SSD (gp3) Amazon Elastic Block Store (Amazon EBS) volume that is configured with 10,000 provisioned IOPS.
+- [ ] Use an Amazon Elastic File System (Amazon EFS) file system in Max I/O mode.
+- [ ] Use an Amazon FSx for Windows File Server file system that is configured with 10,000 IOPS.
 
 ### A company hosts an internal application on Amazon EC2 instances. All application data and requests route through an AWS Site-to-Site VPN connection between the on-premises network and AWS. The company must monitor the application for changes that allow network access outside of the corporate network. Any change that exposes the application externally must be restricted automatically. Which solution meets these requirements in the MOST operationally efficient manner?
 
@@ -1100,9 +1140,19 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation document to remove any noncorporate CIDR ranges from the application security groups.
 - [ ] Configure AWS Config and the managed rule for monitoring public IP associations with the EC2 instances by tag. Tag the EC2 instances with an identifier. Create an AWS Systems Manager Automation document to remove the public IP association from the EC2 instances.
 
-### ...
+### A company has deployed an application on Amazon EC2 instances in a single VPC. The company has placed the EC2 instances in a private subnet in the VPC. The EC2 instances need access to Amazon S3 buckets that are in the same AWS Region as the EC2 instances. A SysOps administrator must provide the EC2 instances with access to the S3 buckets without requiring any changes to the EC2 instances or the application. The EC2 instances must not have access to the internet. Which solution will meet these requirements?
 
-### ...
+- [x] Create an S3 gateway endpoint that uses the default gateway endpoint policy. Associate the private subnet with the gateway endpoint.
+- [ ] Create an S3 interface endpoint. Associate the EC2 instances with the interface endpoint.
+- [ ] Configure a NAT gateway. Associate the private subnet with the NAT gateway.
+- [ ] Configure a proxy EC2 instance. Update the private subnet route tables to route traffic through the proxy EC2 instance. Configure the proxy to route all S3 requests to the target S3 bucket.
+
+### A company runs thousands of Amazon EC2 instances that are based on the Amazon Linux 2 Amazon Machine Image (AMI). A SysOps administrator must implement a solution to record commands and output from any user that needs an interactive session on one of the EC2 instances. The solution must log the data to a durable storage location. The solution also must provide automated notifications and alarms that are based on the log data. Which solution will meet these requirements with the MOST operational efficiency?
+
+- [ ] Configure command session logging on each EC2 instance. Configure the unified Amazon CloudWatch agent to send session logs to Amazon CloudWatch Logs. Set up query filters and alerts by using Amazon Athena.
+- [ ] Require all users to use a central bastion host when they need command line access to an EC2 instance. Configure the unified Amazon CloudWatch agent on the bastion host to send session logs to Amazon CloudWatch Logs. Set up a metric filter and a metric alarm for relevant security findings in CloudWatch Logs.
+- [x] Require all users to use AWS Systems Manager Session Manager when they need command line access to an EC2 instance. Configure Session Manager to stream session logs to Amazon CloudWatch Logs. Set up a metric filter and a metric alarm for relevant security findings in CloudWatch Logs.
+- [ ] Configure command session logging on each EC2 instance. Require all users to use AWS Systems Manager Run Command documents when they need command line access to an EC2 instance. Configure the unified Amazon CloudWatch agent to send session logs to Amazon CloudWatch Logs. Set up CloudWatch alarms that are based on Amazon Athena query results.
 
 ### ...
 
@@ -1695,8 +1745,8 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 - [x] Examine the expiration date on the certificate on the origin site. Validate that the certificate has not expired. Replace the certificate if necessary.
 - [ ] Examine the hostname on the certificate on the origin site. Validate that the hostname matches one of the hostnames on the CloudFront distribution. Replace the certificate if necessary.
-- [ ] Examine the firewall rules that are associated with the origin server. Validate that port 443 is open for inbound traffic from the internet. Create an inbound rule if necessary.
-- [ ] Examine the network ACL rules that are associated with the CloudFront distribution. Validate that port 443 is open for outbound traffic to the origin server. Create an outbound rule if necessary.
+- [ ] Examine the firewall rules that are associated with the origin server. Validate that port `443` is open for inbound traffic from the internet. Create an inbound rule if necessary.
+- [ ] Examine the network ACL rules that are associated with the CloudFront distribution. Validate that port `443` is open for outbound traffic to the origin server. Create an outbound rule if necessary.
 
 ### An Amazon CloudFront distribution has a single Amazon S3 bucket as its origin. A SysOps administrator must ensure that users can access the S3 bucket only through requests from the CloudFront endpoint. Which solution will meet these requirements?
 
