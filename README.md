@@ -145,10 +145,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### An Amazon EC2 instance is running an application that uses Amazon Simple Queue Service (Amazon SQS) queues A SysOps administrator must ensure that the application can read, write, and delete messages from the SQS queues. Which solution will meet these requirements in the MOST secure manner?
 
-- [ ] Create an IAM user with an IAM policy that allows the sqs SendMessage permission, the sqs ReceiveMessage permission, and the sqs DeleteMessage permission to the appropriate queues Embed the IAM user's credentials in the application's configuration.
-- [ ] Create an IAM user with an IAM policy that allows the sqs SendMessage permission, the sqs ReceiveMessage permission, and the sqs DeleteMessage permission to the appropriate queues Export the IAM user's access key and secret access key as environment variables on the EC2 instance.
-- [ ] Create and associate an IAM role that allows EC2 instances to call AWS services Attach an IAM policy to the role that allows sqs." permissions to the appropriate queues.
-- [x] Create and associate an IAM role that allows EC2 instances to call AWS services Attach an IAM policy to the role that allows the sqs SendMessage permission, the sqs ReceiveMessage permission, and the sqs DeleteMessage permission to the appropriate queues.
+- [ ] Create an IAM user with an IAM policy that allows the `sqs:SendMessage` permission, the `sqs:ReceiveMessage` permission, and the `sqs:DeleteMessage` permission to the appropriate queues Embed the IAM user's credentials in the application's configuration.
+- [ ] Create an IAM user with an IAM policy that allows the `sqs:SendMessage` permission, the `sqs:ReceiveMessage` permission, and the `sqs:DeleteMessage` permission to the appropriate queues Export the IAM user's access key and secret access key as environment variables on the EC2 instance.
+- [ ] Create and associate an IAM role that allows EC2 instances to call AWS services. Attach an IAM policy to the role that allows `sqs:*` permissions to the appropriate queues.
+- [x] Create and associate an IAM role that allows EC2 instances to call AWS services. Attach an IAM policy to the role that allows the `sqs:SendMessage` permission, the `sqs:ReceiveMessage` permission, and the `sqs:DeleteMessage` permission to the appropriate queues.
 
 ### A company has a policy that requires all Amazon EC2 instances to have a specific set of tags. If an EC2 instance does not have the required tags, the noncompliant instance should be terminated. What is the MOST operationally efficient solution that meets these requirements?
 
@@ -160,9 +160,9 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A SysOps administrator wants to upload a file that is 1 TB in size from on-premises to an Amazon S3 bucket using multipart uploads. What should the SysOps administrator do to meet this requirement?
 
 - [ ] Upload the file using the S3 console.
-- [ ] Use the s3api copy-object command.
-- [ ] Use the s3api put-object command.
-- [x] Use the s3 cp command.
+- [ ] Use the `s3api copy-object` command.
+- [x] Use the `s3api put-object` command.
+- [ ] Use the `s3 cp` command.
 
 ### A SysOps administrator launches an Amazon EC2 Linux instance in a public subnet. When the instance is running, the SysOps administrator obtains the public IP address and attempts to remotely connect to the instance multiple times. However, the SysOps administrator always receives a timeout error. Which action will allow the SysOps administrator to remotely connect to the instance?
 
@@ -1154,11 +1154,26 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [x] Require all users to use AWS Systems Manager Session Manager when they need command line access to an EC2 instance. Configure Session Manager to stream session logs to Amazon CloudWatch Logs. Set up a metric filter and a metric alarm for relevant security findings in CloudWatch Logs.
 - [ ] Configure command session logging on each EC2 instance. Require all users to use AWS Systems Manager Run Command documents when they need command line access to an EC2 instance. Configure the unified Amazon CloudWatch agent to send session logs to Amazon CloudWatch Logs. Set up CloudWatch alarms that are based on Amazon Athena query results.
 
-### ...
+### A company's AWS account users are launching Amazon EC2 instances without required cost allocation tags. A SysOps administrator needs to prevent users within an organization in AWS Organizations from launching new EC2 instances that do not have the required tags. The solution must require the least possible operational overhead. Which solution meets these requirements?
 
-### ...
+- [ ] Set up an AWS Lambda function that will initiate a run instance event and check for the required tags. Configure the function to prevent the launch of EC2 instances if the tags are missing.
+- [ ] Set up an AWS Config rule to monitor for EC2 instances that lack the required tags.
+- [x] Set up a service control policy (SCP) that prevents the launch of EC2 instances that lack the required tags. Attach the SCP to the organization root.
+- [ ] Set up an Amazon CloudWatch alarm to stop any EC2 instances that lack the required tags.
 
-### ...
+### A company has scientists who upload large data objects to an Amazon S3 bucket. The scientists upload the objects as multipart uploads. The multipart uploads often fail because of poor end-client connectivity. The company wants to optimize storage costs that are associated with the data. A SysOps administrator must implement a solution that presents metrics for incomplete uploads. The solution also must automatically delete any incomplete uploads after 7 days. Which solution will meet these requirements?
+
+- [x] Review the Incomplete Multipart Upload Bytes metric in the S3 Storage Lens dashboard. Create an S3 Lifecycle policy to automatically delete any incomplete multipart uploads after 7 days.
+- [ ] Implement S3 Intelligent-Tiering to move data into lower-cost storage classes after 7 days. Create an S3 Storage Lens policy to automatically delete any incomplete multipart uploads after 7 days.
+- [ ] Access the S3 console. Review the Metrics tab to check the storage that incomplete multipart uploads are consuming. Create an AWS Lambda function to delete any incomplete multipart uploads after 7 days.
+- [ ] Use the S3 analytics storage class analysis tool to identify and measure incomplete multipart uploads. Configure an S3 bucket policy to enforce restrictions on multipart uploads to delete incomplete multipart uploads after 7 days.
+
+### A company is uploading important files as objects to Amazon S3. The company needs to be informed if an object is corrupted during the upload. What should a SysOps administrator do to meet this requirement?
+
+- [ ] Pass the Content-Disposition value as a request body during the object upload.
+- [x] Pass the Content-MD5 value as a request header during the object upload.
+- [ ] Pass `x-amz-object-lock-mode` as a request header during the object upload.
+- [ ] Pass `x-amz-server-side-encryption-customer-algorithm` as a request body during the object upload.
 
 ### ...
 
