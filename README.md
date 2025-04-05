@@ -202,10 +202,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company creates custom AMI images by launching new Amazon EC2 instances from an AWS CloudFormation template it installs and configure necessary software through AWS OpsWorks and takes images of each EC2 instance. The process of installing and configuring software can take between 2 to 3 hours but at times the process stalls due to installation errors. The SysOps administrator must modify the CloudFormation template so if the process stalls, the entire stack will fail and roll back. Based on these requirements what should be added to the template?
 
-- [ ] Conditions with a timeout set to 4 hours.
-- [x] CreationPolicy with timeout set to 4 hours.
-- [ ] DependsOn a timeout set to 4 hours.
-- [ ] Metadata with a timeout set to 4 hours.
+- [ ] `Conditions` with a timeout set to 4 hours.
+- [x] `CreationPolicy` with timeout set to 4 hours.
+- [ ] `DependsOn` a timeout set to 4 hours.
+- [ ] `Metadata` with a timeout set to 4 hours.
 
 ### A company plans to run a public web application on Amazon EC2 instances behind an Elastic Load Balancer (ELB). The company's security team wants to protect the website by using AWS Certificate Manager (ACM) certificates. The ELB must automatically redirect any HTTP requests to HTTPS. Which solution will meet these requirements?
 
@@ -230,7 +230,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A SysOps administrator creates a new VPC that includes a public subnet and a private subnet. The SysOps administrator successfully launches 11 Amazon EC2 instances in the private subnet. The SysOps administrator attempts to launch one more EC2 instance in the same subnet. However, the SysOps administrator receives an error message that states that not enough free IP addresses are available. What must the SysOps administrator do to deploy more EC2 instances?
 
-- [ ] Edit the private subnet to change the CIDR block to /27.
+- [ ] Edit the private subnet to change the CIDR block to `/27`.
 - [ ] Edit the private subnet to extend across a second Availability Zone.
 - [ ] Assign additional Elastic IP addresses to the private subnet.
 - [x] Create a new private subnet to hold the required EC2 instances.
@@ -262,15 +262,15 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Reduce the scaling thresholds so that instances are added before traffic increases.
 - [ ] Purchase Reserved Instances to cover 100% of the maximum capacity of the Auto Scaling group.
-- [x] Update the Auto Scaling group to launch instances that have a storage optimized instance type.
-- [ ] Use EC2 Image Builder to prepare an Amazon Machine Image (AMI) that has pre-installed software.
+- [ ] Update the Auto Scaling group to launch instances that have a storage optimized instance type.
+- [x] Use EC2 Image Builder to prepare an Amazon Machine Image (AMI) that has pre-installed software.
 
 ### A SysOps administrator has launched a large general purpose Amazon EC2 instance to regularly process large data files. The instance has an attached 1 TB General Purpose SSD (gp2) Amazon Elastic Block Store (Amazon EBS) volume. The instance also is EBS-optimized. To save costs, the SysOps administrator stops the instance each evening and restarts the instance each morning. When data processing is active, Amazon CloudWatch metrics on the instance show a consistent 3.000 VolumeReadOps. The SysOps administrator must improve the I/O performance while ensuring data integrity. Which action will meet these requirements?
 
 - [ ] Change the instance type to a large, burstable, general purpose instance.
 - [ ] Change the instance type to an extra large general purpose instance.
-- [x] Increase the EBS volume to a 2 TB General Purpose SSD (gp2) volume.
-- [ ] Move the data that resides on the EBS volume to the instance store.
+- [ ] Increase the EBS volume to a 2 TB General Purpose SSD (gp2) volume.
+- [x] Move the data that resides on the EBS volume to the instance store.
 
 ### A company runs workloads on 90 Amazon EC2 instances in the `eu-west-1` Region in an AWS account. In 2 months, the company will migrate the workloads from `eu-west-1` to the eu-west-3 Region. The company needs to reduce the cost of the EC2 instances. The company is willing to make a 1-year commitment that will begin next week. The company must choose an EC2 Instance purchasing option that will provide discounts for the 90 EC2 Instances regardless of Region during the 1-year period. Which solution will meet these requirements?
 
@@ -1175,7 +1175,12 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Pass `x-amz-object-lock-mode` as a request header during the object upload.
 - [ ] Pass `x-amz-server-side-encryption-customer-algorithm` as a request body during the object upload.
 
-### ...
+### A company currently runs its infrastructure within a VPC in a single Availability Zone. The VPC is connected to the company's on-premises data center through an AWS Site-to-Site VPN connection attached to a virtual private gateway. The on-premises route tables route all VPC networks to the VPN connection. Communication between the two environments is working correctly. A SysOps administrator created new VPC subnets within a new Availability Zone, and deployed new resources within the subnets. However, communication cannot be established between the new resources and the on-premises environment. Which steps should the SysOps administrator take to resolve the issue?
+
+- [x] Add a route to the route tables of the new subnets that send on-premises traffic to the virtual private gateway.
+- [ ] Create a ticket with AWS Support to request adding Availability Zones to the Site-to-Site VPN route configuration.
+- [ ] Establish a new Site-to-Site VPN connection between a virtual private gateway attached to the new Availability Zone and the on-premises data center.
+- [ ] Replace the Site-to-Site VPN connection with an AWS Direct Connect connection.
 
 ### A company has an internal web application that runs on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto. Scaling group in a single Availability Zone. A SysOps administrator must make the application highly available. Which action should the SysOps administrator take to meet this requirement?
 
@@ -1205,7 +1210,12 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] A CNAME record for the domain's zone apex.
 - [x] An alias record for the domain's zone apex.
 
-### ...
+### A SysOps administrator has created a VPC that contains a public subnet and a private subnet. Amazon EC2 instances that were launched in the private subnet cannot access the internet. The default network ACL is active on all subnets in the VPC, and all security groups allow all outbound traffic. Which solution will provide the EC2 instances in the private subnet with access to the internet?
+
+- [x] Create a NAT gateway in the public subnet. Create a route from the private subnet to the NAT gateway.
+- [ ] Create a NAT gateway in the public subnet. Create a route from the public subnet to the NAT gateway.
+- [ ] Create a NAT gateway in the private subnet. Create a route from the public subnet to the NAT gateway.
+- [ ] Create a NAT gateway in the private subnet. Create a route from the private subnet to the NAT gateway.
 
 ### A company is running a serverless application on AWS Lambda. The application stores data in an Amazon RDS for MySQL DB instance. Usage has steadily increased, and recently there have been numerous "too many connections" errors when the Lambda function attempts to connect to the database. The company already has configured the database to use the maximum max_connections value that is possible. What should a SysOps administrator do to resolve these errors?
 
@@ -1214,7 +1224,12 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Increase the value in the max_connect_errors parameter in the parameter group that the database uses.
 - [ ] Update the Lambda function's reserved concurrency to a higher value.
 
-### ...
+### A SysOps administrator creates an AWS CloudFormation template to define an application stack that can be deployed in multiple AWS Regions. The SysOps administrator also creates an Amazon CloudWatch dashboard by using the AWS Management Console. Each deployment of the application requires its own CloudWatch dashboard. How can the SysOps administrator automate the creation of the CloudWatch dashboard each time the application is deployed?
+
+- [ ] Create a script by using the AWS CLI to run the aws cloudformation put-dashboard command with the name of the dashboard. Run the command each time a new CloudFormation stack is created.
+- [x] Export the existing CloudWatch dashboard as JSON. Update the CloudFormation template to define an `AWS::CloudWatch::Dashboard` resource. Include the exported JSON in the resource's DashboardBody property.
+- [ ] Update the CloudFormation template to define an `AWS::CloudWatch::Dashboard` resource. Use the Intrinsic Ref function to reference the ID of the existing CloudWatch dashboard.
+- [ ] Update the CloudFormation template to define an `AWS::CloudWatch::Dashboard` resource. Specify the name of the existing dashboard in the DashboardName property.
 
 ### A SysOps administrator is provisioning an Amazon Elastic File System (Amazon EFS) file system to provide shared storage across multiple Amazon EC2 instances. The instances all exist in the same VPC across multiple Availability Zones. There are two instances in each Availability Zone. The SysOps administrator must make the file system accessible to each instance with the lowest possible latency. Which solution will meet these requirements?
 
@@ -1501,7 +1516,12 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Change to one xlarge general purpose Spot Instance.
 - [ ] Change to two large general purpose On-Demand Instances.
 
-### ...
+### A company runs an application on Amazon EC2 instances that are in an Amazon EC2 Auto Scaling group. Scale-out actions take a long time to become complete because of long-running boot scripts. A SysOps administrator must implement a solution to reduce the required time for scale-out actions without overprovisioning the Auto Scaling group. Which solution will meet these requirements?
+
+- [ ] Change the launch configuration to use a larger instance size.
+- [ ] Increase the minimum number of instances in the Auto Scaling group.
+- [ ] Add a predictive scaling policy to the Auto Scaling group.
+- [x] Add a warm pool to the Auto Scaling group.
 
 ### When the AWS Cloud infrastructure experiences an event that may impact an organization, which AWS service can be used to see which of the organization's resources are affected?
 
