@@ -272,7 +272,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Increase the EBS volume to a 2 TB General Purpose SSD (gp2) volume.
 - [x] Move the data that resides on the EBS volume to the instance store.
 
-### A company runs workloads on 90 Amazon EC2 instances in the `eu-west-1` Region in an AWS account. In 2 months, the company will migrate the workloads from `eu-west-1` to the eu-west-3 Region. The company needs to reduce the cost of the EC2 instances. The company is willing to make a 1-year commitment that will begin next week. The company must choose an EC2 Instance purchasing option that will provide discounts for the 90 EC2 Instances regardless of Region during the 1-year period. Which solution will meet these requirements?
+### A company runs workloads on 90 Amazon EC2 instances in the `eu-west-1` Region in an AWS account. In 2 months, the company will migrate the workloads from `eu-west-1` to the `eu-west-3` Region. The company needs to reduce the cost of the EC2 instances. The company is willing to make a 1-year commitment that will begin next week. The company must choose an EC2 Instance purchasing option that will provide discounts for the 90 EC2 Instances regardless of Region during the 1-year period. Which solution will meet these requirements?
 
 - [ ] Purchase EC2 Standard Reserved Instances.
 - [ ] Purchase an EC2 Instance Savings Plan.
@@ -293,9 +293,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] The member accounts do not have tags enabled for cost allocation.
 - [ ] The member accounts have not manually enabled trusted access for Compute Optimizer.
 
-### A SysOps administrator is attempting to download patches from the internet into an instance in a private subnet. An internet gateway exists for the VPC, and a NAT gateway has been deployed on the public subnet; however, the instance has no internet connectivity. The resources deployed into the private subnet must be inaccessible directly from the public internet. What should be added to the private subnet's route table in order to address this issue, given the information provided?
-
-![Question 42](images/question42.jpg)
+### A SysOps administrator is attempting to download patches from the internet into an instance in a private subnet. An internet gateway exists for the VPC, and a NAT gateway has been deployed on the public subnet; however, the instance has no internet connectivity. The resources deployed into the private subnet must be inaccessible directly from the public internet. Public Subnet `(10.0.1.0/24)` Route Table: `Destination` - `Target`. `10.0.0.0/16` - `local`. `0.0.0.0/0` - `IGW`. Private Subnet (`10.0.2.0/24`) Route Table: `Destination` `Target`. `10.0.0.0/16` - `local`. What should be added to the private subnet’s route table in order to address this issue, given the information provided?
 
 - [ ] `0.0.0.0/0` IGW.
 - [x] `0.0.0.0/0` NAT.
@@ -802,7 +800,7 @@ Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90
 ### A company has a stateless application that runs on four Amazon EC2 instances. The application requires tour instances at all times to support all traffic. A SysOps administrator must design a highly available, fault-tolerant architecture that continually supports all traffic if one Availability Zone becomes unavailable. Which configuration meets these requirements?
 
 - [ ] Deploy two Auto Scaling groups in two Availability Zones with a minimum capacity of two instances in each group.
-- [ ] Deploy an Auto Scaling group across two Availability Zones with a minimum capacity of four instances
+- [ ] Deploy an Auto Scaling group across two Availability Zones with a minimum capacity of four instances.
 - [x] Deploy an Auto Scaling group across three Availability Zones with a minimum capacity of four instances.
 - [ ] Deploy an Auto Scaling group across three Availability Zones with a minimum capacity of six instances.
 
@@ -1565,7 +1563,12 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Provide developers with CLI commands so that they can provision their own development environment when necessary. Schedule a nightly Amazon EventBridge (Amazon CloudWatch Events) rule to invoke an AWS Lambda function to terminate all EC2 instances and the DB instance.
 - [ ] Provide developers with CLI commands so that they can provision their own development environment when necessary. Schedule a nightly Amazon EventBridge (Amazon CloudWatch Events) rule to cause AWS CloudFormation to delete all of the development environment resources.
 
-### ...
+### A SysOps administrator manages policies for many AWS member accounts in an AWS Organizations structure. Administrators on other teams have access to the account root user credentials of the member accounts. The SysOps administrator must prevent all teams, including their administrators, from using Amazon DynamoDB. The solution must not affect the ability of the teams to access other AWS services. Which solution will meet these requirements?
+
+- [ ] In all member accounts, configure IAM policies that deny access to all DynamoDB resources for all users, including the root user.
+- [x] Create a service control policy (SCP) in the management account to deny all DynamoDB actions. Apply the SCP to the root of the organization.
+- [ ] In all member accounts, configure IAM policies that deny AmazonDynamoDBFullAccess to all users, including the root user.
+- [ ] Remove the default service control policy (SCP) in the management account. Create a replacement SCP that includes a single statement that denies all DynamoDB actions.
 
 ### A company runs hundreds of Amazon EC2 instances in a single AWS Region. Each EC2 instance has two attached 1 GiB General Purpose SSD (gp2) Amazon Elastic Block Store (Amazon EBS) volumes. A critical workload is using all the available IOPS capacity on the EBS volumes. According to company policy, the company cannot change instance types or EBS volume types without completing lengthy acceptance tests to validate that the company's applications will function properly. A SysOps administrator needs to increase the I/O performance of the EBS volumes as quickly as possible. Which action should the SysOps administrator take to meet these requirements?
 
@@ -1584,7 +1587,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 ### A company wants to create an automated solution for all accounts managed by AWS Organizations to detect any security groups that use `0.0.0.0/0` as the source address for inbound traffic. The company also wants to automatically remediate any noncompliant security groups by restricting access to a specific CIDR block that corresponds with the company's intranet. Which set of actions should the SysOps administrator take to create a solution?
 
 - [x] Create an AWS Config rule to detect noncompliant security groups. Set up automatic remediation to change the `0.0.0.0/0` source address to the approved CIDR block.
-- [ ] Create an IAM policy to deny the creation of security groups that have `0.0.0.0/0` as the source address. Attach this IAM policy to every user in the company
+- [ ] Create an IAM policy to deny the creation of security groups that have `0.0.0.0/0` as the source address. Attach this IAM policy to every user in the company.
 - [ ] Create an AWS Lambda function to inspect new and existing security groups. Check for a noncompliant `0.0.0.0/0` source address and change the source address to the approved CIDR block.
 - [ ] Create a service control policy (SCP) for the organizational unit (OU) to deny the creation of security groups that have the `0.0.0.0/0` source address. Set up automatic remediation to change the `0.0.0.0/0` source address to the approved CIDR block.
 
@@ -1731,7 +1734,12 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Use EBS snapshot restore to create a new General Purpose SSD EBS volume from the production snapshot.
 - [ ] Use EBS snapshot restore to create a new Provisioned IOPS SSD EBS volume from the production snapshot.
 
-### ...
+### A company uses AWS Organizations to manage its AWS accounts. A SysOps administrator must create a backup strategy for all Amazon EC2 instances across all the company’s AWS accounts. Which solution will meet these requirements in the MOST operationally efficient way?
+
+- [ ] Deploy an AWS Lambda function to each account to run EC2 instance snapshots on a scheduled basis.
+- [ ] Create an AWS CloudFormation stack set in the management account to add an AutoBackup=True tag to every EC2 instance.
+- [x] Use AWS Backup in the management account to deploy policies for all accounts and resources.
+- [ ] Use a service control policy (SCP) to run EC2 instance snapshots on a scheduled basis in each account.
 
 ### A company needs to ensure strict adherence to a budget for 25 applications deployed on AWS. Separate teams are responsible for storage, compute, and database costs. A SysOps administrator must implement an automated solution to alert each team when their projected spend will exceed a quarterly amount that has been set by the finance department. The solution cannot incur additional compute, storage, or database costs. Which solution will meet these requirements?
 
@@ -1747,7 +1755,13 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Disable bucket versioning in the S3 bucket configuration.
 - [ ] Enable content compression in the CloudFront configuration.
 
-### ...
+### A SysOps administrator needs to delete an AWS CloudFormation stack that is no longer in use. The CloudFormation stack is in the DELETE_FAILED state. The SysOps administrator has validated the permissions that are required to delete the CloudFormation stack. Which of the following are possible causes of the DELETE_FAILED state? (Choose two.)
+
+- [ ] The configured timeout to delete the stack was too low for the delete operation to complete.
+- [ ] The stack contains nested stacks that must be manually deleted first.
+- [ ] The stack was deployed with the `--disable-rollback` option.
+- [x] There are additional resources associated with a security group in the stack.
+- [x] There are Amazon S3 buckets that still contain objects in the stack.
 
 ### ...
 
