@@ -408,14 +408,14 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] The security group for the instance does not have an inbound rule on port `22`.
 - [ ] The security group for the instance does not have an outbound rule on port `3389`.
 
-### 31.16.139. When the SysOps administrator tries to ping the instance's public IP address from the remote IP address `203.0.113.12`, the response is "request timed out." The flow logs contain the following information. What is one cause of the problem?
+### While securing the connection between a company’s VPC and its on-premises data center, a security engineer sent a ping command from an on-premises host (IP address `203.0.113.12`) to an Amazon EC2 instance (IP address `172.31.16.139`). The ping command did not return a response. The flow log in the VPC showed the following. What action should be performed to allow the ping to work?
 
-![Question 58](images/question58.jpg)
+![Question 58](images/question58_74_155.png)
 
-- [ ] Inbound security group deny rule.
-- [ ] Outbound security group deny rule.
-- [x] Network ACL inbound rules.
-- [ ] Network ACL outbound rules.
+- [ ] In the security group of the EC2 instance, allow inbound ICMP traffic.
+- [ ] In the security group of the EC2 instance, allow outbound ICMP traffic.
+- [ ] In the VPC’s NACL, allow inbound ICMP traffic.
+- [x] In the VPC’s NACL, allow outbound ICMP traffic.
 
 ### A global company handles a large amount of personally identifiable information (Pll) through an internal web portal. The company's application runs in a corporate data center that is connected to AWS through an AWS Direct Connect connection. The application stores the Pll in Amazon S3. According to a compliance requirement, traffic from the web portal to Amazon S3 must not travel across the internet. What should a SysOps administrator do to meet the compliance requirement?
 
@@ -528,6 +528,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A VPC is connected to a company data center by a VPN. An Amazon EC2 instance with the IP address `172.31.16.139` is within a private subnet of the VPC. A SysOps Administrator issued a ping command to the EC2 instance from an on-premises computer with the IP address `203.0.113.12` and did not receive an acknowledgment. VPC Flow Logs were enabled and showed the following. What action will resolve the issue?
 
+![Question 74](images/question58_74_155.png)
+
 - [ ] Modify the EC2 security group rules to allow inbound traffic from the on-premises computer.
 - [ ] Modify the EC2 security group rules to allow outbound traffic to the on-premises computer.
 - [ ] Modify the VPC network ACL rules to allow inbound traffic from the on-premises computer.
@@ -542,12 +544,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### SysOps administrator needs to secure the credentials for an Amazon RDS database that is created by an AWS CloudFormation template. The solution must encrypt the credentials and must support automatic rotation. Which solution will meet these requirements?
 
-- [x] Create an `AWS::SecretsManager::Secret` resource in the CloudFormation template. Reference the credentials in the `AWS::RDS::DBInstance` resource by using the resolve:secretsmanager dynamic reference.
-- [ ] Create an `AWS::SecretsManager::Secret` resource in the CloudFormation template. Reference the credentials in the `AWS::RDS::DBInstance` resource by using the resolve:ssm-secure dynamic reference.
-- [ ] Create an `AWS::SSM::Parameter` resource in the CloudFormation template. Reference the credentials in the `AWS::RDS::DBInstance` resource by using the resolve:ssm dynamic reference.
+- [x] Create an `AWS::SecretsManager::Secret` resource in the CloudFormation template. Reference the credentials in the `AWS::RDS::DBInstance` resource by using the `resolve:secretsmanager` dynamic reference.
+- [ ] Create an `AWS::SecretsManager::Secret` resource in the CloudFormation template. Reference the credentials in the `AWS::RDS::DBInstance` resource by using the `resolve:ssm-secure` dynamic reference.
+- [ ] Create an `AWS::SSM::Parameter` resource in the CloudFormation template. Reference the credentials in the `AWS::RDS::DBInstance` resource by using the `resolve:ssm` dynamic reference.
 - [ ] Create parameters for the database credentials in the CloudFormation template. Use the Ref intrinsic function to provide the credentials to the `AWS::RDS::DBInstance` resource.
 
-### A company is expanding its fleet of Amazon EC2 instances before an expected increase of traffic. When a SysOps administrator attempts to add more instances, an InstanceLimitExceeded error is returned. What should the SysOps administrator do to resolve this error?
+### A company is expanding its fleet of Amazon EC2 instances before an expected increase of traffic. When a SysOps administrator attempts to add more instances, an `InstanceLimitExceeded` error is returned. What should the SysOps administrator do to resolve this error?
 
 - [ ] Add an additional CIDR block to the VPC.
 - [ ] Launch the EC2 instances in a different Availability Zone.
@@ -561,19 +563,14 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Disable source/destination checks on the NAT instance.
 - [ ] Start/stop the NAT instance so it is launched on a different host.
 
-### A compliance team requires all administrator passwords tor Amazon RDS DB instances to be changed at toast annually. Which solution meets this requirement in the MOST operationally efficient manned?
+### ...
 
-- [x] Store the database credentials in AWS Secrets Manager Configure automate rotation for the secret every 365 days.
-- [ ] Store the database credentials as a parameter in the RDS parameter group Create a database trigger to rotate the password every 365 days.
-- [ ] Store the database credentials in a private Amazon S3 bucket Schedule an AWS Lambda function to generate a new set of credentials every 365 days.
-- [ ] Store the database credentials in AWS Systems Manager Parameter Store as a secure string parameter Configure automatic rotation for the parameter every 365 days.
+### A company uses an Amazon Simple Queue Service (Amazon SQS) standard queue with its application. The application sends messages to the queue with unique message bodies. The company decides to switch to an SQS FIFO queue. What must the company do to migrate to an SQS FIFO queue?
 
-### A company uses an Amazon Simple Queue Service (Amazon SQS) standard queue with its application. The application sends messages to the queue with unique message bodies The company decides to switch to an SQS FIFO queue. What must the company do to migrate to an SQS FIFO queue?
-
-- [x] Create a new SQS FIFO gueue Turn on content based deduplication on the new FIFO queue Update the application to include a message group ID in the messages.
-- [ ] Create a new SQS FIFO queue Update the application to include the DelaySeconds parameter in the messages.
-- [ ] Modify the queue type from SQS standard to SQS FIFO Turn off content-based deduplication on the queue Update the application to include a message group ID in the messages.
-- [ ] Modify the queue type from SQS standard to SQS FIFO Update the application to send messages with identical message bodies and to include the DelaySeconds parameter in the messages.
+- [x] Create a new SQS FIFO gueue. Turn on content based deduplication on the new FIFO queue. Update the application to include a message group ID in the messages.
+- [ ] Create a new SQS FIFO queue. Update the application to include the `DelaySeconds` parameter in the messages.
+- [ ] Modify the queue type from SQS standard to SQS FIFO. Turn off content-based deduplication on the queue. Update the application to include a message group ID in the messages.
+- [ ] Modify the queue type from SQS standard to SQS FIFO. Update the application to send messages with identical message bodies and to include the `DelaySeconds` parameter in the messages.
 
 ### A SysOps administrator created an AWS CloudFormation template that provisions Amazon EC2 instances, an Elastic Load Balancer (ELB), and an Amazon RDS DB instance. During stack creation, the creation of the EC2 instances and the creation of the ELB are successful. However, the creation of the DB instance fails. What is the default behavior of CloudFormation in this scenario?
 
@@ -636,10 +633,10 @@ Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90
 
 ### A manufacturing company uses an Amazon RDS DB instance to store inventory of all stock items. The company maintains several AWS Lambda functions that interact with the database to add, update, and delete items. The Lambda functions use hardcoded credentials to connect to the database. A SysOps administrator must ensure that the database credentials are never stored in plaintext and that the password is rotated every 30 days. Which solution will meet these requirements in the MOST operationally efficient manner?
 
-- [ ] Store the database password as an environment variable for each Lambda function. Create a new Lambda function that is named PasswordRotate. Use Amazon EventBridge (Amazon CloudWatch Events) to schedule the PasswordRotate function every 30 days to change the database password and update the environment variable for each Lambda function.
-- [ ] Use AWS Key Management Service (AWS KMS) to encrypt the database password and to store the encrypted password as an environment variable for each Lambda function. Grant each Lambda function access to the KMS key so that the database password can be decrypted when required. Create a new Lambda function that is named PasswordRotate to change the password every 30 days.
+- [ ] Store the database password as an environment variable for each Lambda function. Create a new Lambda function that is named `PasswordRotate`. Use Amazon EventBridge (Amazon CloudWatch Events) to schedule the `PasswordRotate` function every 30 days to change the database password and update the environment variable for each Lambda function.
+- [ ] Use AWS Key Management Service (AWS KMS) to encrypt the database password and to store the encrypted password as an environment variable for each Lambda function. Grant each Lambda function access to the KMS key so that the database password can be decrypted when required. Create a new Lambda function that is named `PasswordRotate` to change the password every 30 days.
 - [x] Use AWS Secrets Manager to store credentials for the database. Create a Secrets Manager secret, and select the database so that Secrets Manager will use a Lambda function to update the database password automatically. Specify an automatic rotation schedule of 30 days. Update each Lambda function to access the database password from SecretsManager.
-- [ ] Use AWS Systems Manager Parameter Store to create a secure string to store credentials for the database. Create a new Lambda function called PasswordRotate. Use Amazon EventBridge (Amazon CloudWatch Events) to schedule the PasswordRotate function every 30 days to change the database password and to update the secret within Parameter Store. Update each Lambda function to access the database password from Parameter Store.
+- [ ] Use AWS Systems Manager Parameter Store to create a secure string to store credentials for the database. Create a new Lambda function called `PasswordRotate`. Use Amazon EventBridge (Amazon CloudWatch Events) to schedule the `PasswordRotate` function every 30 days to change the database password and to update the secret within Parameter Store. Update each Lambda function to access the database password from Parameter Store.
 
 ### A Sysops administrator creates an Amazon Elastic Kubernetes Service (Amazon EKS) cluster that uses AWS Fargate. The cluster is deployed successfully. The Sysops administrator needs to manage the cluster by using the kubectl command line tool. Which of the following must be configured on the Sysops administrator's machine so that kubectl can communicate with the cluster API server?
 
@@ -1109,7 +1106,9 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 - [ ] In the payer account: Enable billing alerts in the Billing and Cost Management console; set up a billing alarm in the Billing and Cost Management console to publish an SNS message when the alarm triggers.
 - [x] In the payer account: Enable billing alerts in the Billing and Cost Management console; set up a billing alarm in Amazon CloudWatch; publish an SNS message when the alarm triggers.
 
-### A SysOps administrator is troubleshooting connection timeouts to an Amazon EC2 instance that has a public IP address. The instance has a private IP address of `172.31.16.139`. When the SysOps administrator tries to ping the instance's public IP address from the remote IP address `203.0.113.12`, the response is "request timed out." The flow logs contain the following information: What is one cause of the problem?
+### A SysOps administrator is troubleshooting connection timeouts to an Amazon EC2 instance that has a public IP address. The instance has a private IP address of `172.31.16.139`. When the SysOps administrator tries to ping the instance's public IP address from the remote IP address `203.0.113.12`, the response is `request timed out.` The flow logs contain the following information: What is one cause of the problem?
+
+![Question 155](images/question58_74_155.png)
 
 - [ ] Inbound security group deny rule.
 - [ ] Outbound security group deny rule.
