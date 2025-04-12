@@ -153,7 +153,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A company has a policy that requires all Amazon EC2 instances to have a specific set of tags. If an EC2 instance does not have the required tags, the noncompliant instance should be terminated. What is the MOST operationally efficient solution that meets these requirements?
 
 - [ ] Create an Amazon EventBridge (Amazon CloudWatch Events) rule to send all EC2 instance state changes to an AWS Lambda function to determine if each instance is compliant. Terminate any noncompliant instances.
-- [ ] Create an 1AM policy that enforces all EC2 instance tag requirements. If the required tags are not in place for an instance, the policy will terminate noncompliant instance.
+- [ ] Create an IAM policy that enforces all EC2 instance tag requirements. If the required tags are not in place for an instance, the policy will terminate noncompliant instance.
 - [ ] Create an AWS Lambda function to determine if each EC2 instance is compliant and terminate an instance if it is noncompliant. Schedule the Lambda function to invoke every 5 minutes.
 - [x] Create an AWS Config rule to check if the required tags are present. If an EC2 instance is noncompliant, invoke an AWS Systems Manager Automation document to terminate the instance.
 
@@ -457,7 +457,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A SysOps administrator is using AWS Systems Manager Patch Manager to patch a fleet of Amazon EC2 instances. The SysOps administrator has configured a patch baseline and a maintenance window. The SysOps administrator also has used an instance tag to identify which instances to patch. The SysOps administrator must give Systems Manager the ability to access the EC2 instances. Which additional action must the SysOps administrator perform to meet this requirement?
 
 - [ ] Add an inbound rule to the instances' security group.
-- [x] Attach an 1AM instance profile with access to Systems Manager to the instances.
+- [x] Attach an IAM instance profile with access to Systems Manager to the instances.
 - [ ] Create a Systems Manager activation Then activate the fleet of instances.
 - [ ] Manually specify the instances to patch Instead of using tag-based selection.
 
@@ -465,16 +465,16 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Configure Amazon CloudWatch Logs on the elastic network interface of each task.
 - [x] Configure VPC Flow Logs on the elastic network interface of each task.
-- [x] Specify the awsvpc network mode in the task definition.
-- [ ] Specify the bridge network mode in the task definition.
-- [ ] Specify the host network mode in the task definition.
+- [x] Specify the `awsvpc` network mode in the task definition.
+- [ ] Specify the `bridge` network mode in the task definition.
+- [ ] Specify the `host` network mode in the task definition.
 
 ### A company has a mobile app that uses Amazon S3 to store images The images are popular for a week, and then the number of access requests decreases over time The images must be highly available and must be immediately accessible upon request A SysOps administrator must reduce S3 storage costs for the company. Which solution will meet these requirements MOST cost-effectively?
 
 - [ ] Create an S3 Lifecycle policy to transition the images to S3 Glacier after 7 days.
 - [ ] Create an S3 Lifecycle policy to transition the images to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 7 days.
 - [ ] Create an S3 Lifecycle policy to transition the images to S3 Standard after 7 days.
-- [x] Create an S3 Lifecycle policy to transition the images to S3 Standard after 7 days.
+- [x] Create an S3 Lifecycle policy to transition the images to S3 Standard-Infrequent Access (S3 Standard-IA) after 7 days.
 
 ### A SysOps administrator is unable to authenticate an AWS CLI call to an AWS service. Which of the following is the cause of this issue?
 
@@ -499,17 +499,17 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company uses AWS Organizations to manage multiple AWS accounts with consolidated billing enabled. Organization member account owners want the benefits of Reserved Instances (RIs) but do not want to share RIs with other accounts. Which solution will meet these requirements?
 
-- [x] Purchase RIs in individual member accounts. Disable Rl discount sharing in the management account.
-- [ ] Purchase RIs in individual member accounts. Disable Rl discount sharing in the member accounts.
-- [ ] Purchase RIs in the management account. Disable Rl discount sharing in the management account.
-- [ ] Purchase RIs in the management account. Disable Rl discount sharing in the member accounts.
+- [x] Purchase RIs in individual member accounts. Disable RI discount sharing in the management account.
+- [ ] Purchase RIs in individual member accounts. Disable RI discount sharing in the member accounts.
+- [ ] Purchase RIs in the management account. Disable RI discount sharing in the management account.
+- [ ] Purchase RIs in the management account. Disable RI discount sharing in the member accounts.
 
 ### A gaming application is deployed on four Amazon EC2 instances in a default VPC. The SysOps administrator has noticed consistently high latency in responses as data is transferred among the four instances. There is no way for the administrator to alter the application code. The MOST effective way to reduce latency is to relaunch the EC2 instances in:
 
-- [ ] a dedicated VPC.
-- [ ] a single subnet inside the VPC.
-- [x] a placement group.
-- [ ] a single Availability Zone.
+- [ ] Dedicated VPC.
+- [ ] Single subnet inside the VPC.
+- [x] Placement group.
+- [ ] Single Availability Zone.
 
 ### A company has a stateful web application that is hosted on Amazon EC2 instances in an Auto Scaling group. The instances run behind an Application Load Balancer (ALB) that has a single target group. The ALB is configured as the origin in an Amazon CloudFront distribution. Users are reporting random logouts from the web application. Which combination of actions should a SysOps administrator take to resolve this problem? (Select TWO.)
 
@@ -835,7 +835,7 @@ Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90
 ### A SysOps administrator is helping a development team deploy an application to AWS Trie AWS CloudFormat on temp ate includes an Amazon Linux EC2 Instance an Amazon Aurora DB cluster and a hard coded database password that must be rotated every 90 days. What is the MOST secure way to manage the database password?
 
 - [x] Use the AWS SecretsManager Secret resource with the GenerateSecretString property to automatically generate a password Use the AWS SecretsManager RotationSchedule resource lo define a rotation schedule lor the password Configure the application to retrieve the secret from AWS Secrets Manager access the database.
-- [ ] Use me AWS SecretsManager Secret resource with the SecretStrmg property Accept a password as a CloudFormation parameter Use the AllowedPatteen property of the CloudFormaton parameter to require e minimum length, uppercase and lowercase letters and special characters Configure me application to retrieve the secret from AWS Secrets Manager to access the database.
+- [ ] Use me AWS SecretsManager Secret resource with the SecretStrmg property Accept a password as a CloudFormation parameter Use the AllowedPatteen property of the CloudFormaton parameter to require a minimum length, uppercase and lowercase letters and special characters Configure me application to retrieve the secret from AWS Secrets Manager to access the database.
 - [ ] Use the AWS SSM Parameter resource Accept input as a Qoudformatton parameter to store the parameter as a secure sting Configure the application to retrieve the parameter from AWS Systems Manager Parameter Store to access the database.
 - [ ] Use the AWS SSM Parameter resource Accept input as a Cloudf ormetton parameter to store the parameter as a string Configure the application to retrieve the parameter from AWS Systems Manager Parameter Store to access the database.
 
@@ -1923,3 +1923,39 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Add the new S3 bucket to a new Amazon CloudFront distribution. Provide the developers with the domain name of the new distribution for use in their API calls.
 - [x] Enable S3 Transfer Acceleration for the new S3 bucket. Verify that the developers are using the `DOC-EXAMPLE-BUCKET.s3-accelerate.amazonaws.com` endpoint name in their API calls.
 - [ ] Use S3 multipart upload for the new S3 bucket. Verify that the developers are using Region-specific S3 endpoint names such as `DOC-EXAMPLE-BUCKETS3`, [Region] amazonaws.com in their API calls.
+
+### A SysOps administrator wants to use AWS Systems Manager Patch Manager to automate the process of patching Amazon EC2 Windows instances. The SysOps administrator wants to ensure that patches are auto-approved 2 days after the release date for development instances. Patches also must be auto-approved 5 days after the release date for production instances. Maintenance must occur only during a 2-hour window for all instances. Which solution will meet these requirements?
+
+- [ ] Use tags to identify development instances and production instances. In Patch Manager, create two patch groups and one patch baseline. Add an auto-approval delay to each patch group. Create a single maintenance window.
+- [x] Use tags to identify development instances and production instances. In Patch Manager, create two patch groups and two patch baselines. Specify an auto-approval delay in each of the patch baselines. Create a single maintenance window.
+- [ ] Use tags to identity development instances and production instances. In Patch Manager, create two patch groups and one patch baseline, Create two separate maintenance windows, each with an auto-approval delay.
+- [ ] Use tags to identify development instances. In Patch Manager, create one patch group and one patch baseline. Specify auto-approval delays in the patch baseline, Add development instances to the new patch group. Use predefined Patch Manager patch baselines for all remaining instances. Create a single maintenance window.
+
+### A company wants to collect data from an application to use for analytics. For the first 90 days, the data will be infrequently accessed but must remain highly available. During this time, the company's analytics team requires access to the data in milliseconds. However, after 90 days, the company must retain the data for the long term at a lower cost. The retrieval time after 90 days must be less than 5 hours. Which solution will meet these requirements MOST cost-effectively?
+
+- [x] Store the data in S3 Standard-Infrequent Access (S3 Standard-IA) for the first 90 days. Set up an S3 Lifecycle rule to move the data to S3 Glacier Flexible Retrieval after 90 days.
+- [ ] Store the data in S3 One Zone-Infrequent Access (S3 One Zone-IA) for the first 90 days. Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90 days.
+- [ ] Store the data in S3 Standard for the first 90 days. Set up an S3 Lifecycle rule to move the data to S3 Glacier Flexible Retrieval after 90 days.
+- [ ] Store the data in S3 Standard for the first 90 days. Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90 days.
+
+### A SysOps administrator needs to provision a new fleet of Amazon EC2 Spot Instances in an Amazon EC2 Auto Scaling group. The Auto Scaling group will use a wide range of instance types. The configured fleet must come from pools that have the most availability for the number of instances that are launched. Which solution will meet these requirements?
+
+- [ ] Launch the Spot Instances up to the maximum capacity of the Auto Scaling group.
+- [ ] Launch the Spot Instances by using the diversified strategy.
+- [x] Launch the Spot Instances by using the capacity optimized strategy.
+- [ ] Use the Spot Instance advisor to help determine the best Spot allocation strategy.
+
+### Users are reporting consistent forced logouts from a stateful web application. The logouts occur before the expiration of a 15-minute application logout timer. The web application is hosted on Amazon EC2 instances that are in an Auto Scaling group. The instances run behind an Application Load Balancer (ALB) that has a single target group. The ALB is configured as the origin in an Amazon CloudFront distribution. Session affinity (sticky sessions) is already enabled on the ALB target group and uses duration-based cookies. The web application generates its own application cookie. Which combination of actions should a SysOps administrator take to resolve the logout problem? (Choose two.)
+
+- [ ] Change to the least outstanding requests algorithm on the ALB target group.
+- [x] Configure cookie forwarding in the CloudFront distribution's cache behavior settings.
+- [ ] Configure the duration-based cookie to be named AWSALB.
+- [ ] Configure the ALB to use the expiration cookie header.
+- [x] Change the ALB to use application-based cookies.
+
+### A company has a public web application that experiences rapid traffic increases after advertisements appear on local television. The application runs on Amazon EC2 instances that are in an Auto Scaling group. The Auto Scaling group is not keeping up with the traffic surges after an advertisement runs. The company often needs to scale out to 100 EC2 instances during the traffic surges. The instance startup times are lengthy because of a boot process that creates machine-specific data caches that are unique to each instance. The exact timing of when the advertisements will appear on television is not known. A SysOps administrator must implement a solution so that the application can function properly during the traffic surges. Which solution will meet these requirements?
+
+- [x] Create a warm pool. Keep enough instances in the `Stopped` state to meet the increased demand.
+- [ ] Start 100 instances. Allow the boot process to finish running. Store this data on the instance store volume before stopping the instances.
+- [ ] Increase the value of the instance warmup time in the scaling policy
+- [ ] Use predictive scaling for the Auto Scaling group.
