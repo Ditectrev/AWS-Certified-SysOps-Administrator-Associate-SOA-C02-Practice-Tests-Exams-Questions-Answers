@@ -359,8 +359,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company hosts a web portal on Amazon EC2 instances. The web portal uses an Elastic Load Balancer (ELB) and Amazon Route 53 for its public DNS service. The ELB and the EC2 instances are deployed by way of a single AWS CloudFormation stack in the `us-east-1` Region. The web portal must be highly available across multiple Regions. Which configuration will meet these requirements?
 
-- [ ] Deploy a copy of the stack in the `us-west-2` Region. Create a single start of authority (SOA) record in Route 53 that includes the IP address from each ELB. Configure the SOA record with health checks. Use the ELB in `us-east-1` as the primary record and the ELB in `us-west-2` as the secondary record.
-- [x] Deploy a copy of the stack in the `us-west-2` Region. Create an additional A record in Route 53 that includes the ELB in `us-west-2` as an alias target. Configure the A records with a failover routing policy and health checks. Use the ELB in `us-east-1` as the primary record and the ELB in `us-west-2` as the secondary record.
+- [ ] Deploy a copy of the stack in the `us-west-2` Region. Create a single start of authority (SOA) record in Route 53 that includes the IP address from each ELB. Configure the SO`A` record with health checks. Use the ELB in `us-east-1` as the primary record and the ELB in `us-west-2` as the secondary record.
+- [x] Deploy a copy of the stack in the `us-west-2` Region. Create an additional `A` record in Route 53 that includes the ELB in `us-west-2` as an alias target. Configure the A records with a failover routing policy and health checks. Use the ELB in `us-east-1` as the primary record and the ELB in `us-west-2` as the secondary record.
 - [ ] Deploy a new group of EC2 instances in the `us-west-2` Region. Associate the new EC2 instances with the existing ELB, and configure load balancer health checks on all EC2 instances. Configure the ELB to update Route 53 when EC2 instances in `us-west-2` fail health checks.
 - [ ] Deploy a new group of EC2 instances in the `us-west-2` Region. Configure EC2 health checks on all EC2 instances in each Region. Configure a peering connection between the VPCs. Use the VPC in `us-east-1` as the primary record and the VPC in `us-west-2` as the secondary record.
 
@@ -408,14 +408,14 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] The security group for the instance does not have an inbound rule on port `22`.
 - [ ] The security group for the instance does not have an outbound rule on port `3389`.
 
-### While securing the connection between a company’s VPC and its on-premises data center, a security engineer sent a ping command from an on-premises host (IP address `203.0.113.12`) to an Amazon EC2 instance (IP address `172.31.16.139`). The ping command did not return a response. The flow log in the VPC showed the following. What action should be performed to allow the ping to work?
+### While securing the connection between a company's VPC and its on-premises data center, a security engineer sent a ping command from an on-premises host (IP address `203.0.113.12`) to an Amazon EC2 instance (IP address `172.31.16.139`). The ping command did not return a response. The flow log in the VPC showed the following. What action should be performed to allow the ping to work?
 
 ![Question 58](images/question58_74_155.png)
 
 - [ ] In the security group of the EC2 instance, allow inbound ICMP traffic.
 - [ ] In the security group of the EC2 instance, allow outbound ICMP traffic.
-- [ ] In the VPC’s NACL, allow inbound ICMP traffic.
-- [x] In the VPC’s NACL, allow outbound ICMP traffic.
+- [ ] In the VPC's NACL, allow inbound ICMP traffic.
+- [x] In the VPC's NACL, allow outbound ICMP traffic.
 
 ### A global company handles a large amount of personally identifiable information (Pll) through an internal web portal. The company's application runs in a corporate data center that is connected to AWS through an AWS Direct Connect connection. The application stores the Pll in Amazon S3. According to a compliance requirement, traffic from the web portal to Amazon S3 must not travel across the internet. What should a SysOps administrator do to meet the compliance requirement?
 
@@ -563,7 +563,13 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Disable source/destination checks on the NAT instance.
 - [ ] Start/stop the NAT instance so it is launched on a different host.
 
-### ...
+### A SysOps administrator must configure a resilient tier of Amazon EC2 instances for a high performance computing (HPC) application. The HPC application requires minimum latency between nodes. Which actions should the SysOps administrator take to meet these requirements? (Choose two.)
+
+- [ ] Create an Amazon Elastic File System (Amazon EFS) file system. Mount the file system to the EC2 instances by using user data.
+- [ ] Create a Multi-AZ Network Load Balancer in front of the EC2 instances.
+- [x] Place the EC2 instances in an Auto Scaling group within a single subnet.
+- [x] Launch the EC2 instances into a cluster placement group.
+- [ ] Launch the EC2 instances into a partition placement group.
 
 ### A company uses an Amazon Simple Queue Service (Amazon SQS) standard queue with its application. The application sends messages to the queue with unique message bodies. The company decides to switch to an SQS FIFO queue. What must the company do to migrate to an SQS FIFO queue?
 
@@ -602,8 +608,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A SysOps administrator is evaluating Amazon Route 53 DNS options to address concerns about high availability for an on-premises website. The website consists of two servers: a primary active server and a secondary passive server. Route 53 should route traffic to the primary server if the associated health check returns 2xx or 3xx HTTP codes. All other traffic should be directed to the secondary passive server. The failover record type, set ID. and routing policy have been set appropriately for both primary and secondary servers. Which next step should be taken to configure Route 53?
 
-- [x] Create an A record for each server. Associate the records with the Route 53 HTTP health check.
-- [ ] Create an A record for each server. Associate the records with the Route 53 TCP health check.
+- [x] Create an `A` record for each server. Associate the records with the Route 53 HTTP health check.
+- [ ] Create an `A` record for each server. Associate the records with the Route 53 TCP health check.
 - [ ] Create an alias record for each server with evaluate target health set to yes. Associate the records with the Route 53 HTTP health check.
 - [ ] Create an alias record for each server with evaluate target health set to yes. Associate the records with the Route 53 TCP health check.
 
@@ -1193,7 +1199,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Create a target tracking scaling policy to add more instances when memory utilization is above `70%`.
 - [ ] Configure the cooldown period for the Auto Scaling group to modify desired capacity before and after peak times.
 
-### A company is running a website on Amazon EC2 instances behind an Application Load Balancer (ALB). The company configured an Amazon CloudFront distribution and set the ALB as the origin. The company created an Amazon Route 53 CNAME record to send all traffic through the CloudFront distribution. As an unintended side effect, mobile users are now being served the desktop version of the website. Which action should a SysOps administrator take to resolve this issue?
+### A company is running a website on Amazon EC2 instances behind an Application Load Balancer (ALB). The company configured an Amazon CloudFront distribution and set the ALB as the origin. The company created an Amazon Route 53 `CNAME` record to send all traffic through the CloudFront distribution. As an unintended side effect, mobile users are now being served the desktop version of the website. Which action should a SysOps administrator take to resolve this issue?
 
 - [x] Configure the CloudFront distribution behavior to forward the User-Agent header.
 - [ ] Configure the CloudFront distribution origin settings. Add a User-Agent header to the list of origin custom headers.
@@ -1202,9 +1208,9 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 ### A company hosts its website on Amazon EC2 instances behind an Application Load Balancer. The company manages its DNS with Amazon Route 53, and wants to point its domain's zone apex to the website. Which type of record should be used to meet these requirements?
 
-- [ ] An AAAA record for the domain's zone apex.
-- [ ] An A record for the domain's zone apex.
-- [ ] A CNAME record for the domain's zone apex.
+- [ ] An `AAAA` record for the domain's zone apex.
+- [ ] An `A` record for the domain's zone apex.
+- [ ] A `CNAME` record for the domain's zone apex.
 - [x] An alias record for the domain's zone apex.
 
 ### A SysOps administrator has created a VPC that contains a public subnet and a private subnet. Amazon EC2 instances that were launched in the private subnet cannot access the internet. The default network ACL is active on all subnets in the VPC, and all security groups allow all outbound traffic. Which solution will provide the EC2 instances in the private subnet with access to the internet?
@@ -1287,7 +1293,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 ### A company hosts a static website on Amazon S3. The website is served by an Amazon CloudFront distribution with a default TTL of 86,400 seconds. The company recently uploaded an updated version of the website to Amazon S3. However, users still see the old content when they refresh the site. A SysOps administrator must make the new version of the website visible to users as soon as possible. Which solution meets these requirements?
 
-- [ ] Adjust the TTL value for the DNS CNAME record that is pointing to the CloudFront distribution.
+- [ ] Adjust the TTL value for the DNS `CNAME` record that is pointing to the CloudFront distribution.
 - [x] Create an invalidation on the CloudFront distribution for the old S3 objects.
 - [ ] Create a new CloudFront distribution. Update the DNS records to point to the new CloudFront distribution.
 - [ ] Update the DNS record for the website to point to the S3 bucket.
@@ -1958,3 +1964,32 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Start 100 instances. Allow the boot process to finish running. Store this data on the instance store volume before stopping the instances.
 - [ ] Increase the value of the instance warmup time in the scaling policy
 - [ ] Use predictive scaling for the Auto Scaling group.
+
+### A company hosts a Windows-based file server on a fleet of Amazon EC2 instances across multiple Availability Zones. The current setup does not allow application servers to access files simultaneously from the EC2 fleet. Which solution will allow this access in the MOST operationally efficient way?
+
+- [ ] Create an Amazon Elastic File System (Amazon EFS) Multi-AZ file system. Copy the files to the EFS file system. Connect the EFS file system to mount points on the application servers.
+- [x] Create an Amazon FSx for Windows File Server Multi-AZ file system. Copy the files to the Amazon FSx file system. Adjust the connections from the application servers to use the share that the Amazon FSx file system exposes.
+- [ ] Create an Amazon Elastic Block Store (Amazon EBS) volume that has EBS Multi-Attach enabled. Create an Auto Scaling group for the Windows file server. Use a script in the file server's user data to attach the SharedFileAccess tag to the EBS volume during launch.
+- [ ] Create two Amazon FSx for Windows File Server file systems. Configure Distributed File System (DFS) replication between the file systems. Copy the files to the Amazon FSx file systems. Adjust the connections from the application servers to use the shares that the Amazon FSx file systems expose.
+
+### A company recently deployed an application in production. The production environment currently runs on a single Amazon EC2 instance that hosts the application's web application and a MariaDB database. Company policy states that all IT production environments must be highly available. What should a SysOps administrator do to meet this requirement?
+
+- [x] Migrate the database from the EC2 instance to an Amazon RDS for MariaDB Multi-AZ DB instance. Run the application on EC2 instances that are in an Auto Scaling group that extends across multiple Availability Zones. Place the EC2 instances behind a load balancer.
+- [ ] Migrate the database from the EC2 instance to an Amazon RDS for MariaDB Multi-AZ DB instance. Use AWS Application Migration Service to convert the application into an AWS Lambda function. Specify the Multi-AZ option for the Lambda function.
+- [ ] Copy the database to a different EC2 instance in a different Availability Zone. Use AWS Backup to create Amazon Machine Images (AMIs) of the application EC2 instance and the database EC2 instance. Create an AWS Lambda function that performs health checks every minute. In case of failure, configure the Lambda function to launch a new EC2 instance from the AMIs that AWS Backup created.
+- [ ] Migrate the database to a different EC2 instance. Place the application EC2 instance in an Auto Scaling group that extends across multiple Availability Zones. Create an Amazon Machine Image (AMI) from the database EC2 instance. Use the AMI to launch a second database EC2 instance in a different Availability Zone. Put the second database EC2 instance in the stopped state. Use the second database EC2 instance as a standby.
+
+### A company's reporting job that used to run in 15 minutes is now taking an hour to run. An application generates the reports. The application runs on Amazon EC2 instances and extracts data from an Amazon RDS for MySQL database. A SysOps administrator checks the Amazon CloudWatch dashboard for the RDS instance and notices that the Read IOPS metrics are high, even when the reports are not running. The SysOps administrator needs to improve the performance and the availability of the RDS instance. Which solution will meet these requirements?
+
+- [ ] Configure an Amazon ElastiCache cluster in front of the RDS instance. Update the reporting job to query the ElastiCache cluster.
+- [x] Deploy an RDS read replica. Update the reporting job to query the reader endpoint.
+- [ ] Create an Amazon CloudFront distribution. Set the RDS instance as the origin. Update the reporting job to query the CloudFront distribution.
+- [ ] Increase the size of the RDS instance.
+
+### A company has an application that uses an Amazon S3 bucket for object storage. A developer needs to configure in-transit encryption for the S3 bucket. All the S3 objects containing personal data needs to be encrypted at rest with AWS Key Management Service (AWS KMS) keys, which can be rotated on demand. Which combination of steps will meet these requirements? (Choose two.)
+
+- [ ] Write an S3 bucket policy to allow only encrypted connections over HTTPS by using permissions boundary.
+- [ ] Configure an S3 bucket policy to enable client-side encryption for the objects containing personal data by using an AWS KMS customer managed key.
+- [x] Configure the application to encrypt the objects by using an AWS KMS customer managed key before uploading the objects containing personal data to Amazon S3.
+- [x] Write an S3 bucket policy to allow only encrypted connections over HTTPS by using the `aws:SecureTransport` condition.
+- [ ] Configure S3 Block Public Access settings for the S3 bucket to allow only encrypted connections over HTTPS.
