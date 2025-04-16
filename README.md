@@ -359,7 +359,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company hosts a web portal on Amazon EC2 instances. The web portal uses an Elastic Load Balancer (ELB) and Amazon Route 53 for its public DNS service. The ELB and the EC2 instances are deployed by way of a single AWS CloudFormation stack in the `us-east-1` Region. The web portal must be highly available across multiple Regions. Which configuration will meet these requirements?
 
-- [ ] Deploy a copy of the stack in the `us-west-2` Region. Create a single start of authority (SOA) record in Route 53 that includes the IP address from each ELB. Configure the SO`A` record with health checks. Use the ELB in `us-east-1` as the primary record and the ELB in `us-west-2` as the secondary record.
+- [ ] Deploy a copy of the stack in the `us-west-2` Region. Create a single start of authority (SOA) record in Route 53 that includes the IP address from each ELB. Configure the `SOA` record with health checks. Use the ELB in `us-east-1` as the primary record and the ELB in `us-west-2` as the secondary record.
 - [x] Deploy a copy of the stack in the `us-west-2` Region. Create an additional `A` record in Route 53 that includes the ELB in `us-west-2` as an alias target. Configure the A records with a failover routing policy and health checks. Use the ELB in `us-east-1` as the primary record and the ELB in `us-west-2` as the secondary record.
 - [ ] Deploy a new group of EC2 instances in the `us-west-2` Region. Associate the new EC2 instances with the existing ELB, and configure load balancer health checks on all EC2 instances. Configure the ELB to update Route 53 when EC2 instances in `us-west-2` fail health checks.
 - [ ] Deploy a new group of EC2 instances in the `us-west-2` Region. Configure EC2 health checks on all EC2 instances in each Region. Configure a peering connection between the VPCs. Use the VPC in `us-east-1` as the primary record and the VPC in `us-west-2` as the secondary record.
@@ -623,12 +623,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A SysOps administrator is reviewing VPC Flow Logs to troubleshoot connectivity issues in a VPC. While reviewing the togs the SysOps administrator notices that rejected traffic is not listed. What should the SysOps administrator do to ensure that all traffic is logged?
 
-- [x] Create a new flow tog that has a titter setting to capture all traffic.
-- [ ] Create a new flow log set the tog record format to a custom format Select the proper fields to include in the tog.
-- [ ] Edit the existing flow log Change the fitter setting to capture all traffic.
-- [ ] Edit the existing flow log. Set the log record format to a custom format Select the proper fields to include in the tog.
+- [ ] Create a new flow tog that has a titter setting to capture all traffic.
+- [ ] Create a new flow log set the tog record format to a custom format. Select the proper fields to include in the tog.
+- [x] Edit the existing flow log. Change the fitter setting to capture all traffic.
+- [ ] Edit the existing flow log. Set the log record format to a custom format. Select the proper fields to include in the tog.
 
-### A  company wants to collect data from an application to use for analytics. For the first 90 days, the data will be infrequently accessed but must remain highly available. During this time, the company's analytics team requires access to the data in milliseconds. However, after 90 days, the company must retain the data for the long term at a lower cost. The retrieval time after 90 days must be less than 5 hours. Which solution will meet these requirements MOST cost-effectively?
+### A company wants to collect data from an application to use for analytics. For the first 90 days, the data will be infrequently accessed but must remain highly available. During this time, the company's analytics team requires access to the data in milliseconds. However, after 90 days, the company must retain the data for the long term at a lower cost. The retrieval time after 90 days must be less than 5 hours. Which solution will meet these requirements MOST cost-effectively?
 
 - [x] Store the data in S3 Standard-Infrequent Access (S3 Standard-IA) for the first 90 days.
 Set up an S3 Lifecycle rule to move the data to S3 Glacier Flexible Retrieval after 90 days.
@@ -669,7 +669,7 @@ Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90
 
 - [ ] Create an AWS Config rule to discover sensitive personal information in the S3 files and mark them as noncompliant.
 - [ ] Create an S3 event-driven artificial intelligence/machine learning (AI/ML) pipeline to classify sensitive personal information by using Amazon Recognition.
-- [ ]  Enable Amazon GuardDuty. Configure S3 protection to monitor all data inside Amazon S3.
+- [ ] Enable Amazon GuardDuty. Configure S3 protection to monitor all data inside Amazon S3.
 - [x] Enable Amazon Macie. Create a discovery job that uses the managed data identifier.
 
 ### A company has an application that customers use to search for records on a website. The application's data is stored in an Amazon Aurora DB cluster. The application's usage varies by season and by day of the week. The website's popularity is increasing, and the website is experiencing slower performance because of increased load on the DB cluster during periods of peak activity. The application logs show that the performance issues occur when users are searching for information. The same search is rarely performed multiple times. A SysOps administrator must improve the performance of the platform by using a solution that maximizes resource efficiency. Which solution will meet these requirements?
@@ -930,7 +930,7 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 
 ### A SysOps administrator must create a solution that automatically shuts down any Amazon EC2 instances that have less than `10%` average CPU utilization for 60 minutes or more. Which solution will meet this requirement In the MOST operationally efficient manner?
 
-- [ ]  Implement a cron job on each EC2 instance to run once every 60 minutes and calculate the current CPU utilization. Initiate an instance shutdown If CPU utilization is less than `10%`.
+- [ ] Implement a cron job on each EC2 instance to run once every 60 minutes and calculate the current CPU utilization. Initiate an instance shutdown If CPU utilization is less than `10%`.
 - [x] Implement an Amazon CloudWatch alarm for each EC2 instance to monitor average CPU utilization. Set the period at 1 hour, and set the threshold at `10%`. Configure an EC2 action on the alarm to stop the instance.
 - [ ] Install the unified Amazon CloudWatch agent on each EC2 instance, and enable the Basic level predefined metric set. Log CPU utilization every 60 minutes, and initiate an instance shutdown if CPU utilization is less than `10%`.
 - [ ] Use AWS Systems Manager Run Command to get CPU utilization from each EC2 instance every 60 minutes. Initiate an instance shutdown if CPU utilization is less than `10%`.
@@ -1237,7 +1237,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 ### A SysOps administrator is provisioning an Amazon Elastic File System (Amazon EFS) file system to provide shared storage across multiple Amazon EC2 instances. The instances all exist in the same VPC across multiple Availability Zones. There are two instances in each Availability Zone. The SysOps administrator must make the file system accessible to each instance with the lowest possible latency. Which solution will meet these requirements?
 
 - [ ] Create a mount target for the EFS file system in the VPC. Use the mount target to mount the file system on each of the instances.
-- [ ]  Create a mount target for the EFS file system in one Availability Zone of the VPC. Use the mount target to mount the file system on the instances in that Availability Zone. Share the directory with the other instances.
+- [ ] Create a mount target for the EFS file system in one Availability Zone of the VPC. Use the mount target to mount the file system on the instances in that Availability Zone. Share the directory with the other instances.
 - [ ] Create a mount target for each instance. Use each mount target to mount the EFS file system on each respective instance.
 - [x] Create a mount target in each Availability Zone of the VPC. Use the mount target to mount the EFS file system on the instances in the respective Availability Zone.
 
@@ -1372,7 +1372,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 ### A company uses AWS Organizations to manage multiple AWS accounts. Corporate policy mandates that only specific AWS Regions can be used to store and process customer data. A SysOps administrator must prevent the provisioning of Amazon EC2 instances in unauthorized Regions by anyone in the company. What is the MOST operationally efficient solution that meets these requirements?
 
 - [ ] Configure AWS CloudTrail in all Regions to record all API activity. Create an Amazon EventBridge (Amazon CloudWatch Events) rule in all unauthorized Regions for `ec2:RunInstances` events. Use AWS Lambda to terminate the launched EC2 instances.
-- [ ]  In each AWS account, create a managed IAM policy that uses a Region condition to deny the `ec2:RunInstances` action in all unauthorized Regions. Attach this policy to all IAM groups in each AWS account.
+- [ ] In each AWS account, create a managed IAM policy that uses a Region condition to deny the `ec2:RunInstances` action in all unauthorized Regions. Attach this policy to all IAM groups in each AWS account.
 - [ ] In each AWS account, create an IAM permissions boundary policy that uses a Region condition to deny the `ec2:RunInstances` action in all unauthorized Regions. Attach the permissions boundary policy to all IAM users in each AWS account.
 - [x] Create a service control policy (SCP) in AWS Organizations to deny the `ec2:RunInstances` action in all unauthorized Regions. Attach this policy to the root level of the organization.
 
@@ -1993,3 +1993,48 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [x] Configure the application to encrypt the objects by using an AWS KMS customer managed key before uploading the objects containing personal data to Amazon S3.
 - [x] Write an S3 bucket policy to allow only encrypted connections over HTTPS by using the `aws:SecureTransport` condition.
 - [ ] Configure S3 Block Public Access settings for the S3 bucket to allow only encrypted connections over HTTPS.
+
+### A SysOps Administrator found that a newly-deployed Amazon EC2 application server is unable to connect to an existing Amazon RDS database. After enabling VPC Flow Logs and confirming that the flow log is active on the console, the log group cannot be located in Amazon CloudWatch. What are the MOST likely reasons for this situation? (Choose two.)
+
+- [ ] The Administrator must configure the VPC Flow Logs to have them sent to AWS CloudTrail.
+- [x] The Administrator has waited less than ten minutes for the log group to be created in CloudWatch.
+- [ ] The account VPC Flow Logs have been disabled by using a service control policy.
+- [x] No relevant traffic has been sent since the VPC Flow Logs were created.
+- [ ] The account has Amazon GuardDuty enabled.
+
+### A company's SysOps administrator is troubleshooting communication between the components of an application. The company configured VPC flow logs to be published to Amazon CloudWatch Logs. However, there are no logs in CloudWatch Logs. What could be blocking the VPC flow logs from being published to CloudWatch Logs?
+
+- [x] The IAM policy that is attached to the IAM role for the flow log is missing the logs CreateLogGroup permission.
+- [ ] The IAM policy that is attached to the IAM role for the flow log is missing the logs CreateExportTask permission.
+- [ ] The VPC is configured for IPv6 addresses.
+- [ ] The VPC is peered with another VPC in the AWS account.
+
+### A SysOps administrator configures VPC flow logs to publish to Amazon CloudWatch Logs. The SysOps administrator reviews the logs in CloudWatch Logs and notices less traffic than expected. After the SysOps administrator compares the VPC flow logs to logs that were captured on premises, the SysOps administrator believes that the VPC flow logs are incomplete. Which of the following is a possible reason for the difference in traffic?
+
+- [ ] CloudWatch Logs throttling has been applied.
+- [ ] The CloudWatch IAM role does not have a trust relationship with the VPC flow logs service.
+- [ ] The VPC flow log is still in the process of being created.
+- [x] VPC flow logs cannot capture traffic from on-premises servers to a VPC.
+
+### A SysOps administrator is reviewing VPC Flow Logs to troubleshoot connectivity issues in a VPC. While reviewing the logs, the SysOps administrator notices that rejected traffic is not listed. What should the SysOps administrator do to ensure that all traffic is logged?
+
+- [x] Create a new flow log that has a filter setting to capture all traffic.
+- [ ] Create a new flow log. Set the log record format to a custom format. Select the proper fields to include in the log.
+- [ ] Edit the existing flow log. Change the filter setting to capture all traffic.
+- [ ] Edit the existing flow log. Set the log record format to a custom format. Select the proper fields to include in the log.
+
+### A company hosts a web application on an Amazon EC2 instance in a production VPC. Client connections to the application are failing. A SysOps administrator inspects the VPC flow logs and finds the following entry. What is a possible cause of these failed connections?
+
+![Question 282](images/question282.png)
+
+- [ ] A security group deny rule is blocking traffic on port `443`.
+- [ ] The EC2 instance is shut down.
+- [x] The network ACL is blocking HTTPS traffic.
+- [ ] The VPC has no internet gateway attached.
+
+### A company has created a NAT gateway in a public subnet in a VPC. The VPC also contains a private subnet that includes Amazon EC2 instances. The EC2 instances use the NAT gateway to access the internet to download patches and updates. The company has configured a VPC flow log for the elastic network interface of the NAT gateway. The company is publishing the output to Amazon CloudWatch Logs. A SysOps administrator must identify the top five internet destinations that the EC2 instances in the private subnet communicate with for downloads. What should the SysOps administrator do to meet this requirement in the MOST operationally efficient way?
+
+- [ ] Use AWS CloudTrail Insights events to identify the top five internet destinations.
+- [ ] Use Amazon CloudFront standard logs (access logs) to identify the top five internet destinations.
+- [x] Use CloudWatch Logs Insights to identify the top five internet destinations.
+- [ ] Change the flow log to publish logs to Amazon S3. Use Amazon Athena to query the log files in Amazon S3.
