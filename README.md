@@ -630,10 +630,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company wants to collect data from an application to use for analytics. For the first 90 days, the data will be infrequently accessed but must remain highly available. During this time, the company's analytics team requires access to the data in milliseconds. However, after 90 days, the company must retain the data for the long term at a lower cost. The retrieval time after 90 days must be less than 5 hours. Which solution will meet these requirements MOST cost-effectively?
 
-- [x] Store the data in S3 Standard-Infrequent Access (S3 Standard-IA) for the first 90 days.
-Set up an S3 Lifecycle rule to move the data to S3 Glacier Flexible Retrieval after 90 days.
-- [ ] Store the data in S3 One Zone-Infrequent Access (S3 One Zone-IA) for the first 90 days.
-Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90 days.
+- [x] Store the data in S3 Standard-Infrequent Access (S3 Standard-IA) for the first 90 days. Set up an S3 Lifecycle rule to move the data to S3 Glacier Flexible Retrieval after 90 days.
+- [ ] Store the data in S3 One Zone-Infrequent Access (S3 One Zone-IA) for the first 90 days. Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90 days.
 - [ ] Store the data in S3 Standard for the first 90 days. Set up an S3 Lifecycle rule to move the data to S3 Glacier Flexible Retrieval after 90 days.
 - [ ] Store the data in S3 Standard for the first 90 days. Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90 days.
 
@@ -644,12 +642,12 @@ Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90
 - [x] Use AWS Secrets Manager to store credentials for the database. Create a Secrets Manager secret, and select the database so that Secrets Manager will use a Lambda function to update the database password automatically. Specify an automatic rotation schedule of 30 days. Update each Lambda function to access the database password from SecretsManager.
 - [ ] Use AWS Systems Manager Parameter Store to create a secure string to store credentials for the database. Create a new Lambda function called `PasswordRotate`. Use Amazon EventBridge (Amazon CloudWatch Events) to schedule the `PasswordRotate` function every 30 days to change the database password and to update the secret within Parameter Store. Update each Lambda function to access the database password from Parameter Store.
 
-### A Sysops administrator creates an Amazon Elastic Kubernetes Service (Amazon EKS) cluster that uses AWS Fargate. The cluster is deployed successfully. The Sysops administrator needs to manage the cluster by using the kubectl command line tool. Which of the following must be configured on the Sysops administrator's machine so that kubectl can communicate with the cluster API server?
+### A Sysops administrator creates an Amazon Elastic Kubernetes Service (Amazon EKS) cluster that uses AWS Fargate. The cluster is deployed successfully. The Sysops administrator needs to manage the cluster by using the `kubectl` command line tool. Which of the following must be configured on the Sysops administrator's machine so that `kubectl` can communicate with the cluster API server?
 
-- [x] The kubeconfig file.
-- [ ] The kube-proxy Amazon EKS add-on.
+- [x] The `kubeconfig` file.
+- [ ] The `kube-proxy` Amazon EKS add-on.
 - [ ] The Fargate profile.
-- [ ] The eks-connector.yaml file.
+- [ ] The `eks-connector.yaml` file.
 
 ### A Sysops administrator needs to configure automatic rotation for Amazon RDS database credentials. The credentials must rotate every 30 days. The solution must integrate with Amazon RDS. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -833,7 +831,7 @@ Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90
 - [ ] Add the accounts to AWS Organizations. Use a service control policy (SCP) to tag all the untagged resources.
 - [ ] Use an AWS Config rule to find the untagged resources. Set the remediation action to terminate the resources.
 - [ ] Use Cost Explorer to find and tag all the untagged resources.
-- [x] Use Tag Editor to find and taq all the untaqqed resources.
+- [x] Use Tag Editor to find and tag all the untagged resources.
 
 ### A SysOps administrator is helping a development team deploy an application to AWS Trie AWS CloudFormat on temp ate includes an Amazon Linux EC2 Instance an Amazon Aurora DB cluster and a hard coded database password that must be rotated every 90 days. What is the MOST secure way to manage the database password?
 
@@ -2038,3 +2036,10 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Use Amazon CloudFront standard logs (access logs) to identify the top five internet destinations.
 - [x] Use CloudWatch Logs Insights to identify the top five internet destinations.
 - [ ] Change the flow log to publish logs to Amazon S3. Use Amazon Athena to query the log files in Amazon S3.
+
+### A company runs a single-page web application on AWS. The application uses Amazon CloudFront to deliver static content from an Amazon S3 bucket origin. The application also uses an Amazon Elastic Kubernetes Service (Amazon EKS) cluster to serve API calls. Users sometimes report that the website is not operational, even when monitoring shows that the index page is reachable and that the EKS cluster is healthy. A SysOps administrator must implement additional monitoring that can detect when the website is not operational before users report the problem. Which solution will meet these requirements?
+
+- [x] Create an Amazon CloudWatch Synthetics heartbeat monitor canary that points to the fully qualified domain name (FQDN) of the website.
+- [ ] Create an Amazon CloudWatch Synthetics API canary that monitors the availability of API endpoints from the EKS cluster.
+- [ ] Create an Amazon CloudWatch RUM app monitor that points to the fully qualified domain name (FQDN) of the website. Configure the app monitor to collect performance telemetry and JavaScript errors.
+- [ ] Create an Amazon CloudWatch RUM app monitor that uses the API endpoints from the EKS cluster.
