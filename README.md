@@ -686,7 +686,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A SysOps administrator noticed that a large number of Elastic IP addresses are being created on the company's AWS account, but they are not being associated with Amazon EC2 instances, and are incurring Elastic IP address charges in the monthly bill. How can the administrator identify who is creating the Elastic IP addresses?
 
-- [ ] Attach a cost-allocation tag to each requested Elastic IP address with the IAM user name of the developer who creates it.
+- [ ] Attach a `cost-allocation` tag to each requested Elastic IP address with the IAM user name of the developer who creates it.
 - [x] Query AWS CloudTrail logs by using Amazon Athena to search for Elastic IP address events.
 - [ ] Create a CloudWatch alarm on the ElPCreated metric and send an Amazon SNS notification when the alarm triggers.
 - [ ] Use Amazon Inspector to get a report of all Elastic IP addresses created in the last 30 days.
@@ -733,7 +733,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company's IT department noticed an increase in the spend of their developer AWS account. There are over 50 developers using the account, and the finance team wants to determine the service costs incurred by each developer. What should a SysOps administrator do to collect this information? (Select TWO.)
 
-- [x] Activate the createdBy tag in the account.
+- [x] Activate the `createdBy` tag in the account.
 - [ ] Analyze the usage with Amazon CloudWatch dashboards.
 - [x] Analyze the usage with Cost Explorer.
 - [ ] Configure AWS Trusted Advisor to track resource usage.
@@ -826,7 +826,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Create an Auto Scaling group, and assign it to an Application Load Balancer. Configure a target tracking scaling policy that is based on the average CPU utilization of the Auto Scaling group.
 - [ ] Create a CloudWatch alarm that activates when the EC2 instance's CPU utilization goes above `80%`. Configure the alarm to invoke an AWS Lambda function that vertically scales the instance.
 
-### A company recently acquired another corporation and all of that corporation's AWS accounts. A financial analyst needs the cost data from these accounts. A SysOps administrator uses Cost Explorer to generate cost and usage reports. The SysOps administrator notices that "No Tagkey" represents `20%` of the monthly cost. What should the SysOps administrator do to tag the "No Tagkey" resources?
+### A company recently acquired another corporation and all of that corporation's AWS accounts. A financial analyst needs the cost data from these accounts. A SysOps administrator uses Cost Explorer to generate cost and usage reports. The SysOps administrator notices that `No Tagkey` represents `20%` of the monthly cost. What should the SysOps administrator do to tag the `No Tagkey` resources?
 
 - [ ] Add the accounts to AWS Organizations. Use a service control policy (SCP) to tag all the untagged resources.
 - [ ] Use an AWS Config rule to find the untagged resources. Set the remediation action to terminate the resources.
@@ -1740,7 +1740,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 ### A company uses AWS Organizations to manage its AWS accounts. A SysOps administrator must create a backup strategy for all Amazon EC2 instances across all the company's AWS accounts. Which solution will meet these requirements in the MOST operationally efficient way?
 
 - [ ] Deploy an AWS Lambda function to each account to run EC2 instance snapshots on a scheduled basis.
-- [ ] Create an AWS CloudFormation stack set in the management account to add an AutoBackup=True tag to every EC2 instance.
+- [ ] Create an AWS CloudFormation stack set in the management account to add an `AutoBackup=True` tag to every EC2 instance.
 - [x] Use AWS Backup in the management account to deploy policies for all accounts and resources.
 - [ ] Use a service control policy (SCP) to run EC2 instance snapshots on a scheduled basis in each account.
 
@@ -2043,3 +2043,17 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Create an Amazon CloudWatch Synthetics API canary that monitors the availability of API endpoints from the EKS cluster.
 - [ ] Create an Amazon CloudWatch RUM app monitor that points to the fully qualified domain name (FQDN) of the website. Configure the app monitor to collect performance telemetry and JavaScript errors.
 - [ ] Create an Amazon CloudWatch RUM app monitor that uses the API endpoints from the EKS cluster.
+
+### A company is transitioning away from applications that are hosted on Amazon EC2 instances. The company wants to implement a serverless architecture that uses Amazon S3, Amazon API Gateway, AWS Lambda, and Amazon CloudFront. As part of this transition, the company has Elastic IP addresses that are unassociated with any EC2 instances after the EC2 instances are terminated. A SysOps administrator needs to automate the process of releasing all unassociated Elastic IP addresses that remain after the EC2 instances are terminated. Which solution will meet this requirement in the MOST operationally efficient way?
+
+- [x] Activate the `eip-attached` AWS Config managed rule to run automatically when resource changes occur in the AWS account. Configure automatic remediation for the rule. Specify the `AWS-ReleaseElasticIP` AWS Systems Manager Automation runbook for remediation. Specify an appropriate role that has permission for the remediation.
+- [ ] Create a custom Lambda function that calls the EC2 `ReleaseAddress` API operation and specifies the Elastic IP address `AllocationId`. Invoke the Lambda function by using an Amazon EventBridge rule. Specify AWS services as the event source, All Events as the event type, and AWS Trusted Advisor as the target.
+- [ ] Create an Amazon EventBridge rule. Specify AWS services as the event source, `Instance State-change Notification` as the event type, and Amazon EC2 as the service. Invoke a Lambda function that extracts the Elastic IP address from the notification. Use AWS CloudFormation to release the address by specifying the `AllocationId` as an input parameter.
+- [ ] Create a custom Lambda function that calls the EC2 `ReleaseAddress` API operation and specifies the Elastic IP address `AllocationId`. Invoke the Lambda function by using an Amazon EventBridge rule. Specify AWS services as the event source, `Instance State-change Notification` as the event type, and Amazon EC2 as the service.
+
+### A company is running an application on a group of Amazon EC2 instances behind an Application Load Balancer. The EC2 instances run across three Availability Zones. The company needs to provide the customers with a maximum of two static IP addresses for their applications. How should a SysOps administrator meet these requirement?
+
+- [x] Add AWS Global Accelerator in front of the Application Load Balancer.
+- [ ] Add an internal Network Load Balancer behind the Application Load Balancer.
+- [ ] Configure the Application Load Balancer in only two Availability Zones.
+- [ ] Create two Elastic IP addresses and assign them to the Application Load Balancer.
