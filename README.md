@@ -239,8 +239,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [x] Perform a CloudWatch Logs Insights query that uses the stats command and count function.
 - [ ] Perform a CloudWatch Logs search that uses the groupby keyword and count function.
-- [ ] Perform an Amazon Athena query that uses the SELECT and GROUP BY keywords.
-- [ ] Perform an Amazon RDS query that uses the SELECT and GROUP BY keywords.
+- [ ] Perform an Amazon Athena query that uses the `SELECT` and `GROUP BY` keywords.
+- [ ] Perform an Amazon RDS query that uses the `SELECT` and `GROUP BY` keywords.
 
 ### A SysOps administrator applies the following policy to an AWS CloudFormation stack. What is the result of this policy?
 
@@ -693,19 +693,19 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company has an Amazon CloudFront distribution that uses an Amazon S3 bucket as its origin. During a review of the access logs, the company determines that some requests are going directly to the S3 bucket by using the website hosting endpoint. A SysOps administrator must secure the S3 bucket to allow requests only from CloudFront. What should the SysOps administrator do to meet this requirement?
 
-- [x] Create an origin access identity (OAI) in CloudFront. Associate the OAI with the distribution. Remove access to and from other principals in the S3 bucket policy. Update the S3 bucket policy to allow access only from the OAI.
-- [ ] Create an origin access identity (OAI) in CloudFront. Associate the OAI with the distribution. Update the S3 bucket policy to allow access only from the OAI. Create a new origin, and specify the S3 bucket as the new origin. Update the distribution behavior to use the new origin. Remove the existing origin.
-- [ ] Create an origin access identity (OAI) in CloudFront. Associate the OAI with the distribution. Update the S3 bucket policy to allow access only from the OAI. Disable website hosting. Create a new origin, and specify the S3 bucket as the new origin. Update the distribution behavior to use the new origin. Remove the existing origin.
+- [x] Create an Origin Access Identity (OAI) in CloudFront. Associate the OAI with the distribution. Remove access to and from other principals in the S3 bucket policy. Update the S3 bucket policy to allow access only from the OAI.
+- [ ] Create an Origin Access Identity (OAI) in CloudFront. Associate the OAI with the distribution. Update the S3 bucket policy to allow access only from the OAI. Create a new origin, and specify the S3 bucket as the new origin. Update the distribution behavior to use the new origin. Remove the existing origin.
+- [ ] Create an Origin Access Identity (OAI) in CloudFront. Associate the OAI with the distribution. Update the S3 bucket policy to allow access only from the OAI. Disable website hosting. Create a new origin, and specify the S3 bucket as the new origin. Update the distribution behavior to use the new origin. Remove the existing origin.
 - [ ] Update the S3 bucket policy to allow access only from the CloudFront distribution. Remove access to and from other principals in the S3 bucket policy. Disable website hosting. Create a new origin, and specify the S3 bucket as the new origin. Update the distribution behavior to use the new origin. Remove the existing origin.
 
-### A SysOps administrator must create an IAM policy for a developer who needs access to specific AWS services. Based on the requirements, the SysOps administrator creates the following policy: Which actions does this policy allow? (Select TWO.)
+### A SysOps administrator must create an IAM policy for a developer who needs access to specific AWS services. Based on the requirements, the SysOps administrator creates the following policy. Which actions does this policy allow? (Select TWO.)
 
-![Question 98](images/question98.jpg)
+![Question 98](images/question98.png)
 
 - [ ] Create an AWS Storage Gateway.
 - [ ] Create an IAM role for an AWS Lambda function.
 - [ ] Delete an Amazon Simple Queue Service (Amazon SQS) queue.
-- [ ] Describe AWS load balancers.
+- [x] Describe AWS load balancers.
 - [x] Invoke an AWS Lambda function.
 
 ### A company is trying to connect two applications. One application runs in an on-premises data center that has a hostname of hostl .onprem.private. The other application runs on an Amazon EC2 instance that has a hostname of hostl.awscloud.private. An AWS Site-to-Site VPN connection is in place between the on-premises network and AWS. The application that runs in the data center tries to connect to the application that runs on the EC2 instance, but DNS resolution fails. A SysOps administrator must implement DNS resolution between on-premises and AWS resources. Which solution allows the on-premises application to resolve the EC2 instance hostname?
@@ -1122,8 +1122,8 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 ### A SysOps administrator needs to configure a solution that will deliver digital content to a set of authorized users through Amazon CloudFront. Unauthorized users must be restricted from access. Which solution will meet these requirements?
 
 - [ ] Store the digital content in an Amazon S3 bucket that does not have public access blocked. Use signed URLs to access the S3 bucket through CloudFront.
-- [x] Store the digital content in an Amazon S3 bucket that has public access blocked. Use an origin access identity (OAI) to deliver the content through CloudFront. Restrict S3 bucket access with signed URLs in CloudFront.
-- [ ] Store the digital content in an Amazon S3 bucket that has public access blocked. Use an origin access identity (OAI) to deliver the content through CloudFront. Enable field-level encryption.
+- [x] Store the digital content in an Amazon S3 bucket that has public access blocked. Use an Origin Access Identity (OAI) to deliver the content through CloudFront. Restrict S3 bucket access with signed URLs in CloudFront.
+- [ ] Store the digital content in an Amazon S3 bucket that has public access blocked. Use an Origin Access Identity (OAI) to deliver the content through CloudFront. Enable field-level encryption.
 - [ ] Store the digital content in an Amazon S3 bucket that does not have public access blocked. Use signed cookies for restricted delivery of the content through CloudFront.
 
 ### A company has a high-performance Windows workload. The workload requires a storage volume that provides consistent performance of 10,000 IOPS. The company does not want to pay for additional unneeded capacity to achieve this performance. Which solution will meet these requirements with the LEAST cost?
@@ -1371,7 +1371,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 - [ ] Configure AWS CloudTrail in all Regions to record all API activity. Create an Amazon EventBridge (Amazon CloudWatch Events) rule in all unauthorized Regions for `ec2:RunInstances` events. Use AWS Lambda to terminate the launched EC2 instances.
 - [ ] In each AWS account, create a managed IAM policy that uses a Region condition to deny the `ec2:RunInstances` action in all unauthorized Regions. Attach this policy to all IAM groups in each AWS account.
-- [ ] In each AWS account, create an IAM permissions boundary policy that uses a Region condition to deny the `ec2:RunInstances` action in all unauthorized Regions. Attach the permissions boundary policy to all IAM users in each AWS account.
+- [ ] In each AWS account, create an IAM permissions boundary policy that uses a `Region` condition to deny the `ec2:RunInstances` action in all unauthorized Regions. Attach the permissions boundary policy to all IAM users in each AWS account.
 - [x] Create a service control policy (SCP) in AWS Organizations to deny the `ec2:RunInstances` action in all unauthorized Regions. Attach this policy to the root level of the organization.
 
 ### A company has a private Amazon S3 bucket that contains sensitive information. A SysOps administrator needs to keep logs of the IP addresses from authentication failures that result from attempts to access objects in the bucket. The logs must be stored so that they cannot be overwritten or deleted for 90 days. Which solution will meet these requirements?
@@ -1473,8 +1473,8 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 ### A company uses an Amazon CloudFront distribution to deliver its website. Traffic logs for the website must be centrally stored, and all data must be encrypted at rest. Which solution will meet these requirements?
 
 - [ ] Create an Amazon OpenSearch Service (Amazon Elasticsearch Service) domain with internet access and server-side encryption that uses the default AWS managed customer master key (CMK). Configure CloudFront to use the Amazon OpenSearch Service (Amazon Elasticsearch Service) domain as a log destination.
-- [ ] Create an Amazon OpenSearch Service (Amazon Elasticsearch Service) domain with VPC access and server-side encryption that uses AES-256. Configure CloudFront to use the Amazon OpenSearch Service (Amazon Elasticsearch Service) domain as a log destination.
-- [x] Create an Amazon S3 bucket that is configured with default server-side encryption that uses AES-256. Configure CloudFront to use the S3 bucket as a log destination.
+- [ ] Create an Amazon OpenSearch Service (Amazon Elasticsearch Service) domain with VPC access and server-side encryption that uses `AES-256`. Configure CloudFront to use the Amazon OpenSearch Service (Amazon Elasticsearch Service) domain as a log destination.
+- [x] Create an Amazon S3 bucket that is configured with default server-side encryption that uses `AES-256`. Configure CloudFront to use the S3 bucket as a log destination.
 - [ ] Create an Amazon S3 bucket that is configured with no default encryption. Enable encryption in the CloudFront distribution, and use the S3 bucket as a log destination.
 
 ### An organization created an Amazon Elastic File System (Amazon EFS) volume with a file system ID of fs-85ba41fc, and it is actively used by 10 Amazon EC2 hosts. The organization has become concerned that the file system is not encrypted. How can this be resolved?
@@ -1538,7 +1538,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Delete the current key material, and import new material into the existing CMK.
 - [ ] Import a copy of the existing key material into a new CMK as a backup, and set the rotation schedule for 6 months.
 
-### A SysOps administrator is trying to set up an Amazon Route 53 domain name to route traffic to a website hosted on Amazon S3. The domain name of the website is www.example.com and the S3 bucket name `DOC-EXAMPLE-BUCKET`. After the record set is set up in Route 53, the domain name www.anycompany.com does not seem to work, and the static website is not displayed in the browser. Which of the following is a cause of this?
+### A SysOps administrator is trying to set up an Amazon Route 53 domain name to route traffic to a website hosted on Amazon S3. The domain name of the website is `www.example.com` and the S3 bucket name `DOC-EXAMPLE-BUCKET`. After the record set is set up in Route 53, the domain name `www.anycompany.com` does not seem to work, and the static website is not displayed in the browser. Which of the following is a cause of this?
 
 - [ ] The S3 bucket must be configured with Amazon CloudFront first.
 - [ ] The Route 53 record set must have an IAM role that allows access to the S3 bucket.
@@ -1647,7 +1647,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 - [x] Create a CloudFront invalidation, and add the path of the updated files.
 - [ ] Create a CloudFront signed URL to update each object immediately.
-- [ ] Configure an S3 origin access identity (OAI) to display only the updated files to users.
+- [ ] Configure an S3 Origin Access Identity (OAI) to display only the updated files to users.
 - [ ] Disable S3 Versioning on the S3 bucket so that the updated files can replace the old files.
 
 ### A company has two VPC networks named VPC A and VPC B. The VPC A CIDR block is `10.0.0.0/16` and the VPC B CIDR block is `172.31.0.0/16`. The company wants to establish a VPC peering connection named `pcx-12345` between both VPCs. Which rules should appear in the route table of VPC A after configuration? (Choose two.)
@@ -1814,8 +1814,8 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 - [ ] Configure S3 Block Public Access on the S3 bucket. Update the S3 bucket policy to allow the GetObject action from only the CloudFront distribution.
 - [ ] Configure Origin Shield in the CloudFront distribution. Update the CloudFront origin to include a custom Origin_Shield header.
-- [x] Create an origin access identity (OAI). Assign the OAI to the CloudFront distribution. Update the S3 bucket policy to restrict access to the OAI.
-- [ ] Create an origin access identity (OAI). Assign the OAI to the S3 bucket. Update the CloudFront origin to include a custom Origin header with the OAI value.
+- [x] Create an Origin Access Identity (OAI). Assign the OAI to the CloudFront distribution. Update the S3 bucket policy to restrict access to the OAI.
+- [ ] Create an Origin Access Identity (OAI). Assign the OAI to the S3 bucket. Update the CloudFront origin to include a custom Origin header with the OAI value.
 
 ### A SysOps administrator is designing a solution for an Amazon RDS for PostgreSQL DB instance. Database credentials must be stored and rotated monthly. The applications that connect to the DB instance send write-intensive traffic with variable client connections that sometimes increase significantly in a short period of time. Which solution should a SysOps administrator choose to meet these requirements?
 
@@ -2057,3 +2057,30 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Add an internal Network Load Balancer behind the Application Load Balancer.
 - [ ] Configure the Application Load Balancer in only two Availability Zones.
 - [ ] Create two Elastic IP addresses and assign them to the Application Load Balancer.
+
+### A company is storing media content in an Amazon S3 bucket and uses Amazon CloudFront to distribute the content to its users. Due to licensing terms, the company is not authorized to distribute the content in some countries. A SysOps administrator must restrict access to certain countries. What is the MOST operationally efficient solution that meets these requirements?
+
+- [ ] Configure the S3 bucket policy to deny the GetObject operation based on the `S3:LocationConstraint` condition.
+- [ ] Create a secondary Origin Access Identity (OAI). Configure the S3 bucket policy to prevent access from unauthorized countries.
+- [x] Enable the geo restriction feature in the CloudFront distribution to prevent access from unauthorized countries.
+- [ ] Update the application to generate signed CloudFront URLs only for IP addresses in authorized counties.
+
+### A SysOps administrator is using IAM credentials to try to upload a file to a customer's Amazon S3 bucket that is named `DOC-EXAMPLE-BUCKET`. The SysOps administrator is receiving an AccessDenied message. Which combination of configuration changes will correct this problem? (Choose two.)
+
+- [x] Add this IAM policy to the SysOps administrator user.
+![Question 288 option A](images/question288_A.png)
+- [x] Add this IAM policy to the customer S3 bucket.
+![Question 288 option B](images/question288_B.png)
+- [ ] Add this IAM policy to the SysOps administrator user.
+![Question 288 option C](images/question288_C.png)
+- [ ] Add this IAM policy to the customer account root user.
+![Question 288 option D](images/question288_D.png)
+- [ ] Add this IAM policy to the SysOps administrator account root user.
+![Question 288 option E](images/question288_E.png)
+
+### A company has mandated the use of multi-factor authentication (MFA) for all IAM users, and requires users to make all API-calls using the CLI. However, users are not prompted to enter MFA tokens, and are able to run CLI commands without MFA. In an attempt to enforce MFA, the company attached an IAM policy to all users that denies API calls that have not been authenticated with MFA. What additional step must be taken to ensure that API calls are authenticated using MFA?
+
+- [ ] Enable MFA on IAM roles, and require IAM users to use role credentials to sign API calls.
+- [ ] Ask the IAM users to log into the AWS Management Console with MFA before making API calls using the CLI.
+- [ ] Restrict the IAM users to use of the console, as MFA is not supported for CLI use.
+- [x] Require users to use temporary credentials from the `get-session` token command to sign API calls.
