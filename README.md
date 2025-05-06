@@ -108,7 +108,7 @@ Configure the rule to invoke an AWS Lambda function to enable CloudTrail.
 VPC resources. Assign the policy to a cross-account IAM role. Ask the security administrator to assume the role from their account.
 - [x] Create an IAM policy in each developer account that has read-only access related to VPC resources. Assign the policy to a cross-account IAM role. Ask the security administrator to assume the role from their account.
 
-### A company migrated an I/O intensive application to an Amazon EC2 general purpose instance. The EC2 instance has a single General Purpose SSD Amazon Elastic Block Store (Amazon EBS) volume attached. Application users report that certain actions that require intensive reading and writing to the disk are taking much longer than normal or are failing completely. After reviewing the performance metrics of the EBS volume, a SysOps administrator notices that the VolumeQueueLength metric is consistently high during the same times in which the users are reporting issues. The SysOps administrator needs to resolve this problem to restore full performance to the application. Which action will meet these requirements?
+### A company migrated an I/O intensive application to an Amazon EC2 general purpose instance. The EC2 instance has a single General Purpose SSD Amazon Elastic Block Store (Amazon EBS) volume attached. Application users report that certain actions that require intensive reading and writing to the disk are taking much longer than normal or are failing completely. After reviewing the performance metrics of the EBS volume, a SysOps administrator notices that the `VolumeQueueLength` metric is consistently high during the same times in which the users are reporting issues. The SysOps administrator needs to resolve this problem to restore full performance to the application. Which action will meet these requirements?
 
 - [ ] Modify the instance type to be storage optimized.
 - [ ] Modify the volume properties by deselecting Auto-Enable Volume 10.
@@ -167,7 +167,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A SysOps administrator launches an Amazon EC2 Linux instance in a public subnet. When the instance is running, the SysOps administrator obtains the public IP address and attempts to remotely connect to the instance multiple times. However, the SysOps administrator always receives a timeout error. Which action will allow the SysOps administrator to remotely connect to the instance?
 
 - [ ] Add a route table entry in the public subnet for the SysOps administrator's IP address.
-- [ ] Add an outbound network ACL rule to allow TCP port `22` for the SysOps administrator's IP address.
+- [ ] Add an outbound network ACL rule to allow `TCP` port `22` for the SysOps administrator's IP address.
 - [x] Modify the instance security group to allow inbound SSH traffic from the SysOps administrator's IP address.
 - [ ] Modify the instance security group to allow outbound SSH traffic to the SysOps administrator's IP address.
 
@@ -211,8 +211,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Create an Application Load Balancer that has one HTTPS listener on port `80`. Attach an SSL/TLS certificate to listener port `80`. Create a rule to redirect requests from HTTP to HTTPS.
 - [x] Create an Application Load Balancer that has one HTTP listener on port `80` and one HTTPS protocol listener on port `443`. Attach an SSL/TLS certificate to listener port `443`. Create a rule to redirect requests from port `80` to port `443`.
-- [ ] Create an Application Load Balancer that has two TCP listeners on port `80` and port `443`. Attach an SSL/TLS certificate to listener port `443`. Create a rule to redirect requests from port `80` to port `443`.
-- [ ] Create a Network Load Balancer that has two TCP listeners on port `80` and port `443`. Attach an SSL/TLS certificate to listener port `443`. Create a rule to redirect requests from port `80` to port `443`.
+- [ ] Create an Application Load Balancer that has two `TCP` listeners on port `80` and port `443`. Attach an SSL/TLS certificate to listener port `443`. Create a rule to redirect requests from port `80` to port `443`.
+- [ ] Create a Network Load Balancer that has two `TCP` listeners on port `80` and port `443`. Attach an SSL/TLS certificate to listener port `443`. Create a rule to redirect requests from port `80` to port `443`.
 
 ### A SysOps administrator is responsible for a legacy CPU-heavy application. The application can only be scaled vertically. Currently, the application is deployed on a single t2 large Amazon EC2 instance. The system is showing `90%` CPU usage and significant performance latency after a few minutes. What change should be made to alleviate the performance problem?
 
@@ -246,10 +246,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ![Question 35](images/question35.jpg)
 
-- [ ] Users that assume an IAM role with a logical ID that begins with "Production" are prevented from running the update-stack command.
-- [x] Users can update all resources in the stack except for resources that have a logical ID that begins with "Production".
-- [ ] Users can update all resources in the stack except for resources that have an attribute that begins with "Production".
-- [ ] Users in an IAM group with a logical ID that begins with "Production" are prevented from running the update-stack command.
+- [ ] Users that assume an IAM role with a logical ID that begins with `Production` are prevented from running the update-stack command.
+- [x] Users can update all resources in the stack except for resources that have a logical ID that begins with `Production`.
+- [ ] Users can update all resources in the stack except for resources that have an attribute that begins with `Production`.
+- [ ] Users in an IAM group with a logical ID that begins with `Production` are prevented from running the update-stack command.
 
 ### A SysOps administrator is deploying an application on 10 Amazon EC2 instances. The application must be highly available. The instances must be placed on distinct underlying hardware. What should the SysOps administrator do to meet these requirements?
 
@@ -314,7 +314,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Specify `PrincipalOrgld` as the principal.
 - [ ] Specify the organization's management account as the principal.
 
-### SysOps administrator needs to create alerts that are based on the read and write metrics of Amazon Elastic Block Store (Amazon EBS) volumes that are attached to an Amazon EC2 instance. The SysOps administrator creates and enables Amazon CloudWatch alarms for the DiskReadBytes metric and the DiskWriteBytes metric. A custom monitoring tool that is installed on the EC2 instance with the same alarm configuration indicates that the volume metrics have exceeded the threshold. However, the CloudWatch alarms were not in ALARM state. Which action will ensure that the CloudWatch alarms function correctly?
+### SysOps administrator needs to create alerts that are based on the read and write metrics of Amazon Elastic Block Store (Amazon EBS) volumes that are attached to an Amazon EC2 instance. The SysOps administrator creates and enables Amazon CloudWatch alarms for the `DiskReadBytes` metric and the `DiskWriteBytes` metric. A custom monitoring tool that is installed on the EC2 instance with the same alarm configuration indicates that the volume metrics have exceeded the threshold. However, the CloudWatch alarms were not in ALARM state. Which action will ensure that the CloudWatch alarms function correctly?
 
 - [ ] Install and configure the CloudWatch agent on the EC2 instance to capture the desired metrics.
 - [ ] Install and configure AWS Systems Manager Agent on the EC2 instance to capture the desired metrics.
@@ -461,7 +461,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create a Systems Manager activation Then activate the fleet of instances.
 - [ ] Manually specify the instances to patch Instead of using tag-based selection.
 
-### A company is using Amazon Elastic Container Sen/ice (Amazon ECS) to run a containerized application on Amazon EC2 instances. A SysOps administrator needs to monitor only traffic flows between the ECS tasks. Which combination of steps should the SysOps administrator take to meet this requirement? (Select TWO.)
+### A company is using Amazon Elastic Container Service (Amazon ECS) to run a containerized application on Amazon EC2 instances. A SysOps administrator needs to monitor only traffic flows between the ECS tasks. Which combination of steps should the SysOps administrator take to meet this requirement? (Select TWO.)
 
 - [ ] Configure Amazon CloudWatch Logs on the elastic network interface of each task.
 - [x] Configure VPC Flow Logs on the elastic network interface of each task.
@@ -609,9 +609,9 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A SysOps administrator is evaluating Amazon Route 53 DNS options to address concerns about high availability for an on-premises website. The website consists of two servers: a primary active server and a secondary passive server. Route 53 should route traffic to the primary server if the associated health check returns 2xx or 3xx HTTP codes. All other traffic should be directed to the secondary passive server. The failover record type, set ID. and routing policy have been set appropriately for both primary and secondary servers. Which next step should be taken to configure Route 53?
 
 - [x] Create an `A` record for each server. Associate the records with the Route 53 HTTP health check.
-- [ ] Create an `A` record for each server. Associate the records with the Route 53 TCP health check.
+- [ ] Create an `A` record for each server. Associate the records with the Route 53 `TCP` health check.
 - [ ] Create an alias record for each server with evaluate target health set to yes. Associate the records with the Route 53 HTTP health check.
-- [ ] Create an alias record for each server with evaluate target health set to yes. Associate the records with the Route 53 TCP health check.
+- [ ] Create an alias record for each server with evaluate target health set to yes. Associate the records with the Route 53 `TCP` health check.
 
 ### A company must ensure that any objects uploaded to an S3 bucket are encrypted. Which of the following actions will meet this requirement? (Choose two.)
 
@@ -688,7 +688,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Attach a `cost-allocation` tag to each requested Elastic IP address with the IAM user name of the developer who creates it.
 - [x] Query AWS CloudTrail logs by using Amazon Athena to search for Elastic IP address events.
-- [ ] Create a CloudWatch alarm on the ElPCreated metric and send an Amazon SNS notification when the alarm triggers.
+- [ ] Create a CloudWatch alarm on the `EIPCreated` metric and send an Amazon SNS notification when the alarm triggers.
 - [ ] Use Amazon Inspector to get a report of all Elastic IP addresses created in the last 30 days.
 
 ### A company has an Amazon CloudFront distribution that uses an Amazon S3 bucket as its origin. During a review of the access logs, the company determines that some requests are going directly to the S3 bucket by using the website hosting endpoint. A SysOps administrator must secure the S3 bucket to allow requests only from CloudFront. What should the SysOps administrator do to meet this requirement?
@@ -708,7 +708,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Describe AWS load balancers.
 - [x] Invoke an AWS Lambda function.
 
-### A company is trying to connect two applications. One application runs in an on-premises data center that has a hostname of hostl .onprem.private. The other application runs on an Amazon EC2 instance that has a hostname of hostl.awscloud.private. An AWS Site-to-Site VPN connection is in place between the on-premises network and AWS. The application that runs in the data center tries to connect to the application that runs on the EC2 instance, but DNS resolution fails. A SysOps administrator must implement DNS resolution between on-premises and AWS resources. Which solution allows the on-premises application to resolve the EC2 instance hostname?
+### A company is trying to connect two applications. One application runs in an on-premises data center that has a hostname of hostl .onprem.private. The other application runs on an Amazon EC2 instance that has a hostname of `hostl.awscloud.private`. An AWS Site-to-Site VPN connection is in place between the on-premises network and AWS. The application that runs in the data center tries to connect to the application that runs on the EC2 instance, but DNS resolution fails. A SysOps administrator must implement DNS resolution between on-premises and AWS resources. Which solution allows the on-premises application to resolve the EC2 instance hostname?
 
 - [ ] Set up an Amazon Route 53 inbound resolver endpoint with a forwarding rule for the onprem.private hosted zone. Associate the resolver with the VPC of the EC2 instance. Configure the on-premises DNS resolver to forward onprem.private DNS queries to the inbound resolver endpoint.
 - [x] Set up an Amazon Route 53 inbound resolver endpoint. Associate the resolver with the VPC of the EC2 instance. Configure the on-premises DNS resolver to forward awscloud.private DNS queries to the inbound resolver endpoint.
@@ -722,14 +722,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] The public IP address of the customer gateway device.
 - [x] The public IP address of the NAT device in front of the customer gateway device.
 
-### A SysOps administrator applies the following policy to an AWS CloudFormation stack: What is the result of this policy?
+### An application is running on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances are configured in an Amazon EC2 Auto Scaling group. A SysOps Administrator must configure the application to scale based on the number of incoming requests. Which solution accomplishes this with the LEAST amount of effort?
 
-![Question 101](images/question101.jpg)
-
-- [ ] Users that assume an IAM role with a logical ID that begins with "Production" are prevented from running the update-stack command.
-- [x] Users can update all resources in the stack except for resources that have a logical ID that begins with "Production".
-- [ ] Users can update all resources in the stack except for resources that have an attribute that begins with "Production".
-- [ ] Users in an IAM group with a logical ID that begins with "Production" are prevented from running the update-stack command.
+- [ ] Use a simple scaling policy based on a custom metric that measures the average active requests of all EC2 instances.
+- [ ] Use a simple scaling policy based on the Auto Scaling group `GroupDesiredCapacity` metric.
+- [ ] Use a target tracking scaling policy based on the ALB's `ActiveConnectionCount` metric.
+- [x] Use a target tracking scaling policy based on the ALB's `RequestCountPerTarget` metric.
 
 ### A company's IT department noticed an increase in the spend of their developer AWS account. There are over 50 developers using the account, and the finance team wants to determine the service costs incurred by each developer. What should a SysOps administrator do to collect this information? (Select TWO.)
 
@@ -739,22 +737,22 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Configure AWS Trusted Advisor to track resource usage.
 - [ ] Create a billing alarm in AWS Budgets.
 
-### A company website contains a web tier and a database tier on AWS. The web tier consists of Amazon EC2 instances that run in an Auto Scaling group across two Availability Zones. The database tier runs on an Amazon ROS for MySQL Multi-AZ DB instance. The database subnet network ACLs are restricted to only the web subnets that need access to the database. The web subnets use the default network ACL with the default rules. The company's operations team has added a third subnet to the Auto Scaling group configuration. After an Auto Scaling event occurs, some users report that they intermittently receive an error message. The error message states that the server cannot connect to the database. The operations team has confirmed that the route tables are correct and that the required ports are open on all security groups. Which combination of actions should a SysOps administrator take so that the web servers can communicate with the DB instance? (Select TWO.)
+### A company website contains a web tier and a database tier on AWS. The web tier consists of Amazon EC2 instances that run in an Auto Scaling group across two Availability Zones. The database tier runs on an Amazon RDS for MySQL Multi-AZ DB instance. The database subnet network ACLs are restricted to only the web subnets that need access to the database. The web subnets use the default network ACL with the default rules. The company's operations team has added a third subnet to the Auto Scaling group configuration. After an Auto Scaling event occurs, some users report that they intermittently receive an error message. The error message states that the server cannot connect to the database. The operations team has confirmed that the route tables are correct and that the required ports are open on all security groups. Which combination of actions should a SysOps administrator take so that the web servers can communicate with the DB instance? (Select TWO.)
 
-- [ ] On the default ACL. create inbound Allow rules of type TCP with the ephemeral port range and the source as the database subnets.
-- [ ] On the default ACL, create outbound Allow rules of type MySQL/Aurora (3306). Specify the destinations as the database subnets.
-- [x] On the network ACLs for the database subnets, create an inbound Allow rule of type MySQL/Aurora (3306). Specify the source as the third web subnet.
-- [x] On the network ACLs for the database subnets, create an outbound Allow rule of type TCP with the ephemeral port range and the destination as the third web subnet.
-- [ ] On the network ACLs for the database subnets, create an outbound Allow rule of type MySQL/Aurora (3306). Specify the destination as the third web subnet.
+- [ ] On the default ACL. create inbound. Allow rules of type `TCP` with the ephemeral port range and the source as the database subnets.
+- [ ] On the default ACL, create outbound. Allow rules of type `MySQL/Aurora (3306)`. Specify the destinations as the database subnets.
+- [x] On the network ACLs for the database subnets, create an inbound. Allow rule of type `MySQL/Aurora (3306)`. Specify the source as the third web subnet.
+- [x] On the network ACLs for the database subnets, create an outbound. Allow rule of type `TCP` with the ephemeral port range and the destination as the third web subnet.
+- [ ] On the network ACLs for the database subnets, create an outbound. Allow rule of type `MySQL/Aurora (3306)`. Specify the destination as the third web subnet.
 
 ### A company is running an application on a fleet of Amazon EC2 instances behind an Application Load Balancer (ALB). The EC2 instances are launched by an Auto Scaling group and are automatically registered in a target group. A SysOps administrator must set up a notification to alert application owners when targets fail health checks. What should the SysOps administrator do to meet these requirements?
 
-- [x] Create an Amazon CloudWatch alarm on the UnHealthyHostCount metric. Configure an action to send an Amazon Simple Notification Service (Amazon SNS) notification when the metric is greater than 0.
+- [x] Create an Amazon CloudWatch alarm on the `UnHealthyHostCount` metric. Configure an action to send an Amazon Simple Notification Service (Amazon SNS) notification when the metric is greater than 0.
 - [ ] Configure an Amazon EC2 Auto Scaling custom lifecycle action to send an Amazon Simple Notification Service (Amazon SNS) notification when an instance is in the Pending:Wait state.
 - [ ] Update the Auto Scaling group. Configure an activity notification to send an Amazon Simple Notification Service (Amazon SNS) notification for the Unhealthy event type.
 - [ ] Update the ALB health check to send an Amazon Simple Notification Service (Amazon SNS) notification when an instance is unhealthy.
 
-### A company wants to build a solution for its business-critical Amazon RDS for MySQL database. The database requires high availability across different geographic locations. A SysOps administrator must build a solution to handle a disaster recovery (DR) scenario with the lowest recovery time objective (RTO) and recovery point objective (RPO). Which solution meets these requirements?
+### A company wants to build a solution for its business-critical Amazon RDS for MySQL database. The database requires high availability across different geographic locations. A SysOps administrator must build a solution to handle a Disaster Recovery (DR) scenario with the lowest Recovery Time Objective (RTO) and Recovery Point Objective (RPO). Which solution meets these requirements?
 
 - [ ] Create automated snapshots of the database on a schedule. Copy the snapshots to the DR Region.
 - [x] Create a cross-Region read replica for the database.
@@ -805,7 +803,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Deploy an Auto Scaling group across three Availability Zones with a minimum capacity of four instances.
 - [ ] Deploy an Auto Scaling group across three Availability Zones with a minimum capacity of six instances.
 
-### A company's backend infrastructure contains an Amazon EC2 instance in a private subnet. The private subnet has a route to the internet through a NAT gateway in a public subnet. The instance must allow connectivity to a secure web server on the internet to retrieve data at regular intervals. The client software times out with an error message that indicates that the client software could not establish the TCP connection. What should a SysOps administrator do to resolve this error?
+### A company's backend infrastructure contains an Amazon EC2 instance in a private subnet. The private subnet has a route to the internet through a NAT gateway in a public subnet. The instance must allow connectivity to a secure web server on the internet to retrieve data at regular intervals. The client software times out with an error message that indicates that the client software could not establish the `TCP` connection. What should a SysOps administrator do to resolve this error?
 
 - [ ] Add an inbound rule to the security group for the EC2 instance with the following parameters: Type – HTTP, Source – `0.0.0.0/0`.
 - [ ] Add an inbound rule to the security group for the EC2 instance with the following parameters: Type – HTTPS, Source – `0.0.0.0/0`.
@@ -835,8 +833,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A SysOps administrator is helping a development team deploy an application to AWS Trie AWS CloudFormat on temp ate includes an Amazon Linux EC2 Instance an Amazon Aurora DB cluster and a hard coded database password that must be rotated every 90 days. What is the MOST secure way to manage the database password?
 
-- [x] Use the AWS SecretsManager Secret resource with the GenerateSecretString property to automatically generate a password Use the AWS SecretsManager RotationSchedule resource lo define a rotation schedule lor the password Configure the application to retrieve the secret from AWS Secrets Manager access the database.
-- [ ] Use me AWS SecretsManager Secret resource with the SecretStrmg property Accept a password as a CloudFormation parameter Use the AllowedPatteen property of the CloudFormaton parameter to require a minimum length, uppercase and lowercase letters and special characters Configure me application to retrieve the secret from AWS Secrets Manager to access the database.
+- [x] Use the AWS SecretsManager Secret resource with the `GenerateSecretString` property to automatically generate a password Use the AWS SecretsManager RotationSchedule resource lo define a rotation schedule lor the password Configure the application to retrieve the secret from AWS Secrets Manager access the database.
+- [ ] Use me AWS SecretsManager Secret resource with the `SecretStrmg` property Accept a password as a CloudFormation parameter Use the `AllowedPatteen` property of the CloudFormaton parameter to require a minimum length, uppercase and lowercase letters and special characters Configure me application to retrieve the secret from AWS Secrets Manager to access the database.
 - [ ] Use the AWS SSM Parameter resource Accept input as a Qoudformatton parameter to store the parameter as a secure sting Configure the application to retrieve the parameter from AWS Systems Manager Parameter Store to access the database.
 - [ ] Use the AWS SSM Parameter resource Accept input as a Cloudf ormetton parameter to store the parameter as a string Configure the application to retrieve the parameter from AWS Systems Manager Parameter Store to access the database.
 
@@ -951,7 +949,7 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 
 - [ ] Use CloudWatch to create a metric math expression to calculate the approximate age of the oldest message in the SQS queue. Create a target tracking scaling policy for the metric math expression to modify the Auto Scaling group.
 - [x] Use CloudWatch to create a metric math expression to calculate the approximate number of messages visible in the SQS queue for each instance. Create a target tracking scaling policy for the metric math expression to modify the Auto Scaling group.
-- [ ] Create an Application Load Balancer (ALB). Attach the ALB to the Auto Scaling group. Create a target tracking scaling policy for the ALBRequestCountPerTarget metric to modify the Auto Scaling group.
+- [ ] Create an Application Load Balancer (ALB). Attach the ALB to the Auto Scaling group. Create a target tracking scaling policy for the ALB's `RequestCountPerTarget` metric to modify the Auto Scaling group.
 - [ ] Create an Application Load Balancer (ALB). Attach the ALB to the Auto Scaling group. Create a scheduled scaling policy for the Auto Scaling group.
 
 ### A SysOps administrator is notified that an Amazon EC2 instance has stopped responding The AWS Management Console indicates that the system status checks are failing. What should the administrator do first to resolve this issue?
@@ -992,7 +990,7 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 ### A company has an existing web application that runs on two Amazon EC2 instances behind an Application Load Balancer (ALB) across two Availability Zones The application uses an Amazon RDS Multi-AZ DB Instance Amazon Route 53 record sets route requests tor dynamic content to the load balancer and requests for static content to an Amazon S3 bucket Site visitors are reporting extremely long loading times. Which actions should be taken to improve the performance of the website? (Select TWO)
 
 - [x] Add Amazon CloudFront caching for static content.
-- [ ] Change the load balancer listener from HTTPS to TCP.
+- [ ] Change the load balancer listener from HTTPS to `TCP`.
 - [ ] Enable Amazon Route 53 latency-based routing.
 - [x] Implement Amazon EC2 Auto Scaling for the web servers.
 - [ ] Move the static content from Amazon S3 to the web servers.
@@ -1011,12 +1009,12 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 - [ ] Enable encryption on each host's local drive Restart each host to encrypt the drive.
 - [x] Enable encryption on a newly created volume and copy all data from the original volume Reconnect each host to the new volume.
 
-### While setting up an AWS managed VPN connection, a SysOps administrator creates a customer gateway resource in AWS The customer gateway device resides in a data center with a NAT gateway in front of it. What address should be used to create the customer gateway resource?
+### A SysOps administrator configures an application to run on Amazon EC2 instances behind an Application Load Balancer (ALB) in a simple scaling Auto Scaling group with the default settings. The Auto Scaling group is configured to use the `RequestCountPerTarget` metric for scaling. The SysOps administrator notices that the `RequestCountPerTarget` metric exceeded the specified limit twice in 180 seconds. How will the number of EC2 instances in this Auto Scaling group be affected in this scenario?
 
-- [ ] The private IP address of the customer gateway device.
-- [ ] The MAC address of the NAT device in front of the customer gateway device.
-- [ ] The public IP address of the customer gateway device.
-- [x] The public IP address of the NAT device in front of the customer gateway device.
+- [ ] The Auto Scaling group will launch an additional EC2 instance every time the `RequestCountPerTarget` metric exceeds the predefined limit.
+- [x] The Auto Scaling group will launch one EC2 instance and will wait for the default cooldown period before launching another instance.
+- [ ] The Auto Scaling group will send an alert to the ALB to rebalance the traffic and not add new EC2 instances until the load is normalized.
+- [ ] The Auto Scaling group will try to distribute the traffic among all EC2 instances before launching another instance.
 
 ### An errant process is known to use an entire processor and run at `100%`A SysOps administrator wants to automate restarting the instance once the problem occurs for more than 2 minutes. How can this be accomplished?
 
@@ -1228,9 +1226,9 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 ### A SysOps administrator creates an AWS CloudFormation template to define an application stack that can be deployed in multiple AWS Regions. The SysOps administrator also creates an Amazon CloudWatch dashboard by using the AWS Management Console. Each deployment of the application requires its own CloudWatch dashboard. How can the SysOps administrator automate the creation of the CloudWatch dashboard each time the application is deployed?
 
 - [ ] Create a script by using the AWS CLI to run the aws cloudformation put-dashboard command with the name of the dashboard. Run the command each time a new CloudFormation stack is created.
-- [x] Export the existing CloudWatch dashboard as JSON. Update the CloudFormation template to define an `AWS::CloudWatch::Dashboard` resource. Include the exported JSON in the resource's DashboardBody property.
+- [x] Export the existing CloudWatch dashboard as JSON. Update the CloudFormation template to define an `AWS::CloudWatch::Dashboard` resource. Include the exported JSON in the resource's `DashboardBody` property.
 - [ ] Update the CloudFormation template to define an `AWS::CloudWatch::Dashboard` resource. Use the Intrinsic Ref function to reference the ID of the existing CloudWatch dashboard.
-- [ ] Update the CloudFormation template to define an `AWS::CloudWatch::Dashboard` resource. Specify the name of the existing dashboard in the DashboardName property.
+- [ ] Update the CloudFormation template to define an `AWS::CloudWatch::Dashboard` resource. Specify the name of the existing dashboard in the `DashboardName` property.
 
 ### A SysOps administrator is provisioning an Amazon Elastic File System (Amazon EFS) file system to provide shared storage across multiple Amazon EC2 instances. The instances all exist in the same VPC across multiple Availability Zones. There are two instances in each Availability Zone. The SysOps administrator must make the file system accessible to each instance with the lowest possible latency. Which solution will meet these requirements?
 
@@ -1341,7 +1339,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 ### A SysOps administrator must configure Amazon S3 to host a simple nonproduction webpage. The SysOps administrator has created an empty S3 bucket from the. AWS Management Console. The S3 bucket has the default configuration in place. Which combination of actions should the SysOps administrator take to complete this process? (Choose two.)
 
 - [ ] Configure the S3 bucket by using the "Redirect requests for an object" functionality to point to the bucket root URL.
-- [ ] Turn off the "Block all public access" setting. Allow public access by using a bucket ACL that contains <Permission>WEBSITE</Permission>.
+- [ ] Turn off the "Block all public access" setting. Allow public access by using a bucket ACL that contains `<Permission>WEBSITE</Permission>`.
 - [ ] Turn off the "Block all public access" setting. Allow public access by using a bucket ACL that allows access to the AuthenticatedUsers grantee.
 - [x] Turn off the "Block all public access" setting. Set a bucket policy that allows "Principal": the s3:GetObject action.
 - [x] Create an index.html document. Configure static website hosting, and upload the index document to the S3 bucket.
@@ -2084,3 +2082,11 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Ask the IAM users to log into the AWS Management Console with MFA before making API calls using the CLI.
 - [ ] Restrict the IAM users to use of the console, as MFA is not supported for CLI use.
 - [x] Require users to use temporary credentials from the `get-session` token command to sign API calls.
+
+### A SysOps administrator needs to design a Disaster Recovery (DR) plan for an application on AWS. The application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances are in an Auto Scaling group. The application uses an Amazon Aurora PostgreSQL database. The Recovery Time Objective (RTO) and Recovery Point Objective (RPO) are 15 minutes each. Which combination of steps should the SysOps administrator take to meet these requirements MOST cost-effectively? (Choose two.)
+
+- [ ] Configure Aurora backups to be exported to the DR Region.
+- [x] Configure the Aurora cluster to replicate data to the DR Region by using the Aurora global database option.
+- [ ] Configure the DR Region with an ALB and an Auto Scaling group. Use the same configuration as in the primary Region.
+- [x] Configure the DR Region with an ALB and an Auto Scaling group. Set the Auto Scaling group's minimum capacity, maximum capacity, and desired capacity to `1`.
+- [ ] Manually launch a new ALB and a new Auto Scaling group by using AWS CloudFormation during a failover activity.
