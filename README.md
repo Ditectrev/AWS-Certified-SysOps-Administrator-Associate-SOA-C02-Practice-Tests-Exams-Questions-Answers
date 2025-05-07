@@ -367,7 +367,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A company needs to view a list of security groups that are open to the internet on port `3389`. What should a SysOps administrator do to meet this requirement?
 
 - [ ] Configure Amazon GuardDuty to scan security groups and report unrestricted access on port `3389`.
-- [ ] Configure a service control policy (SCP) to identify security groups that allow unrestricted access on port `3389`.
+- [ ] Configure a Service Control Policy (SCP) to identify security groups that allow unrestricted access on port `3389`.
 - [ ] Use AWS Identity and Access Management Access Analyzer to find any instances that have unrestricted access on port `3389`.
 - [x] Use AWS Trusted Advisor to find security groups that allow unrestricted access on port `3389`.
 
@@ -824,17 +824,17 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company recently acquired another corporation and all of that corporation's AWS accounts. A financial analyst needs the cost data from these accounts. A SysOps administrator uses Cost Explorer to generate cost and usage reports. The SysOps administrator notices that `No Tagkey` represents `20%` of the monthly cost. What should the SysOps administrator do to tag the `No Tagkey` resources?
 
-- [ ] Add the accounts to AWS Organizations. Use a service control policy (SCP) to tag all the untagged resources.
+- [ ] Add the accounts to AWS Organizations. Use a Service Control Policy (SCP) to tag all the untagged resources.
 - [ ] Use an AWS Config rule to find the untagged resources. Set the remediation action to terminate the resources.
 - [ ] Use Cost Explorer to find and tag all the untagged resources.
 - [x] Use Tag Editor to find and tag all the untagged resources.
 
 ### A SysOps administrator is helping a development team deploy an application to AWS Trie AWS CloudFormat on temp ate includes an Amazon Linux EC2 Instance an Amazon Aurora DB cluster and a hard coded database password that must be rotated every 90 days. What is the MOST secure way to manage the database password?
 
-- [x] Use the AWS SecretsManager Secret resource with the `GenerateSecretString` property to automatically generate a password Use the AWS SecretsManager RotationSchedule resource lo define a rotation schedule lor the password Configure the application to retrieve the secret from AWS Secrets Manager access the database.
-- [ ] Use me AWS SecretsManager Secret resource with the `SecretStrmg` property Accept a password as a CloudFormation parameter Use the `AllowedPatteen` property of the CloudFormaton parameter to require a minimum length, uppercase and lowercase letters and special characters Configure me application to retrieve the secret from AWS Secrets Manager to access the database.
-- [ ] Use the AWS SSM Parameter resource Accept input as a Qoudformatton parameter to store the parameter as a secure sting Configure the application to retrieve the parameter from AWS Systems Manager Parameter Store to access the database.
-- [ ] Use the AWS SSM Parameter resource Accept input as a Cloudf ormetton parameter to store the parameter as a string Configure the application to retrieve the parameter from AWS Systems Manager Parameter Store to access the database.
+- [x] Use the AWS SecretsManager Secret resource with the `GenerateSecretString` property to automatically generate a password. Use the AWS SecretsManager `RotationSchedule` resource to define a rotation schedule for the password. Configure the application to retrieve the secret from AWS Secrets Manager to access the database.
+- [ ] Use the AWS SecretsManager Secret resource with the `SecretString` property. Accept a password as a CloudFormation parameter. Use the `AllowedPattern` property of the CloudFormaton parameter to require a minimum length, uppercase and lowercase letters and special characters. Configure the application to retrieve the secret from AWS Secrets Manager to access the database.
+- [ ] Use the AWS SSM Parameter resource. Accept input as a `CloudFormation` parameter to store the parameter as a secure sting. Configure the application to retrieve the parameter from AWS Systems Manager Parameter Store to access the database.
+- [ ] Use the AWS SSM Parameter resource. Accept input as a `CloudFormation` parameter to store the parameter as a string. Configure the application to retrieve the parameter from AWS Systems Manager Parameter Store to access the database.
 
 ### An application team uses an Amazon Aurora MySQL DB cluster with one Aurora Replica. The application team notices that the application read performance degrades when user connections exceed 200. The number of user connections is typically consistent around 180. with occasional sudden increases above 200 connections. The application team wants the application to automatically scale as user demand increases or decreases. Which solution will meet these requirements?
 
@@ -1155,7 +1155,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 - [ ] Set up an AWS Lambda function that will initiate a run instance event and check for the required tags. Configure the function to prevent the launch of EC2 instances if the tags are missing.
 - [ ] Set up an AWS Config rule to monitor for EC2 instances that lack the required tags.
-- [x] Set up a service control policy (SCP) that prevents the launch of EC2 instances that lack the required tags. Attach the SCP to the organization root.
+- [x] Set up a Service Control Policy (SCP) that prevents the launch of EC2 instances that lack the required tags. Attach the SCP to the organization root.
 - [ ] Set up an Amazon CloudWatch alarm to stop any EC2 instances that lack the required tags.
 
 ### A company has scientists who upload large data objects to an Amazon S3 bucket. The scientists upload the objects as multipart uploads. The multipart uploads often fail because of poor end-client connectivity. The company wants to optimize storage costs that are associated with the data. A SysOps administrator must implement a solution that presents metrics for incomplete uploads. The solution also must automatically delete any incomplete uploads after 7 days. Which solution will meet these requirements?
@@ -1310,7 +1310,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 - [ ] Whether at least one Amazon EC2 instance is in the running state.
 - [x] The AWS Support plan.
-- [ ] An AWS Organizations service control policy (SCP).
+- [ ] An AWS Organizations Service Control Policy (SCP).
 - [ ] Whether the AWS account root user has multi-factor authentication (MFA) enabled.
 
 ### A SysOps administrator is investigating issues on an Amazon RDS for MariaDB DB instance. The SysOps administrator wants to display the database load categorized by detailed wait events. How can the SysOps administrator accomplish this goal?
@@ -1368,7 +1368,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Configure AWS CloudTrail in all Regions to record all API activity. Create an Amazon EventBridge (Amazon CloudWatch Events) rule in all unauthorized Regions for `ec2:RunInstances` events. Use AWS Lambda to terminate the launched EC2 instances.
 - [ ] In each AWS account, create a managed IAM policy that uses a Region condition to deny the `ec2:RunInstances` action in all unauthorized Regions. Attach this policy to all IAM groups in each AWS account.
 - [ ] In each AWS account, create an IAM permissions boundary policy that uses a `Region` condition to deny the `ec2:RunInstances` action in all unauthorized Regions. Attach the permissions boundary policy to all IAM users in each AWS account.
-- [x] Create a service control policy (SCP) in AWS Organizations to deny the `ec2:RunInstances` action in all unauthorized Regions. Attach this policy to the root level of the organization.
+- [x] Create a Service Control Policy (SCP) in AWS Organizations to deny the `ec2:RunInstances` action in all unauthorized Regions. Attach this policy to the root level of the organization.
 
 ### A company has a private Amazon S3 bucket that contains sensitive information. A SysOps administrator needs to keep logs of the IP addresses from authentication failures that result from attempts to access objects in the bucket. The logs must be stored so that they cannot be overwritten or deleted for 90 days. Which solution will meet these requirements?
 
@@ -1555,19 +1555,19 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Terminate the EC2 instance and relaunch it.
 - [ ] View the AWS CloudTrail log to investigate what changed on the EC2 instance.
 
-### A software development company has multiple developers who work on the same product. Each developer must have their own development environments, and these development environments must be identical. Each development environment consists of Amazon EC2 instances and an Amazon RDS DB instance. The development environments should be created only when necessary, and they must be terminated each night to minimize costs. What is the MOST operationally efficient solution that meets these requirements?
+### A company has a business application hosted on Amazon EC2 instances behind an Application Load Balancer. Amazon CloudWatch metrics show that the CPU utilization on the EC2 instances is very high. There are also reports from users that receive HTTP `503` and `504` errors when they try to connect to the application. Which action will resolve these issues?
 
-- [ ] Provide developers with access to the same AWS CloudFormation template so that they can provision their development environment when necessary. Schedule a nightly cron job on each development instance to stop all running processes to reduce CPU utilization to nearly zero.
-- [x] Provide developers with access to the same AWS CloudFormation template so that they can provision their development environment when necessary. Schedule a nightly Amazon EventBridge (Amazon CloudWatch Events) rule to invoke an AWS Lambda function to delete the AWS CloudFormation stacks.
-- [ ] Provide developers with CLI commands so that they can provision their own development environment when necessary. Schedule a nightly Amazon EventBridge (Amazon CloudWatch Events) rule to invoke an AWS Lambda function to terminate all EC2 instances and the DB instance.
-- [ ] Provide developers with CLI commands so that they can provision their own development environment when necessary. Schedule a nightly Amazon EventBridge (Amazon CloudWatch Events) rule to cause AWS CloudFormation to delete all of the development environment resources.
+- [x] Place the EC2 instances into an AWS Auto Scaling group.
+- [ ] Configure the ALB's Target Group to use more frequent health checks.
+- [ ] Enable sticky sessions on the Application Load Balancer.
+- [ ] Increase the idle timeout setting of the Application Load Balancer.
 
 ### A SysOps administrator manages policies for many AWS member accounts in an AWS Organizations structure. Administrators on other teams have access to the account root user credentials of the member accounts. The SysOps administrator must prevent all teams, including their administrators, from using Amazon DynamoDB. The solution must not affect the ability of the teams to access other AWS services. Which solution will meet these requirements?
 
 - [ ] In all member accounts, configure IAM policies that deny access to all DynamoDB resources for all users, including the root user.
-- [x] Create a service control policy (SCP) in the management account to deny all DynamoDB actions. Apply the SCP to the root of the organization.
+- [x] Create a Service Control Policy (SCP) in the management account to deny all DynamoDB actions. Apply the SCP to the root of the organization.
 - [ ] In all member accounts, configure IAM policies that deny AmazonDynamoDBFullAccess to all users, including the root user.
-- [ ] Remove the default service control policy (SCP) in the management account. Create a replacement SCP that includes a single statement that denies all DynamoDB actions.
+- [ ] Remove the default Service Control Policy (SCP) in the management account. Create a replacement SCP that includes a single statement that denies all DynamoDB actions.
 
 ### A company runs hundreds of Amazon EC2 instances in a single AWS Region. Each EC2 instance has two attached 1 GiB General Purpose SSD (gp2) Amazon Elastic Block Store (Amazon EBS) volumes. A critical workload is using all the available IOPS capacity on the EBS volumes. According to company policy, the company cannot change instance types or EBS volume types without completing lengthy acceptance tests to validate that the company's applications will function properly. A SysOps administrator needs to increase the I/O performance of the EBS volumes as quickly as possible. Which action should the SysOps administrator take to meet these requirements?
 
@@ -1588,7 +1588,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [x] Create an AWS Config rule to detect noncompliant security groups. Set up automatic remediation to change the `0.0.0.0/0` source address to the approved CIDR block.
 - [ ] Create an IAM policy to deny the creation of security groups that have `0.0.0.0/0` as the source address. Attach this IAM policy to every user in the company.
 - [ ] Create an AWS Lambda function to inspect new and existing security groups. Check for a noncompliant `0.0.0.0/0` source address and change the source address to the approved CIDR block.
-- [ ] Create a service control policy (SCP) for the organizational unit (OU) to deny the creation of security groups that have the `0.0.0.0/0` source address. Set up automatic remediation to change the `0.0.0.0/0` source address to the approved CIDR block.
+- [ ] Create a Service Control Policy (SCP) for the organizational unit (OU) to deny the creation of security groups that have the `0.0.0.0/0` source address. Set up automatic remediation to change the `0.0.0.0/0` source address to the approved CIDR block.
 
 ### A company requires that all activity in its AWS account be logged using AWS CloudTrail. Additionally, a SysOps administrator must know when CloudTrail log files are modified or deleted. How should the SysOps administrator meet these requirements?
 
@@ -1738,7 +1738,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Deploy an AWS Lambda function to each account to run EC2 instance snapshots on a scheduled basis.
 - [ ] Create an AWS CloudFormation stack set in the management account to add an `AutoBackup=True` tag to every EC2 instance.
 - [x] Use AWS Backup in the management account to deploy policies for all accounts and resources.
-- [ ] Use a service control policy (SCP) to run EC2 instance snapshots on a scheduled basis in each account.
+- [ ] Use a Service Control Policy (SCP) to run EC2 instance snapshots on a scheduled basis in each account.
 
 ### A company needs to ensure strict adherence to a budget for 25 applications deployed on AWS. Separate teams are responsible for storage, compute, and database costs. A SysOps administrator must implement an automated solution to alert each team when their projected spend will exceed a quarterly amount that has been set by the finance department. The solution cannot incur additional compute, storage, or database costs. Which solution will meet these requirements?
 
@@ -1992,7 +1992,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 - [ ] The Administrator must configure the VPC Flow Logs to have them sent to AWS CloudTrail.
 - [x] The Administrator has waited less than ten minutes for the log group to be created in CloudWatch.
-- [ ] The account VPC Flow Logs have been disabled by using a service control policy.
+- [ ] The account VPC Flow Logs have been disabled by using a Service Control Policy.
 - [x] No relevant traffic has been sent since the VPC Flow Logs were created.
 - [ ] The account has Amazon GuardDuty enabled.
 
@@ -2117,3 +2117,17 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Configure a load balancer in a public subnet, and configure the route tables accordingly.
 - [x] Set up a `NAT` gateway in a public subnet, and change the private subnet route tables accordingly.
 - [ ] Set up a `NAT` gateway in a private subnet, and ensure that the route tables are configured accordingly.
+
+### A company's use of AWS Cloud services is quickly growing, so a SysOps Administrator has been asked to generate details of daily spending to share with management. Which method should the Administrator choose to produce this data?
+
+- [ ] Share the monthly AWS bill with management.
+- [ ] Use AWS CloudTrail Logs to access daily costs in JSON format.
+- [x] Set up a daily Cost and Usage Report and download the output from Amazon S3.
+- [ ] Monitor AWS costs with Amazon CloudWatch and create billing alerts and notifications.
+
+### An ecommerce company has built a web application that uses an Amazon Aurora DB cluster. The DB cluster includes memory optimized instance types with both a writer node and a reader node. Traffic volume changes throughout the day. During sudden traffic surges, Amazon CloudWatch metrics for the DB cluster indicate high RAM consumption and an increase in select latency. A SysOps administrator must implement a configuration change to improve the performance of the DB cluster. The change must minimize downtime and must not result in the loss of data. Which change will meet these requirements?
+
+- [x] Add an Aurora Replica to the DB cluster.
+- [ ] Modify the DB cluster to convert the DB cluster into a multi-master DB cluster.
+- [ ] Take a snapshot of the DB cluster. From that snapshot, create a new DB cluster that has larger memory optimized instances.
+- [ ] Increase the disk storage capacity of the DB cluster to double the existing disk capacity.
