@@ -2,12 +2,12 @@
 
 ![Question 1](images/question1.jpg)
 
-- [ ] A route for `0.0.0.0/0` that points to a NAT gateway.
+- [ ] A route for `0.0.0.0/0` that points to a `NAT` gateway.
 - [ ] A route for `0.0.0.0/0` that points to an egress-only internet gateway.
 - [x] A route for `0.0.0.0/0` that points to an internet gateway.
 - [ ] A route for `0.0.0.0/0` that points to an elastic network interface.
 
-### A SysOps administrator launches an Amazon EC2 instance in a private subnet of a VPC. When the SysOps administrator attempts a curl command from the command line of the EC2 instance, the SysOps administrator cannot connect to https:www.example.com. What should the SysOps administrator do to resolve this issue?
+### A SysOps administrator launches an Amazon EC2 instance in a private subnet of a VPC. When the SysOps administrator attempts a curl command from the command line of the EC2 instance, the SysOps administrator cannot connect to `https:www.example.com`. What should the SysOps administrator do to resolve this issue?
 
 - [x] Ensure that there is an outbound security group for port `443` to `0.0.0.0/0`.
 - [ ] Ensure that there is an inbound security group for port `443` from `0.0.0.0/0`.
@@ -21,7 +21,7 @@
 - [ ] Deploy a global-scoped AWS WAF web ACL with a block default action. Configure an AWS WAF rate-based rule to allow matching traffic. Associate the web ACL with the CloudFront distribution.
 - [ ] Deploy an AWS WAF web ACL with a block default action in `us-east-1`. Configure an AWS WAF rate-based rule to allow matching traffic. Associate the web ACL with the S3 bucket.
 
-### A company hosts an online shopping portal in the AWS Cloud. The portal provides HTTPS security by using a TLS certificate on an Elastic Load Balancer (ELB). Recently, the portal suffered an outage because the TLS certificate expired. A SysOps administrator must create a solution to automatically renew certificates to avoid this issue in the future. What is the MOST operationally efficient solution that meets these requirements?
+### A company hosts an online shopping portal in the AWS Cloud. The portal provides `HTTPS` security by using a TLS certificate on an Elastic Load Balancer (ELB). Recently, the portal suffered an outage because the TLS certificate expired. A SysOps administrator must create a solution to automatically renew certificates to avoid this issue in the future. What is the MOST operationally efficient solution that meets these requirements?
 
 - [ ] Request a public certificate by using AWS Certificate Manager (ACM). Associate the certificate from ACM with the ELB. Write a scheduled AWS Lambda function to renew the certificate every 18 months.
 - [x] Request a public certificate by using AWS Certificate Manager (ACM). Associate the certificate from ACM with the ELB. ACM will automatically manage the renewal of the certificate.
@@ -98,7 +98,7 @@ Configure the rule to invoke an AWS Lambda function to enable CloudTrail.
 - [ ] Create a VPC endpoint for the S3 bucket, and create an IAM policy that conditionally limits all S3 actions on the bucket to the VPC endpoint as the source.
 - [x] Create a VPC endpoint for the S3 bucket, and create an S3 bucket policy that conditionally limits all S3 actions on the bucket to the VPC endpoint as the source.
 - [ ] Create a service-linked role for Amazon EC2 that allows the EC2 instances to interact directly with Amazon S3, and attach an IAM policy to the role that allows the EC2 instances full access to the S3 bucket.
-- [ ] Create a NAT gateway in the VPC, and modify the VPC route table to route all traffic destined for Amazon S3 through the NAT gateway.
+- [ ] Create a `NAT` gateway in the VPC, and modify the VPC route table to route all traffic destined for Amazon S3 through the `NAT` gateway.
 
 ### A company is managing multiple AWS accounts in AWS Organizations. The company is reviewing internal security of its AWS environment. The company's security administrator has their own AWS account and wants to review the VPC configuration of developer AWS accounts. Which solution will meet these requirements in the MOST secure manner?
 
@@ -173,10 +173,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company wants to use only IPv6 for all its Amazon EC2 instances. The EC2 instances must not be accessible from the internet, but the EC2 instances must be able to access the internet. The company creates a dual-stack VPC and IPv6-only subnets. How should a SysOps administrator configure the VPC to meet these requirements?
 
-- [ ] Create and attach a NAT gateway. Create a custom route table that includes an entry to point all IPv6 traffic to the NAT gateway. Attach the custom route table to the IPv6-only subnets.
+- [ ] Create and attach a `NAT` gateway. Create a custom route table that includes an entry to point all IPv6 traffic to the `NAT` gateway. Attach the custom route table to the IPv6-only subnets.
 - [ ] Create and attach an internet gateway. Create a custom route table that includes an entry to point all IPv6 traffic to the internet gateway. Attach the custom route table to the IPv6-only subnets.
 - [x] Create and attach an egress-only internet gateway. Create a custom route table that includes an entry to point all IPv6 traffic to the egress-only internet gateway. Attach the custom route table to the IPv6-only subnets.
-- [ ] Create and attach an internet gateway and a NAT gateway. Create a custom route table that includes an entry to point all IPv6 traffic to the internet gateway and all IPv4 traffic to the NAT gateway. Attach the custom route table to the IPv6-only subnets.
+- [ ] Create and attach an internet gateway and a `NAT` gateway. Create a custom route table that includes an entry to point all IPv6 traffic to the internet gateway and all IPv4 traffic to the `NAT` gateway. Attach the custom route table to the IPv6-only subnets.
 
 ### A SysOps administrator wants to manage a web server application with AWS Elastic Beanstalk. The Elastic Beanstalk service must maintain full capacity for new deployments at all times. Which deployment policies satisfy this requirement? (Select TWO.)
 
@@ -207,10 +207,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] `DependsOn` a timeout set to 4 hours.
 - [ ] `Metadata` with a timeout set to 4 hours.
 
-### A company plans to run a public web application on Amazon EC2 instances behind an Elastic Load Balancer (ELB). The company's security team wants to protect the website by using AWS Certificate Manager (ACM) certificates. The ELB must automatically redirect any HTTP requests to HTTPS. Which solution will meet these requirements?
+### A company plans to run a public web application on Amazon EC2 instances behind an Elastic Load Balancer (ELB). The company's security team wants to protect the website by using AWS Certificate Manager (ACM) certificates. The ELB must automatically redirect any HTTP requests to `HTTPS`. Which solution will meet these requirements?
 
-- [ ] Create an Application Load Balancer that has one HTTPS listener on port `80`. Attach an SSL/TLS certificate to listener port `80`. Create a rule to redirect requests from HTTP to HTTPS.
-- [x] Create an Application Load Balancer that has one HTTP listener on port `80` and one HTTPS protocol listener on port `443`. Attach an SSL/TLS certificate to listener port `443`. Create a rule to redirect requests from port `80` to port `443`.
+- [ ] Create an Application Load Balancer that has one `HTTPS` listener on port `80`. Attach an SSL/TLS certificate to listener port `80`. Create a rule to redirect requests from HTTP to `HTTPS`.
+- [x] Create an Application Load Balancer that has one HTTP listener on port `80` and one `HTTPS` protocol listener on port `443`. Attach an SSL/TLS certificate to listener port `443`. Create a rule to redirect requests from port `80` to port `443`.
 - [ ] Create an Application Load Balancer that has two `TCP` listeners on port `80` and port `443`. Attach an SSL/TLS certificate to listener port `443`. Create a rule to redirect requests from port `80` to port `443`.
 - [ ] Create a Network Load Balancer that has two `TCP` listeners on port `80` and port `443`. Attach an SSL/TLS certificate to listener port `443`. Create a rule to redirect requests from port `80` to port `443`.
 
@@ -293,7 +293,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] The member accounts do not have tags enabled for cost allocation.
 - [ ] The member accounts have not manually enabled trusted access for Compute Optimizer.
 
-### A SysOps administrator is attempting to download patches from the internet into an instance in a private subnet. An internet gateway exists for the VPC, and a NAT gateway has been deployed on the public subnet; however, the instance has no internet connectivity. The resources deployed into the private subnet must be inaccessible directly from the public internet. Public Subnet `(10.0.1.0/24)` Route Table: `Destination` - `Target`. `10.0.0.0/16` - `local`. `0.0.0.0/0` - `IGW`. Private Subnet (`10.0.2.0/24`) Route Table: `Destination` `Target`. `10.0.0.0/16` - `local`. What should be added to the private subnet's route table in order to address this issue, given the information provided?
+### A SysOps administrator is attempting to download patches from the internet into an instance in a private subnet. An internet gateway exists for the VPC, and a `NAT` gateway has been deployed on the public subnet; however, the instance has no internet connectivity. The resources deployed into the private subnet must be inaccessible directly from the public internet. Public Subnet `(10.0.1.0/24)` Route Table: `Destination` - `Target`. `10.0.0.0/16` - `local`. `0.0.0.0/0` - `IGW`. Private Subnet (`10.0.2.0/24`) Route Table: `Destination` `Target`. `10.0.0.0/16` - `local`. What should be added to the private subnet's route table in order to address this issue, given the information provided?
 
 - [ ] `0.0.0.0/0` IGW.
 - [x] `0.0.0.0/0` NAT.
@@ -387,7 +387,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A SysOps administrator is deploying a test site running on Amazon EC2 instances. The application requires both incoming and outgoing connectivity to the internet. Which combination of steps are required to provide internet connectivity to the EC2 instances? (Choose two.)
 
-- [ ] Add a NAT gateway to a public subnet.
+- [ ] Add a `NAT` gateway to a public subnet.
 - [ ] Attach a private address to the elastic network interface on the EC2 instance.
 - [ ] Attach an Elastic IP address to the internet gateway.
 - [x] Add an entry to the route table for the subnet that points to an internet gateway.
@@ -556,12 +556,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Launch new EC2 instances in another VPC.
 - [x] Use Service Quotas to request an EC2 quota increase.
 
-### A SysOps Administrator maintains several Amazon EC2 instances that do not have access to the public internet. To patch operating systems, the instances require outbound internet connectivity. For security reasons, the instances should not be reachable from the public Internet. The Administrator deploys a NAT instance, updates the security groups, and configures the appropriate routes within the route table. However, the instances are still unable to reach the Internet. What should be done to resolve the issue?
+### A SysOps Administrator maintains several Amazon EC2 instances that do not have access to the public internet. To patch operating systems, the instances require outbound internet connectivity. For security reasons, the instances should not be reachable from the public Internet. The Administrator deploys a `NAT` instance, updates the security groups, and configures the appropriate routes within the route table. However, the instances are still unable to reach the Internet. What should be done to resolve the issue?
 
 - [ ] Assign Elastic IP addresses to the instances and create a route from the private subnets to the internet gateway.
-- [ ] Delete the NAT instance and replace it with AWS WAF.
-- [x] Disable source/destination checks on the NAT instance.
-- [ ] Start/stop the NAT instance so it is launched on a different host.
+- [ ] Delete the `NAT` instance and replace it with AWS WAF.
+- [x] Disable source/destination checks on the `NAT` instance.
+- [ ] Start/stop the `NAT` instance so it is launched on a different host.
 
 ### A SysOps administrator must configure a resilient tier of Amazon EC2 instances for a high performance computing (HPC) application. The HPC application requires minimum latency between nodes. Which actions should the SysOps administrator take to meet these requirements? (Choose two.)
 
@@ -616,7 +616,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A company must ensure that any objects uploaded to an S3 bucket are encrypted. Which of the following actions will meet this requirement? (Choose two.)
 
 - [ ] Implement AWS Shield to protect against unencrypted objects stored in S3 buckets.
-- [ ] Implement Object access control list (ACL) to deny unencrypted objects from being uploaded to the S3 bucket.
+- [ ] Implement Object Access Control List (ACL) to deny unencrypted objects from being uploaded to the S3 bucket.
 - [x] Implement Amazon S3 default encryption to make sure that any object being uploaded is encrypted before it is stored.
 - [ ] Implement Amazon Inspector to inspect objects uploaded to the S3 bucket to make sure that they are encrypted.
 - [x] Implement S3 bucket policies to deny unencrypted objects from being uploaded to the buckets.
@@ -715,12 +715,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Set up an Amazon Route 53 outbound resolver endpoint with a forwarding rule for the onprem.private hosted zone. Associate the resolver with the AWS Region of the EC2 instance. Configure the on-premises DNS resolver to forward onprem.private DNS queries to the outbound resolver endpoint.
 - [ ] Set up an Amazon Route 53 outbound resolver endpoint. Associate the resolver with the AWS Region of the EC2 instance. Configure the on-premises DNS resolver to forward awscloud.private DNS queries to the outbound resolver endpoint.
 
-### While setting up an AWS managed VPN connection, a SysOps administrator creates a customer gateway resource in AWS. The customer gateway device resides in a data center with a NAT gateway in front of it. What address should be used to create the customer gateway resource?
+### While setting up an AWS managed VPN connection, a SysOps administrator creates a customer gateway resource in AWS. The customer gateway device resides in a data center with a `NAT` gateway in front of it. What address should be used to create the customer gateway resource?
 
 - [ ] The private IP address of the customer gateway device.
-- [ ] The MAC address of the NAT device in front of the customer gateway device.
+- [ ] The MAC address of the `NAT` device in front of the customer gateway device.
 - [ ] The public IP address of the customer gateway device.
-- [x] The public IP address of the NAT device in front of the customer gateway device.
+- [x] The public IP address of the `NAT` device in front of the customer gateway device.
 
 ### An application is running on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances are configured in an Amazon EC2 Auto Scaling group. A SysOps Administrator must configure the application to scale based on the number of incoming requests. Which solution accomplishes this with the LEAST amount of effort?
 
@@ -768,7 +768,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company has a web application with a database tier that consists of an Amazon EC2 instance that runs MySQL. A SysOps administrator needs to minimize potential data loss and the time that is required to recover in the event of a database failure. What is the MOST operationally efficient solution that meets these requirements?
 
-- [ ] Create an Amazon CloudWatch alarm for the StatusCheckFailed_System metric to invoke an AWS Lambda function that stops and starts the EC2 instance.
+- [ ] Create an Amazon CloudWatch alarm for the `StatusCheckFailed_System` metric to invoke an AWS Lambda function that stops and starts the EC2 instance.
 - [x] Create an Amazon RDS for MySQL Multi-AZ DB instance. Use a MySQL native backup that is stored in Amazon S3 to restore the data to the new database. Update the connection string in the web application.
 - [ ] Create an Amazon RDS for MySQL Single-AZ DB instance with a read replica. Use a MySQL native backup that is stored in Amazon S3 to restore the data to the new database. Update the connection string in the web application.
 - [ ] Use Amazon Data Lifecycle Manager (Amazon DLM) to take a snapshot of the Amazon Elastic Block Store (Amazon EBS) volume every hour. In the event of an EC2 instance failure, restore the EBS volume from a snapshot.
@@ -780,19 +780,17 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Create a scheduled scaling action to scale out the number of EC2 instances shortly before the increase in user traffic occurs.
 - [ ] Manually add a few more EC2 instances to the Auto Scaling group to support the increase in user traffic.
 
-### An Amazon EC2 instance needs to be reachable from the internet. The EC2 instance is in a subnet with the following route table: Which entry must a SysOps administrator add to the route table to meet this requirement?
+### A root account owner has given full access of his S3 bucket to one of the IAM users using the bucket ACL. When the IAM user logs in to the S3 console, which actions can he perform?
 
-![Question 109](images/question109.jpg)
-
-- [ ] A route for `0.0.0.0/0` that points to a NAT gateway.
-- [ ] A route for `0.0.0.0/0` that points to an egress-only internet gateway.
-- [x] A route for `0.0.0.0/0` that points to an internet gateway.
-- [ ] A route for `0.0.0.0/0` that points to an elastic network interface.
+- [ ] He can just view the content of the bucket.
+- [ ] He can do all the operations on the bucket.
+- [x] It is not possible to give access to an IAM user using ACL.
+- [ ] The IAM user can perform all operations on the bucket using only API/SDK.
 
 ### An Amazon S3 bucket in a SysOps Administrator's account can be accesses by users in other AWS accounts. How can the Administrator ensure that the bucket is only accessible to members of the Administrator's AWS account?
 
 - [ ] Move the S3 bucket from a public subnet to a private subnet in the Amazon VPC.
-- [x] Change the bucket access control list (ACL) to restrict access to the bucket owner.
+- [x] Change the bucket Access Control List (ACL) to restrict access to the bucket owner.
 - [ ] Enable server-side encryption for all objects in the bucket.
 - [ ] Use only Amazon S3 presigned URLs for accessing objects in the bucket.
 
@@ -803,12 +801,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Deploy an Auto Scaling group across three Availability Zones with a minimum capacity of four instances.
 - [ ] Deploy an Auto Scaling group across three Availability Zones with a minimum capacity of six instances.
 
-### A company's backend infrastructure contains an Amazon EC2 instance in a private subnet. The private subnet has a route to the internet through a NAT gateway in a public subnet. The instance must allow connectivity to a secure web server on the internet to retrieve data at regular intervals. The client software times out with an error message that indicates that the client software could not establish the `TCP` connection. What should a SysOps administrator do to resolve this error?
+### A company's backend infrastructure contains an Amazon EC2 instance in a private subnet. The private subnet has a route to the internet through a `NAT` gateway in a public subnet. The instance must allow connectivity to a secure web server on the internet to retrieve data at regular intervals. The client software times out with an error message that indicates that the client software could not establish the `TCP` connection. What should a SysOps administrator do to resolve this error?
 
-- [ ] Add an inbound rule to the security group for the EC2 instance with the following parameters: Type – HTTP, Source – `0.0.0.0/0`.
-- [ ] Add an inbound rule to the security group for the EC2 instance with the following parameters: Type – HTTPS, Source – `0.0.0.0/0`.
-- [ ] Add an outbound rule to the security group for the EC2 instance with the following parameters: Type – HTTP, Destination – `0.0.0.0/0`.
-- [x] Add an outbound rule to the security group for the EC2 instance with the following parameters: Type – HTTPS. Destination – `0.0.0.0/0`.
+- [ ] Add an inbound rule to the security group for the EC2 instance with the following parameters: `Type` – `HTTP`, `Source` – `0.0.0.0/0`.
+- [ ] Add an inbound rule to the security group for the EC2 instance with the following parameters: `Type` – `HTTPS`, `Source` – `0.0.0.0/0`.
+- [ ] Add an outbound rule to the security group for the EC2 instance with the following parameters: `Type` – `HTTP`, `Destination` – `0.0.0.0/0`.
+- [x] Add an outbound rule to the security group for the EC2 instance with the following parameters: `Type` – `HTTPS`. `Destination` – `0.0.0.0/0`.
 
 ### A software development company has multiple developers who work on the same product. Each developer must have their own development environment, and these development environments must be identical. Each development environment consists of Amazon EC2 instances and an Amazon RDS DB instance. The development environments should be created only when necessary, and they must be terminated each night to minimize costs. What is the MOST operationally efficient solution that meets these requirements?
 
@@ -906,7 +904,7 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 ### A SysOps administrator is setting up an automated process to recover an Amazon EC2 instance In the event of an underlying hardware failure. The recovered instance must have the same private IP address and the same Elastic IP address that the original instance had. The SysOps team must receive an email notification when the recovery process is initiated. Which solution will meet these requirements?
 
 - [ ] Create an Amazon CloudWatch alarm for the EC2 instance, and specify the SiatusCheckFailedjnstance metric. Add an EC2 action to the alarm to recover the instance. Add an alarm notification to publish a message to an Amazon Simple Notification Service (Amazon SNS> topic. Subscribe the SysOps team email address to the SNS topic.
-- [x] Create an Amazon CloudWatch alarm for the EC2 Instance, and specify the StatusCheckFailed_System metric. Add an EC2 action to the alarm to recover the instance. Add an alarm notification to publish a message to an Amazon Simple Notification Service (Amazon SNS) topic. Subscribe the SysOps team email address to the SNS topic.
+- [x] Create an Amazon CloudWatch alarm for the EC2 Instance, and specify the `StatusCheckFailed_System` metric. Add an EC2 action to the alarm to recover the instance. Add an alarm notification to publish a message to an Amazon Simple Notification Service (Amazon SNS) topic. Subscribe the SysOps team email address to the SNS topic.
 - [ ] Create an Auto Scaling group across three different subnets in the same Availability Zone with a minimum, maximum, and desired size of 1. Configure the Auto Seating group to use a launch template that specifies the private IP address and the Elastic IP address. Add an activity notification for the Auto Scaling group to send an email message to the SysOps team through Amazon Simple Email Service (Amazon SES)
 - [ ] Create an Auto Scaling group across three Availability Zones with a minimum, maximum, and desired size of 1. Configure the Auto Scaling group to use a launch template that specifies the private IP address and the Elastic IP address. Add an activity notification for the Auto Scaling group to publish a message to an Amazon Simple Notification Service (Amazon SNS) topic. Subscribe the SysOps team email address to the SNS topic.
 
@@ -990,7 +988,7 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 ### A company has an existing web application that runs on two Amazon EC2 instances behind an Application Load Balancer (ALB) across two Availability Zones The application uses an Amazon RDS Multi-AZ DB Instance Amazon Route 53 record sets route requests tor dynamic content to the load balancer and requests for static content to an Amazon S3 bucket Site visitors are reporting extremely long loading times. Which actions should be taken to improve the performance of the website? (Select TWO)
 
 - [x] Add Amazon CloudFront caching for static content.
-- [ ] Change the load balancer listener from HTTPS to `TCP`.
+- [ ] Change the load balancer listener from `HTTPS` to `TCP`.
 - [ ] Enable Amazon Route 53 latency-based routing.
 - [x] Implement Amazon EC2 Auto Scaling for the web servers.
 - [ ] Move the static content from Amazon S3 to the web servers.
@@ -1143,7 +1141,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 - [x] Create an S3 gateway endpoint that uses the default gateway endpoint policy. Associate the private subnet with the gateway endpoint.
 - [ ] Create an S3 interface endpoint. Associate the EC2 instances with the interface endpoint.
-- [ ] Configure a NAT gateway. Associate the private subnet with the NAT gateway.
+- [ ] Configure a `NAT` gateway. Associate the private subnet with the `NAT` gateway.
 - [ ] Configure a proxy EC2 instance. Update the private subnet route tables to route traffic through the proxy EC2 instance. Configure the proxy to route all S3 requests to the target S3 bucket.
 
 ### A company runs thousands of Amazon EC2 instances that are based on the Amazon Linux 2 Amazon Machine Image (AMI). A SysOps administrator must implement a solution to record commands and output from any user that needs an interactive session on one of the EC2 instances. The solution must log the data to a durable storage location. The solution also must provide automated notifications and alarms that are based on the log data. Which solution will meet these requirements with the MOST operational efficiency?
@@ -1211,10 +1209,10 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 ### A SysOps administrator has created a VPC that contains a public subnet and a private subnet. Amazon EC2 instances that were launched in the private subnet cannot access the internet. The default network ACL is active on all subnets in the VPC, and all security groups allow all outbound traffic. Which solution will provide the EC2 instances in the private subnet with access to the internet?
 
-- [x] Create a NAT gateway in the public subnet. Create a route from the private subnet to the NAT gateway.
-- [ ] Create a NAT gateway in the public subnet. Create a route from the public subnet to the NAT gateway.
-- [ ] Create a NAT gateway in the private subnet. Create a route from the public subnet to the NAT gateway.
-- [ ] Create a NAT gateway in the private subnet. Create a route from the private subnet to the NAT gateway.
+- [x] Create a `NAT` gateway in the public subnet. Create a route from the private subnet to the `NAT` gateway.
+- [ ] Create a `NAT` gateway in the public subnet. Create a route from the public subnet to the `NAT` gateway.
+- [ ] Create a `NAT` gateway in the private subnet. Create a route from the public subnet to the `NAT` gateway.
+- [ ] Create a `NAT` gateway in the private subnet. Create a route from the private subnet to the `NAT` gateway.
 
 ### A company is running a serverless application on AWS Lambda. The application stores data in an Amazon RDS for MySQL DB instance. Usage has steadily increased, and recently there have been numerous "too many connections" errors when the Lambda function attempts to connect to the database. The company already has configured the database to use the maximum max_connections value that is possible. What should a SysOps administrator do to resolve these errors?
 
@@ -1379,12 +1377,12 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Turn on access logging for the S3 bucket. Configure the access logs to be saved to Amazon CloudWatch Logs. Configure the log group with a retention period of 90 days.
 - [x] Turn on access logging for the S3 bucket. Configure the access logs to be saved in a second S3 bucket. Turn on S3 Object Lock on the second S3 bucket, and configure a default retention period of 90 days.
 
-### A SysOps administrator migrates NAT instances to NAT gateways. After the migration, an application that is hosted on Amazon EC2 instances in a private subnet cannot access the internet. Which of the following are possible reasons for this problem? (Choose two.)
+### A SysOps administrator migrates `NAT` instances to `NAT` gateways. After the migration, an application that is hosted on Amazon EC2 instances in a private subnet cannot access the internet. Which of the following are possible reasons for this problem? (Choose two.)
 
-- [x] The application is using a protocol that the NAT gateway does not support.
-- [ ] The NAT gateway is not in a security group.
-- [ ] The NAT gateway is in an unsupported Availability Zone.
-- [x] The NAT gateway is not in the Available state.
+- [x] The application is using a protocol that the `NAT` gateway does not support.
+- [ ] The `NAT` gateway is not in a security group.
+- [ ] The `NAT` gateway is in an unsupported Availability Zone.
+- [x] The `NAT` gateway is not in the Available state.
 - [ ] The port forwarding settings do not allow access to internal services from the internet.
 
 ### A company runs an application on an Amazon EC2 instance. A SysOps administrator creates an Auto Scaling group and an Application Load Balancer (ALB) to handle an increase in demand. However, the EC2 instances are failing the health check. What should the SysOps administrator do to troubleshoot this issue?
@@ -1463,7 +1461,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 ### A SysOps administrator is responsible for managing a fleet of Amazon EC2 instances. These EC2 instances upload build artifacts to a third-party service. The third-party service recently implemented a strict IP allow list that requires all build uploads to come from a single IP address. What change should the systems administrator make to the existing build fleet to comply with this new requirement?
 
-- [x] Move all of the EC2 instances behind a NAT gateway and provide the gateway IP address to the service.
+- [x] Move all of the EC2 instances behind a `NAT` gateway and provide the gateway IP address to the service.
 - [ ] Move all of the EC2 instances behind an internet gateway and provide the gateway IP address to the service.
 - [ ] Move all of the EC2 instances into a single Availability Zone and provide the Availability Zone IP address to the service.
 - [ ] Move all of the EC2 instances to a peered VPC and provide the VPC IP address to the service.
@@ -1496,7 +1494,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [x] Search AWS CloudTrail event history for all events initiated with the compromised access key within the suspected timeframe.
 - [ ] Search VPC Flow Logs for all events initiated with the compromised access key within the suspected timeframe.
 
-### A company runs a retail website on multiple Amazon EC2 instances behind an Application Load Balancer (ALB). The company must secure traffic to the website over an HTTPS connection. Which combination of actions should a SysOps administrator take to meet these requirements? (Choose two.)
+### A company runs a retail website on multiple Amazon EC2 instances behind an Application Load Balancer (ALB). The company must secure traffic to the website over an `HTTPS` connection. Which combination of actions should a SysOps administrator take to meet these requirements? (Choose two.)
 
 - [ ] Attach the certificate to each EC2 instance.
 - [x] Attach the certificate to the ALB.
@@ -1650,11 +1648,11 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 ### A company has two VPC networks named VPC A and VPC B. The VPC A CIDR block is `10.0.0.0/16` and the VPC B CIDR block is `172.31.0.0/16`. The company wants to establish a VPC peering connection named `pcx-12345` between both VPCs. Which rules should appear in the route table of VPC A after configuration? (Choose two.)
 
-- [x] Destination: `10.0.0.0/16`, Target: `Local`.
-- [ ] Destination: `172.31.0.0/16`, Target: `Local`.
-- [ ] Destination: `10.0.0.0/16`, Target: `pcx-12345`.
-- [x] Destination: `172.31.0.0/16`, Target: `pcx-12345`.
-- [ ] Destination: `10.0.0.0/16`, Target: `172.31.0.0/16`.
+- [x] `Destination`: `10.0.0.0/16`, `Target`: `Local`.
+- [ ] `Destination`: `172.31.0.0/16`, `Target`: `Local`.
+- [ ] `Destination`: `10.0.0.0/16`, `Target`: `pcx-12345`.
+- [x] `Destination`: `172.31.0.0/16`, `Target`: `pcx-12345`.
+- [ ] `Destination`: `10.0.0.0/16`, `Target`: `172.31.0.0/16`.
 
 ### A company analyzes sales data for its customers. Customers upload files to one of the company's Amazon S3 buckets, and a message is posted to an Amazon. Simple Queue Service (Amazon SQS) queue that contains the object Amazon Resource Name (ARN). An application that runs on an Amazon EC2 instance polls the queue and processes the messages. The processing time depends on the size of the file. Customers are reporting delays in the processing of their files. A SysOps administrator decides to configure Amazon EC2 Auto Scaling as the first step. The SysOps administrator creates an Amazon Machine Image (AMI) that is based on the existing EC2 instance. The SysOps administrator also creates a launch template that references the AMI. How should the SysOps administrator configure the Auto Scaling policy to improve the response time?
 
@@ -1730,10 +1728,10 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 ### A company runs an application that uses a MySQL database on an Amazon EC2 instance. The EC2 instance has a General Purpose SSD Amazon Elastic Block. Store (Amazon EBS) volume. The company made changes to the application code and now wants to perform load testing to evaluate the impact of the code changes. A SysOps administrator must create a new MySQL instance from a snapshot of the existing production instance. This new instance needs to perform as similarly as possible to the production instance. Which restore option meets these requirements?
 
-- [x] Use EBS fast snapshot restore to create a new General Purpose SSD EBS volume from the production snapshot.
-- [ ] Use EBS fast snapshot restore to create a new Provisioned IOPS SSD EBS volume from the production snapshot.
-- [ ] Use EBS snapshot restore to create a new General Purpose SSD EBS volume from the production snapshot.
-- [ ] Use EBS snapshot restore to create a new Provisioned IOPS SSD EBS volume from the production snapshot.
+- [x] Use EBS fast snapshot restore to create a new `General Purpose SSD EBS` volume from the production snapshot.
+- [ ] Use EBS fast snapshot restore to create a new `Provisioned IOPS SSD EBS` volume from the production snapshot.
+- [ ] Use EBS snapshot restore to create a new `General Purpose SSD EBS` volume from the production snapshot.
+- [ ] Use EBS snapshot restore to create a new `Provisioned IOPS SSD EBS` volume from the production snapshot.
 
 ### A company uses AWS Organizations to manage its AWS accounts. A SysOps administrator must create a backup strategy for all Amazon EC2 instances across all the company's AWS accounts. Which solution will meet these requirements in the MOST operationally efficient way?
 
@@ -1870,11 +1868,11 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 ### A company has an application that is running on Amazon EC2 instances in a VPC. The application needs access to download software updates from the internet. The VPC has public subnets and private subnets. The company's security policy requires all EC2 instances to be deployed in private subnets. What should a SysOps administrator do to meet these requirements?
 
 - [ ] Add an internet gateway to the VPC. In the route table for the private subnets, add a route to the internet gateway.
-- [ ] Add aNAT gateway to a private subnet. In the route table for the private subnets, add a route to the NAT gateway.
-- [x] Add a NAT gateway to public subnet. In the route table for the private subnets, add a route to the NAT gateway.
+- [ ] Add aNAT gateway to a private subnet. In the route table for the private subnets, add a route to the `NAT` gateway.
+- [x] Add a `NAT` gateway to public subnet. In the route table for the private subnets, add a route to the `NAT` gateway.
 - [ ] Add two internet gateways to the VPC. In the route tables for the private subnets and public subnets, add a route to each internet gateway.
 
-### A SysOps administrator has set up a new Amazon EC2 instance as a web server in a public subnet. The instance uses HTTP port `80` and HTTPS port `443`. The SysOps administrator has confirmed internet connectivity by downloading operating system updates and software from public repositories. However, the SysOps administrator cannot access the instance from a web browser on the internet. Which combination of steps should the SysOps administrator take to troubleshoot this issue? (Choose three.)
+### A SysOps administrator has set up a new Amazon EC2 instance as a web server in a public subnet. The instance uses HTTP port `80` and `HTTPS` port `443`. The SysOps administrator has confirmed internet connectivity by downloading operating system updates and software from public repositories. However, the SysOps administrator cannot access the instance from a web browser on the internet. Which combination of steps should the SysOps administrator take to troubleshoot this issue? (Choose three.)
 
 - [x] Ensure that the inbound rules of the instance's security group allow traffic on ports `80` and `443`.
 - [ ] Ensure that the outbound rules of the instance's security group allow traffic on ports `80` and `443`.
@@ -1984,11 +1982,11 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 ### A company has an application that uses an Amazon S3 bucket for object storage. A developer needs to configure in-transit encryption for the S3 bucket. All the S3 objects containing personal data needs to be encrypted at rest with AWS Key Management Service (AWS KMS) keys, which can be rotated on demand. Which combination of steps will meet these requirements? (Choose two.)
 
-- [ ] Write an S3 bucket policy to allow only encrypted connections over HTTPS by using permissions boundary.
+- [ ] Write an S3 bucket policy to allow only encrypted connections over `HTTPS` by using permissions boundary.
 - [ ] Configure an S3 bucket policy to enable client-side encryption for the objects containing personal data by using an AWS KMS customer managed key.
 - [x] Configure the application to encrypt the objects by using an AWS KMS customer managed key before uploading the objects containing personal data to Amazon S3.
-- [x] Write an S3 bucket policy to allow only encrypted connections over HTTPS by using the `aws:SecureTransport` condition.
-- [ ] Configure S3 Block Public Access settings for the S3 bucket to allow only encrypted connections over HTTPS.
+- [x] Write an S3 bucket policy to allow only encrypted connections over `HTTPS` by using the `aws:SecureTransport` condition.
+- [ ] Configure S3 Block Public Access settings for the S3 bucket to allow only encrypted connections over `HTTPS`.
 
 ### A SysOps Administrator found that a newly-deployed Amazon EC2 application server is unable to connect to an existing Amazon RDS database. After enabling VPC Flow Logs and confirming that the flow log is active on the console, the log group cannot be located in Amazon CloudWatch. What are the MOST likely reasons for this situation? (Choose two.)
 
@@ -2025,10 +2023,10 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 - [ ] A security group deny rule is blocking traffic on port `443`.
 - [ ] The EC2 instance is shut down.
-- [x] The network ACL is blocking HTTPS traffic.
+- [x] The network ACL is blocking `HTTPS` traffic.
 - [ ] The VPC has no internet gateway attached.
 
-### A company has created a NAT gateway in a public subnet in a VPC. The VPC also contains a private subnet that includes Amazon EC2 instances. The EC2 instances use the NAT gateway to access the internet to download patches and updates. The company has configured a VPC flow log for the elastic network interface of the NAT gateway. The company is publishing the output to Amazon CloudWatch Logs. A SysOps administrator must identify the top five internet destinations that the EC2 instances in the private subnet communicate with for downloads. What should the SysOps administrator do to meet this requirement in the MOST operationally efficient way?
+### A company has created a `NAT` gateway in a public subnet in a VPC. The VPC also contains a private subnet that includes Amazon EC2 instances. The EC2 instances use the `NAT` gateway to access the internet to download patches and updates. The company has configured a VPC flow log for the elastic network interface of the `NAT` gateway. The company is publishing the output to Amazon CloudWatch Logs. A SysOps administrator must identify the top five internet destinations that the EC2 instances in the private subnet communicate with for downloads. What should the SysOps administrator do to meet this requirement in the MOST operationally efficient way?
 
 - [ ] Use AWS CloudTrail Insights events to identify the top five internet destinations.
 - [ ] Use Amazon CloudFront standard logs (access logs) to identify the top five internet destinations.
@@ -2090,3 +2088,32 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Configure the DR Region with an ALB and an Auto Scaling group. Use the same configuration as in the primary Region.
 - [x] Configure the DR Region with an ALB and an Auto Scaling group. Set the Auto Scaling group's minimum capacity, maximum capacity, and desired capacity to `1`.
 - [ ] Manually launch a new ALB and a new Auto Scaling group by using AWS CloudFormation during a failover activity.
+
+### A company has a memory-intensive application that runs on a fleet of Amazon EC2 instances behind an Elastic Load Balancer (ELB). The instances run in an Auto Scaling group. A SysOps administrator must ensure that the application can scale based on the number of users that connect to the application. Which solution will meet these requirements?
+
+- [x] Create a scaling policy that will scale the application based on the `ActiveConnectionCount` Amazon CloudWatch metric that is generated from the ELB.
+- [ ] Create a scaling policy that will scale the application based on the `mem_used` Amazon CloudWatch metric that is generated from the ELB.
+- [ ] Create a scheduled scaling policy to increase the number of EC2 instances in the Auto Scaling group to support additional connections.
+- [ ] Create and deploy a script on the ELB to expose the number of connected users as a custom Amazon CloudWatch metric. Create a scaling policy that uses the metric.
+
+### A company using AWS Organizations requires that no Amazon S3 buckets in its production accounts should ever be deleted. What is the SIMPLEST approach the SysOps Administrator can take to ensure S3 buckets in those accounts can never be deleted?
+
+- [ ] Set up MFA Delete on all the S3 buckets to prevent the buckets from being deleted.
+- [x] Use service control policies to deny the `s3:DeleteBucket` action on all buckets in production accounts.
+- [ ] Create an IAM group that has an IAM policy to deny the `s3:DeleteBucket` action on all buckets in production accounts.
+- [ ] Use AWS Shield to deny the `s3:DeleteBucket` action on the AWS account instead of all S3 buckets.
+
+### A company has an application that is running on an EC2 instance in one Availability Zone. A SysOps Administrator has been tasked with making the application highly available. The Administrator created a launch configuration from the running EC2 instance. The Administrator also properly configured a load balancer. What step should the Administrator complete next to make the application highly available?
+
+- [ ] Create an Auto Scaling group by using the launch configuration across at least `2` Availability Zones with a minimum size of `1`, desired capacity of `1`, and a maximum size of `1`.
+- [x] Create an Auto Scaling group by using the launch configuration across at least `3` Availability Zones with a minimum size of `2`, desired capacity of `2`, and a maximum of `2`.
+- [ ] Create an Auto Scaling group by using the launch configuration across at least `2` regions with a minimum size of `1`, desired capacity of `1`, and a maximum size of `1`.
+- [ ] Create an Auto Scaling group by using the launch configuration across at least `3` regions with a minimum size of `2`, desired capacity of `2`, and a maximum size of `2`.
+
+### An application is running on multiple EC2 instances. As part of an initiative to improve overall infrastructure security, the EC2 instances were moved to a private subnet. However, since moving, the EC2 instances have not been able to automatically update, and a SysOps Administrator has not been able to SSH into them remotely. Which two actions could the Administrator take to securely resolve these issues? (Choose two.)
+
+- [x] Set up a bastion host in a public subnet, and configure security groups and route tables accordingly.
+- [ ] Set up a bastion host in the private subnet, and configure security groups accordingly.
+- [ ] Configure a load balancer in a public subnet, and configure the route tables accordingly.
+- [x] Set up a `NAT` gateway in a public subnet, and change the private subnet route tables accordingly.
+- [ ] Set up a `NAT` gateway in a private subnet, and ensure that the route tables are configured accordingly.
