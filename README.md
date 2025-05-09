@@ -235,7 +235,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Assign additional Elastic IP addresses to the private subnet.
 - [x] Create a new private subnet to hold the required EC2 instances.
 
-### A company has a critical serverless application that uses multiple AWS Lambda functions. Each Lambda function generates 1 GB of log data daily in its own Amazon CloudWatch Logs log group. The company's security team asks for a count of application errors, grouped by type, across all of the log groups. What should a SysOps administrator do to meet this requirement?
+### A company has a critical serverless application that uses multiple AWS Lambda functions. Each Lambda function generates `1 GB` of log data daily in its own Amazon CloudWatch Logs log group. The company's security team asks for a count of application errors, grouped by type, across all of the log groups. What should a SysOps administrator do to meet this requirement?
 
 - [x] Perform a CloudWatch Logs Insights query that uses the stats command and count function.
 - [ ] Perform a CloudWatch Logs search that uses the groupby keyword and count function.
@@ -265,11 +265,11 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Update the Auto Scaling group to launch instances that have a storage optimized instance type.
 - [x] Use EC2 Image Builder to prepare an Amazon Machine Image (AMI) that has pre-installed software.
 
-### A SysOps administrator has launched a large general purpose Amazon EC2 instance to regularly process large data files. The instance has an attached 1 TB General Purpose SSD (gp2) Amazon Elastic Block Store (Amazon EBS) volume. The instance also is EBS-optimized. To save costs, the SysOps administrator stops the instance each evening and restarts the instance each morning. When data processing is active, Amazon CloudWatch metrics on the instance show a consistent 3.000 VolumeReadOps. The SysOps administrator must improve the I/O performance while ensuring data integrity. Which action will meet these requirements?
+### A SysOps administrator has launched a large general purpose Amazon EC2 instance to regularly process large data files. The instance has an attached 1 TB `General Purpose SSD (gp2)` Amazon Elastic Block Store (Amazon EBS) volume. The instance also is EBS-optimized. To save costs, the SysOps administrator stops the instance each evening and restarts the instance each morning. When data processing is active, Amazon CloudWatch metrics on the instance show a consistent 3.000 `VolumeReadOps`. The SysOps administrator must improve the I/O performance while ensuring data integrity. Which action will meet these requirements?
 
 - [ ] Change the instance type to a large, burstable, general purpose instance.
 - [ ] Change the instance type to an extra large general purpose instance.
-- [ ] Increase the EBS volume to a 2 TB General Purpose SSD (gp2) volume.
+- [ ] Increase the EBS volume to a 2 TB `General Purpose SSD (gp2)` volume.
 - [x] Move the data that resides on the EBS volume to the instance store.
 
 ### A company runs workloads on 90 Amazon EC2 instances in the `eu-west-1` Region in an AWS account. In 2 months, the company will migrate the workloads from `eu-west-1` to the `eu-west-3` Region. The company needs to reduce the cost of the EC2 instances. The company is willing to make a 1-year commitment that will begin next week. The company must choose an EC2 Instance purchasing option that will provide discounts for the 90 EC2 Instances regardless of Region during the 1-year period. Which solution will meet these requirements?
@@ -585,7 +585,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] CloudFormation will prompt the user to roll back the stack or continue.
 - [ ] CloudFormation will successfully complete the stack but will report a failed status for the DB instance.
 
-### A SysOps administrator manages a company's Amazon S3 buckets. The SysOps administrator has identified 5 GB of incomplete multipart uploads in an S3 bucket in the company's AWS account. The SysOps administrator needs to reduce the number of incomplete multipart upload objects in the S3 bucket. Which solution will meet this requirement?
+### A SysOps administrator manages a company's Amazon S3 buckets. The SysOps administrator has identified `5 GB` of incomplete multipart uploads in an S3 bucket in the company's AWS account. The SysOps administrator needs to reduce the number of incomplete multipart upload objects in the S3 bucket. Which solution will meet this requirement?
 
 - [x] Create an S3 Lifecycle rule on the S3 bucket to delete expired markers or incomplete multipart uploads.
 - [ ] Require users that perform uploads of files into Amazon S3 to use the S3 TransferUtility.
@@ -639,7 +639,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Store the database password as an environment variable for each Lambda function. Create a new Lambda function that is named `PasswordRotate`. Use Amazon EventBridge (Amazon CloudWatch Events) to schedule the `PasswordRotate` function every 30 days to change the database password and update the environment variable for each Lambda function.
 - [ ] Use AWS Key Management Service (AWS KMS) to encrypt the database password and to store the encrypted password as an environment variable for each Lambda function. Grant each Lambda function access to the KMS key so that the database password can be decrypted when required. Create a new Lambda function that is named `PasswordRotate` to change the password every 30 days.
-- [x] Use AWS Secrets Manager to store credentials for the database. Create a Secrets Manager secret, and select the database so that Secrets Manager will use a Lambda function to update the database password automatically. Specify an automatic rotation schedule of 30 days. Update each Lambda function to access the database password from SecretsManager.
+- [x] Use AWS Secrets Manager to store credentials for the database. Create a Secrets Manager secret, and select the database so that Secrets Manager will use a Lambda function to update the database password automatically. Specify an automatic rotation schedule of 30 days. Update each Lambda function to access the database password from Secrets Manager.
 - [ ] Use AWS Systems Manager Parameter Store to create a secure string to store credentials for the database. Create a new Lambda function called `PasswordRotate`. Use Amazon EventBridge (Amazon CloudWatch Events) to schedule the `PasswordRotate` function every 30 days to change the database password and to update the secret within Parameter Store. Update each Lambda function to access the database password from Parameter Store.
 
 ### A Sysops administrator creates an Amazon Elastic Kubernetes Service (Amazon EKS) cluster that uses AWS Fargate. The cluster is deployed successfully. The Sysops administrator needs to manage the cluster by using the `kubectl` command line tool. Which of the following must be configured on the Sysops administrator's machine so that `kubectl` can communicate with the cluster API server?
@@ -831,25 +831,24 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A SysOps administrator is helping a development team deploy an application to AWS Trie AWS CloudFormat on temp ate includes an Amazon Linux EC2 Instance an Amazon Aurora DB cluster and a hard coded database password that must be rotated every 90 days. What is the MOST secure way to manage the database password?
 
-- [x] Use the AWS SecretsManager Secret resource with the `GenerateSecretString` property to automatically generate a password. Use the AWS SecretsManager `RotationSchedule` resource to define a rotation schedule for the password. Configure the application to retrieve the secret from AWS Secrets Manager to access the database.
-- [ ] Use the AWS SecretsManager Secret resource with the `SecretString` property. Accept a password as a CloudFormation parameter. Use the `AllowedPattern` property of the CloudFormaton parameter to require a minimum length, uppercase and lowercase letters and special characters. Configure the application to retrieve the secret from AWS Secrets Manager to access the database.
-- [ ] Use the AWS SSM Parameter resource. Accept input as a `CloudFormation` parameter to store the parameter as a secure sting. Configure the application to retrieve the parameter from AWS Systems Manager Parameter Store to access the database.
-- [ ] Use the AWS SSM Parameter resource. Accept input as a `CloudFormation` parameter to store the parameter as a string. Configure the application to retrieve the parameter from AWS Systems Manager Parameter Store to access the database.
+- [x] Use the AWS Secrets Manager Secret resource with the `GenerateSecretString` property to automatically generate a password. Use the AWS Secrets Manager `RotationSchedule` resource to define a rotation schedule for the password. Configure the application to retrieve the secret from AWS Secrets Manager to access the database.
+- [ ] Use the AWS Secrets Manager Secret resource with the `SecretString` property. Accept a password as a `CloudFormation` parameter. Use the `AllowedPattern` property of the `CloudFormaton` parameter to require a minimum length, uppercase and lowercase letters and special characters. Configure the application to retrieve the secret from AWS Secrets Manager to access the database.
+- [ ] Use the `AWS::SSM::Parameter` resource. Accept input as a `CloudFormation` parameter to store the parameter as a secure string. Configure the application to retrieve the parameter from AWS Systems Manager Parameter Store to access the database.
+- [ ] Use the `AWS::SSM::Parameter` resource. Accept input as a `CloudFormation` parameter to store the parameter as a string. Configure the application to retrieve the parameter from AWS Systems Manager Parameter Store to access the database.
 
-### An application team uses an Amazon Aurora MySQL DB cluster with one Aurora Replica. The application team notices that the application read performance degrades when user connections exceed 200. The number of user connections is typically consistent around 180. with occasional sudden increases above 200 connections. The application team wants the application to automatically scale as user demand increases or decreases. Which solution will meet these requirements?
+### An application team uses an Amazon Aurora MySQL DB cluster with one Aurora Replica. The application team notices that the application read performance degrades when user connections exceed `200`. The number of user connections is typically consistent around `180`. with occasional sudden increases above `200` connections. The application team wants the application to automatically scale as user demand increases or decreases. Which solution will meet these requirements?
 
 - [ ] Migrate to a new Aurora multi-master DB cluster. Modify the application database connection string.
-- [ ] Modify the DB cluster by changing to serverless mode whenever user connections exceed 200.
-- [x] Create an auto scaling policy with a target metric of 195 DatabaseConnections.
+- [ ] Modify the DB cluster by changing to serverless mode whenever user connections exceed `200`.
+- [x] Create an auto scaling policy with a target metric of `195` `DatabaseConnections`.
 - [ ] Modify the DB cluster by increasing the Aurora Replica instance size.
 
 ### A company's SysOps administrator has created an Amazon EC2 instance with custom software that will be used as a template for all new EC2 instances across multiple AWS accounts. The Amazon Elastic Block Store (Amazon EBS) volumes that are attached to the EC2 instance are encrypted with AWS managed keys. The SysOps administrator creates an Amazon Machine Image (AMI) of the custom EC2 instance and plans to share the AMI with the company's other AWS accounts. The company requires that all AMIs are encrypted with AWS Key Management Service (AWS KMS) keys and that only authorized AWS accounts can access the shared AMIs. Which solution will securely share the AMI with the other AWS accounts?
 
-- [ ] In the account where the AMI was created, create a customer master key (CMK). Modify the key policy to provide kms:DescribeKey, kms ReEncrypf, kms:CreateGrant, and kms:Decrypt permissions to the AWS accounts that the AMI will be shared with. Modify the AMI permissions to specify the AWS account numbers that the AMI will be shared with.
-- [x] In the account where the AMI was created, create a customer master key (CMK). Modify the key policy to provide kms:DescribeKey, kms:ReEncrypt*. kms:CreateGrant, and kms;Decrypt permissions to the AWS accounts that the AMI will be shared with. Create a copy of the AMI. and specify the CMK. Modify the permissions on the copied AMI to specify the AWS account numbers that the AMI will be shared with.
-- [ ] In the account where the AMI was created, create a customer master key (CMK). Modify the key
-policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decrypt permissions to the AWS accounts that the AMI will be shared with. Create a copy of the AMI. and specify the CMK. Modify the permissions on the copied AMI to make it public.
-- [ ] In the account where the AMI was created, modify the key policy of the AWS managed key to provide kms:DescnbeKey. kms:ReEncrypt kms:CreateGrant, and kms:Decrypt permissions to the AWS accounts that the AMI will be shared with. Modify the AMI permissions to specify the AWS account numbers that the AMI will be shared with.
+- [ ] In the account where the AMI was created, create a customer managed KMS key. Modify the key policy to provide `kms:DescribeKey`, `kms:ReEncrypt*`, `kms:CreateGrant`, and `kms:Decrypt` permissions to the AWS accounts that the AMI will be shared with. Modify the AMI permissions to specify the AWS account numbers that the AMI will be shared with.
+- [x] In the account where the AMI was created, create a customer managed KMS key. Modify the key policy to provide `kms:DescribeKey`, `kms:ReEncrypt*`, `kms:CreateGrant`, and `kms:Decrypt` permissions to the AWS accounts that the AMI will be shared with. Create a copy of the AMI, and specify the KMS key. Modify the permissions on the copied AMI to specify the AWS account numbers that the AMI will be shared with.
+- [ ] In the account where the AMI was created, create a customer managed KMS key. Modify the key policy to provide `kms:DescribeKey`, `kms:ReEncrypt*`, `kms:CreateGrant`, and `kms:Decrypt` permissions to the AWS accounts that the AMI will be shared with. Create a copy of the AMI, and specify the KMS key. Modify the permissions on the copied AMI to make it public.
+- [ ] In the account where the AMI was created, modify the key policy of the AWS managed key to provide `kms:DescribeKey`, `kms:ReEncrypt*`, `kms:CreateGrant`, and `kms:Decrypt` permissions to the AWS accounts that the AMI will be shared with. Modify the AMI permissions to specify the AWS account numbers that the AMI will be shared with.
 
 ### A company has an application that uses an Amazon Elastic File System (Amazon EFS) file system. A recent incident that involved an application logic error corrupted several files. The company wants to improve its ability to back up and recover the EFS file system. The company must be able to recover individual files rapidly. Which solution meets these requirements MOST cost-effectively?
 
@@ -1007,7 +1006,7 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 - [ ] Enable encryption on each host's local drive Restart each host to encrypt the drive.
 - [x] Enable encryption on a newly created volume and copy all data from the original volume Reconnect each host to the new volume.
 
-### A SysOps administrator configures an application to run on Amazon EC2 instances behind an Application Load Balancer (ALB) in a simple scaling Auto Scaling group with the default settings. The Auto Scaling group is configured to use the `RequestCountPerTarget` metric for scaling. The SysOps administrator notices that the `RequestCountPerTarget` metric exceeded the specified limit twice in 180 seconds. How will the number of EC2 instances in this Auto Scaling group be affected in this scenario?
+### A SysOps administrator configures an application to run on Amazon EC2 instances behind an Application Load Balancer (ALB) in a simple scaling Auto Scaling group with the default settings. The Auto Scaling group is configured to use the `RequestCountPerTarget` metric for scaling. The SysOps administrator notices that the `RequestCountPerTarget` metric exceeded the specified limit twice in `180` seconds. How will the number of EC2 instances in this Auto Scaling group be affected in this scenario?
 
 - [ ] The Auto Scaling group will launch an additional EC2 instance every time the `RequestCountPerTarget` metric exceeds the predefined limit.
 - [x] The Auto Scaling group will launch one EC2 instance and will wait for the default cooldown period before launching another instance.
@@ -1125,7 +1124,7 @@ policy to provide kms:DescrlbeKey, kms:ReEncrypt kms:CreateGrant, and kms:Decryp
 ### A company has a high-performance Windows workload. The workload requires a storage volume that provides consistent performance of 10,000 IOPS. The company does not want to pay for additional unneeded capacity to achieve this performance. Which solution will meet these requirements with the LEAST cost?
 
 - [ ] Use a Provisioned IOPS SSD (io1) Amazon Elastic Block Store (Amazon EBS) volume that is configured with 10,000 provisioned IOPS.
-- [x] Use a General Purpose SSD (gp3) Amazon Elastic Block Store (Amazon EBS) volume that is configured with 10,000 provisioned IOPS.
+- [x] Use a `General Purpose SSD (gp3)` Amazon Elastic Block Store (Amazon EBS) volume that is configured with 10,000 provisioned IOPS.
 - [ ] Use an Amazon Elastic File System (Amazon EFS) file system in Max I/O mode.
 - [ ] Use an Amazon FSx for Windows File Server file system that is configured with 10,000 IOPS.
 
@@ -1569,7 +1568,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] In all member accounts, configure IAM policies that deny AmazonDynamoDBFullAccess to all users, including the root user.
 - [ ] Remove the default Service Control Policy (SCP) in the management account. Create a replacement SCP that includes a single statement that denies all DynamoDB actions.
 
-### A company runs hundreds of Amazon EC2 instances in a single AWS Region. Each EC2 instance has two attached 1 GiB General Purpose SSD (gp2) Amazon Elastic Block Store (Amazon EBS) volumes. A critical workload is using all the available IOPS capacity on the EBS volumes. According to company policy, the company cannot change instance types or EBS volume types without completing lengthy acceptance tests to validate that the company's applications will function properly. A SysOps administrator needs to increase the I/O performance of the EBS volumes as quickly as possible. Which action should the SysOps administrator take to meet these requirements?
+### A company runs hundreds of Amazon EC2 instances in a single AWS Region. Each EC2 instance has two attached 1 GiB `General Purpose SSD (gp2)` Amazon Elastic Block Store (Amazon EBS) volumes. A critical workload is using all the available IOPS capacity on the EBS volumes. According to company policy, the company cannot change instance types or EBS volume types without completing lengthy acceptance tests to validate that the company's applications will function properly. A SysOps administrator needs to increase the I/O performance of the EBS volumes as quickly as possible. Which action should the SysOps administrator take to meet these requirements?
 
 - [x] Increase the size of the 1 GiB EBS volumes.
 - [ ] Add two additional elastic network interfaces on each EC2 instance.
@@ -1888,7 +1887,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] AWS IAM team.
 - [x] SysOps Administrator.
 
-### A company has deployed an application on AWS. The application runs on a fleet of Linux Amazon EC2 instances that are in an Auto Scaling group. The Auto Scaling group is configured to use launch templates. The launch templates launch Amazon Elastic Block Store (Amazon EBS) backed EC2 instances that use General Purpose SSD (gp3) EBS volumes for primary storage. A SysOps administrator needs to implement a solution to ensure that all the EC2 instances can share the same underlying files. The solution also must ensure that the data is consistent. Which solution will meet these requirements?
+### A company has deployed an application on AWS. The application runs on a fleet of Linux Amazon EC2 instances that are in an Auto Scaling group. The Auto Scaling group is configured to use launch templates. The launch templates launch Amazon Elastic Block Store (Amazon EBS) backed EC2 instances that use `General Purpose SSD (gp3)` EBS volumes for primary storage. A SysOps administrator needs to implement a solution to ensure that all the EC2 instances can share the same underlying files. The solution also must ensure that the data is consistent. Which solution will meet these requirements?
 
 - [x] Create an Amazon Elastic File System (Amazon EFS) file system. Create a new launch template version that includes user data that mounts the EFS file system. Update the Auto Scaling group to use the new launch template version to cycle in newer EC2 instances and to terminate the older EC2 instances.
 - [ ] Enable Multi-Attach on the EBS volumes. Create a new launch template version that includes user data that mounts the EBS volume. Update the Auto Scaling group to use the new template version to cycle in newer EC2 instances and to terminate the older EC2 instances.
@@ -2131,3 +2130,17 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Modify the DB cluster to convert the DB cluster into a multi-master DB cluster.
 - [ ] Take a snapshot of the DB cluster. From that snapshot, create a new DB cluster that has larger memory optimized instances.
 - [ ] Increase the disk storage capacity of the DB cluster to double the existing disk capacity.
+
+### A web-commerce application stores its data in an Amazon Aurora DB cluster with an Aurora replica. The application displays shopping cart information by reading data from the reader endpoint. When monitoring the Aurora database, the SysOps Administrator sees that the `AuroraReplicaLagMaximum` metric for a single replica is high. What behavior is the application MOST likely exhibiting to users?
+
+- [ ] Users cannot add any items to the shopping cart.
+- [x] Users intermittently notice that the cart is not updated correctly.
+- [ ] Users cannot remove any items from the shopping cart.
+- [ ] Users cannot use the application because it is falling back to an error page.
+
+### Users are periodically experiencing slow response times from a relational database. The database runs on a burstable Amazon EC2 instance with a `350 GB` `General Purpose SSD (gp2)` Amazon Elastic Block Store (Amazon EBS) volume. A SysOps administrator monitors the EC2 instance in Amazon CloudWatch and observes that the `VolumeReadOps` metric drops to less than 10% of its peak value during the periods of slow response. What should the SysOps administrator do to ensure consistently high performance?
+
+- [ ] Convert the `gp2` volume to a `General Purpose SSD (gp3)` EBS volume.
+- [ ] Convert the `gp2` volume to a `Cold HDD (sc1)` EBS volume.
+- [ ] Convert the EC2 instance to a memory optimized instance type.
+- [x] Activate unlimited mode on the EC2 instance.
