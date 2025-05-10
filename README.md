@@ -875,14 +875,14 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Stream the CloudTrail logs to Amazon CloudWatch Logs to store logs at a secondary location.
 - [x] Enable log file integrity validation and use digest files to verify the hash value of the log file.
-- [ ] Enable log file integrity validation and use digest files to verify the hash value of the log file.
+- [ ] Replicate the S3 log bucket across regions, and encrypt log files with S3 managed keys.
 - [ ] Enable S3 server access logging to track requests made to the log bucket for security audits.
 
-### A team of On-call engineers frequently needs to connect to Amazon EC2 Instances In a private subnet to troubleshoot and run commands. The Instances use either the latest AWS-provided Windows Amazon Machine Images (AMIs) or Amazon Linux AMIs. The team has an existing IAM role for authorization. A SysOps administrator must provide the team with access to the Instances by granting IAM permissions to this
+### A team of On-call engineers frequently needs to connect to Amazon EC2 Instances In a private subnet to troubleshoot and run commands. The Instances use either the latest AWS-provided Windows Amazon Machine Images (AMIs) or Amazon Linux AMIs. The team has an existing IAM role for authorization. A SysOps administrator must provide the team with access to the Instances by granting IAM permissions to this role. Which solution will meet this requirement?
 
 - [x] Add a statement to the IAM role policy to allow the `ssm:StartSession` action on the instances. Instruct the team to use AWS Systems Manager Session Manager to connect to the Instances by using the assumed IAM role.
 - [ ] Associate an Elastic IP address and a security group with each instance. Add the engineers' IP addresses to the security group inbound rules. Add a statement to the IAM role policy to allow the `ec2:AuthoflzeSecurityGroupIngress` action so that the team can connect to the Instances.
-- [ ] Create a bastion host with an EC2 Instance, and associate the bastion host with the VPC. Add a statement to the IAM role policy to allow the e`c2:CreateVpnConnection` action on the bastion host. Instruct the team to use the bastion host endpoint to connect to the instances.
+- [ ] Create a bastion host with an EC2 Instance, and associate the bastion host with the VPC. Add a statement to the IAM role policy to allow the `ec2:CreateVpnConnection` action on the bastion host. Instruct the team to use the bastion host endpoint to connect to the instances.
 - [ ] Create an internet-facing Network Load Balancer. Use two listeners. Forward port `22` to a target group of Linux instances. Forward port `3389` to a target group of Windows Instances. Add a statement to the IAM role policy to allow the `ec2:CreateRoute` action so that the team can connect to the Instances.
 
 ### A company has an AWS CloudFormation template that creates an Amazon S3 bucket. A user authenticates to the corporate AWS account with their Active Directory credentials and attempts to deploy the CloudFormation template. However, the stack creation fails. Which factors could cause this failure? (Select TWO.)
