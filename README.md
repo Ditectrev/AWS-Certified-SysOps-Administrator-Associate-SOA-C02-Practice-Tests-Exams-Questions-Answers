@@ -916,7 +916,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A SysOps administrator developed a Python script that uses the AWS SDK to conduct several maintenance tasks. The script needs to run automatically every night. What is the MOST operationally efficient solution that meets this requirement?
 
-- [x] Convert the Python script to an AWS Lambda (unction. Use an Amazon EventBridge (Amazon CloudWatch Events) rule to invoke the function every night.
+- [x] Convert the Python script to an AWS Lambda function. Use an Amazon EventBridge (Amazon CloudWatch Events) rule to invoke the function every night.
 - [ ] Convert the Python script to an AWS Lambda function. Use AWS CloudTrail to invoke the function every night.
 - [ ] Deploy the Python script to an Amazon EC2 Instance. Use Amazon EventBridge (Amazon CloudWatch Events) to schedule the instance to start and stop every night.
 - [ ] Deploy the Python script to an Amazon EC2 instance. Use AWS Systems Manager to schedule the instance to start and stop every night.
@@ -2151,3 +2151,10 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Create an Amazon EventBridge rule that filters appropriate events and specifies an Amazon Kinesis data stream as the target. Create an AWS Lambda function to receive events from the Kinesis data stream. Configure the Lambda function to start an AWS Glue job to transform the data and forward the output to the `HTTPS` endpoint.
 - [x] Create an Amazon EventBridge rule that filters appropriate events and specifies Amazon Simple Notification Service (Amazon SNS) as a target. Configure Amazon SNS to transform the events and send the events to the `HTTPS` endpoint.
 - [ ] Create an Amazon EventBridge rule that filters appropriate events and specifies an AWS Step Functions state machine as a target. Create an AWS Lambda function and an AWS Glue job in Step Functions to transform the events and send the events to the `HTTPS` endpoint.
+
+### A company runs its applications on a large number of Amazon EC2 instances. A SysOps administrator must implement a solution to notify the operations team whenever an EC2 instance state changes. What is the MOST operationally efficient solution that meets these requirements?
+
+- [ ] Create a script that captures instance state changes and publishes a notification to an Amazon Simple Notification Service (Amazon SNS) topic. Use AWS Systems Manager Run Command to run the script on all EC2 instances.
+- [x] Create an Amazon EventBridge event rule that captures EC2 instance state changes. Set an Amazon Simple Notification Service (Amazon SNS) topic as the target
+- [ ] Create an Amazon EventBridge event rule that captures EC2 instance state changes. Set as the target an AWS Lambda function that publishes a notification to an Amazon Simple Notification Service (Amazon SNS) topic.
+- [ ] Create an AWS Config custom rule that evaluates instance state changes with automatic remediation. Use the rule to invoke an AWS Lambda function that publishes a notification to an Amazon Simple Notification Service (Amazon SNS) topic.
