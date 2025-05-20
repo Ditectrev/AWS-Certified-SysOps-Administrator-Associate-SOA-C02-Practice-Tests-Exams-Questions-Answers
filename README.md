@@ -930,7 +930,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company uses AWS CloudFormation templates to deploy cloud infrastructure. An analysis of all the company's templates shows that the company has declared the same components in multiple templates. A SysOps administrator needs to create dedicated templates that have their own parameters and conditions for these common components. Which solution will meet this requirement?
 
-- [ ] Develop a CloudFormaiion change set.
+- [ ] Develop a CloudFormation change set.
 - [ ] Develop CloudFormation macros.
 - [x] Develop CloudFormation nested stacks.
 - [ ] Develop CloudFormation stack sets.
@@ -1293,7 +1293,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 ### A SysOps administrator is responsible for managing a company's cloud infrastructure with AWS CloudFormation. The SysOps administrator needs to create a single resource that consists of multiple AWS services. The resource must support creation and deletion through the CloudFormation console. Which CloudFormation resource type should the SysOps administrator create to meet these requirements?
 
-- [ ] `AWS::EC2::Instance` with a cfn-init helper script.
+- [ ] `AWS::EC2::Instance` with a `cfn-init helper` script.
 - [ ] `AWS::OpsWorks::Instance`.
 - [ ] `AWS::SSM::Document`.
 - [x] `Custom::MyCustomType`.
