@@ -2158,3 +2158,17 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [x] Create an Amazon EventBridge event rule that captures EC2 instance state changes. Set an Amazon Simple Notification Service (Amazon SNS) topic as the target
 - [ ] Create an Amazon EventBridge event rule that captures EC2 instance state changes. Set as the target an AWS Lambda function that publishes a notification to an Amazon Simple Notification Service (Amazon SNS) topic.
 - [ ] Create an AWS Config custom rule that evaluates instance state changes with automatic remediation. Use the rule to invoke an AWS Lambda function that publishes a notification to an Amazon Simple Notification Service (Amazon SNS) topic.
+
+### A company is running Amazon EC2 On-Demand Instances in an Auto Scaling group. The instances process messages from an Amazon Simple Queue Service (Amazon SQS) queue. The Auto Scaling group is set to scale based on the number of messages in the queue. Messages can take up to 12 hours to process completely. A SysOps administrator must ensure that instances are not interrupted during message processing. What should the SysOps administrator do to meet these requirements?
+
+- [x] Enable instance scale-in protection for the specific instance in the Auto Scaling group at the start of message processing by calling the Amazon EC2 Auto Scaling API from the processing script. Disable instance scale-in protection after message processing is complete by calling the Amazon EC2 Auto Scaling API from the processing script.
+- [ ] Set the Auto Scaling group's termination policy to `OldestInstance`.
+- [ ] Set the Auto Scaling group's termination policy to `OldestLaunchConfiguration`.
+- [ ] Suspend the Launch and Terminate scaling processes for the specific instance in the Auto Scaling group at the start of message processing by calling the Amazon EC2 Auto Scaling API from the processing script. Resume the scaling processes after message processing is complete by calling the Amazon EC2 Auto Scaling API from the processing script.
+
+### A company has an application that collects notifications from thousands of alarm systems. The notifications include alarm notifications and information notifications. The information notifications include the system arming processes, disarming processes, and sensor status. All notifications are kept as messages in an Amazon Simple Queue Service (Amazon SQS) queue. Amazon EC2 instances that are in an Auto Scaling group process the messages. A SysOps administrator needs to implement a solution that prioritizes alarm notifications over information notifications. Which solution will meet these requirements?
+
+- [ ] Adjust the Auto Scaling group to scale faster when a high number of messages is in the queue.
+- [ ] Use the Amazon Simple Notification Service (Amazon SNS) fanout feature with Amazon SQS to send the notifications in parallel to all the C2 instances
+- [ ] Add an Amazon DynamoDB stream to accelerate the message processing
+- [x] Create a queue for alarm notifications and a queue for information notifications. Update the application to collect messages from the alarm notifications queue first.
