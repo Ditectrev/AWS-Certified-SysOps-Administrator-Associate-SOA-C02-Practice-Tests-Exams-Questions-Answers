@@ -949,7 +949,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create an Application Load Balancer (ALB). Attach the ALB to the Auto Scaling group. Create a target tracking scaling policy for the ALB's `RequestCountPerTarget` metric to modify the Auto Scaling group.
 - [ ] Create an Application Load Balancer (ALB). Attach the ALB to the Auto Scaling group. Create a scheduled scaling policy for the Auto Scaling group.
 
-### A SysOps administrator is notified that an Amazon EC2 instance has stopped responding The AWS Management Console indicates that the system status checks are failing. What should the administrator do first to resolve this issue?
+### A SysOps administrator is notified that an Amazon EC2 instance has stopped responding. The AWS Management Console indicates that the system checks are failing. What should the administrator do first to resolve this issue?
 
 - [ ] Reboot the EC2 instance so it can be launched on a new host.
 - [x] Stop and then start the EC2 instance so that it can be launched on a new host.
@@ -1547,12 +1547,12 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Enable termination protection on the AWS CloudFormation stack.
 - [ ] Update the application's IAM policy with a Deny statement for the `dynamodb:DeleteTable` action.
 
-### A SysOps administrator is notified that an Amazon EC2 instance has stopped responding. The AWS Management Console indicates that the system checks are failing. What should the administrator do first to resolve this issue?
+### A SysOps Administrator must devise a strategy for enforcing tagging of all EC2 instances and Amazon Elastic Block Store (Amazon EBS) volumes. What action can the Administrator take to implement this for real-time enforcement?
 
-- [ ] Reboot the EC2 instance so it can be launched on a new host.
-- [x] Stop and then start the EC2 instance so that it can be launched on a new host.
-- [ ] Terminate the EC2 instance and relaunch it.
-- [ ] View the AWS CloudTrail log to investigate what changed on the EC2 instance.
+- [ ] Use the AWS Tag Editor to manually search for untagged resources and then tag them properly in the editor.
+- [x] Set up AWS Service Catalog with the `TagOptions` Library rule that enforces a tagging taxonomy proactively when instances and volumes are launched.
+- [ ] In a PowerShell or shell script, check for untagged items by using the resource tagging `GetResources` API action, and then manually tag the reported items.
+- [ ] Launch items by using the AWS API. Use the `TagResources` API action to apply the required tags when the instances and volumes are launched.
 
 ### A company has a business application hosted on Amazon EC2 instances behind an Application Load Balancer. Amazon CloudWatch metrics show that the CPU utilization on the EC2 instances is very high. There are also reports from users that receive HTTP `503` and `504` errors when they try to connect to the application. Which action will resolve these issues?
 
@@ -2172,3 +2172,12 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Use the Amazon Simple Notification Service (Amazon SNS) fanout feature with Amazon SQS to send the notifications in parallel to all the C2 instances
 - [ ] Add an Amazon DynamoDB stream to accelerate the message processing
 - [x] Create a queue for alarm notifications and a queue for information notifications. Update the application to collect messages from the alarm notifications queue first.
+
+### A SysOps administrator is responsible for more than `50` Amazon EC2 instances that are deployed in a single production AWS account. The EC2 instances are running several different operating systems. The company's standards require patching to be completed at least once a month. The SysOps administrator wants to use AWS Systems Manager to reduce the number of hours the company spends on operating system patching each month. Which combination of steps should the SysOps administrator take to meet these requirements? (Choose three.)
+
+- [x] Group similar EC2 instances together into resource groups by using AWS Resource Groups.
+- [ ] Create a schedule in Systems Manager Patch Manager. Specify the appropriate resource group as the target.
+- [x] Specify Systems Manager Automation runbooks to patch the operating systems. Register the runbooks as tasks in the maintenance window. Specify the appropriate resource group as the target.
+- [ ] Create a Systems Manager Automation runbook to monitor and control the state of the patches required. Apply the runbook to Systems Manager Patch Manager.
+- [ ] Create a single Systems Manager maintenance window for each resource group.
+- [x] Configure Systems Manager Fleet Manager to apply a Systems Manager Automation runbook to the appropriate resource group.
