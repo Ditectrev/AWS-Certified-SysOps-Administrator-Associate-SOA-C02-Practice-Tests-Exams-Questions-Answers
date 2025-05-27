@@ -53,7 +53,7 @@
 
 - [ ] Create a new security group to block traffic to the external IP address. Assign the new security group to the EC2 instance.
 - [ ] Use VPC flow logs with Amazon Athena to block traffic to the external IP address.
-- [x] Create a network ACL Add an outbound deny rule tor traffic to the external IP address.
+- [x] Create a network ACL Add an outbound deny rule for traffic to the external IP address.
 - [ ] Create a new security group to block traffic to the external IP address Assign the new security group to the entire VPC.
 
 ### A web application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances run in an Auto Scaling group across multiple Availability Zones. A SysOps administrator notices that some of these EC2 instances show up as healthy in the Auto Scaling group but show up as unhealthy in the ALB target group. What is a possible reason for this issue?
@@ -977,14 +977,14 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Amazon EFS file systems.
 - [x] S3 objects within a bucket.
 
-### A company uses an AWS CloudFormation template to provision an Amazon EC2 instance and an Amazon RDS DB instance A SysOps administrator must update the template to ensure that the DB instance is created before the EC2 instance is launched. What should the SysOps administrator do to meet this requirement?
+### A company uses an AWS CloudFormation template to provision an Amazon EC2 instance and an Amazon RDS DB instance. A SysOps administrator must update the template to ensure that the DB instance is created before the EC2 instance is launched. What should the SysOps administrator do to meet this requirement?
 
 - [ ] Add a wait condition to the template. Update the EC2 instance user data script to send a signal after the EC2 instance is started.
-- [x] Add the DependsOn attribute to the EC2 instance resource, and provide the logical name of the RDS resource.
+- [x] Add the `DependsOn` attribute to the EC2 instance resource, and provide the logical name of the RDS resource.
 - [ ] Change the order of the resources in the template so that the RDS resource is listed before the EC2 instance resource.
-- [ ] Create multiple templates Use AWS CloudFormation StackSets to wait for one stack to complete before the second stack is created.
+- [ ] Create multiple templates. Use AWS CloudFormation StackSets to wait for one stack to complete before the second stack is created.
 
-### A company has an existing web application that runs on two Amazon EC2 instances behind an Application Load Balancer (ALB) across two Availability Zones The application uses an Amazon RDS Multi-AZ DB Instance Amazon Route 53 record sets route requests tor dynamic content to the load balancer and requests for static content to an Amazon S3 bucket Site visitors are reporting extremely long loading times. Which actions should be taken to improve the performance of the website? (Select TWO)
+### A company has an existing web application that runs on two Amazon EC2 instances behind an Application Load Balancer (ALB) across two Availability Zones. The application uses an Amazon RDS Multi-AZ DB Instance. Amazon Route 53 record sets route requests for dynamic content to the load balancer and requests for static content to an Amazon S3 bucket. Site visitors are reporting extremely long loading times. Which actions should be taken to improve the performance of the website? (Select TWO)
 
 - [x] Add Amazon CloudFront caching for static content.
 - [ ] Change the load balancer listener from `HTTPS` to `TCP`.
@@ -1277,12 +1277,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Ensure that the IAM credentials that are used to access Cost Explorer have permissions to group cost by tags.
 - [x] Activate the tag keys for cost allocation on the organization's management account.
 
-### A company uses an AWS CloudFormation template to provision an Amazon EC2 instance and an Amazon RDS DB instance. A SysOps administrator must update the template to ensure that the DB instance is created before the EC2 instance is launched. What should the SysOps administrator do to meet this requirement?
-
-- [ ] Add a wait condition to the template. Update the EC2 instance user data script to send a signal after the EC2 instance is started.
-- [x] Add the DependsOn attribute to the EC2 instance resource, and provide the logical name of the RDS resource.
-- [ ] Change the order of the resources in the template so that the RDS resource is listed before the EC2 instance resource.
-- [ ] Create multiple templates. Use AWS CloudFormation StackSets to wait for one stack to complete before the second stack is created.
+### ...
 
 ### A company hosts a static website on Amazon S3. The website is served by an Amazon CloudFront distribution with a default TTL of 86,400 seconds. The company recently uploaded an updated version of the website to Amazon S3. However, users still see the old content when they refresh the site. A SysOps administrator must make the new version of the website visible to users as soon as possible. Which solution meets these requirements?
 
