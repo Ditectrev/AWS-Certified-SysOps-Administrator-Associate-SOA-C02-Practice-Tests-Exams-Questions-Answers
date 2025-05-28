@@ -999,12 +999,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Use AWS Storage Gateway, and configure it to use gateway-cached volumes.
 - [x] Use AWS Storage Gateway, and configure it to use gateway-stored volumes.
 
-### An organization created an Amazon Elastic File System (Amazon EFS) volume with a file system ID of fs-85ba4Kc. and it is actively used by 10 Amazon EC2 hosts. The organization has become concerned that the file system is not encrypted.How can this be resolved?
+### An organization created an Amazon Elastic File System (Amazon EFS) volume with a file system ID of fs-85ba41fc, and it is actively used by 10 Amazon EC2 hosts. The organization has become concerned that the file system is not encrypted. How can this be resolved?
 
-- [ ] Enable encryption on each host's connection to the Amazon EFS volume Each connection must be recreated for encryption to take effect.
+- [ ] Enable encryption on each host's connection to the Amazon EFS volume. Each connection must be recreated for encryption to take effect.
 - [ ] Enable encryption on the existing EFS volume by using the AWS Command Line Interface.
-- [ ] Enable encryption on each host's local drive Restart each host to encrypt the drive.
-- [x] Enable encryption on a newly created volume and copy all data from the original volume Reconnect each host to the new volume.
+- [ ] Enable encryption on each host's local drive. Restart each host to encrypt the drive.
+- [x] Enable encryption on a newly created volume and copy all data from the original volume. Reconnect each host to the new volume.
 
 ### A SysOps administrator configures an application to run on Amazon EC2 instances behind an Application Load Balancer (ALB) in a simple scaling Auto Scaling group with the default settings. The Auto Scaling group is configured to use the `RequestCountPerTarget` metric for scaling. The SysOps administrator notices that the `RequestCountPerTarget` metric exceeded the specified limit twice in `180` seconds. How will the number of EC2 instances in this Auto Scaling group be affected in this scenario?
 
@@ -1015,12 +1015,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### An errant process is known to use an entire processor and run at `100%`A SysOps administrator wants to automate restarting the instance once the problem occurs for more than 2 minutes. How can this be accomplished?
 
-- [ ] Create an Amazon CloudWatch alarm for the Amazon EC2 instance with basic monitoring Enable an action to restart the instance.
-- [x] Create a CloudWatch alarm for the EC2 instance with detailed monitoring Enable an action to restart the instance.
+- [ ] Create an Amazon CloudWatch alarm for the Amazon EC2 instance with basic monitoring. Enable an action to restart the instance.
+- [x] Create a CloudWatch alarm for the EC2 instance with detailed monitoring. Enable an action to restart the instance.
 - [ ] Create an AWS Lambda function to restart the EC2 instance triggered on a scheduled basis every 2 minutes.
 - [ ] Create a Lambda function to restart the EC2 instance, triggered by EC2 health checks.
 
-### A SysOps administrator notices a scale-up event for an Amazon EC2 Auto Scaling group Amazon CloudWatch shows a spike in the RequestCount metric for the associated Application Load Balancer The administrator would like to know the IP addresses for the source of the requests. Where can the administrator find this information?
+### A SysOps administrator notices a scale-up event for an Amazon EC2 Auto Scaling group Amazon CloudWatch shows a spike in the `RequestCount` metric for the associated Application Load Balancer. The administrator would like to know the IP addresses for the source of the requests. Where can the administrator find this information?
 
 - [ ] Auto Scaling logs.
 - [ ] AWS CloudTrail logs.
@@ -1029,15 +1029,15 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### An organization with a large IT department has decided to migrate to AWS With different job functions in the IT department it is not desirable to give all users access to all AWS resources Currently the organization handles access via LDAP group membership. What is the BEST method to allow access using current LDAP credentials?
 
-- [ ] Create an AWS Directory Service Simple AD Replicate the on-premises LDAP directory to Simple AD.
+- [ ] Create an AWS Directory Service Simple AD. Replicate the on-premises LDAP directory to Simple AD.
 - [ ] Create a Lambda function to read LDAP groups and automate the creation of IAM users.
-- [ ] Use AWS CloudFormation to create IAM roles Deploy Direct Connect to allow access to the on-premises LDAP server.
-- [x] Federate the LDAP directory with IAM using SAML Create different IAM roles to correspond to different LDAP groups to limit permissions.
+- [ ] Use AWS CloudFormation to create IAM roles. Deploy Direct Connect to allow access to the on-premises LDAP server.
+- [x] Federate the LDAP directory with IAM using SAML. Create different IAM roles to correspond to different LDAP groups to limit permissions.
 
-### A company is using an AWS KMS customer master key (CMK) with imported key material The company references the CMK by its alias in the Java application to encrypt data The CMK must be rotated every 6 months. What is the process to rotate the key?
+### A company is using an AWS KMS customer master key (CMK) with imported key material. The company references the CMK by its alias in the Java application to encrypt data. The CMK must be rotated every 6 months. What is the process to rotate the key?
 
-- [ ] Enable automatic key rotation for the CMK and specify a period of 6 months.
-- [X] Create a new CMK with new imported material, and update the key alias to point to the new CMK.
+- [ ] Enable automatic key rotation for the CMK, and specify a period of 6 months.
+- [x] Create a new CMK with new imported material, and update the key alias to point to the new CMK.
 - [ ] Delete the current key material, and import new material into the existing CMK.
 - [ ] Import a copy of the existing key material into a new CMK as a backup, and set the rotation schedule for 6 months.
 
@@ -1277,7 +1277,12 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Ensure that the IAM credentials that are used to access Cost Explorer have permissions to group cost by tags.
 - [x] Activate the tag keys for cost allocation on the organization's management account.
 
-### ...
+### An errant process is known to use an entire processor and run at 100%. A SysOps administrator wants to automate restarting an Amazon EC2 instance when the problem occurs for more than 2 minutes. How can this be accomplished?
+
+- [ ] Create an Amazon CloudWatch alarm for the EC2 instance with basic monitoring. Add an action to restart the instance.
+- [x] Create an Amazon CloudWatch alarm for the EC2 instance with detailed monitoring. Add an action to restart the instance.
+- [ ] Create an AWS Lambda function to restart the EC2 instance, invoked on a scheduled basis every 2 minutes.
+- [ ] Create an AWS Lambda function to restart the EC2 instance, invoked by EC2 health checks.
 
 ### A company hosts a static website on Amazon S3. The website is served by an Amazon CloudFront distribution with a default TTL of 86,400 seconds. The company recently uploaded an updated version of the website to Amazon S3. However, users still see the old content when they refresh the site. A SysOps administrator must make the new version of the website visible to users as soon as possible. Which solution meets these requirements?
 
@@ -1467,12 +1472,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [x] Create an Amazon S3 bucket that is configured with default server-side encryption that uses `AES-256`. Configure CloudFront to use the S3 bucket as a log destination.
 - [ ] Create an Amazon S3 bucket that is configured with no default encryption. Enable encryption in the CloudFront distribution, and use the S3 bucket as a log destination.
 
-### An organization created an Amazon Elastic File System (Amazon EFS) volume with a file system ID of fs-85ba41fc, and it is actively used by 10 Amazon EC2 hosts. The organization has become concerned that the file system is not encrypted. How can this be resolved?
-
-- [ ] Enable encryption on each host's connection to the Amazon EFS volume. Each connection must be recreated for encryption to take effect.
-- [ ] Enable encryption on the existing EFS volume by using the AWS Command Line Interface.
-- [ ] Enable encryption on each host's local drive. Restart each host to encrypt the drive.
-- [x] Enable encryption on a newly created volume and copy all data from the original volume. Reconnect each host to the new volume.
+### ...
 
 ### A company uses an AWS Service Catalog portfolio to create and manage resources. A SysOps administrator must create a replica of the company's existing AWS infrastructure in a new AWS account. What is the MOST operationally efficient way to meet this requirement?
 
@@ -1521,12 +1521,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [x] AWS Personal Health Dashboard.
 - [ ] AWS Systems Manager.
 
-### A company is using an AWS KMS customer master key (CMK) with imported key material. The company references the CMK by its alias in the Java application to encrypt data. The CMK must be rotated every 6 months. What is the process to rotate the key?
-
-- [ ] Enable automatic key rotation for the CMK, and specify a period of 6 months.
-- [x] Create a new CMK with new imported material, and update the key alias to point to the new CMK.
-- [ ] Delete the current key material, and import new material into the existing CMK.
-- [ ] Import a copy of the existing key material into a new CMK as a backup, and set the rotation schedule for 6 months.
+### ...
 
 ### A SysOps administrator is trying to set up an Amazon Route 53 domain name to route traffic to a website hosted on Amazon S3. The domain name of the website is `www.example.com` and the S3 bucket name `DOC-EXAMPLE-BUCKET`. After the record set is set up in Route 53, the domain name `www.anycompany.com` does not seem to work, and the static website is not displayed in the browser. Which of the following is a cause of this?
 
