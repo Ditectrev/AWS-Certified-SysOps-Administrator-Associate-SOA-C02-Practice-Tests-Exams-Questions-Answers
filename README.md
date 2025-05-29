@@ -1041,11 +1041,11 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Delete the current key material, and import new material into the existing CMK.
 - [ ] Import a copy of the existing key material into a new CMK as a backup, and set the rotation schedule for 6 months.
 
-### A company is running a serverless application on AWS Lambda The application stores data in an Amazon RDS for MySQL DB instance Usage has steadily increased and recently there have been numerous "too many connections" errors when the Lambda function attempts to connect to the database The company already has configured the database to use the maximum max_connections value that is possible. What should a SysOps administrator do to resolve these errors?
+### A company is running a serverless application on AWS Lambda. The application stores data in an Amazon RDS for MySQL DB instance. Usage has steadily increased, and recently there have been numerous `too many connections` errors when the Lambda function attempts to connect to the database. The company already has configured the database to use the `maximum max_connections` value that is possible. What should a SysOps administrator do to resolve these errors?
 
-- [ ] Create a read replica of the database Use Amazon Route 53 to create a weighted DNS record that contains both databases.
-- [x] Use Amazon RDS Proxy to create a proxy Update the connection string in the Lambda function.
-- [ ] Increase the value in the max_connect_errors parameter in the parameter group that the database uses.
+- [ ] Create a read replica of the database. Use Amazon Route 53 to create a weighted DNS record that contains both databases.
+- [x] Use Amazon RDS Proxy to create a proxy. Update the connection string in the Lambda function.
+- [ ] Increase the value in the `max_connect_errors` parameter in the parameter group that the database uses.
 - [ ] Update the Lambda function's reserved concurrency to a higher value.
 
 ### A company stores files on 50 Amazon S3 buckets in the same AWS Region The company wants to connect to the S3 buckets securely over a private connection from its Amazon EC2 instances. The company needs a solution that produces no additional cost. Which solution will meet these requirements?
@@ -1055,18 +1055,18 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Create one gateway VPC endpoint for all the S3 buckets. Add the gateway VPC endpoint to the VPC route table.
 - [ ] Create one interface VPC endpoint for all the S3 buckets. Add the interface VPC endpoint to the VPC route table.
 
-### A company uses AWS CloudFormation to deploy its application infrastructure Recently, a user accidentally changed a property of a database in a CloudFormation template and performed a stack update that caused an interruption to the application A SysOps administrator must determine how to modify the deployment process to allow the DevOps team to continue to deploy the infrastructure, but prevent against accidental modifications to specific resources. Which solution will meet these requirements?
+### A company uses AWS CloudFormation to deploy its application infrastructure. Recently, a user accidentally changed a property of a database in a CloudFormation template and performed a stack update that caused an interruption to the application. A SysOps administrator must determine how to modify the deployment process to allow the DevOps team to continue to deploy the infrastructure, but prevent against accidental modifications to specific resources. Which solution will meet these requirements?
 
-- [ ] Set up an AWS Config rule to alert based on changes to any CloudFormation stack An AWS Lambda function can then describe the stack to determine if any protected resources were modified and cancel the operation.
-- [ ] Set up an Amazon CloudWatch Events event with a rule to trigger based on any CloudFormation API call An AWS Lambda function can then describe the stack to determine if any protected resources were modified and cancel the operation.
-- [x] Launch the CloudFormation templates using a stack policy with an explicit allow for all resources and an explicit deny of the protected resources with an action of Update.
-- [ ] Attach an IAM policy to the DevOps team role that prevents a CloudFormation stack from updating, with a condition based on the specific Amazon Resource Names (ARNs) of the protected resources
+- [ ] Set up an AWS Config rule to alert based on changes to any CloudFormation stack. An AWS Lambda function can then describe the stack to determine if any protected resources were modified and cancel the operation.
+- [ ] Set up an Amazon CloudWatch Events event with a rule to trigger based on any CloudFormation API call. An AWS Lambda function can then describe the stack to determine if any protected resources were modified and cancel the operation.
+- [x] Launch the CloudFormation templates using a stack policy with an explicit allow for all resources and an explicit deny of the protected resources with an action of `Update`.
+- [ ] Attach an IAM policy to the DevOps team role that prevents a CloudFormation stack from updating, with a condition based on the specific Amazon Resource Names (ARNs) of the protected resources.
 
 ### A SysOps administrator receives notification that an application that is running on Amazon EC2 instances has failed to authenticate to an Amazon RDS database. To troubleshoot, the SysOps administrator needs to investigate AWS Secrets Manager password rotation. Which Amazon CloudWatch log will provide insight into the password rotation?
 
 - [ ] AWS CloudTrail logs.
-- [x] EC2 instance application logs.
-- [ ] AWS Lambda function logs.
+- [ ] EC2 instance application logs.
+- [x] AWS Lambda function logs.
 - [ ] RDS database logs.
 
 ### An AWS Lambda function is intermittently failing several times a day. A SysOps administrator must find out how often this error has occurred in the last 7 days. Which action will meet this requirement in the MOST operationally efficient manner?
@@ -1213,12 +1213,12 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Create a `NAT` gateway in the private subnet. Create a route from the public subnet to the `NAT` gateway.
 - [ ] Create a `NAT` gateway in the private subnet. Create a route from the private subnet to the `NAT` gateway.
 
-### A company is running a serverless application on AWS Lambda. The application stores data in an Amazon RDS for MySQL DB instance. Usage has steadily increased, and recently there have been numerous "too many connections" errors when the Lambda function attempts to connect to the database. The company already has configured the database to use the maximum max_connections value that is possible. What should a SysOps administrator do to resolve these errors?
+### A company uses AWS CloudFormation to deploy its infrastructure. The company recently retired an application. A cloud operations engineer initiates CloudFormation stack deletion, and the stack gets stuck in `DELETE_FAILED` status. A SysOps administrator discovers that the stack had deployed a security group. The security group is referenced by other security groups in the environment. The SysOps administrator needs to delete the stack without affecting other applications. Which solution will meet these requirements in the MOST operationally efficient manner?
 
-- [ ] Create a read replica of the database. Use Amazon Route 53 to create a weighted DNS record that contains both databases.
-- [x] Use Amazon RDS Proxy to create a proxy. Update the connection string in the Lambda function.
-- [ ] Increase the value in the max_connect_errors parameter in the parameter group that the database uses.
-- [ ] Update the Lambda function's reserved concurrency to a higher value.
+- [ ] Create a new security group that has a different name. Apply identical rules to the new security group. Replace all other security groups that reference the new security group. Delete the stack.
+- [ ] Create a CloudFormation change set to delete the security group. Deploy the change set.
+- [x] Delete the stack again. Specify that the security group be retained.
+- [ ] Perform CloudFormation drift detection. Delete the stack.
 
 ### A SysOps administrator creates an AWS CloudFormation template to define an application stack that can be deployed in multiple AWS Regions. The SysOps administrator also creates an Amazon CloudWatch dashboard by using the AWS Management Console. Each deployment of the application requires its own CloudWatch dashboard. How can the SysOps administrator automate the creation of the CloudWatch dashboard each time the application is deployed?
 
@@ -1446,9 +1446,10 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 ### A new application runs on Amazon EC2 instances and accesses data in an Amazon RDS database instance. When fully deployed in production, the application fails. The database can be queried from a console on a bastion host. When looking at the web server logs, the following error is repeated multiple times: *** Error Establishing a Database Connection Which of the following may be causes of the connectivity problems? (Choose two.)
 
-- [x] The security group for the database does not have the appropriate egress rule from the database to the web server.
+- [ ] The security group for the database does not have the appropriate egress rule from the database to the web server.
 - [ ] The certificate used by the web server is not trusted by the RDS instance.
 - [x] The security group for the database does not have the appropriate ingress rule from the web server to the database.
+- [x] The port used by the application developer does not match the port specified in the RDS configuration.
 - [ ] The database is still being created and is not available for connectivity.
 
 ### A compliance team requires all administrator passwords for Amazon RDS DB instances to be changed at least annually. Which solution meets this requirement in the MOST operationally efficient manner?
@@ -1472,7 +1473,12 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [x] Create an Amazon S3 bucket that is configured with default server-side encryption that uses `AES-256`. Configure CloudFront to use the S3 bucket as a log destination.
 - [ ] Create an Amazon S3 bucket that is configured with no default encryption. Enable encryption in the CloudFront distribution, and use the S3 bucket as a log destination.
 
-### ...
+### A company receives an alert from an Amazon CloudWatch alarm. The alarm indicates that a web application that is running on Amazon EC2 instances is not responding to requests. The EC2 instances have a Red Hat Enterprise Linux operating system and are in an Auto Scaling group. The Auto Scaling group has a minimum capacity of 2 and a maximum capacity of 5. An investigation reveals that the web application is experiencing out-of-memory errors. The company adds memory to the web application and wants to track operating system memory utilization. A CloudWatch memory metric does not currently exist for the EC2 instances in the Auto Scaling group. What should a SysOps administrator do to provide a CloudWatch memory metric for the EC2 instances?
+
+- [x] Use an Amazon Machine Image (AMI) that includes the CloudWatch agent.
+- [ ] Turn on CloudWatch detailed monitoring.
+- [ ] Turn on Instance Metadata Service Version 2 (IMDSv2).
+- [ ] Use an Amazon Machine Image (AMI) that is based on Amazon Linux.
 
 ### A company uses an AWS Service Catalog portfolio to create and manage resources. A SysOps administrator must create a replica of the company's existing AWS infrastructure in a new AWS account. What is the MOST operationally efficient way to meet this requirement?
 
@@ -1521,7 +1527,12 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [x] AWS Personal Health Dashboard.
 - [ ] AWS Systems Manager.
 
-### ...
+### A company runs an application on Amazon EC2 instances behind an Application Load Balancer. The EC2 instances are in an Auto Scaling group. The application sometimes becomes slow and unresponsive. Amazon CloudWatch metrics show that some EC2 instances are experiencing high CPU load. A SysOps administrator needs to create a CloudWatch dashboard that can automatically display CPU metrics of all the EC2 instances. The metrics must include new instances that are launched as part of the Auto Scaling group. What should the SysOps administrator do to meet these requirements in the MOST operationally efficient way?
+
+- [ ] Create a CloudWatch dashboard. Use activity notifications from the Auto Scaling group to invoke a custom AWS Lambda function. Use the Lambda function to update the CloudWatch dashboard to monitor the `CPUUtilization` metric for the new instance IDs.
+- [ ] Create a CloudWatch dashboard. Run a custom script on each EC2 instance to stream the CPU utilization to the dashboard.
+- [x] Use CloudWatch metrics explorer to filter by the `aws:autoscaling:groupName` tag and to create a visualization for the `CPUUtilization` metric. Add the visualization to a CloudWatch dashboard.
+- [ ] Use CloudWatch metrics explorer to filter by instance state and to create a visualization for the `CPUUtilization` metric. Add the visualization to a CloudWatch dashboard.
 
 ### A SysOps administrator is trying to set up an Amazon Route 53 domain name to route traffic to a website hosted on Amazon S3. The domain name of the website is `www.example.com` and the S3 bucket name `DOC-EXAMPLE-BUCKET`. After the record set is set up in Route 53, the domain name `www.anycompany.com` does not seem to work, and the static website is not displayed in the browser. Which of the following is a cause of this?
 
@@ -1647,7 +1658,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 - [ ]Add several different instance sizes in the launch template. Create an Auto Scaling policy based on the ApproximateNumberOfMessagesVisible metric to select the size of the instance based on the number of messages in the queue.
 - [ ] Create an Auto Scaling policy based on the ApproximateNumberOfMessagesDelayed metric to scale the number of instances based on the number of messages in the queue that have been delayed.
-- [ ] Create a custom metric based on the ASGAverageCPUUtilization metric and the GroupPendingInstances metric from the Auto Scaling group. Modify the application to calculate the metric and post the metric to Amazon CloudWatch once each minute. Create an Auto Scaling policy based on this metric to scale the number of instances.
+- [ ] Create a custom metric based on the `ASGAverageCPUUtilization` metric and the GroupPendingInstances metric from the Auto Scaling group. Modify the application to calculate the metric and post the metric to Amazon CloudWatch once each minute. Create an Auto Scaling policy based on this metric to scale the number of instances.
 - [x] Create a custom metric based on the ApproximateNumberOfMessagesVisible metric and the number of instances in the InService state in the Auto Scaling group. Modify the application to calculate the metric and post the metric to Amazon CloudWatch once each minute. Create an Auto Scaling policy based on this metric to scale the number of instances.
 
 ### A company runs a multi-tier web application with two Amazon EC2 instances in one Availability Zone in the `us-east-1` Region. A SysOps administrator must migrate one of the EC2 instances to a new Availability Zone. Which solution will accomplish this?
@@ -1743,7 +1754,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Disable bucket versioning in the S3 bucket configuration.
 - [ ] Enable content compression in the CloudFront configuration.
 
-### A SysOps administrator needs to delete an AWS CloudFormation stack that is no longer in use. The CloudFormation stack is in the DELETE_FAILED state. The SysOps administrator has validated the permissions that are required to delete the CloudFormation stack. Which of the following are possible causes of the DELETE_FAILED state? (Choose two.)
+### A SysOps administrator needs to delete an AWS CloudFormation stack that is no longer in use. The CloudFormation stack is in the `DELETE_FAILED` state. The SysOps administrator has validated the permissions that are required to delete the CloudFormation stack. Which of the following are possible causes of the `DELETE_FAILED` state? (Choose two.)
 
 - [ ] The configured timeout to delete the stack was too low for the delete operation to complete.
 - [ ] The stack contains nested stacks that must be manually deleted first.
@@ -1903,7 +1914,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Create an AWS Lambda function that lists the EC2 instances, counts the EC2 instances, and compares the total number against the applied quota value by using the Service Quotas API. Configure the Lambda function to publish an Amazon Simple Notification Service (Amazon SNS) notification if the quota utilization is equal to or greater than `70%`. Create an Amazon EventBridge rule to invoke the Lambda function.
 - [ ] Create an AWS Lambda function that lists the EC2 instances, counts the EC2 instances, and compares the total number against the applied quota value by using the Amazon CloudWatch Metrics API. Configure the Lambda function to publish an Amazon Simple Notification Service (Amazon SNS) notification if the quota utilization is equal to or greater than `70%`. Create an Amazon EventBridge rule to invoke the Lambda function.
 - [x] Use the Service Quotas console to create an Amazon CloudWatch alarm for the EC2 instances. Configure the alarm with quota utilization equal to or greater than `70%`. Configure the alarm to publish an Amazon Simple Notification Service (Amazon SNS) notification when the alarm enters `ALARM` state.
-- [ ] Create an Amazon CloudWatch alarm. Configure the alarm with a threshold of `70%` for the CPUUtilization metric for the EC2 instances. Configure the alarm to publish an Amazon Simple Notification Service (Amazon SNS) notification when the alarm enters `ALARM` state.
+- [ ] Create an Amazon CloudWatch alarm. Configure the alarm with a threshold of `70%` for the `CPUUtilization` metric for the EC2 instances. Configure the alarm to publish an Amazon Simple Notification Service (Amazon SNS) notification when the alarm enters `ALARM` state.
 
 ### A team of developers is using several Amazon S3 buckets as centralized repositories. Users across the world upload large sets of files to these repositories. The development team's applications later process these files. A SysOps administrator sets up a new S3 bucket, `DOC-EXAMPLE-BUCKET`, to support a new workload, The rew S3 bucket also receives regular uploads cf large sets of files from users worldwide. When the new S3 bucket is put into production, the upload performance from certain geographic areas is lower than the upload performance that the existing $3 buckets provide. What should the SysOps administrator do to remediate this issue?
 
