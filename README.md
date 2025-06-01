@@ -1095,7 +1095,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Enable DynamoDB Accelerator (DAX).
 - [ ] Enable DynamoDB Streams, and add a global secondary index (GSI).
-- [x] Enable DynamoDB Streams, and-add a global table Region.
+- [x] Enable DynamoDB Streams, and add a global table Region.
 - [ ] Enable point-in-time recovery.
 
 ### A SysOps administrator must set up notifications for whenever combined billing exceeds a certain threshold for all AWS accounts within a company. The administrator has set up AWS Organizations and enabled Consolidated Billing. Which additional steps must the administrator perform to set up the billing alerts?
@@ -1634,7 +1634,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 ### A SysOps administrator maintains the security and compliance of a company's AWS account. To ensure the company's Amazon EC2 instances are following company policy, a SysOps administrator wants to terminate any EC2 instance that do not contain a department tag. Noncompliant resources must be terminated in near-real time. Which solution will meet these requirements?
 
-- [x] Create an AWS Config rule with the required-tags managed rule to identify noncompliant resources. Configure automatic remediation to run the AWS- TerminateEC2Instance automation document to terminate noncompliant resources.
+- [x] Create an AWS Config rule with the `required-tags` managed rule to identify noncompliant resources. Configure automatic remediation to run the AWS- TerminateEC2Instance automation document to terminate noncompliant resources.
 - [ ] Create a new Amazon EventBridge (Amazon CloudWatch Events) rule to monitor when new EC2 instances are created. Send the event to a Simple Notification Service (Amazon SNS) topic for automatic remediation.
 - [ ] Ensure all users who can create EC2 instances also have the permissions to use the `ec2:CreateTags` and `ec2:DescribeTags` actions. Change the instance's shutdown behavior to terminate.
 - [ ] Ensure AWS Systems Manager Compliance is configured to manage the EC2 instances. Call the AWS-StopEC2Instances automation document to stop noncompliant resources.
@@ -2182,3 +2182,27 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 - [ ] Create a Systems Manager Automation runbook to monitor and control the state of the patches required. Apply the runbook to Systems Manager Patch Manager.
 - [ ] Create a single Systems Manager maintenance window for each resource group.
 - [x] Configure Systems Manager Fleet Manager to apply a Systems Manager Automation runbook to the appropriate resource group.
+
+### A company needs to enforce tagging requirements for Amazon DynamoDB tables in its AWS accounts. A SysOps administrator must implement a solution to identify and remediate all DynamoDB tables that do not have the appropriate tags. Which solution will meet these requirements with the LEAST operational overhead?
+
+- [ ] Create a custom AWS Lambda function to evaluate and remediate all DynamoDB tables. Create an Amazon EventBridge scheduled rule to invoke the Lambda function.
+- [ ] Create a custom AWS Lambda function to evaluate and remediate ail DynamoDB tables. Create an AWS Config custom rule to invoke the Lambda function.
+- [x] Use the `required-tags` AWS Config managed rule to evaluate all DynamoDB tables for the appropriate tags. Configure an automatic remediation action that uses an AWS
+Systems Manager Automation custom runbook.
+- [ ] Create an Amazon EventBridge managed rule to evaluate all DynamoDB tables for the appropriate tags. Configure the EventBridge rule to run an AWS Systems Manager
+Automation custom runbook for remediation.
+
+### A company has an application that uses Amazon DynamoDB tables. The tables are spread across AWS accounts and AWS Regions. The company uses AWS CloudFormation to deploy AWS resources. A new team at the company is deleting unused AWS resources. The team accidentally deletes several production DynamoDB tables by running an AWS Lambda function that makes a DynamoDB DeleteTable API call. The table deletions cause an application outage. A SysOps administrator must implement a solution that minimizes the chance of accidental deletions of tables. The solution also must minimize data loss that results from accidental deletions. Which combination of steps will meet these requirements? (Choose two.)
+
+- [ ] Enable termination protection for the CloudFormation stacks that deploy the DynamoDB tables.
+- [x] Enable deletion protection for the DynamoDB tables.
+- [x] Enable point-in-time recovery for the DynamoDB tables. Restore the tables if they are accidentally deleted.
+- [ ] Schedule daily backups of the DynamoDB tables. Restore the tables if they are accidentally deleted.
+- [ ] Export the DynamoDB tables to Amazon S3 every day. Use Import from Amazon S3 to restore data for tables that are accidentally deleted.
+
+### A company wants to track its AWS costs in all member accounts that are part of an organization in AWS Organizations. Managers of the member accounts want to receive a notification when the estimated costs exceed a predetermined amount each month. The managers are unable to configure a billing alarm. The IAM permissions for all users are correct. What could be the cause of this issue?
+
+- [x] The management/payer account does not have billing alerts turned on.
+- [ ] The company has not configured AWS Resource Access Manager (AWS RAM) to share billing information between the member accounts and the management/payer account.
+- [ ] Amazon GuardDuty is turned on for all the accounts.
+- [ ] The company has not configured an AWS Config rule to monitor billing.
