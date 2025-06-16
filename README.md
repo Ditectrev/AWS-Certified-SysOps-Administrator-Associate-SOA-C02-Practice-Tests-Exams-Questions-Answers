@@ -161,8 +161,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Upload the file using the S3 console.
 - [ ] Use the `s3api copy-object` command.
-- [x] Use the `s3api put-object` command.
-- [ ] Use the `s3 cp` command.
+- [ ] Use the `s3api put-object` command.
+- [x] Use the `s3 cp` command.
 
 ### A SysOps administrator launches an Amazon EC2 Linux instance in a public subnet. When the instance is running, the SysOps administrator obtains the public IP address and attempts to remotely connect to the instance multiple times. However, the SysOps administrator always receives a timeout error. Which action will allow the SysOps administrator to remotely connect to the instance?
 
@@ -333,7 +333,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create an AWS Config rule that runs evaluations against configuration changes to the S3 bucket. When an unencrypted object is found run an AWS Systems Manager Automation document to encrypt the object in place.
 - [x] Edit the properties of the S3 bucket to enable default server-side encryption.
 - [x] Filter the S3 Inventory report by using S3 Select to find all objects that are not encrypted. Create an S3 Batch Operations job to copy each object in place with en cryption enabled.
-- [ ] Filter the S3 Inventory report by using S3 Select to find all objects that are not encrypted. Send each object name as a message to an Amazon Simple Queue Service (Amazon SQS) queue. Use the SQS queue to invoke an AWS Lambda function to tag each object with a key of "Encryption" and a value of "SSE-KMS"
+- [ ] Filter the S3 Inventory report by using S3 Select to find all objects that are not encrypted. Send each object name as a message to an Amazon Simple Queue Service (Amazon SQS) queue. Use the SQS queue to invoke an AWS Lambda function to tag each object with a key of `Encryption` and a value of `SSE-KMS`
 - [ ] Use S3 Event Notifications to invoke an AWS Lambda function on all new object-created events for the S3 bucket. Configure the Lambda function to check whether the object is encrypted and to run an AWS Systems Manager Automation document to encrypt the object in place when an unencrypted object is found.
 
 ### A web application runs on Amazon EC2 instances behind an Elastic Load Balancing Application Load Balancer (ALB). The instances run in an Auto Scaling group across multiple Availability Zones. A SysOps Administrator has notice that some EC2 instances show up healthy in the Auto Scaling console but show up as unhealthy in the ALB target console. What could be the issue?
@@ -1123,7 +1123,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company has a high-performance Windows workload. The workload requires a storage volume that provides consistent performance of 10,000 IOPS. The company does not want to pay for additional unneeded capacity to achieve this performance. Which solution will meet these requirements with the LEAST cost?
 
-- [ ] Use a Provisioned IOPS SSD (io1) Amazon Elastic Block Store (Amazon EBS) volume that is configured with 10,000 provisioned IOPS.
+- [ ] Use a `Provisioned IOPS SSD (io1)` Amazon Elastic Block Store (Amazon EBS) volume that is configured with 10,000 provisioned IOPS.
 - [x] Use a `General Purpose SSD (gp3)` Amazon Elastic Block Store (Amazon EBS) volume that is configured with 10,000 provisioned IOPS.
 - [ ] Use an Amazon Elastic File System (Amazon EFS) file system in Max I/O mode.
 - [ ] Use an Amazon FSx for Windows File Server file system that is configured with 10,000 IOPS.
@@ -1132,8 +1132,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Create an AWS Lambda function that updates security groups that are associated with the elastic network interface to remove inbound rules with noncorporate CIDR ranges. Turn on VPC Flow Logs, and send the logs to Amazon CloudWatch Logs. Create an Amazon CloudWatch alarm that matches traffic from noncorporate CIDR ranges, and publish a message to an Amazon Simple Notification Service (Amazon SNS) topic with the Lambda function as a target.
 - [ ] Create a scheduled Amazon EventBridge (Amazon CloudWatch Events) rule that targets an AWS Systems Manager Automation document to check for public IP addresses on the EC2 instances. If public IP addresses are found on the EC2 instances, initiate another Systems Manager Automation document to terminate the instances.
-- [x] Configure AWS Config and a custom rule to monitor whether a security group allows inbound
-requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation document to remove any noncorporate CIDR ranges from the application security groups.
+- [x] Configure AWS Config and a custom rule to monitor whether a security group allows inbound requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation document to remove any noncorporate CIDR ranges from the application security groups.
 - [ ] Configure AWS Config and the managed rule for monitoring public IP associations with the EC2 instances by tag. Tag the EC2 instances with an identifier. Create an AWS Systems Manager Automation document to remove the public IP association from the EC2 instances.
 
 ### A company has deployed an application on Amazon EC2 instances in a single VPC. The company has placed the EC2 instances in a private subnet in the VPC. The EC2 instances need access to Amazon S3 buckets that are in the same AWS Region as the EC2 instances. A SysOps administrator must provide the EC2 instances with access to the S3 buckets without requiring any changes to the EC2 instances or the application. The EC2 instances must not have access to the internet. Which solution will meet these requirements?
@@ -1166,8 +1165,8 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 ### A company is uploading important files as objects to Amazon S3. The company needs to be informed if an object is corrupted during the upload. What should a SysOps administrator do to meet this requirement?
 
-- [ ] Pass the Content-Disposition value as a request body during the object upload.
-- [x] Pass the Content-MD5 value as a request header during the object upload.
+- [ ] Pass the `Content-Disposition` value as a request body during the object upload.
+- [x] Pass the `Content-MD5` value as a request header during the object upload.
 - [ ] Pass `x-amz-object-lock-mode` as a request header during the object upload.
 - [ ] Pass `x-amz-server-side-encryption-customer-algorithm` as a request body during the object upload.
 
@@ -1260,7 +1259,7 @@ requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation
 
 - [x] Configure the procstat plugin to collect and send CPU metrics for the running processes.
 - [ ] Configure an AWS Lambda function to run every minute to capture the PID and send a notification.
-- [ ] Log in to the EC2 instance by using a .pem key each night. Then run the top command.
+- [ ] Log in to the EC2 instance by using a `.pem` key each night. Then run the top command.
 - [ ] Use the default Amazon CloudWatch CPU utilization metric to capture the PID in CloudWatch.
 
 ### A SysOps administrator configured AWS Backup to capture snapshots from a single Amazon EC2 instance that has one Amazon Elastic Block Store (Amazon. EBS) volume attached. On the first snapshot, the EBS volume has 10 GiB of data. On the second snapshot, the EBS volume still contains 10 GiB of data, but 4. GiB have changed. On the third snapshot, 2 GiB of data have been added to the volume, for a total of 12 GiB. How much total storage is required to store these snapshots?
