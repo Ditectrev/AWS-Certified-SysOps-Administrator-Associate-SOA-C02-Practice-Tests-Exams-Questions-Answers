@@ -118,9 +118,9 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A company has multiple AWS Site-to-Site VPN connections between a VPC and its branch offices. The company manages an Amazon Elasticsearch Service (Amazon ES) domain that is configured with public access. The Amazon ES domain has an open domain access policy. A SysOps administrator needs to ensure that Amazon ES can be accessed only from the branch offices while preserving existing data. Which solution will meet these requirements?
 
 - [ ] Configure an identity-based access policy on Amazon ES. Add an allow statement to the policy that includes the Amazon Resource Name (ARN) for each branch office VPN connection.
-- [x] Configure an IP-based domain access policy on Amazon ES. Add an allow statement to the policy that includes the private IP CIDR blocks from each branch office network.
-- [ ] Deploy a new Amazon ES domain in private subnets in a VPC, and import a snapshot from the old domain. Create a security group that allows inbound traffic from the branch office CIDR blocks.
-- [ ] Reconfigure the Amazon ES domain in private subnets in a VPC. Create a security group that allows inbound traffic from the branch office CIDR blocks.
+- [x] Configure an IP-based domain access policy on Amazon ES. Add an allow statement to the policy that includes the private IP `CIDR` blocks from each branch office network.
+- [ ] Deploy a new Amazon ES domain in private subnets in a VPC, and import a snapshot from the old domain. Create a security group that allows inbound traffic from the branch office `CIDR` blocks.
+- [ ] Reconfigure the Amazon ES domain in private subnets in a VPC. Create a security group that allows inbound traffic from the branch office `CIDR` blocks.
 
 ### A company is managing many accounts by using a single organization in AWS Organizations. The organization has all features enabled. The company wants to turn on AWS Config in all the accounts of the organization and in all AWS Regions. What should a Sysops administrator do to meet these requirements in the MOST operationally efficient way?
 
@@ -230,7 +230,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A SysOps administrator creates a new VPC that includes a public subnet and a private subnet. The SysOps administrator successfully launches 11 Amazon EC2 instances in the private subnet. The SysOps administrator attempts to launch one more EC2 instance in the same subnet. However, the SysOps administrator receives an error message that states that not enough free IP addresses are available. What must the SysOps administrator do to deploy more EC2 instances?
 
-- [ ] Edit the private subnet to change the CIDR block to `/27`.
+- [ ] Edit the private subnet to change the `CIDR` block to `/27`.
 - [ ] Edit the private subnet to extend across a second Availability Zone.
 - [ ] Assign additional Elastic IP addresses to the private subnet.
 - [x] Create a new private subnet to hold the required EC2 instances.
@@ -551,7 +551,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company is expanding its fleet of Amazon EC2 instances before an expected increase of traffic. When a SysOps administrator attempts to add more instances, an `InstanceLimitExceeded` error is returned. What should the SysOps administrator do to resolve this error?
 
-- [ ] Add an additional CIDR block to the VPC.
+- [ ] Add an additional `CIDR` block to the VPC.
 - [ ] Launch the EC2 instances in a different Availability Zone.
 - [ ] Launch new EC2 instances in another VPC.
 - [x] Use Service Quotas to request an EC2 quota increase.
@@ -1059,7 +1059,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Set up an AWS Config rule to alert based on changes to any CloudFormation stack. An AWS Lambda function can then describe the stack to determine if any protected resources were modified and cancel the operation.
 - [ ] Set up an Amazon CloudWatch Events event with a rule to trigger based on any CloudFormation API call. An AWS Lambda function can then describe the stack to determine if any protected resources were modified and cancel the operation.
-- [x] Launch the CloudFormation templates using a stack policy with an explicit allow for all resources and an explicit deny of the protected resources with an action of `Update`.
+- [x] Launch the CloudFormation templates using a stack policy with an explicit allow for all resources and an explicit deny of the protected resources with an action of `Update:*`.
 - [ ] Attach an IAM policy to the DevOps team role that prevents a CloudFormation stack from updating, with a condition based on the specific Amazon Resource Names (ARNs) of the protected resources.
 
 ### A SysOps administrator receives notification that an application that is running on Amazon EC2 instances has failed to authenticate to an Amazon RDS database. To troubleshoot, the SysOps administrator needs to investigate AWS Secrets Manager password rotation. Which Amazon CloudWatch log will provide insight into the password rotation?
@@ -1130,9 +1130,9 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company hosts an internal application on Amazon EC2 instances. All application data and requests route through an AWS Site-to-Site VPN connection between the on-premises network and AWS. The company must monitor the application for changes that allow network access outside of the corporate network. Any change that exposes the application externally must be restricted automatically. Which solution meets these requirements in the MOST operationally efficient manner?
 
-- [ ] Create an AWS Lambda function that updates security groups that are associated with the elastic network interface to remove inbound rules with noncorporate CIDR ranges. Turn on VPC Flow Logs, and send the logs to Amazon CloudWatch Logs. Create an Amazon CloudWatch alarm that matches traffic from noncorporate CIDR ranges, and publish a message to an Amazon Simple Notification Service (Amazon SNS) topic with the Lambda function as a target.
+- [ ] Create an AWS Lambda function that updates security groups that are associated with the elastic network interface to remove inbound rules with noncorporate `CIDR` ranges. Turn on VPC Flow Logs, and send the logs to Amazon CloudWatch Logs. Create an Amazon CloudWatch alarm that matches traffic from noncorporate `CIDR` ranges, and publish a message to an Amazon Simple Notification Service (Amazon SNS) topic with the Lambda function as a target.
 - [ ] Create a scheduled Amazon EventBridge (Amazon CloudWatch Events) rule that targets an AWS Systems Manager Automation document to check for public IP addresses on the EC2 instances. If public IP addresses are found on the EC2 instances, initiate another Systems Manager Automation document to terminate the instances.
-- [x] Configure AWS Config and a custom rule to monitor whether a security group allows inbound requests from noncorporate CIDR ranges. Create an AWS Systems Manager Automation document to remove any noncorporate CIDR ranges from the application security groups.
+- [x] Configure AWS Config and a custom rule to monitor whether a security group allows inbound requests from noncorporate `CIDR` ranges. Create an AWS Systems Manager Automation document to remove any noncorporate `CIDR` ranges from the application security groups.
 - [ ] Configure AWS Config and the managed rule for monitoring public IP associations with the EC2 instances by tag. Tag the EC2 instances with an identifier. Create an AWS Systems Manager Automation document to remove the public IP association from the EC2 instances.
 
 ### A company has deployed an application on Amazon EC2 instances in a single VPC. The company has placed the EC2 instances in a private subnet in the VPC. The EC2 instances need access to Amazon S3 buckets that are in the same AWS Region as the EC2 instances. A SysOps administrator must provide the EC2 instances with access to the S3 buckets without requiring any changes to the EC2 instances or the application. The EC2 instances must not have access to the internet. Which solution will meet these requirements?
@@ -1193,8 +1193,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company is running a website on Amazon EC2 instances behind an Application Load Balancer (ALB). The company configured an Amazon CloudFront distribution and set the ALB as the origin. The company created an Amazon Route 53 `CNAME` record to send all traffic through the CloudFront distribution. As an unintended side effect, mobile users are now being served the desktop version of the website. Which action should a SysOps administrator take to resolve this issue?
 
-- [x] Configure the CloudFront distribution behavior to forward the User-Agent header.
-- [ ] Configure the CloudFront distribution origin settings. Add a User-Agent header to the list of origin custom headers.
+- [x] Configure the CloudFront distribution behavior to forward the `User-Agent` header.
+- [ ] Configure the CloudFront distribution origin settings. Add a `User-Agent` header to the list of origin custom headers.
 - [ ] Enable IPv6 on the ALB. Update the CloudFront distribution origin settings to use the dualstack endpoint.
 - [ ] Enable IPv6 on the CloudFront distribution. Update the Route 53 record to use the dualstack endpoint.
 
@@ -1582,12 +1582,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create a VPN connection between the two Regions. Add the private IP address range of the instances to the outbound rule of the database security group.
 - [ ] Create a VPN connection between the two Regions. Add the security group of the instances in eu-central-1 to the inbound rule of the database security group.
 
-### A company wants to create an automated solution for all accounts managed by AWS Organizations to detect any security groups that use `0.0.0.0/0` as the source address for inbound traffic. The company also wants to automatically remediate any noncompliant security groups by restricting access to a specific CIDR block that corresponds with the company's intranet. Which set of actions should the SysOps administrator take to create a solution?
+### A company wants to create an automated solution for all accounts managed by AWS Organizations to detect any security groups that use `0.0.0.0/0` as the source address for inbound traffic. The company also wants to automatically remediate any noncompliant security groups by restricting access to a specific `CIDR` block that corresponds with the company's intranet. Which set of actions should the SysOps administrator take to create a solution?
 
-- [x] Create an AWS Config rule to detect noncompliant security groups. Set up automatic remediation to change the `0.0.0.0/0` source address to the approved CIDR block.
+- [x] Create an AWS Config rule to detect noncompliant security groups. Set up automatic remediation to change the `0.0.0.0/0` source address to the approved `CIDR` block.
 - [ ] Create an IAM policy to deny the creation of security groups that have `0.0.0.0/0` as the source address. Attach this IAM policy to every user in the company.
-- [ ] Create an AWS Lambda function to inspect new and existing security groups. Check for a noncompliant `0.0.0.0/0` source address and change the source address to the approved CIDR block.
-- [ ] Create a Service Control Policy (SCP) for the organizational unit (OU) to deny the creation of security groups that have the `0.0.0.0/0` source address. Set up automatic remediation to change the `0.0.0.0/0` source address to the approved CIDR block.
+- [ ] Create an AWS Lambda function to inspect new and existing security groups. Check for a noncompliant `0.0.0.0/0` source address and change the source address to the approved `CIDR` block.
+- [ ] Create a Service Control Policy (SCP) for the organizational unit (OU) to deny the creation of security groups that have the `0.0.0.0/0` source address. Set up automatic remediation to change the `0.0.0.0/0` source address to the approved `CIDR` block.
 
 ### A company requires that all activity in its AWS account be logged using AWS CloudTrail. Additionally, a SysOps administrator must know when CloudTrail log files are modified or deleted. How should the SysOps administrator meet these requirements?
 
@@ -1645,7 +1645,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Configure an S3 Origin Access Identity (OAI) to display only the updated files to users.
 - [ ] Disable S3 Versioning on the S3 bucket so that the updated files can replace the old files.
 
-### A company has two VPC networks named VPC A and VPC B. The VPC A CIDR block is `10.0.0.0/16` and the VPC B CIDR block is `172.31.0.0/16`. The company wants to establish a VPC peering connection named `pcx-12345` between both VPCs. Which rules should appear in the route table of VPC A after configuration? (Choose two.)
+### A company has two VPC networks named VPC A and VPC B. The VPC A `CIDR` block is `10.0.0.0/16` and the VPC B `CIDR` block is `172.31.0.0/16`. The company wants to establish a VPC peering connection named `pcx-12345` between both VPCs. Which rules should appear in the route table of VPC A after configuration? (Choose two.)
 
 - [x] `Destination`: `10.0.0.0/16`, `Target`: `Local`.
 - [ ] `Destination`: `172.31.0.0/16`, `Target`: `Local`.
@@ -1748,7 +1748,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company hosts a static website on Amazon S3. An Amazon CloudFront distribution presents this site to global users. The company uses the Managed-CachingDisabled CloudFront cache policy. The company's developers confirm that they frequently update a file in Amazon S3 with new information. Users report that the website presents correct information when the website first loads the file. However, the users' browsers do not retrieve the updated file after a refresh. What should a SysOps administrator recommend to fix this issue?
 
-- [x] Add a Cache-Control header field with max-age=0 to the S3 object.
+- [x] Add a `Cache-Control` header field with max-age=0 to the S3 object.
 - [ ] Change the CloudFront cache policy to Managed-CachingOptimized.
 - [ ] Disable bucket versioning in the S3 bucket configuration.
 - [ ] Enable content compression in the CloudFront configuration.
@@ -1808,9 +1808,9 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### An Amazon CloudFront distribution has a single Amazon S3 bucket as its origin. A SysOps administrator must ensure that users can access the S3 bucket only through requests from the CloudFront endpoint. Which solution will meet these requirements?
 
 - [ ] Configure S3 Block Public Access on the S3 bucket. Update the S3 bucket policy to allow the GetObject action from only the CloudFront distribution.
-- [ ] Configure Origin Shield in the CloudFront distribution. Update the CloudFront origin to include a custom Origin_Shield header.
+- [ ] Configure Origin Shield in the CloudFront distribution. Update the CloudFront origin to include a custom `Origin_Shield` header.
 - [x] Create an Origin Access Identity (OAI). Assign the OAI to the CloudFront distribution. Update the S3 bucket policy to restrict access to the OAI.
-- [ ] Create an Origin Access Identity (OAI). Assign the OAI to the S3 bucket. Update the CloudFront origin to include a custom Origin header with the OAI value.
+- [ ] Create an Origin Access Identity (OAI). Assign the OAI to the S3 bucket. Update the CloudFront origin to include a custom `Origin` header with the OAI value.
 
 ### A SysOps administrator is designing a solution for an Amazon RDS for PostgreSQL DB instance. Database credentials must be stored and rotated monthly. The applications that connect to the DB instance send write-intensive traffic with variable client connections that sometimes increase significantly in a short period of time. Which solution should a SysOps administrator choose to meet these requirements?
 
@@ -2205,3 +2205,10 @@ Automation custom runbook for remediation.
 - [ ] The company has not configured AWS Resource Access Manager (AWS RAM) to share billing information between the member accounts and the management/payer account.
 - [ ] Amazon GuardDuty is turned on for all the accounts.
 - [ ] The company has not configured an AWS Config rule to monitor billing.
+
+### A SysOps administrator is troubleshooting a VPC with public and private subnets that leverage custom network ACLs. Instances in the private subnet are unable to access the internet. There is an internet gateway attached to the public subnet. The private subnet has a route to a `NAT` gateway that is also attached to the public subnet. The Amazon EC2 instances are associated with the default security group for the VPC. What is causing the issue in this scenario?
+
+- [x] There is a network ACL on the private subnet set to deny all outbound traffic.
+- [ ] There is no `NAT` gateway deployed in the private subnet of the VPC.
+- [ ] The default security group for the VPC blocks all inbound traffic to the EC2 instances.
+- [ ] The default security group for the VPC blocks all outbound traffic from the EC2 instances.
