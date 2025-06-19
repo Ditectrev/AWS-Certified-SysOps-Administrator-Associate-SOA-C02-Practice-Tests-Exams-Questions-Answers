@@ -2212,3 +2212,18 @@ Automation custom runbook for remediation.
 - [ ] There is no `NAT` gateway deployed in the private subnet of the VPC.
 - [ ] The default security group for the VPC blocks all inbound traffic to the EC2 instances.
 - [ ] The default security group for the VPC blocks all outbound traffic from the EC2 instances.
+
+### An organization is running multiple applications for their customers. Each application is deployed by running a base AWS CloudFormation template that configures a new VPC. All applications are run in the same AWS account and AWS Region. A SysOps Administrator has noticed that when trying to deploy the same AWS CloudFormation stack, it fails to deploy. What is likely to be the problem?
+
+- [ ] The Amazon Machine image used is not available in that region.
+- [ ] The AWS CloudFormation template needs to be updated to the latest version.
+- [ ] The VPC configuration parameters have changed and must be updated in the template.
+- [x] The account has reached the default limit for VPCs allowed.
+
+### A financial service company is running distributed computing software to manage a fleet of 20 servers for their calculations. There are 2 control nodes and 18 worker nodes to run the calculations. Worker nodes can be automatically started by the control nodes when required. Currently, all nodes are running on demand, and the worker nodes are used for approximately 4 hours each day. Which combination of actions will be MOST cost-effective? (Choose two.)
+
+- [ ] Use Dedicated Hosts for the control nodes.
+- [x] Use Reserved Instances for the control nodes.
+- [ ] Use Reserved Instances for the worker nodes.
+- [ ] Use Spot Instances for the control nodes and On-Demand Instances if there is no Spot availability.
+- [x] Use Spot Instances for the worker nodes and On-Demand Instances if there is no Spot availability.
