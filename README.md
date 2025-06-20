@@ -1013,7 +1013,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] The Auto Scaling group will send an alert to the ALB to rebalance the traffic and not add new EC2 instances until the load is normalized.
 - [ ] The Auto Scaling group will try to distribute the traffic among all EC2 instances before launching another instance.
 
-### An errant process is known to use an entire processor and run at `100%`A SysOps administrator wants to automate restarting the instance once the problem occurs for more than 2 minutes. How can this be accomplished?
+### An errant process is known to use an entire processor and run at `100%`. A SysOps administrator wants to automate restarting the instance once the problem occurs for more than 2 minutes. How can this be accomplished?
 
 - [ ] Create an Amazon CloudWatch alarm for the Amazon EC2 instance with basic monitoring. Enable an action to restart the instance.
 - [x] Create a CloudWatch alarm for the EC2 instance with detailed monitoring. Enable an action to restart the instance.
@@ -1257,8 +1257,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company has a web application that is experiencing performance problems many times each night. A root cause analysis reveals sudden increases in CPU utilization that last 5 minutes on an Amazon EC2 Linux instance. A SysOps administrator must find the process ID (PID) of the service or process that is consuming more CPU. What should the SysOps administrator do to collect the process utilization information with the LEAST amount of effort?
 
-- [x] Configure the procstat plugin to collect and send CPU metrics for the running processes.
 - [ ] Configure an AWS Lambda function to run every minute to capture the PID and send a notification.
+- [x] Configure the `procstat` plugin to collect and send CPU metrics for the running processes.
 - [ ] Log in to the EC2 instance by using a `.pem` key each night. Then run the top command.
 - [ ] Use the default Amazon CloudWatch CPU utilization metric to capture the PID in CloudWatch.
 
@@ -1276,7 +1276,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Ensure that the IAM credentials that are used to access Cost Explorer have permissions to group cost by tags.
 - [x] Activate the tag keys for cost allocation on the organization's management account.
 
-### An errant process is known to use an entire processor and run at 100%. A SysOps administrator wants to automate restarting an Amazon EC2 instance when the problem occurs for more than 2 minutes. How can this be accomplished?
+### An errant process is known to use an entire processor and run at `100%`. A SysOps administrator wants to automate restarting an Amazon EC2 instance when the problem occurs for more than 2 minutes. How can this be accomplished?
 
 - [ ] Create an Amazon CloudWatch alarm for the EC2 instance with basic monitoring. Add an action to restart the instance.
 - [x] Create an Amazon CloudWatch alarm for the EC2 instance with detailed monitoring. Add an action to restart the instance.
@@ -2138,7 +2138,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Users cannot remove any items from the shopping cart.
 - [ ] Users cannot use the application because it is falling back to an error page.
 
-### Users are periodically experiencing slow response times from a relational database. The database runs on a burstable Amazon EC2 instance with a `350 GB` `General Purpose SSD (gp2)` Amazon Elastic Block Store (Amazon EBS) volume. A SysOps administrator monitors the EC2 instance in Amazon CloudWatch and observes that the `VolumeReadOps` metric drops to less than 10% of its peak value during the periods of slow response. What should the SysOps administrator do to ensure consistently high performance?
+### Users are periodically experiencing slow response times from a relational database. The database runs on a burstable Amazon EC2 instance with a `350 GB` `General Purpose SSD (gp2)` Amazon Elastic Block Store (Amazon EBS) volume. A SysOps administrator monitors the EC2 instance in Amazon CloudWatch and observes that the `VolumeReadOps` metric drops to less than `10%` of its peak value during the periods of slow response. What should the SysOps administrator do to ensure consistently high performance?
 
 - [ ] Convert the `gp2` volume to a `General Purpose SSD (gp3)` EBS volume.
 - [ ] Convert the `gp2` volume to a `Cold HDD (sc1)` EBS volume.
@@ -2227,3 +2227,24 @@ Automation custom runbook for remediation.
 - [ ] Use Reserved Instances for the worker nodes.
 - [ ] Use Spot Instances for the control nodes and On-Demand Instances if there is no Spot availability.
 - [x] Use Spot Instances for the worker nodes and On-Demand Instances if there is no Spot availability.
+
+### A company has a web application that is experiencing performance problems many times each night. A root cause analysis reveals spikes in CPU utilization that last 5 minutes on an Amazon EC2 Linux instance. A SysOps administrator is tasked with finding the process ID (PID) of the service or process that is consuming more CPU. How can the administrator accomplish this with the LEAST amount of effort?
+
+- [ ] Configure an AWS Lambda function in Python `3.7` to run every minute to capture the PID and send a notification.
+- [x] Configure the `procstat` plugin to collect and send CPU metrics for the running processes.
+- [ ] Log in to the EC2 Linux instance using a `.pem` key each night and then run the top command.
+- [ ] Use the default Amazon CloudWatch CPU utilization metric to capture the PID in the CloudWatch dashboard.
+
+### A company uses AWS Organizations to host several applications across multiple AWS accounts. Several teams are responsible for building and maintaining the infrastructure of the applications across the AWS accounts. A SysOps administrator must implement a solution to ensure that user accounts and permissions are centrally managed. The solution must be integrated with the company's existing on-premises Active Directory environment. The SysOps administrator already has enabled AWS IAM Identity Center (AWS Single Sign-On) and has set up an AWS Direct Connect connection. What is the MOST operationally efficient solution that meets these requirements?
+
+- [ ] Create a Simple AD domain, and establish a forest trust relationship with the on-premises Active Directory domain. Set the Simple AD domain as the identity source for IAM Identity Center. Create the required role-based permission sets. Assign each group of users to the AWS accounts that the group will manage.
+- [ ] Create an Active Directory domain controller on an Amazon EC2 instance that is joined to the on-premises Active Directory domain. Set the Active Directory domain controller as the identity source for IAM Identity Center. Create the required role-based permission sets. Assign each group of users to the AWS accounts that the group will manage.
+- [x] Create an AD Connector that is associated with the on-premises Active Directory domain. Set the AD Connector as the identity source for IAM Identity Center. Create the required role-based permission sets. Assign each group of users to the AWS accounts that the group will manage.
+- [ ] Use the built-in SSO directory as the identity source for IAM Identity Center. Copy the users and groups from the on-premises Active Directory domain. Create the required role-based permission sets. Assign each group of users to the AWS accounts that the group will manage.
+
+### A SysOps Administrator has been asked to configure user-defined cost allocation tags for a new AWS account. The company is using AWS Organizations for account management. What should the Administrator do to enable user-defined cost allocation tags?
+
+- [ ] Log in to the AWS Billing and Cost Management console of the new account, and use the Cost Allocation Tags manager to create the new user-defined cost allocation tags.
+- [x] Log in to the AWS Billing and Cost Management console of the payer account, and use Cost Allocation Tags manager to create the new user-defined cost allocation tags.
+- [ ] Log in to the AWS Management Console of the new account, use the Tag Editor to create the new user-defined tags, then use the Cost Allocation Tags manager in the new account to mark the tags as cost allocation tags.
+- [ ] Log in to the AWS Management Console of the new account, use the Tag Editor to create the new user-defined tags, then use the Cost Allocation Tags manager in the payer account to mark the tags as cost allocation tags.
