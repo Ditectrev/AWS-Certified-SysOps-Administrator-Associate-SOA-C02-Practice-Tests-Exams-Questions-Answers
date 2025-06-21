@@ -124,8 +124,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company is managing many accounts by using a single organization in AWS Organizations. The organization has all features enabled. The company wants to turn on AWS Config in all the accounts of the organization and in all AWS Regions. What should a Sysops administrator do to meet these requirements in the MOST operationally efficient way?
 
-- [x] Use AWS CloudFormation StackSets to deploy stack instances that turn on AWS Config in all accounts and in all Regions.
-- [ ] Use AWS CloudFormation StackSets to deploy stack policies that turn on AWS Config in all accounts and in all Regions.
+- [x] Use AWS CloudFormation `StackSets` to deploy stack instances that turn on AWS Config in all accounts and in all Regions.
+- [ ] Use AWS CloudFormation `StackSets` to deploy stack policies that turn on AWS Config in all accounts and in all Regions.
 - [ ] Use service control policies (SCPs) to configure AWS Config in all accounts and in all Regions.
 - [ ] Create a script that uses the AWS CLI to turn on AWS Config in all accounts in the organization. Run the script from the organization's management account.
 
@@ -359,8 +359,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company hosts a web portal on Amazon EC2 instances. The web portal uses an Elastic Load Balancer (ELB) and Amazon Route 53 for its public DNS service. The ELB and the EC2 instances are deployed by way of a single AWS CloudFormation stack in the `us-east-1` Region. The web portal must be highly available across multiple Regions. Which configuration will meet these requirements?
 
-- [ ] Deploy a copy of the stack in the `us-west-2` Region. Create a single start of authority (SOA) record in Route 53 that includes the IP address from each ELB. Configure the `SOA` record with health checks. Use the ELB in `us-east-1` as the primary record and the ELB in `us-west-2` as the secondary record.
-- [x] Deploy a copy of the stack in the `us-west-2` Region. Create an additional `A` record in Route 53 that includes the ELB in `us-west-2` as an alias target. Configure the A records with a failover routing policy and health checks. Use the ELB in `us-east-1` as the primary record and the ELB in `us-west-2` as the secondary record.
+- [ ] Deploy a copy of the stack in the `us-west-2` Region. Create a single start of authority (`SOA`) record in Route 53 that includes the IP address from each ELB. Configure the `SOA` record with health checks. Use the ELB in `us-east-1` as the primary record and the ELB in `us-west-2` as the secondary record.
+- [x] Deploy a copy of the stack in the `us-west-2` Region. Create an additional `A` record in Route 53 that includes the ELB in `us-west-2` as an alias target. Configure the `A` records with a failover routing policy and health checks. Use the ELB in `us-east-1` as the primary record and the ELB in `us-west-2` as the secondary record.
 - [ ] Deploy a new group of EC2 instances in the `us-west-2` Region. Associate the new EC2 instances with the existing ELB, and configure load balancer health checks on all EC2 instances. Configure the ELB to update Route 53 when EC2 instances in `us-west-2` fail health checks.
 - [ ] Deploy a new group of EC2 instances in the `us-west-2` Region. Configure EC2 health checks on all EC2 instances in each Region. Configure a peering connection between the VPCs. Use the VPC in `us-east-1` as the primary record and the VPC in `us-west-2` as the secondary record.
 
@@ -982,7 +982,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Add a wait condition to the template. Update the EC2 instance user data script to send a signal after the EC2 instance is started.
 - [x] Add the `DependsOn` attribute to the EC2 instance resource, and provide the logical name of the RDS resource.
 - [ ] Change the order of the resources in the template so that the RDS resource is listed before the EC2 instance resource.
-- [ ] Create multiple templates. Use AWS CloudFormation StackSets to wait for one stack to complete before the second stack is created.
+- [ ] Create multiple templates. Use AWS CloudFormation `StackSets` to wait for one stack to complete before the second stack is created.
 
 ### A company has an existing web application that runs on two Amazon EC2 instances behind an Application Load Balancer (ALB) across two Availability Zones. The application uses an Amazon RDS Multi-AZ DB Instance. Amazon Route 53 record sets route requests for dynamic content to the load balancer and requests for static content to an Amazon S3 bucket. Site visitors are reporting extremely long loading times. Which actions should be taken to improve the performance of the website? (Select TWO)
 
@@ -1238,7 +1238,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Assume the OrganizationAccountAccessRole IAM role from the management account. Deploy the template in each of the accounts.
 - [ ] Create an AWS Lambda function to assume a role in each account. Deploy the template by using the AWS CloudFormation CreateStack API call.
 - [ ] Create an AWS Lambda function to query for a list of accounts. Deploy the template by using the AWS CloudFormation CreateStack API call.
-- [x] Use AWS CloudFormation StackSets from the management account to deploy the template in each of the accounts.
+- [x] Use AWS CloudFormation `StackSets` from the management account to deploy the template in each of the accounts.
 
 ### A company is running distributed computing software to manage a fleet of 20 Amazon EC2 instances for calculations. The fleet includes 2 control nodes and 18 task nodes to run the calculations. Control nodes can automatically start the task nodes. Currently, all the nodes run on demand. The control nodes must be available 24 hours a day, 7 days a week. The task nodes run for 4 hours each day. A SysOps administrator needs to optimize the cost of this solution. Which combination of actions will meet these requirements? (Choose two.)
 
@@ -1283,9 +1283,9 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create an AWS Lambda function to restart the EC2 instance, invoked on a scheduled basis every 2 minutes.
 - [ ] Create an AWS Lambda function to restart the EC2 instance, invoked by EC2 health checks.
 
-### A company hosts a static website on Amazon S3. The website is served by an Amazon CloudFront distribution with a default TTL of 86,400 seconds. The company recently uploaded an updated version of the website to Amazon S3. However, users still see the old content when they refresh the site. A SysOps administrator must make the new version of the website visible to users as soon as possible. Which solution meets these requirements?
+### A company hosts a static website on Amazon S3. The website is served by an Amazon CloudFront distribution with a default `TTL` of 86,400 seconds. The company recently uploaded an updated version of the website to Amazon S3. However, users still see the old content when they refresh the site. A SysOps administrator must make the new version of the website visible to users as soon as possible. Which solution meets these requirements?
 
-- [ ] Adjust the TTL value for the DNS `CNAME` record that is pointing to the CloudFront distribution.
+- [ ] Adjust the `TTL` value for the DNS `CNAME` record that is pointing to the CloudFront distribution.
 - [x] Create an invalidation on the CloudFront distribution for the old S3 objects.
 - [ ] Create a new CloudFront distribution. Update the DNS records to point to the new CloudFront distribution.
 - [ ] Update the DNS record for the website to point to the S3 bucket.
@@ -1299,10 +1299,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A new website will run on Amazon EC2 instances behind an Application Load Balancer. Amazon Route 53 will be used to manage DNS records. What type of record should be set in Route 53 to point the website's apex domain name (for example, `company.com`) to the Application Load Balancer?
 
-- [ ] CNAME.
-- [ ] SOA.
-- [ ] TXT.
-- [x] ALIAS.
+- [ ] `CNAME`.
+- [ ] `SOA`.
+- [ ] `TXT`.
+- [x] `ALIAS`.
 
 ### A company is implementing security and compliance by using AWS Trusted Advisor. The company's SysOps team is validating the list of Trusted Advisor checks that it can access. Which factor will affect the quantity of available Trusted Advisor checks?
 
@@ -1314,8 +1314,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A SysOps administrator is investigating issues on an Amazon RDS for MariaDB DB instance. The SysOps administrator wants to display the database load categorized by detailed wait events. How can the SysOps administrator accomplish this goal?
 
 - [ ] Create an Amazon CloudWatch dashboard.
-- [x] Enable Amazon RDS Performance Insights.
-- [ ] Enable and configure Enhanced Monitoring.
+- [x] Enable Amazon RDS `Performance Insights`.
+- [ ] Enable and configure `Enhanced Monitoring`.
 - [ ] Review the database logs in Amazon CloudWatch Logs.
 
 ### A company is planning to host an application on a set of Amazon EC2 instances that are distributed across multiple Availability Zones. The application must be able to scale to millions of requests each second. A SysOps administrator must design a solution to distribute the traffic to the EC2 instances. The solution must be optimized to handle sudden and volatile traffic patterns while using a single static IP address for each Availability Zone. Which solution will meet these requirements?
@@ -1325,7 +1325,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] AWS Global Accelerator.
 - [x] Network Load Balancer.
 
-### A SysOps administrator is using AWS CloudFormation StackSets to create AWS resources in two AWS Regions in the same AWS account. A stack operation fails in one Region and returns the stack instance status of OUTDATED. What is the cause of this failure?
+### A SysOps administrator is using AWS CloudFormation `StackSets` to create AWS resources in two AWS Regions in the same AWS account. A stack operation fails in one Region and returns the stack instance status of `OUTDATED`. What is the cause of this failure?
 
 - [ ] The CloudFormation template changed on the local disk and has not been submitted to CloudFormation.
 - [x] The CloudFormation template is trying to create a global resource that is not unique.
@@ -1674,19 +1674,19 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Apply the SCPs to each developer account.
 - [ ] Enroll the accounts with AWS Control Tower. Apply the SCPs to the AWS Control Tower management account.
 
-### An application is running on an Amazon EC2 instance in a VPC with the default DHCP option set. The application connects to an on-premises Microsoft SQL. Server database with the DNS name mssql.example.com. The application is unable to resolve the database DNS name. Which solution will fix this problem?
+### An application is running on an Amazon EC2 instance in a VPC with the default DHCP option set. The application connects to an on-premises Microsoft SQL. Server database with the DNS name `mssql.example.com`. The application is unable to resolve the database DNS name. Which solution will fix this problem?
 
-- [ ] Create an Amazon Route 53 Resolver inbound endpoint. Add a forwarding rule for the domain example.com. Associate the forwarding rule with the VPC
-- [ ] Create an Amazon Route 53 Resolver inbound endpoint. Add a system rule for the domain example.com. Associate the system rule with the VPC.
-- [x] Create an Amazon Route 53 Resolver outbound endpoint. Add a forwarding rule for the domain example.com. Associate the forwarding rule with the VPC.
-- [ ] Create an Amazon Route 53 Resolver outbound endpoint. Add a system rule for the domain example.com. Associate the system rule with the VPC
+- [ ] Create an Amazon Route 53 Resolver inbound endpoint. Add a forwarding rule for the domain `example.com`. Associate the forwarding rule with the VPC
+- [ ] Create an Amazon Route 53 Resolver inbound endpoint. Add a system rule for the domain `example.com`. Associate the system rule with the VPC.
+- [x] Create an Amazon Route 53 Resolver outbound endpoint. Add a forwarding rule for the domain `example.com`. Associate the forwarding rule with the VPC.
+- [ ] Create an Amazon Route 53 Resolver outbound endpoint. Add a system rule for the domain `example.com`. Associate the system rule with the VPC
 
-### A company's application is hosted by an internet provider at app.example.com. The company wants to access the application by using www.company.com, which the company owns and manages with Amazon Route 53. Which Route 53 record should be created to address this?
+### A company's application is hosted by an internet provider at `app.example.com`. The company wants to access the application by using `www.company.com`, which the company owns and manages with Amazon Route 53. Which Route 53 record should be created to address this?
 
-- [ ] A record.
-- [ ] Alias record.
-- [x] CNAME record.
-- [ ] Pointer (PTR) record.
+- [ ] `A` record.
+- [ ] `Alias` record.
+- [x] `CNAME` record.
+- [ ] `Pointer (PTR)` record.
 
 ### A company expanded its web application to serve a worldwide audience. A SysOps administrator has implemented a multi-Region AWS deployment for all production infrastructure. The SysOps administrator must route traffic based on the location of resources. Which Amazon Route 53 routing policy should the SysOps administrator use to meet this requirement?
 
@@ -1746,9 +1746,9 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Use AWS Budgets to create one cost budget and select each of the services in use. Specify the budget amount defined by the finance department along with the forecasted cost threshold. Enter the appropriate email recipients for the budget.
 - [x] Use AWS Budgets to create a cost budget for each team, filtering by the services they own. Specify the budget amount defined by the finance department along with a forecasted cost threshold. Enter the appropriate email recipients for each budget.
 
-### A company hosts a static website on Amazon S3. An Amazon CloudFront distribution presents this site to global users. The company uses the Managed-CachingDisabled CloudFront cache policy. The company's developers confirm that they frequently update a file in Amazon S3 with new information. Users report that the website presents correct information when the website first loads the file. However, the users' browsers do not retrieve the updated file after a refresh. What should a SysOps administrator recommend to fix this issue?
+### A company hosts a static website on Amazon S3. An Amazon CloudFront distribution presents this site to global users. The company uses the `Managed-CachingDisabled` CloudFront cache policy. The company's developers confirm that they frequently update a file in Amazon S3 with new information. Users report that the website presents correct information when the website first loads the file. However, the users' browsers do not retrieve the updated file after a refresh. What should a SysOps administrator recommend to fix this issue?
 
-- [x] Add a `Cache-Control` header field with max-age=0 to the S3 object.
+- [x] Add a `Cache-Control` header field with `max-age=0` to the S3 object.
 - [ ] Change the CloudFront cache policy to Managed-CachingOptimized.
 - [ ] Disable bucket versioning in the S3 bucket configuration.
 - [ ] Enable content compression in the CloudFront configuration.
@@ -1920,7 +1920,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Provision an Amazon ElastiCache for Redis cluster for the new S3 bucket. Provide the developers with the configuration endpoint of the cluster for use in their API calls
 - [ ] Add the new S3 bucket to a new Amazon CloudFront distribution. Provide the developers with the domain name of the new distribution for use in their API calls.
 - [x] Enable S3 Transfer Acceleration for the new S3 bucket. Verify that the developers are using the `DOC-EXAMPLE-BUCKET.s3-accelerate.amazonaws.com` endpoint name in their API calls.
-- [ ] Use S3 multipart upload for the new S3 bucket. Verify that the developers are using Region-specific S3 endpoint names such as `DOC-EXAMPLE-BUCKETS3`, [Region] amazonaws.com in their API calls.
+- [ ] Use S3 multipart upload for the new S3 bucket. Verify that the developers are using Region-specific S3 endpoint names such as `DOC-EXAMPLE-BUCKETS3`, `[Region] amazonaws.com` in their API calls.
 
 ### A SysOps administrator wants to use AWS Systems Manager Patch Manager to automate the process of patching Amazon EC2 Windows instances. The SysOps administrator wants to ensure that patches are auto-approved 2 days after the release date for development instances. Patches also must be auto-approved 5 days after the release date for production instances. Maintenance must occur only during a 2-hour window for all instances. Which solution will meet these requirements?
 
