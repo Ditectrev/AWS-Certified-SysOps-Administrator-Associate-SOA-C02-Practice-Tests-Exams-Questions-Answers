@@ -1332,7 +1332,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] The stack has not yet been deployed to the Region.
 - [ ] The SysOps administrator is using an old version of the CloudFormation API.
 
-### A SysOps administrator must configure Amazon S3 to host a simple nonproduction webpage. The SysOps administrator has created an empty S3 bucket from the. AWS Management Console. The S3 bucket has the default configuration in place. Which combination of actions should the SysOps administrator take to complete this process? (Choose two.)
+### A SysOps administrator must configure Amazon S3 to host a simple nonproduction webpage. The SysOps administrator has created an empty S3 bucket from the AWS Management Console. The S3 bucket has the default configuration in place. Which combination of actions should the SysOps administrator take to complete this process? (Choose two.)
 
 - [ ] Configure the S3 bucket by using the `Redirect requests for an object` functionality to point to the bucket root URL.
 - [ ] Turn off the `Block all public access` setting. Allow public access by using a bucket ACL that contains `<Permission>WEBSITE</Permission>`.
@@ -1358,7 +1358,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Create an Amazon Data Lifecycle Manager (Amazon DLM) lifecycle policy for the S3 bucket. Add a rule to the lifecycle policy to delete noncurrent objects after 90 days.
 - [ ] Create an AWS Backup policy for the S3 bucket. Create a backup rule that includes a lifecycle to expire noncurrent objects after 90 days.
-- [ ] Create an AWS Backup policy for the S3 bucket. Create a backup rule that includes a lifecycle to expire noncurrent objects after 90 days.
+- [ ] Enable S3 Cross-Region Replication on the S3 bucket. Create an S3 Lifecycle policy for the bucket to expire noncurrent objects after 90 days.
 - [x] Enable S3 Versioning on the S3 bucket. Create an S3 Lifecycle policy for the bucket to expire noncurrent objects after 90 days.
 
 ### A company uses AWS Organizations to manage multiple AWS accounts. Corporate policy mandates that only specific AWS Regions can be used to store and process customer data. A SysOps administrator must prevent the provisioning of Amazon EC2 instances in unauthorized Regions by anyone in the company. What is the MOST operationally efficient solution that meets these requirements?
@@ -1867,7 +1867,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A company has an application that is running on Amazon EC2 instances in a VPC. The application needs access to download software updates from the internet. The VPC has public subnets and private subnets. The company's security policy requires all EC2 instances to be deployed in private subnets. What should a SysOps administrator do to meet these requirements?
 
 - [ ] Add an internet gateway to the VPC. In the route table for the private subnets, add a route to the internet gateway.
-- [ ] Add aNAT gateway to a private subnet. In the route table for the private subnets, add a route to the `NAT` gateway.
+- [ ] Add a `NAT` gateway to a private subnet. In the route table for the private subnets, add a route to the `NAT` gateway.
 - [x] Add a `NAT` gateway to public subnet. In the route table for the private subnets, add a route to the `NAT` gateway.
 - [ ] Add two internet gateways to the VPC. In the route tables for the private subnets and public subnets, add a route to each internet gateway.
 
@@ -2255,3 +2255,18 @@ Automation custom runbook for remediation.
 - [ ] Configure static website hosting in the S3 bucket. Use Amazon Route 53 to create a `DNS` `CNAME` to point to the S3 website endpoint.
 - [ ] Create an Application Load Balancer (ALB). Change the protocol to `HTTPS` in the `ALB` listener configuration. Forward the traffic to the S3 bucket.
 - [ ] Create an accelerator in AWS Global Accelerator. Set up a listener configuration for port `443`. Set the endpoint type to forward the traffic to the S3 bucket.
+
+### An Amazon EBS volume attached to an EC2 instance was recently modified. Part of the modification included increasing the storage capacity. The SysOps Administrator notices that the increased storage capacity is not reflected in the file system. Which step should the Administrator complete to use the increased storage capacity?
+
+- [ ] Restart the EC2 instance.
+- [x] Extend the volume's file system.
+- [ ] Detach the EBS volume, resize it, and attach it.
+- [ ] Take an EBS snapshot and restore it to the bigger volume.
+
+### Recently several critical files were mistakenly deleted from a shared Amazon S3 bucket. A SysOps Administrator needs to prevent accidental deletions from occurring in the future by enabling MFA Delete. Once enabled, which bucket activities will require MFA authentication? (Choose two.)
+
+- [x] Permanently removing an object version from the bucket.
+- [ ] Disabling default object encryption for the bucket.
+- [ ] Listing all versions of deleted objects in the bucket.
+- [x] Suspending versioning on the bucket.
+- [ ] Enabling MFA Add on the bucket.
