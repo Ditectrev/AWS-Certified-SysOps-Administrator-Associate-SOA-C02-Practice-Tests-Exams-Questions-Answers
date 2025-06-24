@@ -1408,7 +1408,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Deploy a third-party monitoring solution to provide real-time EC2 instance monitoring.
 - [ ] List any instances with failed system status checks using the AWS Management Console.
-- [ ] Monitor AWS CloudTrail for StopInstances API calls.
+- [ ] Monitor AWS CloudTrail for `StopInstances` API calls.
 - [x] Review the AWS Personal Health Dashboard.
 
 ### A SysOps administrator is attempting to deploy resources by using an AWS CloudFormation template. An Amazon EC2 instance that is defined in the template fails to launch and produces an InsufficientInstanceCapacity error. Which actions should the SysOps administrator take to resolve this error? (Choose two.)
@@ -2277,3 +2277,17 @@ Automation custom runbook for remediation.
 - [ ] Place the instance into the Standby state.
 - [ ] Remove the listener from the `ALB`.
 - [x] Suspend the `Launch and Terminate` process types.
+
+### A SysOps Administrator has been tasked with deploying a company's infrastructure as code. The Administrator wants to write a single template that can be reused for multiple environments in a safe, repeatable manner. What is the recommended way to use AWS CloudFormation to meet this requirement?
+
+- [x] Use parameters to provision the resources.
+- [ ] Use nested stacks to provision the resources.
+- [ ] Use Amazon EC2 user data to provision the resources.
+- [ ] Use stack policies to provision the resources.
+
+### A SysOps Administrator is responsible for a large fleet of EC2 instances and must know whether any instances will be affected by upcoming hardware maintenance. Which option would provide this information with the LEAST administrative overhead?
+
+- [ ] Monitor AWS CloudTrail for `StopInstances` API calls related to upcoming maintenance.
+- [x] Review the Personal Health Dashboard for any scheduled maintenance.
+- [ ] From the AWS Management Console, list any instances with failed system status checks.
+- [ ] Deploy a third-party monitoring solution to provide real-time EC2 instance monitoring.
