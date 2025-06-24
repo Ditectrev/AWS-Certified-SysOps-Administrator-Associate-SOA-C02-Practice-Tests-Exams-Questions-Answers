@@ -207,10 +207,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] `DependsOn` a timeout set to 4 hours.
 - [ ] `Metadata` with a timeout set to 4 hours.
 
-### A company plans to run a public web application on Amazon EC2 instances behind an Elastic Load Balancer (ELB). The company's security team wants to protect the website by using AWS Certificate Manager (ACM) certificates. The ELB must automatically redirect any HTTP requests to `HTTPS`. Which solution will meet these requirements?
+### A company plans to run a public web application on Amazon EC2 instances behind an Elastic Load Balancer (ELB). The company's security team wants to protect the website by using AWS Certificate Manager (ACM) certificates. The ELB must automatically redirect any `HTTP` requests to `HTTPS`. Which solution will meet these requirements?
 
-- [ ] Create an Application Load Balancer that has one `HTTPS` listener on port `80`. Attach an SSL/TLS certificate to listener port `80`. Create a rule to redirect requests from HTTP to `HTTPS`.
-- [x] Create an Application Load Balancer that has one HTTP listener on port `80` and one `HTTPS` protocol listener on port `443`. Attach an SSL/TLS certificate to listener port `443`. Create a rule to redirect requests from port `80` to port `443`.
+- [ ] Create an Application Load Balancer that has one `HTTPS` listener on port `80`. Attach an SSL/TLS certificate to listener port `80`. Create a rule to redirect requests from `HTTP` to `HTTPS`.
+- [x] Create an Application Load Balancer that has one `HTTP` listener on port `80` and one `HTTPS` protocol listener on port `443`. Attach an SSL/TLS certificate to listener port `443`. Create a rule to redirect requests from port `80` to port `443`.
 - [ ] Create an Application Load Balancer that has two `TCP` listeners on port `80` and port `443`. Attach an SSL/TLS certificate to listener port `443`. Create a rule to redirect requests from port `80` to port `443`.
 - [ ] Create a Network Load Balancer that has two `TCP` listeners on port `80` and port `443`. Attach an SSL/TLS certificate to listener port `443`. Create a rule to redirect requests from port `80` to port `443`.
 
@@ -606,11 +606,11 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Migrate the database to an Amazon Aurora multi-master DB cluster.
 - [ ] Migrate the database to an Amazon RDS for MySQL DB instance.
 
-### A SysOps administrator is evaluating Amazon Route 53 `DNS` options to address concerns about high availability for an on-premises website. The website consists of two servers: a primary active server and a secondary passive server. Route 53 should route traffic to the primary server if the associated health check returns 2xx or 3xx HTTP codes. All other traffic should be directed to the secondary passive server. The failover record type, set ID. and routing policy have been set appropriately for both primary and secondary servers. Which next step should be taken to configure Route 53?
+### A SysOps administrator is evaluating Amazon Route 53 `DNS` options to address concerns about high availability for an on-premises website. The website consists of two servers: a primary active server and a secondary passive server. Route 53 should route traffic to the primary server if the associated health check returns 2xx or 3xx `HTTP` codes. All other traffic should be directed to the secondary passive server. The failover record type, set ID. and routing policy have been set appropriately for both primary and secondary servers. Which next step should be taken to configure Route 53?
 
-- [x] Create an `A` record for each server. Associate the records with the Route 53 HTTP health check.
+- [x] Create an `A` record for each server. Associate the records with the Route 53 `HTTP` health check.
 - [ ] Create an `A` record for each server. Associate the records with the Route 53 `TCP` health check.
-- [ ] Create an alias record for each server with evaluate target health set to yes. Associate the records with the Route 53 HTTP health check.
+- [ ] Create an alias record for each server with evaluate target health set to yes. Associate the records with the Route 53 `HTTP` health check.
 - [ ] Create an alias record for each server with evaluate target health set to yes. Associate the records with the Route 53 `TCP` health check.
 
 ### A company must ensure that any objects uploaded to an S3 bucket are encrypted. Which of the following actions will meet this requirement? (Choose two.)
@@ -1554,7 +1554,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] In a PowerShell or shell script, check for untagged items by using the resource tagging `GetResources` API action, and then manually tag the reported items.
 - [ ] Launch items by using the AWS API. Use the `TagResources` API action to apply the required tags when the instances and volumes are launched.
 
-### A company has a business application hosted on Amazon EC2 instances behind an Application Load Balancer. Amazon CloudWatch metrics show that the CPU utilization on the EC2 instances is very high. There are also reports from users that receive HTTP `503` and `504` errors when they try to connect to the application. Which action will resolve these issues?
+### A company has a business application hosted on Amazon EC2 instances behind an Application Load Balancer. Amazon CloudWatch metrics show that the CPU utilization on the EC2 instances is very high. There are also reports from users that receive `HTTP` `503` and `504` errors when they try to connect to the application. Which action will resolve these issues?
 
 - [x] Place the EC2 instances into an AWS Auto Scaling group.
 - [ ] Configure the `ALB`'s Target Group to use more frequent health checks.
@@ -1626,7 +1626,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company needs to upload gigabytes of files every day. The company need to achieve higher throughput and upload speeds to Amazon S3. Which action should a SysOps administrator take to meet this requirement?
 
-- [ ] Create an Amazon CloudFront distribution with the GET HTTP method allowed and the S3 bucket as an origin.
+- [ ] Create an Amazon CloudFront distribution with the GET `HTTP` method allowed and the S3 bucket as an origin.
 - [ ] Create an Amazon ElastiCache cluster and enable caching for the S3 bucket.
 - [ ] Set up AWS Global Accelerator and configure it with the S3 bucket.
 - [x] Enable S3 Transfer Acceleration and use the acceleration endpoint when uploading files.
@@ -1798,7 +1798,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create a metric alarm for the `EBSByteBalance%` metric and a metric alarm for the `DiskReadOps` metric. Create a composite alarm that includes the two metric alarms to publish a notification to the SNS topic.
 - [ ] Configure detailed monitoring for the EC2 instances. Create a metric alarm for the disk space and a metric alarm for the `DiskReadOps` metric. Create a composite alarm that includes the two metric alarms to publish a notification to the SNS topic.
 
-### A company is using Amazon CloudFront to serve static content for its web application to its users. The CloudFront distribution uses an existing on-premises website as a custom origin. The company requires the use of TLS between CloudFront and the origin server. This configuration has worked as expected for several months. However, users are now experiencing HTTP 502 (Bad Gateway) errors when they view webpages that include content from the CloudFront distribution. What should a SysOps administrator do to resolve this problem?
+### A company is using Amazon CloudFront to serve static content for its web application to its users. The CloudFront distribution uses an existing on-premises website as a custom origin. The company requires the use of TLS between CloudFront and the origin server. This configuration has worked as expected for several months. However, users are now experiencing `HTTP` 502 (Bad Gateway) errors when they view webpages that include content from the CloudFront distribution. What should a SysOps administrator do to resolve this problem?
 
 - [x] Examine the expiration date on the certificate on the origin site. Validate that the certificate has not expired. Replace the certificate if necessary.
 - [ ] Examine the hostname on the certificate on the origin site. Validate that the hostname matches one of the hostnames on the CloudFront distribution. Replace the certificate if necessary.
@@ -1871,7 +1871,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Add a `NAT` gateway to public subnet. In the route table for the private subnets, add a route to the `NAT` gateway.
 - [ ] Add two internet gateways to the VPC. In the route tables for the private subnets and public subnets, add a route to each internet gateway.
 
-### A SysOps administrator has set up a new Amazon EC2 instance as a web server in a public subnet. The instance uses HTTP port `80` and `HTTPS` port `443`. The SysOps administrator has confirmed internet connectivity by downloading operating system updates and software from public repositories. However, the SysOps administrator cannot access the instance from a web browser on the internet. Which combination of steps should the SysOps administrator take to troubleshoot this issue? (Choose three.)
+### A SysOps administrator has set up a new Amazon EC2 instance as a web server in a public subnet. The instance uses `HTTP` port `80` and `HTTPS` port `443`. The SysOps administrator has confirmed internet connectivity by downloading operating system updates and software from public repositories. However, the SysOps administrator cannot access the instance from a web browser on the internet. Which combination of steps should the SysOps administrator take to troubleshoot this issue? (Choose three.)
 
 - [x] Ensure that the inbound rules of the instance's security group allow traffic on ports `80` and `443`.
 - [ ] Ensure that the outbound rules of the instance's security group allow traffic on ports `80` and `443`.
@@ -2164,7 +2164,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Enable instance scale-in protection for the specific instance in the Auto Scaling group at the start of message processing by calling the Amazon EC2 Auto Scaling API from the processing script. Disable instance scale-in protection after message processing is complete by calling the Amazon EC2 Auto Scaling API from the processing script.
 - [ ] Set the Auto Scaling group's termination policy to `OldestInstance`.
 - [ ] Set the Auto Scaling group's termination policy to `OldestLaunchConfiguration`.
-- [ ] Suspend the Launch and Terminate scaling processes for the specific instance in the Auto Scaling group at the start of message processing by calling the Amazon EC2 Auto Scaling API from the processing script. Resume the scaling processes after message processing is complete by calling the Amazon EC2 Auto Scaling API from the processing script.
+- [ ] Suspend the `Launch and Terminate` scaling processes for the specific instance in the Auto Scaling group at the start of message processing by calling the Amazon EC2 Auto Scaling API from the processing script. Resume the scaling processes after message processing is complete by calling the Amazon EC2 Auto Scaling API from the processing script.
 
 ### A company has an application that collects notifications from thousands of alarm systems. The notifications include alarm notifications and information notifications. The information notifications include the system arming processes, disarming processes, and sensor status. All notifications are kept as messages in an Amazon Simple Queue Service (Amazon SQS) queue. Amazon EC2 instances that are in an Auto Scaling group process the messages. A SysOps administrator needs to implement a solution that prioritizes alarm notifications over information notifications. Which solution will meet these requirements?
 
@@ -2270,3 +2270,10 @@ Automation custom runbook for remediation.
 - [ ] Listing all versions of deleted objects in the bucket.
 - [x] Suspending versioning on the bucket.
 - [ ] Enabling MFA Add on the bucket.
+
+### A SysOps administrator is testing an application that is hosted on five Amazon EC2 instances. The instances run in an Auto Scaling group behind an Application Load Balancer (`ALB`). High CPU utilization during load testing is causing the Auto Scaling group to scale out. The SysOps administrator must troubleshoot to find the root cause of the high CPU utilization before the Auto Scaling group scales out. Which action should the SysOps administrator take to meet these requirements?
+
+- [ ] Enable instance scale-in protection.
+- [ ] Place the instance into the Standby state.
+- [ ] Remove the listener from the `ALB`.
+- [x] Suspend the `Launch and Terminate` process types.
