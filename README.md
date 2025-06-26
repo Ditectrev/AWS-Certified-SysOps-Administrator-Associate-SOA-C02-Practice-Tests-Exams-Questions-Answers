@@ -1262,7 +1262,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Log in to the EC2 instance by using a `.pem` key each night. Then run the top command.
 - [ ] Use the default Amazon CloudWatch CPU utilization metric to capture the PID in CloudWatch.
 
-### A SysOps administrator configured AWS Backup to capture snapshots from a single Amazon EC2 instance that has one Amazon Elastic Block Store (Amazon. EBS) volume attached. On the first snapshot, the EBS volume has 10 GiB of data. On the second snapshot, the EBS volume still contains 10 GiB of data, but 4. GiB have changed. On the third snapshot, 2 GiB of data have been added to the volume, for a total of 12 GiB. How much total storage is required to store these snapshots?
+### A SysOps administrator configured AWS Backup to capture snapshots from a single Amazon EC2 instance that has one Amazon Elastic Block Store (Amazon EBS) volume attached. On the first snapshot, the EBS volume has 10 GiB of data. On the second snapshot, the EBS volume still contains 10 GiB of data, but 4. GiB have changed. On the third snapshot, 2 GiB of data have been added to the volume, for a total of 12 GiB. How much total storage is required to store these snapshots?
 
 - [ ] 12 GiB.
 - [x] 16 GiB.
@@ -1411,13 +1411,13 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Monitor AWS CloudTrail for `StopInstances` API calls.
 - [x] Review the AWS Personal Health Dashboard.
 
-### A SysOps administrator is attempting to deploy resources by using an AWS CloudFormation template. An Amazon EC2 instance that is defined in the template fails to launch and produces an InsufficientInstanceCapacity error. Which actions should the SysOps administrator take to resolve this error? (Choose two.)
+### A SysOps administrator is attempting to deploy resources by using an AWS CloudFormation template. An Amazon EC2 instance that is defined in the template fails to launch and produces an `InsufficientInstanceCapacity` error. Which actions should the SysOps administrator take to resolve this error? (Choose two.)
 
 - [ ] Create a separate AWS CloudFormation template for the EC2 instance.
 - [x] Modify the AWS CloudFormation template to not specify an Availability Zone for the EC2 instance.
 - [x] Modify the AWS CloudFormation template to use a different EC2 instance type.
 - [ ] Use a different Amazon Machine Image (AMI) for the EC2 instance.
-- [ ] Use the AWS CLI's validate-template command before creating a stack from the template.
+- [ ] Use the AWS CLI's `validate-template` command before creating a stack from the template.
 
 ### A company hosts a web application on Amazon EC2 instances behind an Application Load Balancer (ALB). The company uses Amazon Route 53 to route traffic. The company also has a static website that is configured in an Amazon S3 bucket. A SysOps administrator must use the static website as a backup to the web application. The failover to the static website must be fully automated. Which combination of actions will meet these requirements? (Choose two.)
 
@@ -1427,12 +1427,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create a secondary failover routing policy record. Configure the value to be the static website. Associate the record with a Route 53 health check.
 - [x] Create a secondary failover routing policy record. Configure the value to be the static website.
 
-### A data analytics application is running on an Amazon EC2 instance. A SysOps administrator must add custom dimensions to the metrics collected by the Amazon. CloudWatch agent. How can the SysOps administrator meet this requirement?
+### A data analytics application is running on an Amazon EC2 instance. A SysOps administrator must add custom dimensions to the metrics collected by the Amazon CloudWatch agent. How can the SysOps administrator meet this requirement?
 
 - [ ] Create a custom shell script to extract the dimensions and collect the metrics using the Amazon CloudWatch agent.
 - [ ] Create an Amazon EventBridge (Amazon CloudWatch Events) rule to evaluate the required custom dimensions and send the metrics to Amazon Simple Notification Service (Amazon SNS).
 - [ ] Create an AWS Lambda function to collect the metrics from AWS CloudTrail and send the metrics to an Amazon CloudWatch Logs group.
-- [x] Create an append_dimensions field in the Amazon CloudWatch agent configuration file to collect the metrics.
+- [x] Create an `append_dimensions` field in the Amazon CloudWatch agent configuration file to collect the metrics.
 
 ### A SysOps administrator is examining the following AWS CloudFormation template: Why will the stack creation fail?
 
@@ -1653,7 +1653,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] `Destination`: `172.31.0.0/16`, `Target`: `pcx-12345`.
 - [ ] `Destination`: `10.0.0.0/16`, `Target`: `172.31.0.0/16`.
 
-### A company analyzes sales data for its customers. Customers upload files to one of the company's Amazon S3 buckets, and a message is posted to an Amazon. Simple Queue Service (Amazon SQS) queue that contains the object Amazon Resource Name (ARN). An application that runs on an Amazon EC2 instance polls the queue and processes the messages. The processing time depends on the size of the file. Customers are reporting delays in the processing of their files. A SysOps administrator decides to configure Amazon EC2 Auto Scaling as the first step. The SysOps administrator creates an Amazon Machine Image (AMI) that is based on the existing EC2 instance. The SysOps administrator also creates a launch template that references the AMI. How should the SysOps administrator configure the Auto Scaling policy to improve the response time?
+### A company analyzes sales data for its customers. Customers upload files to one of the company's Amazon S3 buckets, and a message is posted to an Amazon Simple Queue Service (Amazon SQS) queue that contains the object Amazon Resource Name (ARN). An application that runs on an Amazon EC2 instance polls the queue and processes the messages. The processing time depends on the size of the file. Customers are reporting delays in the processing of their files. A SysOps administrator decides to configure Amazon EC2 Auto Scaling as the first step. The SysOps administrator creates an Amazon Machine Image (AMI) that is based on the existing EC2 instance. The SysOps administrator also creates a launch template that references the AMI. How should the SysOps administrator configure the Auto Scaling policy to improve the response time?
 
 - [ ]Add several different instance sizes in the launch template. Create an Auto Scaling policy based on the ApproximateNumberOfMessagesVisible metric to select the size of the instance based on the number of messages in the queue.
 - [ ] Create an Auto Scaling policy based on the ApproximateNumberOfMessagesDelayed metric to scale the number of instances based on the number of messages in the queue that have been delayed.
@@ -1768,7 +1768,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Use the Amazon CloudWatch agent to send disk space metrics, then set up CloudWatch alarms using an Amazon SNS topic.
 - [ ] Use AWS Trusted Advisor and enable email notification alerts for EC2 disk space.
 
-### A company has an Auto Scaling group of Amazon EC2 instances that scale based on average CPU utilization. The Auto Scaling group events log indicates an InsufficientInstanceCapacity error. Which actions should a SysOps administrator take to remediate this issue? (Choose two.)
+### A company has an Auto Scaling group of Amazon EC2 instances that scale based on average CPU utilization. The Auto Scaling group events log indicates an `InsufficientInstanceCapacity` error. Which actions should a SysOps administrator take to remediate this issue? (Choose two.)
 
 - [x] Change the instance type that the company is using.
 - [x] Configure the Auto Scaling group in different Availability Zones.
@@ -2291,3 +2291,31 @@ Automation custom runbook for remediation.
 - [x] Review the Personal Health Dashboard for any scheduled maintenance.
 - [ ] From the AWS Management Console, list any instances with failed system status checks.
 - [ ] Deploy a third-party monitoring solution to provide real-time EC2 instance monitoring.
+
+### A SysOps administrator is creating resources from an AWS CloudFormation template that defines an Auto Scaling group of Amazon EC2 instances. The Auto Scaling group launch template provisions each EC2 instance by using a user data script. The creation of the Auto Scaling group resource is failing because of an error. The wait condition is not receiving the required number of signals. How should the SysOps administrator resolve this error?
+
+- [x] Run `cfn-signal` at the completion of the user data script.
+- [ ] Modify the EC2 instances' security group to allow outgoing traffic on port `443`.
+- [ ] Reduce the Auto Scaling group's `DesiredCapacity` value in the CloudFormation template.
+- [ ] Set the `AssociatePublicIpAddress` property to `True` in the Auto Scaling group launch template.
+
+### A company hosts a web application on Amazon EC2 instances behind an Application Load Balancer. The instances are in an Amazon EC2 Auto Scaling group. The application is accessed with a public URL. A SysOps administrator needs to implement a monitoring solution that checks the availability of the application and follows the same routes and actions as a customer. The SysOps administrator must receive a notification if less than `95%` of the monitoring runs find no errors. Which solution will meet these requirements?
+
+- [x] Create an Amazon CloudWatch Synthetics canary with a script that follows customer routes. Schedule the canary to run on a recurring schedule. Create a CloudWatch alarm that publishes a message to an Amazon Simple Notification Service (Amazon SNS) topic when the `SuccessPercent` metric is less than `95%`.
+- [ ] Create Amazon Route 53 health checks that monitor the availability of the endpoint. Create Amazon CloudWatch alarms that publish a message to an Amazon Simple Notification Service (Amazon SNS) topic when the `HealthCheckPercentageHealthy` metric is less than `95%`.
+- [ ] Create a single AWS Lambda function to check whether the endpoints are available for each customer path. Schedule the Lambda function by using Amazon EventBridge (Amazon CloudWatch Events). Configure the Lambda function to publish a message to an Amazon Simple Notification Service (Amazon SNS) topic when an endpoint returns an error.
+- [ ] Create an AWS Lambda function for each customer path to check whether that specific endpoint is available. Schedule the Lambda functions by using Amazon EventBridge (Amazon CloudWatch Events). Configure each Lambda function to publish a custom metric to Amazon CloudWatch for the endpoint status. Create CloudWatch alarms based on each custom metric to publish a message to an Amazon Simple Notification Service (Amazon SNS) topic when an alarm is in the `ALARM` state.
+
+### A SysOps Administrator working on an Amazon EC2 instance has misconfigured the clock by one hour. The EC2 instance is sending data to Amazon CloudWatch through the CloudWatch agent. The timestamps on the logs are 45 minutes in the future. What will be the result of this configuration?
+
+- [ ] Amazon CloudWatch will not capture the data because it is in the future.
+- [x] Amazon CloudWatch will accept the custom metric data and record it.
+- [ ] The Amazon CloudWatch agent will check the Network Time Protocol (NTP) server before sending the data, and the agent will correct the time.
+- [ ] The Amazon CloudWatch agent will check the Network Time Protocol (NTP) server, and the agent will not send the data because it is more than 30 minutes in the future.
+
+### A SysOps Administrator has configured a CloudWatch agent to send custom metrics to Amazon CloudWatch and is now assembling a CloudWatch dashboard to display these metrics. What steps should the Administrator take to complete this task?
+
+- [ ] Select the AWS Namespace, filter by metric name, then add to the dashboard.
+- [ ] Add a text widget, select the appropriate metric from the custom namespace, then add to the dashboard.
+- [x] Select the appropriate widget and metrics from the custom namespace, then add to the dashboard.
+- [ ] Open the CloudWatch console, from the CloudWatch Events, add all custom metrics.
