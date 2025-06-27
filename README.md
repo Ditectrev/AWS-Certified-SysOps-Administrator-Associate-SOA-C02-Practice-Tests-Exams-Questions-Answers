@@ -1434,16 +1434,16 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create an AWS Lambda function to collect the metrics from AWS CloudTrail and send the metrics to an Amazon CloudWatch Logs group.
 - [x] Create an `append_dimensions` field in the Amazon CloudWatch agent configuration file to collect the metrics.
 
-### A SysOps administrator is examining the following AWS CloudFormation template: Why will the stack creation fail?
+### A SysOps administrator is examining the following AWS CloudFormation template. Why will the stack creation fail?
 
 ![Question 201](images/question201.jpg)
 
 - [ ] The Outputs section of the CloudFormation template was omitted.
 - [ ] The Parameters section of the CloudFormation template was omitted.
-- [x] The PrivateDnsName cannot be set from a CloudFormation template.
+- [x] The `PrivateDnsName` cannot be set from a CloudFormation template.
 - [ ] The VPC was not specified in the CloudFormation template.
 
-### A new application runs on Amazon EC2 instances and accesses data in an Amazon RDS database instance. When fully deployed in production, the application fails. The database can be queried from a console on a bastion host. When looking at the web server logs, the following error is repeated multiple times: *** Error Establishing a Database Connection Which of the following may be causes of the connectivity problems? (Choose two.)
+### A new application runs on Amazon EC2 instances and accesses data in an Amazon RDS database instance. When fully deployed in production, the application fails. The database can be queried from a console on a bastion host. When looking at the web server logs, the following error is repeated multiple times: `*** Error Establishing a Database Connection`. Which of the following may be causes of the connectivity problems? (Choose two.)
 
 - [ ] The security group for the database does not have the appropriate egress rule from the database to the web server.
 - [ ] The certificate used by the web server is not trusted by the RDS instance.
