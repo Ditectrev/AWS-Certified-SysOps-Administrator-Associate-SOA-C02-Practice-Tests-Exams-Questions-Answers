@@ -126,7 +126,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [x] Use AWS CloudFormation `StackSets` to deploy stack instances that turn on AWS Config in all accounts and in all Regions.
 - [ ] Use AWS CloudFormation `StackSets` to deploy stack policies that turn on AWS Config in all accounts and in all Regions.
-- [ ] Use service control policies (SCPs) to configure AWS Config in all accounts and in all Regions.
+- [ ] Use Service Control Policies (SCPs) to configure AWS Config in all accounts and in all Regions.
 - [ ] Create a script that uses the AWS CLI to turn on AWS Config in all accounts in the organization. Run the script from the organization's management account.
 
 ### A company's SysOps administrator deploys four new Amazon EC2 instances by using the standard Amazon Linux 2 Amazon Machine Image (AMI). The company needs to be able to use AWS Systems Manager to manage the instances The SysOps administrator notices that the instances do not appear in the Systems Manager console. What must the SysOps administrator do to resolve this issue?
@@ -939,7 +939,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] AWS Config aggregator.
 - [ ] IAM user permissions boundaries.
-- [x] AWS Organizations service control policies (SCPs).
+- [x] AWS Organizations Service Control Policies (SCPs).
 - [ ] AWS Security Hub conformance packs.
 
 ### A company runs a worker process on three Amazon EC2 instances. The instances are in an Auto Scaling group that is configured to use a simple scaling policy. The instances process messages from an Amazon Simple Queue Service (Amazon SQS) queue. Random periods of increased messages are causing a decrease in the performance of the worker process. A SysOps administrator must scale the instances to accommodate the increased number of messages. Which solution will meet these requirements?
@@ -1034,7 +1034,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Use AWS CloudFormation to create IAM roles. Deploy Direct Connect to allow access to the on-premises LDAP server.
 - [x] Federate the LDAP directory with IAM using SAML. Create different IAM roles to correspond to different LDAP groups to limit permissions.
 
-### A company is using an AWS KMS customer master key (CMK) with imported key material. The company references the CMK by its alias in the Java application to encrypt data. The CMK must be rotated every 6 months. What is the process to rotate the key?
+### A company is using an AWS KMS Customer Master Key (CMK) with imported key material. The company references the CMK by its alias in the Java application to encrypt data. The CMK must be rotated every 6 months. What is the process to rotate the key?
 
 - [ ] Enable automatic key rotation for the CMK, and specify a period of 6 months.
 - [x] Create a new CMK with new imported material, and update the key alias to point to the new CMK.
@@ -1272,7 +1272,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A team is managing an AWS account that is a member of an organization in AWS Organizations. The organization has consolidated billing features enabled. The account hosts several applications. A SysOps administrator has applied tags to resources within the account to reflect the environment. The team needs a report of the breakdown of charges by environment. What should the SysOps administrator do to meet this requirement?
 
 - [ ] Filter, map, and categorize resource groups in Tag Editor.
-- [ ] Ensure that the organization's service control policies (SCPs) allow access to cost allocation tags.
+- [ ] Ensure that the organization's Service Control Policies (SCPs) allow access to cost allocation tags.
 - [ ] Ensure that the IAM credentials that are used to access Cost Explorer have permissions to group cost by tags.
 - [x] Activate the tag keys for cost allocation on the organization's management account.
 
@@ -1467,7 +1467,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company uses an Amazon CloudFront distribution to deliver its website. Traffic logs for the website must be centrally stored, and all data must be encrypted at rest. Which solution will meet these requirements?
 
-- [ ] Create an Amazon OpenSearch Service (Amazon Elasticsearch Service) domain with internet access and server-side encryption that uses the default AWS managed customer master key (CMK). Configure CloudFront to use the Amazon OpenSearch Service (Amazon Elasticsearch Service) domain as a log destination.
+- [ ] Create an Amazon OpenSearch Service (Amazon Elasticsearch Service) domain with internet access and server-side encryption that uses the default AWS managed Customer Master Key (CMK). Configure CloudFront to use the Amazon OpenSearch Service (Amazon Elasticsearch Service) domain as a log destination.
 - [ ] Create an Amazon OpenSearch Service (Amazon Elasticsearch Service) domain with VPC access and server-side encryption that uses `AES-256`. Configure CloudFront to use the Amazon OpenSearch Service (Amazon Elasticsearch Service) domain as a log destination.
 - [x] Create an Amazon S3 bucket that is configured with default server-side encryption that uses `AES-256`. Configure CloudFront to use the S3 bucket as a log destination.
 - [ ] Create an Amazon S3 bucket that is configured with no default encryption. Enable encryption in the CloudFront distribution, and use the S3 bucket as a log destination.
@@ -1483,7 +1483,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Create an AWS CloudFormation template to use the AWS Service Catalog portfolio in the new AWS account.
 - [ ] In the new AWS account, manually create an AWS Service Catalog portfolio that duplicates the original portfolio.
-- [ ] Run an AWS Lambda function to create a new AWS Service Catalog portfolio based on the output of the DescribePortfolio API operation.
+- [ ] Run an AWS Lambda function to create a new AWS Service Catalog portfolio based on the output of the `DescribePortfolio` API operation.
 - [x] Share the AWS Service Catalog portfolio with the new AWS account. Import the portfolio into the new AWS account.
 
 ### A SysOps administrator must manage the security of an AWS account. Recently, an IAM user's access key was mistakenly uploaded to a public code repository. The SysOps administrator must identify anything that was changed by using this access key. How should the SysOps administrator meet these requirements?
@@ -1667,7 +1667,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Move the EC2 instance to a different Availability Zone using the AWS CLI.
 - [ ] Stop the EC2 instance, modify the Availability Zone, and start the instance.
 
-### A company wants to prohibit its developers from using a particular family of Amazon EC2 instances. The company uses AWS Organizations and wants to apply the restriction across multiple accounts. What is the MOST operationally efficient way for the company to apply service control policies (SCPs) to meet these requirements?
+### A company wants to prohibit its developers from using a particular family of Amazon EC2 instances. The company uses AWS Organizations and wants to apply the restriction across multiple accounts. What is the MOST operationally efficient way for the company to apply Service Control Policies (SCPs) to meet these requirements?
 
 - [x] Add the accounts to an organizational unit (OU). Apply the SCPs to the OU.
 - [ ] Add the accounts to resource groups in AWS Resource Groups. Apply the SCPs to the resource groups.
@@ -2098,7 +2098,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A company using AWS Organizations requires that no Amazon S3 buckets in its production accounts should ever be deleted. What is the SIMPLEST approach the SysOps Administrator can take to ensure S3 buckets in those accounts can never be deleted?
 
 - [ ] Set up MFA Delete on all the S3 buckets to prevent the buckets from being deleted.
-- [x] Use service control policies to deny the `s3:DeleteBucket` action on all buckets in production accounts.
+- [x] Use Service Control Policies to deny the `s3:DeleteBucket` action on all buckets in production accounts.
 - [ ] Create an IAM group that has an IAM policy to deny the `s3:DeleteBucket` action on all buckets in production accounts.
 - [ ] Use AWS Shield to deny the `s3:DeleteBucket` action on the AWS account instead of all S3 buckets.
 
@@ -2319,3 +2319,10 @@ Automation custom runbook for remediation.
 - [ ] Add a text widget, select the appropriate metric from the custom namespace, then add to the dashboard.
 - [x] Select the appropriate widget and metrics from the custom namespace, then add to the dashboard.
 - [ ] Open the CloudWatch console, from the CloudWatch Events, add all custom metrics.
+
+### A SysOps Administrator needs to create a replica of a company's existing AWS infrastructure in a new AWS account. Currently, an AWS Service Catalog portfolio is used to create and manage resources. What is the MOST efficient way to accomplish this?
+
+- [ ] Create an AWS CloudFormation template to use the AWS Service Catalog portfolio in the new AWS account.
+- [ ] Manually create an AWS Service Catalog portfolio in the new AWS account that duplicates the original portfolio.
+- [ ] Run an AWS Lambda function to create a new AWS Service Catalog portfolio based on the output of the `DescribePortfolio` API operation.
+- [x] Share the AWS Service Catalog portfolio with the other AWS accounts and import the portfolio into the other AWS accounts.
