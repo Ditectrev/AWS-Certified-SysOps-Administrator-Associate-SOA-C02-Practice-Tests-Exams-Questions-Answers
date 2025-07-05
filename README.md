@@ -610,8 +610,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [x] Create an `A` record for each server. Associate the records with the Route 53 `HTTP` health check.
 - [ ] Create an `A` record for each server. Associate the records with the Route 53 `TCP` health check.
-- [ ] Create an alias record for each server with evaluate target health set to yes. Associate the records with the Route 53 `HTTP` health check.
-- [ ] Create an alias record for each server with evaluate target health set to yes. Associate the records with the Route 53 `TCP` health check.
+- [ ] Create an alias record for each server with `Evaluate Target Health` set to `Yes`. Associate the records with the Route 53 `HTTP` health check.
+- [ ] Create an alias record for each server with `Evaluate Target Health` set to `Yes`. Associate the records with the Route 53 `TCP` health check.
 
 ### A company must ensure that any objects uploaded to an S3 bucket are encrypted. Which of the following actions will meet this requirement? (Choose two.)
 
@@ -1501,9 +1501,11 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Create a public certificate in AWS Certificate Manager (ACM).
 - [ ] Export the certificate, and attach it to the website.
 
-### SIMULATION - Instructions - If the copy-paste functionality is not working in your environment, refer to the instructions file on the VM desktop and use Ctrl+C, Ctrl+V or Command-C, Command-V. Configure Amazon EventBridge to meet the following requirements. 1. Use the us-east-2 Region for all resources. 2. Unless specified below, use the default configuration settings. 3. Use your own resource naming unless a resource name is specified below. 4. Ensure all Amazon EC2 events in the default event bus are replayable for the past 45 days. 5. Create a rule named RunFunction to send the exact message `{"name":"example"}` every 15 minutes to an existing AWS Lambda function named LogEventFunction 6. Create a rule named SpotWarning to send a notification to a new standard Amazon SNS topic named TopicEvents whenever an Amazon EC2 Spot Instance is interrupted. Do NOT create any topic subscriptions. The notification must match the following structure: `Input path: {instance: detail.instance-id} Input template: The EC2 Spot Instance <instance> has been interrupted.` Important: Click the Next button to complete this lab and continue to the next lab. Once you click the Next button, you will NOT be able to return to this lab.
+### If your AWS Management Console browser does not show that you are logged in to an AWS account, close the browser and relaunch the console by using the AWS Management Console shortcut from the VM desktop. If the copy-paste functionality is not working in your environment, refer to the instructions file on the VM desktop and use `Ctrl+C`, `Ctrl+V` or `Command-C`, `Command-V`. Configure Amazon EventBridge to meet the following requirements. 1. Use the `us-east-2` Region for all resources. 2. Unless specified below, use the default configuration settings. 3. Use your own resource naming unless a resource name is specified below. 4. Ensure all Amazon EC2 events in the default event bus are replayable for the past 90 days. 5. Create a rule named `RunFunction` to send the exact message `{"name":"example"}` every 15 minutes to an existing AWS Lambda function named LogEventFunction. 6. Create a rule named `SpotWarning` to send a notification to a new standard Amazon SNS topic named `TopicEvents` whenever an Amazon EC2 Spot Instance is interrupted. Do NOT create any topic subscriptions. The notification must match the following structure: `Input path: {instance: detail.instance-id} Input template: The EC2 Spot Instance <instance> has been interrupted.` Important: Click the Next button to complete this lab and continue to the next lab. Once you click the Next button, you will NOT be able to return to this lab.
 
-"NO_ANSWER"
+![Question 210](images/question210.png)
+
+- [x] 1. Click `Event pattern form` in `Event patterns`. 2. Select `AWS service`. 3. In the `Step 1: Create rule`, select `Event Pattern` under `Event Source`. 4. Make sure `Build event pattern to match events by service` is selected. 5. Make sure `Service Name` has `EC2` selected. 6. Make sure `Event Type` has `EC2 Spot Instance Interruption Warning` selected. 7. Select `SNS topic` under `Targets`. 8. Make sure `TopicEvents` has `Topic` selected. 9. Click `Input Transformer` and make sure to have `{"instance":"$.detail-instance-id"}`. 10. Write some description and click `Configure details`. 11. In the `Step 2: Configure rule details` create 2 rules: `RunFunction` and `SpotWarning`. 12. Make sure the rules `State` is set to be `Enabled` on that step. 13. Validate in CloudWatch Events or EventBridge.
 
 ### A company has a stateful, long-running workload on a single xlarge general purpose Amazon EC2 On-Demand Instance Metrics show that the service is always using `80%` of its available memory and `40%` of its available CPU. A SysOps administrator must reduce the cost of the service without negatively affecting performance. Which change in instance type will meet these requirements?
 
@@ -2326,3 +2328,10 @@ Automation custom runbook for remediation.
 - [ ] Manually create an AWS Service Catalog portfolio in the new AWS account that duplicates the original portfolio.
 - [ ] Run an AWS Lambda function to create a new AWS Service Catalog portfolio based on the output of the `DescribePortfolio` API operation.
 - [x] Share the AWS Service Catalog portfolio with the other AWS accounts and import the portfolio into the other AWS accounts.
+
+### A company has an application that is deployed to two AWS Regions in an active-passive configuration. The application runs on Amazon EC2 instances behind an Application Load Balancer (ALB) in each Region. The instances are in an Amazon EC2 Auto Scaling group in each Region. The application uses an Amazon Route 53 hosted zone for `DNS`. A SysOps administrator needs to configure automatic failover to the secondary Region. What should the SysOps administrator do to meet these requirements?
+
+- [x] Configure Route 53 alias records that point to each `ALB`. Choose a failover routing policy. Set `Evaluate Target Health` to `Yes`.
+- [ ] Configure `CNAME` records that point to each ALChoose a failover routing policy. Set `Evaluate Target Health` to `Yes`.
+- [ ] Configure Elastic Load Balancing (ELB) health checks for the Auto Scaling group. Add a target group to the `ALB` in the primary Region. Include the EC2 instances in the secondary Region as targets.
+- [ ] Configure EC2 health checks for the Auto Scaling group. Add a target group to the `ALB` in the primary Region. Include the EC2 instances in the secondary Region as targets.
