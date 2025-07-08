@@ -2335,3 +2335,10 @@ Automation custom runbook for remediation.
 - [ ] Configure `CNAME` records that point to each ALChoose a failover routing policy. Set `Evaluate Target Health` to `Yes`.
 - [ ] Configure Elastic Load Balancing (ELB) health checks for the Auto Scaling group. Add a target group to the `ALB` in the primary Region. Include the EC2 instances in the secondary Region as targets.
 - [ ] Configure EC2 health checks for the Auto Scaling group. Add a target group to the `ALB` in the primary Region. Include the EC2 instances in the secondary Region as targets.
+
+### A company plans to launch a static website on its domain `example.com` and subdomain `www.example.com` using Amazon S3. How should the SysOps administrator meet this requirement?
+
+- [ ] Create one S3 bucket named `example.com` for both the domain and subdomain.
+- [ ] Create one S3 bucket with a wildcard named `*.example.com` for both the domain and subdomain.
+- [x] Create two S3 buckets named `example.com` and `www.example.com`. Configure the subdomain bucket to redirect requests to the domain bucket.
+- [ ] Create two S3 buckets named `http://example.com` and `http://*.example.com`. Configure the wildcard (*) bucket to redirect requests to the domain bucket.
