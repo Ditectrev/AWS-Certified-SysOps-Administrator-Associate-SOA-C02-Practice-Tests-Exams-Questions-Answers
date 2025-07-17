@@ -606,7 +606,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Migrate the database to an Amazon Aurora multi-master DB cluster.
 - [ ] Migrate the database to an Amazon RDS for MySQL DB instance.
 
-### A SysOps administrator is evaluating Amazon Route 53 `DNS` options to address concerns about high availability for an on-premises website. The website consists of two servers: a primary active server and a secondary passive server. Route 53 should route traffic to the primary server if the associated health check returns 2xx or 3xx `HTTP` codes. All other traffic should be directed to the secondary passive server. The failover record type, set ID. and routing policy have been set appropriately for both primary and secondary servers. Which next step should be taken to configure Route 53?
+### A SysOps administrator is evaluating Amazon Route 53 `DNS` options to address concerns about high availability for an on-premises website. The website consists of two servers: a primary active server and a secondary passive server. Route 53 should route traffic to the primary server if the associated health check returns 2xx or 3xx `HTTP` codes. All other traffic should be directed to the secondary passive server. The failover record type, set ID, and routing policy have been set appropriately for both primary and secondary servers. Which next step should be taken to configure Route 53?
 
 - [x] Create an `A` record for each server. Associate the records with the Route 53 `HTTP` health check.
 - [ ] Create an `A` record for each server. Associate the records with the Route 53 `TCP` health check.
@@ -871,7 +871,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create a new Amazon Machine Image (AMI) that has a custom script configured to send logs to AWS CloudTrail. Update the launch template to use the new AMI.
 - [ ] Install the Amazon CloudWatch agent on the Amazon Machine Image (AMI) that is defined in the launch template. Configure the CloudWatch agent to back up the logs to ephemeral storage.
 
-### A company monitors its account activity using AWS CloudTrail. and is concerned that some log files are being tampered with after the logs have been delivered to the account's Amazon S3 bucket. Moving forward, how can the SysOps administrator confirm that the log files have not been modified after being delivered to the S3 bucket?
+### A company monitors its account activity using AWS CloudTrail, and is concerned that some log files are being tampered with after the logs have been delivered to the account's Amazon S3 bucket. Moving forward, how can the SysOps administrator confirm that the log files have not been modified after being delivered to the S3 bucket?
 
 - [ ] Stream the CloudTrail logs to Amazon CloudWatch Logs to store logs at a secondary location.
 - [x] Enable log file integrity validation and use digest files to verify the hash value of the log file.
@@ -1235,7 +1235,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A SysOps administrator has successfully deployed a VPC with an AWS CloudFormation template. The SysOps administrator wants to deploy the same template across multiple accounts that are managed through AWS Organizations. Which solution will meet this requirement with the LEAST operational overhead?
 
-- [ ] Assume the OrganizationAccountAccessRole IAM role from the management account. Deploy the template in each of the accounts.
+- [ ] Assume the `OrganizationAccountAccessRole` IAM role from the management account. Deploy the template in each of the accounts.
 - [ ] Create an AWS Lambda function to assume a role in each account. Deploy the template by using the AWS CloudFormation CreateStack API call.
 - [ ] Create an AWS Lambda function to query for a list of accounts. Deploy the template by using the AWS CloudFormation CreateStack API call.
 - [x] Use AWS CloudFormation `StackSets` from the management account to deploy the template in each of the accounts.
@@ -1544,10 +1544,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A SysOps administrator has used AWS CloudFormation to deploy a serverless application into a production VPC. The application consists of an AWS Lambda function, an Amazon DynamoDB table, and an Amazon API Gateway API. The SysOps administrator must delete the AWS CloudFormation stack without deleting the DynamoDB table. Which action should the SysOps administrator take before deleting the AWS CloudFormation stack?
 
-- [x] Add a Retain deletion policy to the DynamoDB resource in the AWS CloudFormation stack.
-- [ ] Add a Snapshot deletion policy to the DynamoDB resource in the AWS CloudFormation stack.
+- [x] Add a `Retain` deletion policy to the DynamoDB resource in the AWS CloudFormation stack.
+- [ ] Add a `Snapshot` deletion policy to the DynamoDB resource in the AWS CloudFormation stack.
 - [ ] Enable termination protection on the AWS CloudFormation stack.
-- [ ] Update the application's IAM policy with a Deny statement for the `dynamodb:DeleteTable` action.
+- [ ] Update the application's IAM policy with a `Deny` statement for the `dynamodb:DeleteTable` action.
 
 ### A SysOps Administrator must devise a strategy for enforcing tagging of all EC2 instances and Amazon Elastic Block Store (Amazon EBS) volumes. What action can the Administrator take to implement this for real-time enforcement?
 
@@ -1567,7 +1567,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] In all member accounts, configure IAM policies that deny access to all DynamoDB resources for all users, including the root user.
 - [x] Create a Service Control Policy (SCP) in the management account to deny all DynamoDB actions. Apply the SCP to the root of the organization.
-- [ ] In all member accounts, configure IAM policies that deny AmazonDynamoDBFullAccess to all users, including the root user.
+- [ ] In all member accounts, configure IAM policies that deny `AmazonDynamoDBFullAccess` to all users, including the root user.
 - [ ] Remove the default Service Control Policy (SCP) in the management account. Create a replacement SCP that includes a single statement that denies all DynamoDB actions.
 
 ### A company runs hundreds of Amazon EC2 instances in a single AWS Region. Each EC2 instance has two attached 1 GiB `General Purpose SSD (gp2)` Amazon Elastic Block Store (Amazon EBS) volumes. A critical workload is using all the available IOPS capacity on the EBS volumes. According to company policy, the company cannot change instance types or EBS volume types without completing lengthy acceptance tests to validate that the company's applications will function properly. A SysOps administrator needs to increase the I/O performance of the EBS volumes as quickly as possible. Which action should the SysOps administrator take to meet these requirements?
@@ -1577,12 +1577,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Turn on Transfer Acceleration on the EBS volumes in the Region.
 - [ ] Add all the EC2 instances to a cluster placement group.
 
-### A company hosts its website on Amazon EC2 instances in the `us-east-1` Region. The company is preparing to extend its website into the eu-central-1 Region, but the database must remain only in us-east-1. After deployment, the EC2 instances in eu-central-1 are unable to connect to the database in us-east-1. What is the MOST operationally efficient solution that will resolve this connectivity issue?
+### A company hosts its website on Amazon EC2 instances in the `us-east-1` Region. The company is preparing to extend its website into the `eu-central-1` Region, but the database must remain only in `us-east-1`. After deployment, the EC2 instances in `eu-central-1` are unable to connect to the database in `us-east-1`. What is the MOST operationally efficient solution that will resolve this connectivity issue?
 
 - [x] Create a VPC peering connection between the two Regions. Add the private IP address range of the instances to the inbound rule of the database security group.
-- [ ] Create a VPC peering connection between the two Regions. Add the security group of the instances in eu-central-1 to the outbound rule of the database security group.
+- [ ] Create a VPC peering connection between the two Regions. Add the security group of the instances in `eu-central-1` to the outbound rule of the database security group.
 - [ ] Create a VPN connection between the two Regions. Add the private IP address range of the instances to the outbound rule of the database security group.
-- [ ] Create a VPN connection between the two Regions. Add the security group of the instances in eu-central-1 to the inbound rule of the database security group.
+- [ ] Create a VPN connection between the two Regions. Add the security group of the instances in `eu-central-1` to the inbound rule of the database security group.
 
 ### A company wants to create an automated solution for all accounts managed by AWS Organizations to detect any security groups that use `0.0.0.0/0` as the source address for inbound traffic. The company also wants to automatically remediate any noncompliant security groups by restricting access to a specific `CIDR` block that corresponds with the company's intranet. Which set of actions should the SysOps administrator take to create a solution?
 
@@ -1931,12 +1931,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Use tags to identity development instances and production instances. In Patch Manager, create two patch groups and one patch baseline, Create two separate maintenance windows, each with an auto-approval delay.
 - [ ] Use tags to identify development instances. In Patch Manager, create one patch group and one patch baseline. Specify auto-approval delays in the patch baseline, Add development instances to the new patch group. Use predefined Patch Manager patch baselines for all remaining instances. Create a single maintenance window.
 
-### A company wants to collect data from an application to use for analytics. For the first 90 days, the data will be infrequently accessed but must remain highly available. During this time, the company's analytics team requires access to the data in milliseconds. However, after 90 days, the company must retain the data for the long term at a lower cost. The retrieval time after 90 days must be less than 5 hours. Which solution will meet these requirements MOST cost-effectively?
+### A company has users that deploy Amazon EC2 instances that have more disk performance capacity than is required. A SysOps administrator needs to review all Amazon Elastic Block Store (Amazon EBS) volumes that are associated with the instances and create cost optimization recommendations based on IOPS and throughput. What should the SysOps administrator do to meet these requirements in the MOST operationally efficient way?
 
-- [x] Store the data in S3 Standard-Infrequent Access (S3 Standard-IA) for the first 90 days. Set up an S3 Lifecycle rule to move the data to S3 Glacier Flexible Retrieval after 90 days.
-- [ ] Store the data in S3 One Zone-Infrequent Access (S3 One Zone-IA) for the first 90 days. Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90 days.
-- [ ] Store the data in S3 Standard for the first 90 days. Set up an S3 Lifecycle rule to move the data to S3 Glacier Flexible Retrieval after 90 days.
-- [ ] Store the data in S3 Standard for the first 90 days. Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90 days.
+- [ ] Use the monitoring graphs in the EC2 console to view metrics for EBS volumes. Review the consumed space against the provisioned space on each volume. Identify any volumes that have low utilization.
+- [ ] Stop the EC2 instances from the EC2 console. Change the EC2 instance type for Amazon EBS-optimized. Start the EC2 instances.
+- [x] Opt in to AWS Compute Optimizer. Allow sufficient time for metrics to be gathered. Review the Compute Optimizer findings for EBS volumes.
+- [ ] Install the `fio` tool onto the EC2 instances and create a `.cfg` file to approximate the required workloads. Use the benchmark results to gauge whether the provisioned EBS volumes are of the most appropriate type.
 
 ### A SysOps administrator needs to provision a new fleet of Amazon EC2 Spot Instances in an Amazon EC2 Auto Scaling group. The Auto Scaling group will use a wide range of instance types. The configured fleet must come from pools that have the most availability for the number of instances that are launched. Which solution will meet these requirements?
 
@@ -2342,3 +2342,32 @@ Automation custom runbook for remediation.
 - [ ] Create one S3 bucket with a wildcard named `*.example.com` for both the domain and subdomain.
 - [x] Create two S3 buckets named `example.com` and `www.example.com`. Configure the subdomain bucket to redirect requests to the domain bucket.
 - [ ] Create two S3 buckets named `http://example.com` and `http://*.example.com`. Configure the wildcard (*) bucket to redirect requests to the domain bucket.
+
+### A SysOps Administrator is maintaining an application that runs on Amazon EC2 instances behind an Application Load Balancer (ALB). Users are reporting errors when attempting to launch the application. The Administrator notices an increase in the `HTTPCode_ELB_5xx_Count` Amazon CloudWatch metric for the load balancer. What is a possible cause for this increase?
+
+- [ ] The `ALB` is associated with private subnets within the VPC.
+- [ ] The `ALB` received a request from a client, but the client closed the connection.
+- [ ] The `ALB` security group is not configured to allow inbound traffic from the users.
+- [x] The `ALB` target group does not contain healthy EC2 instances.
+
+### A company has several member accounts that are in an organization in AWS Organizations. The company recently discovered that administrators have been using account root user credentials. The company must prevent the administrators from using root user credentials to perform any actions on Amazon EC2 instances. What should a SysOps administrator do to meet this requirement?
+
+- [ ] Create an identity-based IAM policy in each member account to deny actions on EC2 instances by the root user.
+- [x] In the organization's management account, create a service control policy (SCP) to deny actions on EC2 instances by the root user in all member accounts.
+- [ ] Use AWS Config to prevent any actions on EC2 instances by the root user.
+- [ ] Use Amazon Inspector in each member account to scan for root user logins and to prevent any actions on EC2 instances by the root user
+
+### A company creates a new member account by using AWS Organizations. A SysOps administrator needs to add AWS Business Support to the new account. Which combination of steps must the SysOps administrator take to meet this requirement? (Choose two.)
+
+- [x] Sign in to the new account by using IAM credentials. Change the support plan.
+- [ ] Sign in to the new account by using root user credentials. Change the support plan.
+- [ ] Use the AWS Support API to change the support plan.
+- [ ] Reset the password of the account root user.
+- [x] Create an IAM user that has administrator privileges in the new account.
+
+### A company hosts its website in the us-east-1 Region. The company is preparing to deploy its website into the eu-central-1 Region. Website visitors who are located in Europe should access the website that is hosted in eu-central-1. All other visitors access the website that is hosted in us-east-1. The company uses Amazon Route 53 to manage the website’s DNS records. Which routing policy should a SysOps administrator apply to the Route 53 record set to meet these requirements?
+
+- [x] Geolocation routing policy.
+- [ ] Geoproximity routing policy.
+- [ ] Latency routing policy.
+- [ ] Multivalue answer routing policy.
