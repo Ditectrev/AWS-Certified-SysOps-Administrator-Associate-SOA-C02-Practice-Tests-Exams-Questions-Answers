@@ -1635,7 +1635,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A SysOps administrator maintains the security and compliance of a company's AWS account. To ensure the company's Amazon EC2 instances are following company policy, a SysOps administrator wants to terminate any EC2 instance that do not contain a department tag. Noncompliant resources must be terminated in near-real time. Which solution will meet these requirements?
 
-- [x] Create an AWS Config rule with the `required-tags` managed rule to identify noncompliant resources. Configure automatic remediation to run the AWS- TerminateEC2Instance automation document to terminate noncompliant resources.
+- [x] Create an AWS Config rule with the `required-tags` managed rule to identify noncompliant resources. Configure automatic remediation to run the AWS `TerminateEC2Instance` automation document to terminate noncompliant resources.
 - [ ] Create a new Amazon EventBridge (Amazon CloudWatch Events) rule to monitor when new EC2 instances are created. Send the event to a Simple Notification Service (Amazon SNS) topic for automatic remediation.
 - [ ] Ensure all users who can create EC2 instances also have the permissions to use the `ec2:CreateTags` and `ec2:DescribeTags` actions. Change the instance's shutdown behavior to terminate.
 - [ ] Ensure AWS Systems Manager Compliance is configured to manage the EC2 instances. Call the AWS-StopEC2Instances automation document to stop noncompliant resources.
@@ -2371,3 +2371,21 @@ Automation custom runbook for remediation.
 - [ ] Geoproximity routing policy.
 - [ ] Latency routing policy.
 - [ ] Multivalue answer routing policy.
+
+### A company's SysOps administrator manages a fleet of hundreds of Amazon EC2 instances that run Windows-based workloads and Linux-based workloads. Each EC2 instance has a tag that identifies its operating system. All the EC2 instances run AWS Systems Manager Session Manager. A zero-day vulnerability is reported, and no patches are available. The company's security team provides code for all the relevant operating systems to reduce the risk of the vulnerability. The SysOps administrator needs to implement the code on the EC2 instances and must provide a report that shows that the code has successfully run on all the instances. What should the SysOps administrator do to meet these requirements as quickly as possible?
+
+- [x] Use Systems Manager Run Command. Choose either the `AWS-RunShellScript` document or the `AWS-RunPowerShellScript` document. Configure Run Command with the code from the security team. Specify the operating system tag in the Targets parameter. Run the command. Provide the command history's evidence to the security team.
+- [ ] Create an AWS Lambda function that connects to the EC2 instances through Session Manager. Configure the Lambda function to identify the operating system, run the code from the security team, and return the results to an Amazon RDS DB instance. Query the DB instance for the results. Provide the results as evidence to the security team.
+- [ ] Log on to each EC2 instance. Run the code from the security team on each EC2 instance. Copy and paste the results of each run into a single spreadsheet. Provide the spreadsheet as evidence to the security team.
+- [ ] Update the launch templates of the EC2 instances to include the code from the security team in the user data. Relaunch the EC2 instances by using the updated launch templates. Retrieve the EC2 instance logs of each instance. Provide the EC2 instance logs as evidence to the security team.
+
+### A SysOps administrator is responsible for the security of a company's AWS account. The company has a policy that a user may stop or terminate Amazon EC2 instances only when the user is authenticated by using a multi-factor authentication (MFA) device. Which policy should the SysOps administrator apply to meet this requirement?
+
+- [x] Option A.
+![Question 331 option A](images/question331_A.png)
+- [x] Option B.
+![Question 331 option B](images/question331_B.png)
+- [ ] Option C.
+![Question 331 option C](images/question331_C.png)
+- [ ] Option D.
+![Question 331 option D](images/question331_D.png)
