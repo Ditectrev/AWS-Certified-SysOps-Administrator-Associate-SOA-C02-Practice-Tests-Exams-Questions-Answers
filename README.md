@@ -1177,7 +1177,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Establish a new Site-to-Site VPN connection between a virtual private gateway attached to the new Availability Zone and the on-premises data center.
 - [ ] Replace the Site-to-Site VPN connection with an AWS Direct Connect connection.
 
-### A company has an internal web application that runs on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto. Scaling group in a single Availability Zone. A SysOps administrator must make the application highly available. Which action should the SysOps administrator take to meet this requirement?
+### A company has an internal web application that runs on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto Scaling group in a single Availability Zone. A SysOps administrator must make the application highly available. Which action should the SysOps administrator take to meet this requirement?
 
 - [ ] Increase the maximum number of instances in the Auto Scaling group to meet the capacity that is required at peak usage.
 - [ ] Increase the minimum number of instances in the Auto Scaling group to meet the capacity that is required at peak usage.
@@ -1657,10 +1657,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company analyzes sales data for its customers. Customers upload files to one of the company's Amazon S3 buckets, and a message is posted to an Amazon Simple Queue Service (Amazon SQS) queue that contains the object Amazon Resource Name (ARN). An application that runs on an Amazon EC2 instance polls the queue and processes the messages. The processing time depends on the size of the file. Customers are reporting delays in the processing of their files. A SysOps administrator decides to configure Amazon EC2 Auto Scaling as the first step. The SysOps administrator creates an Amazon Machine Image (AMI) that is based on the existing EC2 instance. The SysOps administrator also creates a launch template that references the AMI. How should the SysOps administrator configure the Auto Scaling policy to improve the response time?
 
-- [ ]Add several different instance sizes in the launch template. Create an Auto Scaling policy based on the ApproximateNumberOfMessagesVisible metric to select the size of the instance based on the number of messages in the queue.
+- [ ] Add several different instance sizes in the launch template. Create an Auto Scaling policy based on the `ApproximateNumberOfMessagesVisible` metric to select the size of the instance based on the number of messages in the queue.
 - [ ] Create an Auto Scaling policy based on the ApproximateNumberOfMessagesDelayed metric to scale the number of instances based on the number of messages in the queue that have been delayed.
 - [ ] Create a custom metric based on the `ASGAverageCPUUtilization` metric and the GroupPendingInstances metric from the Auto Scaling group. Modify the application to calculate the metric and post the metric to Amazon CloudWatch once each minute. Create an Auto Scaling policy based on this metric to scale the number of instances.
-- [x] Create a custom metric based on the ApproximateNumberOfMessagesVisible metric and the number of instances in the InService state in the Auto Scaling group. Modify the application to calculate the metric and post the metric to Amazon CloudWatch once each minute. Create an Auto Scaling policy based on this metric to scale the number of instances.
+- [x] Create a custom metric based on the `ApproximateNumberOfMessagesVisible` metric and the number of instances in the `InService` state in the Auto Scaling group. Modify the application to calculate the metric and post the metric to Amazon CloudWatch once each minute. Create an Auto Scaling policy based on this metric to scale the number of instances.
 
 ### A company runs a multi-tier web application with two Amazon EC2 instances in one Availability Zone in the `us-east-1` Region. A SysOps administrator must migrate one of the EC2 instances to a new Availability Zone. Which solution will accomplish this?
 
@@ -1676,7 +1676,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Apply the SCPs to each developer account.
 - [ ] Enroll the accounts with AWS Control Tower. Apply the SCPs to the AWS Control Tower management account.
 
-### An application is running on an Amazon EC2 instance in a VPC with the default DHCP option set. The application connects to an on-premises Microsoft SQL. Server database with the `DNS` name `mssql.example.com`. The application is unable to resolve the database `DNS` name. Which solution will fix this problem?
+### An application is running on an Amazon EC2 instance in a VPC with the default `DHCP` option set. The application connects to an on-premises Microsoft SQL. Server database with the `DNS` name `mssql.example.com`. The application is unable to resolve the database `DNS` name. Which solution will fix this problem?
 
 - [ ] Create an Amazon Route 53 Resolver inbound endpoint. Add a forwarding rule for the domain `example.com`. Associate the forwarding rule with the VPC
 - [ ] Create an Amazon Route 53 Resolver inbound endpoint. Add a system rule for the domain `example.com`. Associate the system rule with the VPC.
@@ -1828,11 +1828,11 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Submit a request for Spot Instances with a defined duration for the jobs.
 - [ ] Use a mixture of On-Demand Instances and Spot Instances for the jobs.
 
-### An environment consists of 100 Amazon EC2 Windows instances. The Amazon CloudWatch agent is deployed and running on all EC2 Instances with a baseline configuration file to capture log files. There is a new requirement to capture the DHCP log files that exist on 50 of the instances. What is the MOST operationally efficient way to meet this new requirement?
+### An environment consists of 100 Amazon EC2 Windows instances. The Amazon CloudWatch agent is deployed and running on all EC2 Instances with a baseline configuration file to capture log files. There is a new requirement to capture the `DHCP` log files that exist on 50 of the instances. What is the MOST operationally efficient way to meet this new requirement?
 
-- [x] Create an additional CloudWatch agent configuration file to capture the DHCP logs. Use the AWS Systems Manager Run Command to restart the CloudWatch agent on each EC2 instance with the append-config option to apply the additional configuration file.
-- [ ] Log in to each EC2 Instance with administrator rights. Create a PowerShell script to push the needed baseline log files and DHCP log files to CloudWatch.
-- [ ] Run the CloudWatch agent configuration file wizard on each EC2 instance. Verify that the baseline log files are included and add the DHCP log files during the wizard creation process.
+- [x] Create an additional CloudWatch agent configuration file to capture the `DHCP` logs. Use the AWS Systems Manager Run Command to restart the CloudWatch agent on each EC2 instance with the append-config option to apply the additional configuration file.
+- [ ] Log in to each EC2 Instance with administrator rights. Create a PowerShell script to push the needed baseline log files and `DHCP` log files to CloudWatch.
+- [ ] Run the CloudWatch agent configuration file wizard on each EC2 instance. Verify that the baseline log files are included and add the `DHCP` log files during the wizard creation process.
 - [ ] Run the CloudWatch agent configuration file wizard on each EC2 instance and select the advanced detail level. This will capture the operating system log files.
 
 ### A company needs to monitor the disk utilization of Amazon Elastic Block Store (Amazon EBS) volumes. The EBS volumes are attached to Amazon EC2 Linux instances. A SysOps administrator must set up an Amazon CloudWatch alarm that provides an alert when disk utilization increases to more than `80%`. Which combination of steps must the SysOps administrator take to meet these requirements? (Choose three.)
@@ -2389,3 +2389,10 @@ Automation custom runbook for remediation.
 ![Question 331 option C](images/question331_C.png)
 - [ ] Option D.
 ![Question 331 option D](images/question331_D.png)
+
+### A company is setting up a VPC peering connection between its VPC and a customer's VPC. The company VPC is an IPv4 CIDR block of `172.16.0.0/16`, and the customer's is an IPv4 CIDR block of `10.0.0.0/16`. The SysOps Administrator wants to be able to ping the customer's database private IP address from one of the company's Amazon EC2 instances. What action should be taken to meet the requirements?
+
+- [ ] Ensure that both accounts are linked and are part of consolidated billing to create a file sharing network, and then enable VPC peering.
+- [x] Ensure that both VPC owners manually add a route to the VPC route tables that points to the IP address range of the other VPC.
+- [ ] Instruct the customer to set up a VPC with the same IPv4 CIDR block as that of the source VPC: `172.16.0.0/16`.
+- [ ] Instruct the customer to create a virtual private gateway to link the two VPCs.
