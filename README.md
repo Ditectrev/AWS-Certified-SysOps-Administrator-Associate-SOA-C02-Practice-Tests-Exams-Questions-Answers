@@ -2396,3 +2396,24 @@ Automation custom runbook for remediation.
 - [x] Ensure that both VPC owners manually add a route to the VPC route tables that points to the IP address range of the other VPC.
 - [ ] Instruct the customer to set up a VPC with the same IPv4 CIDR block as that of the source VPC: `172.16.0.0/16`.
 - [ ] Instruct the customer to create a virtual private gateway to link the two VPCs.
+
+### A company runs a web application that users access using the domain name `www.example.com`. The company manages the domain name using Amazon Route 53. The company created an Amazon CloudFront distribution in front of the application and would like `www.example.com` to access the application through CloudFront. What is the MOST cost-effective way to achieve this?
+
+- [ ] Create a `CNAME` record in Amazon Route 53 that points to the CloudFront distribution URL.
+- [x] Create an `ALIAS` record in Amazon Route 53 that points to the CloudFront distribution URL.
+- [ ] Create an `A` record in Amazon Route 53 that points to the public IP address of the web application.
+- [ ] Create a `PTR` record in Amazon Route 53 that points to the public IP address of the web application.
+
+### A SysOps administrator needs to deploy an application in multiple AWS Regions. The SysOps administrator must implement a solution that routes users to the Region with the lowest latency. In case of failure, the solution must automatically route requests to a Region with a healthy instance of the application. The company needs a solution with the shortest time to failover. Which solution will meet these requirements?
+
+- [ ] Create Amazon Route 53 A records that have the same name for each endpoint. Use a latency routing policy. Associate a health check with each record.
+- [ ] Create Amazon Route 53 A records that have the same name for each endpoint. Use a failover routing policy. Associate a health check with each record.
+- [x] Create an AWS Global Accelerator standard accelerator. Create an endpoint group for each Region. Add a listener to the accelerator. Associate the endpoint group with the listener.
+- [ ] Create Amazon Route 53 A records that have the same name for each endpoint. Use a geolocation routing policy. Associate a health check with each record.
+
+### A company is using Amazon CloudWatch alarms to monitor Amazon Elastic Kubernetes Service (Amazon EKS) workloads. The alarms are initiated through a threshold definition and are not helping the EKS cluster operate more efficiently. A SysOps administrator must implement a solution that identifies anomalies and generates recommendations for how to address the anomalies. Which solution will meet these requirements?
+
+- [ ] Use CloudWatch anomaly detection to identify anomalies and provide recommendations.
+- [x] Use CloudWatch Container Insights with Amazon DevOps Guru to identify anomalies and provide recommendations.
+- [ ] Use CloudWatch Container Insights to identify anomalies and provide recommendations.
+- [ ] Use CloudWatch anomaly detection with CloudWatch Container Insights to identify anomalies and provide recommendations.
