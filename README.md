@@ -2365,7 +2365,7 @@ Automation custom runbook for remediation.
 - [ ] Reset the password of the account root user.
 - [x] Create an IAM user that has administrator privileges in the new account.
 
-### A company hosts its website in the us-east-1 Region. The company is preparing to deploy its website into the eu-central-1 Region. Website visitors who are located in Europe should access the website that is hosted in eu-central-1. All other visitors access the website that is hosted in us-east-1. The company uses Amazon Route 53 to manage the website’s DNS records. Which routing policy should a SysOps administrator apply to the Route 53 record set to meet these requirements?
+### A company hosts its website in the us-east-1 Region. The company is preparing to deploy its website into the eu-central-1 Region. Website visitors who are located in Europe should access the website that is hosted in eu-central-1. All other visitors access the website that is hosted in us-east-1. The company uses Amazon Route 53 to manage the website's `DNS` records. Which routing policy should a SysOps administrator apply to the Route 53 record set to meet these requirements?
 
 - [x] Geolocation routing policy.
 - [ ] Geoproximity routing policy.
@@ -2417,3 +2417,10 @@ Automation custom runbook for remediation.
 - [x] Use CloudWatch Container Insights with Amazon DevOps Guru to identify anomalies and provide recommendations.
 - [ ] Use CloudWatch Container Insights to identify anomalies and provide recommendations.
 - [ ] Use CloudWatch anomaly detection with CloudWatch Container Insights to identify anomalies and provide recommendations.
+
+### A company's application currently uses an IAM role that allows all access to all AWS services. A SysOps administrator must ensure that the company's IAM policies allow only the permissions that the application requires. How can the SysOps administrator create a policy to meet this requirement?
+
+- [ ] Turn on AWS CloudTrail. Generate a policy by using AWS Security Hub.
+- [ ] Turn on Amazon EventBridge (Amazon CloudWatch Events). Generate a policy by using AWS Identity and Access Management Access Analyzer.
+- [ ] Use the AWS CLI to run the get-generated-policy command in AWS Identity and Access Management Access Analyzer.
+- [x] Turn on AWS CloudTrail. Generate a policy by using AWS Identity and Access Management Access Analyzer.
