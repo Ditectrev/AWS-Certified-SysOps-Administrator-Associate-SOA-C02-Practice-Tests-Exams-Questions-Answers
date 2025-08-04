@@ -1727,7 +1727,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Enable S3 server access logging for each S3 bucket.
 - [ ] Use AWS IAM Access Analyzer for Amazon S3 to store object access logs.
 
-### A company runs an application that uses a MySQL database on an Amazon EC2 instance. The EC2 instance has a General Purpose SSD Amazon Elastic Block. Store (Amazon EBS) volume. The company made changes to the application code and now wants to perform load testing to evaluate the impact of the code changes. A SysOps administrator must create a new MySQL instance from a snapshot of the existing production instance. This new instance needs to perform as similarly as possible to the production instance. Which restore option meets these requirements?
+### A company runs an application that uses a MySQL database on an Amazon EC2 instance. The EC2 instance has a General Purpose SSD Amazon Elastic Block Store (Amazon EBS) volume. The company made changes to the application code and now wants to perform load testing to evaluate the impact of the code changes. A SysOps administrator must create a new MySQL instance from a snapshot of the existing production instance. This new instance needs to perform as similarly as possible to the production instance. Which restore option meets these requirements?
 
 - [x] Use EBS fast snapshot restore to create a new `General Purpose SSD EBS` volume from the production snapshot.
 - [ ] Use EBS fast snapshot restore to create a new `Provisioned IOPS SSD EBS` volume from the production snapshot.
@@ -2424,3 +2424,24 @@ Automation custom runbook for remediation.
 - [ ] Turn on Amazon EventBridge (Amazon CloudWatch Events). Generate a policy by using AWS Identity and Access Management Access Analyzer.
 - [ ] Use the AWS CLI to run the get-generated-policy command in AWS Identity and Access Management Access Analyzer.
 - [x] Turn on AWS CloudTrail. Generate a policy by using AWS Identity and Access Management Access Analyzer.
+
+### A company stores sensitive data in an Amazon S3 bucket. The company must log all access attempts to the S3 bucket. The company's risk team must receive immediate notification about any delete events. Which solution will meet these requirements?
+
+- [x] Enable S3 server access logging for audit logs. Set up an Amazon Simple Notification Service (Amazon SNS) notification for the S3 bucket. Select `DeleteObject` for the event type for the alert system.
+- [ ] Enable S3 server access logging for audit logs. Launch an Amazon EC2 instance for the alert system. Run a cron job on the EC2 instance to download the access logs each day and to scan for a `DeleteObject` event.
+- [ ] Use Amazon CloudWatch Logs for audit logs. Use Amazon CloudWatch alarms with an Amazon Simple Notification Service (Amazon SNS) notification for the alert system.
+- [ ] Use Amazon CloudWatch Logs for audit logs. Launch an Amazon EC2 instance for the alert system. Run a cron job on the EC2 instance each day to compare the list of the items with the list from the previous day. Configure the cron job to send a notification if an item is missing.
+
+### A company stores its internal data within an Amazon S3 bucket. All existing data within the S3 bucket is protected by using server-side encryption with Amazon S3 managed encryption keys (SSE-S3). S3 Versioning is enabled. A SysOps administrator must replicate the internal data to another S3 bucket in a different AWS account for disaster recovery. All the existing data is copied from the source S3 bucket to the destination S3 bucket. Which replication solution is MOST operationally efficient?
+
+- [x] Add a replication rule to the source bucket and specify the destination bucket. Create a bucket policy for the destination bucket to allow the owner of the source bucket to replicate objects.
+- [ ] Schedule an AWS Batch job with Amazon EventBridge to copy new objects from the source bucket to the destination bucket. Create a Batch Operations IAM role in the destination account.
+- [ ] Configure an Amazon S3 event notification for the source bucket to invoke an AWS Lambda function to copy new objects to the destination bucket. Ensure that the Lambda function has cross-account access permissions.
+- [ ] Run a scheduled script on an Amazon EC2 instance to copy new objects from the source bucket to the destination bucket. Assign cross-account access permissions to the EC2 instance's role.
+
+### A company recently deployed MySQL on an Amazon EC2 instance with a default boot volume. The company intends to restore a 1.75 TB database. A SysOps administrator needs to provision the correct Amazon Elastic Block Store (Amazon EBS) volume. The database will require read performance of up to 10,000 IOPS and is not expected to grow in size. Which solution will provide the required performance at the LOWEST cost?
+
+- [ ] Deploy a 2 TB Cold HDD (sc1) volume.
+- [ ] Deploy a 2 TB Throughput Optimized HDD (st1) volume.
+- [x] Deploy a 2 TB General Purpose SSD (gp3) volume. Set the IOPS to 10,000.
+- [ ] Deploy a 2 TB Provisioned IOPS SSD (io2) volume. Set the IOPS to 10,000.
