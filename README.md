@@ -1751,7 +1751,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A company hosts a static website on Amazon S3. An Amazon CloudFront distribution presents this site to global users. The company uses the `Managed-CachingDisabled` CloudFront cache policy. The company's developers confirm that they frequently update a file in Amazon S3 with new information. Users report that the website presents correct information when the website first loads the file. However, the users' browsers do not retrieve the updated file after a refresh. What should a SysOps administrator recommend to fix this issue?
 
 - [x] Add a `Cache-Control` header field with `max-age=0` to the S3 object.
-- [ ] Change the CloudFront cache policy to Managed-CachingOptimized.
+- [ ] Change the CloudFront cache policy to `Managed-CachingOptimized`.
 - [ ] Disable bucket versioning in the S3 bucket configuration.
 - [ ] Enable content compression in the CloudFront configuration.
 
@@ -2446,7 +2446,7 @@ Automation custom runbook for remediation.
 - [x] Deploy a 2 TB General Purpose SSD (gp3) volume. Set the IOPS to 10,000.
 - [ ] Deploy a 2 TB Provisioned IOPS SSD (io2) volume. Set the IOPS to 10,000.
 
-### A company manages its multi-account environment by using AWS Organizations. The company needs to automate the creation of daily incremental backups of any Amazon Elastic Block Store (Amazon EBS) volume that is marked with a Lifecycle: Production tag in one of its primary AWS accounts. The company wants to prevent users from using Amazon EC2 * permissions to delete any of these production snapshots. What should a SysOps administrator do to meet these requirements?
+### A company manages its multi-account environment by using AWS Organizations. The company needs to automate the creation of daily incremental backups of any Amazon Elastic Block Store (Amazon EBS) volume that is marked with a Lifecycle: Production tag in one of its primary AWS accounts. The company wants to prevent users from using Amazon EC2 `*` permissions to delete any of these production snapshots. What should a SysOps administrator do to meet these requirements?
 
 - [ ] Create a daily snapshot of all EBS volumes by using Amazon Data Lifecycle Manager. Specify Lifecycle as the tag key. Specify Production as the tag value.
 - [x] Associate a service control policy (SCP) with the account to deny users the ability to delete EBS snapshots. Create an Amazon EventBridge rule with a 24-hour cron schedule. Configure EBS Create Snapshot as the target. Target all EBS volumes with the specified tags.
