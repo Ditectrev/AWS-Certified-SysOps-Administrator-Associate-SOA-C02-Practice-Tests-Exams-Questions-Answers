@@ -2445,3 +2445,10 @@ Automation custom runbook for remediation.
 - [ ] Deploy a 2 TB Throughput Optimized HDD (st1) volume.
 - [x] Deploy a 2 TB General Purpose SSD (gp3) volume. Set the IOPS to 10,000.
 - [ ] Deploy a 2 TB Provisioned IOPS SSD (io2) volume. Set the IOPS to 10,000.
+
+### A company manages its multi-account environment by using AWS Organizations. The company needs to automate the creation of daily incremental backups of any Amazon Elastic Block Store (Amazon EBS) volume that is marked with a Lifecycle: Production tag in one of its primary AWS accounts. The company wants to prevent users from using Amazon EC2 * permissions to delete any of these production snapshots. What should a SysOps administrator do to meet these requirements?
+
+- [ ] Create a daily snapshot of all EBS volumes by using Amazon Data Lifecycle Manager. Specify Lifecycle as the tag key. Specify Production as the tag value.
+- [x] Associate a service control policy (SCP) with the account to deny users the ability to delete EBS snapshots. Create an Amazon EventBridge rule with a 24-hour cron schedule. Configure EBS Create Snapshot as the target. Target all EBS volumes with the specified tags.
+- [ ] Create a daily snapshot of all EBS volumes by using AWS Backup. Specify Lifecycle as the tag key. Specify Production as the tag value.
+- [ ] Create a daily Amazon Machine Image (AMI) of every production EC2 instance within the AWS account by using Amazon Data Lifecycle Manager.
