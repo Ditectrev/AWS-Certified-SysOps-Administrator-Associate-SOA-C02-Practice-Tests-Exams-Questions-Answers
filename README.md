@@ -1780,18 +1780,18 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A SysOps administrator needs to control access to groups of Amazon EC2 instances using AWS Systems Manager Session Manager. Specific tags on the EC2 instances have already been added. Which additional actions should the administrator take to control access? (Choose two.)
 
-- [ ] Attach an IAM policy to the users or groups that require access to the EC2 instances.
-- [x] Attach an IAM role to control access to the EC2 instances.
+- [x] Attach an IAM policy to the users or groups that require access to the EC2 instances.
+- [ ] Attach an IAM role to control access to the EC2 instances.
 - [ ] Create a placement group for the EC2 instances and add a specific tag.
 - [ ] Create a service account and attach it to the EC2 instances that need to be controlled.
 - [x] Create an IAM policy that grants access to any EC2 instances with a tag specified in the Condition element.
 
 ### A company has an AWS Lambda function in Account A. The Lambda function needs to read the objects in an Amazon S3 bucket in Account B. A SysOps administrator must create corresponding IAM roles in both accounts. Which solution will meet these requirements?
 
-- [x] In Account A, create a Lambda execution role to assume the role in Account B. In Account B. create a role that the function can assume to gain access to the S3 bucket.
+- [x] In Account A, create a Lambda execution role to assume the role in Account B. In Account B, create a role that the function can assume to gain access to the S3 bucket.
 - [ ] In Account A, create a Lambda execution role that provides access to the S3 bucket. In Account B, create a role that the function can assume.
 - [ ] In Account A, create a role that the function can assume. In Account B, create a Lambda execution role that provides access to the S3 bucket.
-- [ ] In Account A. create a role that the function can assume to gain access to the S3 bucket. In Account B, create a Lambda execution role to assume the role in Account A.
+- [ ] In Account A, create a role that the function can assume to gain access to the S3 bucket. In Account B, create a Lambda execution role to assume the role in Account A.
 
 ### A SysOps administrator wants to monitor the free disk space that is available on a set of Amazon EC2 instances that have Amazon Elastic Block Store (Amazon EBS) volumes attached. The SysOps administrator wants to receive a notification when the used disk space of the EBS volumes exceeds a threshold value, but only when the `DiskReadOps` metric also exceeds a threshold value. The SysOps administrator has set up an Amazon Simple Notification Service (Amazon SNS) topic. How can the SysOps administrator receive notification only when both metrics exceed their threshold values?
 
@@ -2057,7 +2057,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company is storing media content in an Amazon S3 bucket and uses Amazon CloudFront to distribute the content to its users. Due to licensing terms, the company is not authorized to distribute the content in some countries. A SysOps administrator must restrict access to certain countries. What is the MOST operationally efficient solution that meets these requirements?
 
-- [ ] Configure the S3 bucket policy to deny the GetObject operation based on the `S3:LocationConstraint` condition.
+- [ ] Configure the S3 bucket policy to deny the GetObject operation based on the `s3:LocationConstraint` condition.
 - [ ] Create a secondary Origin Access Identity (OAI). Configure the S3 bucket policy to prevent access from unauthorized countries.
 - [x] Enable the geo restriction feature in the CloudFront distribution to prevent access from unauthorized countries.
 - [ ] Update the application to generate signed CloudFront URLs only for IP addresses in authorized counties.
@@ -2181,8 +2181,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create a schedule in Systems Manager Patch Manager. Specify the appropriate resource group as the target.
 - [x] Specify Systems Manager Automation runbooks to patch the operating systems. Register the runbooks as tasks in the maintenance window. Specify the appropriate resource group as the target.
 - [ ] Create a Systems Manager Automation runbook to monitor and control the state of the patches required. Apply the runbook to Systems Manager Patch Manager.
-- [ ] Create a single Systems Manager maintenance window for each resource group.
-- [x] Configure Systems Manager Fleet Manager to apply a Systems Manager Automation runbook to the appropriate resource group.
+- [x] Create a single Systems Manager maintenance window for each resource group.
+- [ ] Configure Systems Manager Fleet Manager to apply a Systems Manager Automation runbook to the appropriate resource group.
 
 ### A company needs to enforce tagging requirements for Amazon DynamoDB tables in its AWS accounts. A SysOps administrator must implement a solution to identify and remediate all DynamoDB tables that do not have the appropriate tags. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -2452,3 +2452,32 @@ Automation custom runbook for remediation.
 - [x] Associate a service control policy (SCP) with the account to deny users the ability to delete EBS snapshots. Create an Amazon EventBridge rule with a 24-hour cron schedule. Configure EBS Create Snapshot as the target. Target all EBS volumes with the specified tags.
 - [ ] Create a daily snapshot of all EBS volumes by using AWS Backup. Specify Lifecycle as the tag key. Specify Production as the tag value.
 - [ ] Create a daily Amazon Machine Image (AMI) of every production EC2 instance within the AWS account by using Amazon Data Lifecycle Manager.
+
+### A web application accepts orders from online users and places the orders into an Amazon SQS queue. Amazon EC2 instances in an EC2 Auto Scaling group read the messages from the queue, process the orders, and email order confirmations to the users. The Auto Scaling group scales up and down based on the queue depth. At the beginning of each business day, users report confirmation emails are delayed. What action will address this issue?
+
+- [x] Create a scheduled scaling action to scale up in anticipation of the traffic.
+- [ ] Change the Auto Scaling group to scale up and down based on CPU utilization.
+- [ ] Change the launch configuration to launch larger EC2 instance types.
+- [ ] Modify the scaling policy to deploy more EC2 instances when scaling up.
+
+### A company has developed a service that is deployed on a fleet of Linux-based Amazon EC2 instances that are in an Auto Scaling group. The service occasionally fails unexpectedly because of an error in the application code. The company's engineering team determines that resolving the underlying cause of the service failure could take several weeks. A SysOps administrator needs to create a solution to automate recovery if the service crashes on any of the EC2 instances. Which solutions will meet this requirement? (Choose two.)
+
+- [x] Install the Amazon CloudWatch agent on the EC2 instances. Configure the CloudWatch agent to monitor the service. Set the CloudWatch action to restart if the service health check fails.
+- [ ] Tag the EC2 instances. Create an AWS Lambda function that uses AWS Systems Manager Session Manager to log in to the tagged EC2 instances and restart the service. Schedule the Lambda function to run every 5 minutes.
+- [x] Tag the EC2 instances. Use AWS Systems Manager State Manager to create an association that uses the `AWS-RunShellScript` document. Configure the association command with a script that checks if the service is running and that starts the service if the service is not running. For targets, specify the EC2 instance tag. Schedule the association to run every 5 minutes.
+- [ ] Update the EC2 user data that is specified in the Auto Scaling group's launch template to include a script that runs on a cron schedule every 5 minutes. Configure the script to check if the service is running and to start the service if the service is not running. Redeploy all the EC2 instances in the Auto Scaling group with the updated launch template.
+- [ ] Update the EC2 user data that is specified in the Auto Scaling group's launch template to ensure that the service runs during startup. Redeploy all the EC2 instances in the Auto Scaling group with the updated launch template.
+
+### A SysOps Administrator is writing an AWS Lambda function in AWS Account A to put objects in an Amazon S3 bucket in AWS Account B. The Lambda function is able to successfully write new objects to the S3 bucket, but IAM users in Account B are unable to delete objects written to the bucket by Account A. Which step will fix this issue?
+
+- [ ] Add `s3:DeleteObject` permission to the IAM execution role of the AWS Lambda function in Account A.
+- [ ] Change the bucket policy of the S3 bucket in Account B to allow `s3:DeleteObject` permission for Account A.
+- [ ] Disable server-side encryption for objects written to the S3 bucket by the Lambda function.
+- [x] Modify the Lambda function to call the `s3:PutObjectAcl` API operation to specify bucket owner, full control.
+
+### A SysOps administrator needs to automate the invocation of an AWS Lambda function. The Lambda function must run at the end of each day to generate a report on data that is stored in an Amazon S3 bucket. What is the MOST operationally efficient solution that meets these requirements?
+
+- [ ] Create an Amazon EventBridge (Amazon CloudWatch Events) rule that has an event pattern for Amazon S3 and the Lambda function as a target.
+- [x] Create an Amazon EventBridge (Amazon CloudWatch Events) rule that has a schedule and the Lambda function as a target.
+- [ ] Create an S3 event notification to invoke the Lambda function whenever objects change in the S3 bucket.
+- [ ] Deploy an Amazon EC2 instance with a cron job to invoke the Lambda function.
