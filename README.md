@@ -2481,3 +2481,10 @@ Automation custom runbook for remediation.
 - [x] Create an Amazon EventBridge (Amazon CloudWatch Events) rule that has a schedule and the Lambda function as a target.
 - [ ] Create an S3 event notification to invoke the Lambda function whenever objects change in the S3 bucket.
 - [ ] Deploy an Amazon EC2 instance with a cron job to invoke the Lambda function.
+
+### A SysOps administrator has an Amazon S3 website and wants to restrict access to a single Amazon CloudFront distribution. Visitors to the website should not be able to circumvent CloudFront or view the S3 website directly from the bucket. Which AWS service or feature will meet these requirements?
+
+- [ ] S3 bucket ACL.
+- [ ] AWS Firewall Manager.
+- [ ] Amazon Route 53 private hosted zone.
+- [x] Origin Access Identity (OAI).
