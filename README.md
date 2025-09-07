@@ -1830,7 +1830,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### An environment consists of 100 Amazon EC2 Windows instances. The Amazon CloudWatch agent is deployed and running on all EC2 Instances with a baseline configuration file to capture log files. There is a new requirement to capture the `DHCP` log files that exist on 50 of the instances. What is the MOST operationally efficient way to meet this new requirement?
 
-- [x] Create an additional CloudWatch agent configuration file to capture the `DHCP` logs. Use the AWS Systems Manager Run Command to restart the CloudWatch agent on each EC2 instance with the append-config option to apply the additional configuration file.
+- [x] Create an additional CloudWatch agent configuration file to capture the `DHCP` logs. Use the AWS Systems Manager Run Command to restart the CloudWatch agent on each EC2 instance with the `append-config` option to apply the additional configuration file.
 - [ ] Log in to each EC2 Instance with administrator rights. Create a PowerShell script to push the needed baseline log files and `DHCP` log files to CloudWatch.
 - [ ] Run the CloudWatch agent configuration file wizard on each EC2 instance. Verify that the baseline log files are included and add the `DHCP` log files during the wizard creation process.
 - [ ] Run the CloudWatch agent configuration file wizard on each EC2 instance and select the advanced detail level. This will capture the operating system log files.
@@ -2488,3 +2488,31 @@ Automation custom runbook for remediation.
 - [ ] AWS Firewall Manager.
 - [ ] Amazon Route 53 private hosted zone.
 - [x] Origin Access Identity (OAI).
+
+### An application running on Amazon EC2 allows users to launch batch jobs for data analysis. The jobs are run asynchronously, and the user is notified when they are complete. While multiple jobs can run concurrently, a user's request need not be fulfilled for up to 24 hours. To run a job, the application launches an additional EC2 instance that performs all the analytics calculations. A job takes between 75 and 110 minutes to complete and cannot be interrupted. What is the MOST cost-effective way to run this workload?
+
+- [ ] Run the application on On-Demand EC2 instances. Run the jobs on Spot Instances with a specified duration.
+- [ ] Run the application on Reserved Instance EC2 instances. Run the jobs on AWS Lambda.
+- [ ] Run the application on On-Demand EC2 instances. Run the jobs on On-Demand EC2 instances.
+- [x] Run the application on Reserved Instance EC2 instances. Run the jobs on Spot Instances with a specified duration.
+
+### An e-commerce company wants to lower costs on its nightly jobs that aggregate the current day's sales and store the results in Amazon S3. The jobs are currently run using multiple on-demand instances and the jobs take just under 2 hours to complete. If a job fails for any reason, it needs to be restarted from the beginning. What method is the MOST cost effective based on these requirements?
+
+- [ ] Use a mixture of On-Demand and Spot Instances for job execution.
+- [x] Submit a request for a Spot block to be used for job execution.
+- [ ] Purchase Reserved Instances to be used for job execution.
+- [ ] Submit a request for a one-time Spot Instance for job execution.
+
+### A company wants to reduce costs on jobs that can be completed at any time. The jobs are currently run using multiple On-Demand Instances, and the jobs take just under 2 hours to complete. If a job fails for any reason, it can be restarted from the beginning. Which method is the MOST cost-effective based on these requirements?
+
+- [ ] Purchase Reserved Instances to be used for job execution.
+- [ ] Submit a request for a one-time Spot Instance for job execution.
+- [x] Submit a request for a Spot block to be used for job execution.
+- [ ] Use a mixture of On-Demand and Spot Instances for job execution.
+
+### A SysOps administrator needs to collect the content of log files from a custom application that is deployed across hundreds of Amazon EC2 instances running Ubuntu. The log files need to be stored in Amazon CloudWatch Logs. How should the SysOps administrator collect the application log files with the LOWEST operational overhead?
+
+- [ ] Configure the syslogd service on each EC2 instance to collect and send the application log files to CloudWatch Logs.
+- [ ] Install the CloudWatch agent by using the Amazon Linux package manager on each EC2 instance. Configure each agent to collect the application log files.
+- [ ] Install the CloudWatch agent on each EC2 instance by using AWS Systems Manager. Create an agent configuration on each instance by using the CloudWatch configuration wizard. Configure each agent to collect the application log files.
+- [x] Store a CloudWatch agent configuration in the AWS Systems Manager Parameter Store. Install the CloudWatch agent on each EC2 instance by using Systems Manager. Configure each agent to collect the application log files.
