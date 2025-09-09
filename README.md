@@ -131,9 +131,9 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company's SysOps administrator deploys four new Amazon EC2 instances by using the standard Amazon Linux 2 Amazon Machine Image (AMI). The company needs to be able to use AWS Systems Manager to manage the instances The SysOps administrator notices that the instances do not appear in the Systems Manager console. What must the SysOps administrator do to resolve this issue?
 
-- [ ] Connect to each instance by using SSH. Install Systems Manager Agent on each instance. Configure Systems Manager Agent to start automatically when the instances start up.
+- [ ] Connect to each instance by using `SSH`. Install Systems Manager Agent on each instance. Configure Systems Manager Agent to start automatically when the instances start up.
 - [ ] Use AWS Certificate Manager (ACM) to create a TLS certificate. Import the certificate into each instance. Configure Systems Manager Agent to use the TLS certificate for secure communications.
-- [ ] Connect to each instance by using SSH. Create an `ssm-user` account. Add the `ssm-user` account to the `/etcsudoers` directory.
+- [ ] Connect to each instance by using `SSH`. Create an `ssm-user` account. Add the `ssm-user` account to the `/etcsudoers` directory.
 - [x] Attach an IAM instance profile to the instances. Ensure that the instance profile contains the `AmazonSSMManagedinstanceCore` policy.
 
 ### A development team recently deployed a new version of a web application to production. After the release, penetration testing revealed a cross-site scripting vulnerability that could expose user data. Which AWS service will mitigate this issue?
@@ -168,8 +168,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Add a route table entry in the public subnet for the SysOps administrator's IP address.
 - [ ] Add an outbound network ACL rule to allow `TCP` port `22` for the SysOps administrator's IP address.
-- [x] Modify the instance security group to allow inbound SSH traffic from the SysOps administrator's IP address.
-- [ ] Modify the instance security group to allow outbound SSH traffic to the SysOps administrator's IP address.
+- [x] Modify the instance security group to allow inbound `SSH` traffic from the SysOps administrator's IP address.
+- [ ] Modify the instance security group to allow outbound `SSH` traffic to the SysOps administrator's IP address.
 
 ### A company wants to use only IPv6 for all its Amazon EC2 instances. The EC2 instances must not be accessible from the internet, but the EC2 instances must be able to access the internet. The company creates a dual-stack VPC and IPv6-only subnets. How should a SysOps administrator configure the VPC to meet these requirements?
 
@@ -480,7 +480,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] The IAM password is incorrect.
 - [ ] The server certificate is missing.
-- [ ] The SSH key pair is incorrect.
+- [ ] The `SSH` key pair is incorrect.
 - [x] There is no access key.
 
 ### A SysOps administrator is setting up a fleet of Amazon EC2 instances in an Auto Scaling group for an application. The fleet should have `50%` CPU available at that times to accommodate bursts of traffic. The load will increase significantly between the hours of 09:00 and 17:00,7 days a week. How should the SysOps adminiAstrator configure the scaling of the EC2 instances to meet these requirements?
@@ -1081,7 +1081,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Write a script to download the encrypted snapshot, decrypt it using the AWS KMS encryption key used to encrypt the snapshot, then create a new volume in each account.
 - [x] Update the key policy to grant permission to the AWS KMS encryption key used to encrypt the snapshot with all relevant accounts, then share the snapshot with those accounts.
 - [ ] Create an Amazon EC2 instance based on the snapshot, then save the instance's Amazon EBS volume as a snapshot and share it with the other accounts. Require each account owner to create a new volume from that snapshot and encrypt it.
-- [ ] Create a new unencrypted RDS instance from the encrypted snapshot, connect to the instance using SSH/RDP. export the database contents into a file, then share this file with the other accounts.
+- [ ] Create a new unencrypted RDS instance from the encrypted snapshot, connect to the instance using `SSH`/RDP. export the database contents into a file, then share this file with the other accounts.
 
 ### A SysOps administrator has an AWS CloudFormation template of the company's existing infrastructure in `us-west-2`. The administrator attempts to use the template to launch a new stack in `eu-west-1`, but the stack only partially deploys, receives an error message, and then rolls back. Why would this template fail to deploy? (Select TWO.)
 
@@ -1858,11 +1858,11 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] `AWS/EC2 StatusCheckFailed <= 0`.
 - [ ] `AWS/EC2 StatusCheckFailed >= 1`.
 
-### A company wants to monitor the security groups of its Amazon EC2 instances to ensure that SSH is not open to the public. If the port is opened, the company needs to close the port as soon as possible. Which combination of actions should a SysOps administrator take to meet these requirements? (Choose two.)
+### A company wants to monitor the security groups of its Amazon EC2 instances to ensure that `SSH` is not open to the public. If the port is opened, the company needs to close the port as soon as possible. Which combination of actions should a SysOps administrator take to meet these requirements? (Choose two.)
 
-- [ ] Add an Amazon CloudWatch alarm to detect the security groups that allow SSH.
-- [x] Add an AWS Config rule to detect the security groups that allow SSH.
-- [ ] Add an assessment template to Amazon Inspector to detect the security groups that allow SSH.
+- [ ] Add an Amazon CloudWatch alarm to detect the security groups that allow `SSH`.
+- [x] Add an AWS Config rule to detect the security groups that allow `SSH`.
+- [ ] Add an assessment template to Amazon Inspector to detect the security groups that allow `SSH`.
 - [x] Call an AWS Systems Manager Automation runbook to close the port.
 - [ ] Call AWS Systems Manager Run Command to close the port.
 
@@ -2111,7 +2111,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create an Auto Scaling group by using the launch configuration across at least `2` regions with a minimum size of `1`, desired capacity of `1`, and a maximum size of `1`.
 - [ ] Create an Auto Scaling group by using the launch configuration across at least `3` regions with a minimum size of `2`, desired capacity of `2`, and a maximum size of `2`.
 
-### An application is running on multiple EC2 instances. As part of an initiative to improve overall infrastructure security, the EC2 instances were moved to a private subnet. However, since moving, the EC2 instances have not been able to automatically update, and a SysOps Administrator has not been able to SSH into them remotely. Which two actions could the Administrator take to securely resolve these issues? (Choose two.)
+### An application is running on multiple EC2 instances. As part of an initiative to improve overall infrastructure security, the EC2 instances were moved to a private subnet. However, since moving, the EC2 instances have not been able to automatically update, and a SysOps Administrator has not been able to `SSH` into them remotely. Which two actions could the Administrator take to securely resolve these issues? (Choose two.)
 
 - [x] Set up a bastion host in a public subnet, and configure security groups and route tables accordingly.
 - [ ] Set up a bastion host in the private subnet, and configure security groups accordingly.
@@ -2516,3 +2516,10 @@ Automation custom runbook for remediation.
 - [ ] Install the CloudWatch agent by using the Amazon Linux package manager on each EC2 instance. Configure each agent to collect the application log files.
 - [ ] Install the CloudWatch agent on each EC2 instance by using AWS Systems Manager. Create an agent configuration on each instance by using the CloudWatch configuration wizard. Configure each agent to collect the application log files.
 - [x] Store a CloudWatch agent configuration in the AWS Systems Manager Parameter Store. Install the CloudWatch agent on each EC2 instance by using Systems Manager. Configure each agent to collect the application log files.
+
+### A company's security policy states that connecting to Amazon EC2 instances is not permitted through `SSH` and `RDP`. If access is required, authorized staff can connect to instances by using AWS Systems Manager Session Manager. Users report that they are unable to connect to one specific Amazon EC2 instance that is running Ubuntu and has AWS Systems Manager Agent (SSM Agent) pre-installed. These users are able to use Session Manager to connect to other instances in the same subnet, and they are in an IAM group that has Session Manager permission for all instances. What should a SysOps administrator do to resolve this issue?
+
+- [ ] Add an inbound rule for port `22` in the security group associated with the Ubuntu instance.
+- [x] Assign the `AmazonSSMManagedInstanceCore` managed policy to the EC2 instance profile for the Ubuntu instance.
+- [ ] Configure the SSM Agent to log in with a user name of `ubuntu`.
+- [ ] Generate a new key pair, configure Session Manager to use this new key pair, and provide the private key to the users.
