@@ -11,15 +11,15 @@
 
 - [x] Ensure that there is an outbound security group for port `443` to `0.0.0.0/0`.
 - [ ] Ensure that there is an inbound security group for port `443` from `0.0.0.0/0`.
-- [ ] Ensure that there is an outbound network ACL for ephemeral ports `1024-66535` to `0.0.0.0/0`.
-- [ ] Ensure that there is an outbound network ACL for port `80` to `0.0.0.0/0`.
+- [ ] Ensure that there is an outbound network `ACL` for ephemeral ports `1024-66535` to `0.0.0.0/0`.
+- [ ] Ensure that there is an outbound network `ACL` for port `80` to `0.0.0.0/0`.
 
 ### A company's public website is hosted in an Amazon S3 bucket in the `us-east-1` Region behind an Amazon CloudFront distribution. The company wants to ensure that the website is protected from DDoS attacks. A SysOps administrator needs to deploy a solution that gives the company the ability to maintain control over the rate limit at which DDoS protections are applied. Which solution will meet these requirements?
 
-- [x] Deploy a global-scoped AWS WAF web ACL with an allow default action. Configure an AWS WAF rate-based rule to block matching traffic. Associate the web ACL with the CloudFront distribution.
-- [ ] Deploy an AWS WAF web ACL with an allow default action in `us-east-1`. Configure an AWS WAF rate-based rule to block matching traffic. Associate the web ACL with the S3 bucket.
-- [ ] Deploy a global-scoped AWS WAF web ACL with a block default action. Configure an AWS WAF rate-based rule to allow matching traffic. Associate the web ACL with the CloudFront distribution.
-- [ ] Deploy an AWS WAF web ACL with a block default action in `us-east-1`. Configure an AWS WAF rate-based rule to allow matching traffic. Associate the web ACL with the S3 bucket.
+- [x] Deploy a global-scoped AWS WAF web `ACL` with an allow default action. Configure an AWS WAF rate-based rule to block matching traffic. Associate the web `ACL` with the CloudFront distribution.
+- [ ] Deploy an AWS WAF web `ACL` with an allow default action in `us-east-1`. Configure an AWS WAF rate-based rule to block matching traffic. Associate the web `ACL` with the S3 bucket.
+- [ ] Deploy a global-scoped AWS WAF web `ACL` with a block default action. Configure an AWS WAF rate-based rule to allow matching traffic. Associate the web `ACL` with the CloudFront distribution.
+- [ ] Deploy an AWS WAF web `ACL` with a block default action in `us-east-1`. Configure an AWS WAF rate-based rule to allow matching traffic. Associate the web `ACL` with the S3 bucket.
 
 ### A company hosts an online shopping portal in the AWS Cloud. The portal provides `HTTPS` security by using a TLS certificate on an Elastic Load Balancer (ELB). Recently, the portal suffered an outage because the TLS certificate expired. A SysOps administrator must create a solution to automatically renew certificates to avoid this issue in the future. What is the MOST operationally efficient solution that meets these requirements?
 
@@ -53,7 +53,7 @@
 
 - [ ] Create a new security group to block traffic to the external IP address. Assign the new security group to the EC2 instance.
 - [ ] Use VPC flow logs with Amazon Athena to block traffic to the external IP address.
-- [x] Create a network ACL Add an outbound deny rule for traffic to the external IP address.
+- [x] Create a network `ACL` Add an outbound deny rule for traffic to the external IP address.
 - [ ] Create a new security group to block traffic to the external IP address Assign the new security group to the entire VPC.
 
 ### A web application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances run in an Auto Scaling group across multiple Availability Zones. A SysOps administrator notices that some of these EC2 instances show up as healthy in the Auto Scaling group but show up as unhealthy in the `ALB` target group. What is a possible reason for this issue?
@@ -167,7 +167,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A SysOps administrator launches an Amazon EC2 Linux instance in a public subnet. When the instance is running, the SysOps administrator obtains the public IP address and attempts to remotely connect to the instance multiple times. However, the SysOps administrator always receives a timeout error. Which action will allow the SysOps administrator to remotely connect to the instance?
 
 - [ ] Add a route table entry in the public subnet for the SysOps administrator's IP address.
-- [ ] Add an outbound network ACL rule to allow `TCP` port `22` for the SysOps administrator's IP address.
+- [ ] Add an outbound network `ACL` rule to allow `TCP` port `22` for the SysOps administrator's IP address.
 - [x] Modify the instance security group to allow inbound `SSH` traffic from the SysOps administrator's IP address.
 - [ ] Modify the instance security group to allow outbound `SSH` traffic to the SysOps administrator's IP address.
 
@@ -226,7 +226,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Launch EC2 instances in the VPC. On the EC2 instances, deploy a custom `DNS` forwarder that forwards all `DNS` requests to the on-premises `DNS` server. Create an Amazon Route 53 private hosted zone that uses the EC2 instances for name servers.
 - [x] Create an Amazon Route 53 Resolver outbound endpoint. Configure the outbound endpoint to forward `DNS` queries against the on-premises domain to the on-premises `DNS` server.
 - [ ] Set up two AWS Direct Connect connections between the AWS environment and the on-premises network. Set up a link aggregation group (LAG) that includes the two connections. Change the VPC resolver address to point to the on-premises `DNS` server.
-- [ ] Create an Amazon Route 53 public hosted zone for the on-premises domain. Configure the network ACLs to forward `DNS` requests against the on-premises domain to the Route 53 public hosted zone.
+- [ ] Create an Amazon Route 53 public hosted zone for the on-premises domain. Configure the network `ACL`s to forward `DNS` requests against the on-premises domain to the Route 53 public hosted zone.
 
 ### A SysOps administrator creates a new VPC that includes a public subnet and a private subnet. The SysOps administrator successfully launches 11 Amazon EC2 instances in the private subnet. The SysOps administrator attempts to launch one more EC2 instance in the same subnet. However, the SysOps administrator receives an error message that states that not enough free IP addresses are available. What must the SysOps administrator do to deploy more EC2 instances?
 
@@ -325,8 +325,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [x] Turn on S3 Block Public Access from the account level.
 - [ ] Create an Amazon Event Bridge (Amazon CloudWatch Events) rule to enforce that all S3 objects are private.
-- [ ] Use Amazon Inspector to search for S3 buckets and to automatically reset S3 ACLs if any public S3 buckets are found.
-- [ ] Use S3 Object Lambda to examine S3 ACLs and to change any public S3 ACLs to private.
+- [ ] Use Amazon Inspector to search for S3 buckets and to automatically reset S3 `ACL`s if any public S3 buckets are found.
+- [ ] Use S3 Object Lambda to examine S3 `ACL`s and to change any public S3 `ACL`s to private.
 
 ### An Amazon S3 Inventory report reveals that more than 1 million objects in an S3 bucket are not encrypted These objects must be encrypted, and all future objects must be encrypted at the time they are written. Which combination of actions should a SysOps administrator take to meet these requirements? (Select TWO)
 
@@ -400,9 +400,9 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Use a cluster of six data nodes across three Availability Zones. Use six dedicated master nodes.
 - [ ] Use a cluster of eight data nodes across two Availability Zones. Deploy four master nodes in a failover AWS Region.
 
-### A SysOps administrator is investigating why a user has been unable to use RDP to connect over the internet from their home computer to a bastion server running on an Amazon EC2 Windows instance. Which of the following are possible causes of this issue? (Choose two.)
+### A SysOps administrator is investigating why a user has been unable to use `RDP` to connect over the internet from their home computer to a bastion server running on an Amazon EC2 Windows instance. Which of the following are possible causes of this issue? (Choose two.)
 
-- [x] A network ACL associated with the bastion's subnet is blocking the network traffic.
+- [x] A network `ACL` associated with the bastion's subnet is blocking the network traffic.
 - [ ] The instance does not have a private IP address.
 - [x] The route table associated with the bastion's subnet does not have a route to the internet gateway.
 - [ ] The security group for the instance does not have an inbound rule on port `22`.
@@ -414,15 +414,15 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] In the security group of the EC2 instance, allow inbound ICMP traffic.
 - [ ] In the security group of the EC2 instance, allow outbound ICMP traffic.
-- [ ] In the VPC's NACL, allow inbound ICMP traffic.
-- [x] In the VPC's NACL, allow outbound ICMP traffic.
+- [ ] In the VPC's N`ACL`, allow inbound ICMP traffic.
+- [x] In the VPC's N`ACL`, allow outbound ICMP traffic.
 
 ### A global company handles a large amount of personally identifiable information (Pll) through an internal web portal. The company's application runs in a corporate data center that is connected to AWS through an AWS Direct Connect connection. The application stores the Pll in Amazon S3. According to a compliance requirement, traffic from the web portal to Amazon S3 must not travel across the internet. What should a SysOps administrator do to meet the compliance requirement?
 
 - [x] Provision an interface VPC endpoint for Amazon S3. Modify the application to use the interface endpoint.
 - [ ] Configure AWS Network Firewall to redirect traffic to the internal S3 address.
 - [ ] Modify the application to use the S3 path-style endpoint.
-- [ ] Set up a range of VPC network ACLs to redirect traffic to the Internal S3 address.
+- [ ] Set up a range of VPC network `ACL`s to redirect traffic to the Internal S3 address.
 
 ### An application runs on multiple Amazon EC2 instances in an Auto Scaling group The Auto Scaling group is configured to use the latest version of a launch template A SysOps administrator must devise a solution that centrally manages the application logs and retains the logs for no more than 90 days. Which solution will meet these requirements?
 
@@ -532,8 +532,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Modify the EC2 security group rules to allow inbound traffic from the on-premises computer.
 - [ ] Modify the EC2 security group rules to allow outbound traffic to the on-premises computer.
-- [ ] Modify the VPC network ACL rules to allow inbound traffic from the on-premises computer.
-- [x] Modify the VPC network ACL rules to allow outbound traffic to the on-premises computer.
+- [ ] Modify the VPC network `ACL` rules to allow inbound traffic from the on-premises computer.
+- [x] Modify the VPC network `ACL` rules to allow outbound traffic to the on-premises computer.
 
 ### A company's financial department needs to view the cost details of each project in an AWS account A SysOps administrator must perform the initial configuration that is required to view cost for each project in Cost Explorer. Which solution will meet this requirement?
 
@@ -616,7 +616,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A company must ensure that any objects uploaded to an S3 bucket are encrypted. Which of the following actions will meet this requirement? (Choose two.)
 
 - [ ] Implement AWS Shield to protect against unencrypted objects stored in S3 buckets.
-- [ ] Implement Object Access Control List (ACL) to deny unencrypted objects from being uploaded to the S3 bucket.
+- [ ] Implement Object Access Control List (`ACL`) to deny unencrypted objects from being uploaded to the S3 bucket.
 - [x] Implement Amazon S3 default encryption to make sure that any object being uploaded is encrypted before it is stored.
 - [ ] Implement Amazon Inspector to inspect objects uploaded to the S3 bucket to make sure that they are encrypted.
 - [x] Implement S3 bucket policies to deny unencrypted objects from being uploaded to the buckets.
@@ -737,13 +737,13 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Configure AWS Trusted Advisor to track resource usage.
 - [ ] Create a billing alarm in AWS Budgets.
 
-### A company website contains a web tier and a database tier on AWS. The web tier consists of Amazon EC2 instances that run in an Auto Scaling group across two Availability Zones. The database tier runs on an Amazon RDS for MySQL Multi-AZ DB instance. The database subnet network ACLs are restricted to only the web subnets that need access to the database. The web subnets use the default network ACL with the default rules. The company's operations team has added a third subnet to the Auto Scaling group configuration. After an Auto Scaling event occurs, some users report that they intermittently receive an error message. The error message states that the server cannot connect to the database. The operations team has confirmed that the route tables are correct and that the required ports are open on all security groups. Which combination of actions should a SysOps administrator take so that the web servers can communicate with the DB instance? (Select TWO.)
+### A company website contains a web tier and a database tier on AWS. The web tier consists of Amazon EC2 instances that run in an Auto Scaling group across two Availability Zones. The database tier runs on an Amazon RDS for MySQL Multi-AZ DB instance. The database subnet network `ACL`s are restricted to only the web subnets that need access to the database. The web subnets use the default network `ACL` with the default rules. The company's operations team has added a third subnet to the Auto Scaling group configuration. After an Auto Scaling event occurs, some users report that they intermittently receive an error message. The error message states that the server cannot connect to the database. The operations team has confirmed that the route tables are correct and that the required ports are open on all security groups. Which combination of actions should a SysOps administrator take so that the web servers can communicate with the DB instance? (Select TWO.)
 
-- [ ] On the default ACL. create inbound. Allow rules of type `TCP` with the ephemeral port range and the source as the database subnets.
-- [ ] On the default ACL, create outbound. Allow rules of type `MySQL/Aurora (3306)`. Specify the destinations as the database subnets.
-- [x] On the network ACLs for the database subnets, create an inbound. Allow rule of type `MySQL/Aurora (3306)`. Specify the source as the third web subnet.
-- [x] On the network ACLs for the database subnets, create an outbound. Allow rule of type `TCP` with the ephemeral port range and the destination as the third web subnet.
-- [ ] On the network ACLs for the database subnets, create an outbound. Allow rule of type `MySQL/Aurora (3306)`. Specify the destination as the third web subnet.
+- [ ] On the default `ACL`. create inbound. Allow rules of type `TCP` with the ephemeral port range and the source as the database subnets.
+- [ ] On the default `ACL`, create outbound. Allow rules of type `MySQL/Aurora (3306)`. Specify the destinations as the database subnets.
+- [x] On the network `ACL`s for the database subnets, create an inbound. Allow rule of type `MySQL/Aurora (3306)`. Specify the source as the third web subnet.
+- [x] On the network `ACL`s for the database subnets, create an outbound. Allow rule of type `TCP` with the ephemeral port range and the destination as the third web subnet.
+- [ ] On the network `ACL`s for the database subnets, create an outbound. Allow rule of type `MySQL/Aurora (3306)`. Specify the destination as the third web subnet.
 
 ### A company is running an application on a fleet of Amazon EC2 instances behind an Application Load Balancer (ALB). The EC2 instances are launched by an Auto Scaling group and are automatically registered in a target group. A SysOps administrator must set up a notification to alert application owners when targets fail health checks. What should the SysOps administrator do to meet these requirements?
 
@@ -780,17 +780,17 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Create a scheduled scaling action to scale out the number of EC2 instances shortly before the increase in user traffic occurs.
 - [ ] Manually add a few more EC2 instances to the Auto Scaling group to support the increase in user traffic.
 
-### A root account owner has given full access of his S3 bucket to one of the IAM users using the bucket ACL. When the IAM user logs in to the S3 console, which actions can he perform?
+### A root account owner has given full access of his S3 bucket to one of the IAM users using the bucket `ACL`. When the IAM user logs in to the S3 console, which actions can he perform?
 
 - [ ] He can just view the content of the bucket.
 - [ ] He can do all the operations on the bucket.
-- [x] It is not possible to give access to an IAM user using ACL.
+- [x] It is not possible to give access to an IAM user using `ACL`.
 - [ ] The IAM user can perform all operations on the bucket using only API/SDK.
 
 ### An Amazon S3 bucket in a SysOps Administrator's account can be accesses by users in other AWS accounts. How can the Administrator ensure that the bucket is only accessible to members of the Administrator's AWS account?
 
 - [ ] Move the S3 bucket from a public subnet to a private subnet in the Amazon VPC.
-- [x] Change the bucket Access Control List (ACL) to restrict access to the bucket owner.
+- [x] Change the bucket Access Control List (`ACL`) to restrict access to the bucket owner.
 - [ ] Enable server-side encryption for all objects in the bucket.
 - [ ] Use only Amazon S3 presigned URLs for accessing objects in the bucket.
 
@@ -968,7 +968,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Delete the EFS file share. Create an Amazon FSx for Windows File Server file share for the EC2 instances.
 - [ ] Use the correct IAM credentials to mount the EFS file share.
 - [ ] Configure NFSv4 support on the Windows operating system that is running on the EC2 instances.
-- [ ] Allow the correct port for NFS through the security group and network ACL.
+- [ ] Allow the correct port for NFS through the security group and network `ACL`.
 
 ### An existing, deployed solution uses Amazon EC2 instances with Amazon EBS General Purpose SSD volumes, am Amazon RDS PostgreSQL database, an Amazon EFS file system, and static objects stored in an Amazon S3 bucket. The Security team now mandates that at-rest encryption be turned on immediately for all aspects of the application, without creating new resources and without any downtime. To satisfy the requirements, which one of these services can the SysOps Administrator enable at-rest encryption on?
 
@@ -1081,7 +1081,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Write a script to download the encrypted snapshot, decrypt it using the AWS KMS encryption key used to encrypt the snapshot, then create a new volume in each account.
 - [x] Update the key policy to grant permission to the AWS KMS encryption key used to encrypt the snapshot with all relevant accounts, then share the snapshot with those accounts.
 - [ ] Create an Amazon EC2 instance based on the snapshot, then save the instance's Amazon EBS volume as a snapshot and share it with the other accounts. Require each account owner to create a new volume from that snapshot and encrypt it.
-- [ ] Create a new unencrypted RDS instance from the encrypted snapshot, connect to the instance using `SSH`/RDP. export the database contents into a file, then share this file with the other accounts.
+- [ ] Create a new unencrypted RDS instance from the encrypted snapshot, connect to the instance using `SSH`/`RDP`. export the database contents into a file, then share this file with the other accounts.
 
 ### A SysOps administrator has an AWS CloudFormation template of the company's existing infrastructure in `us-west-2`. The administrator attempts to use the template to launch a new stack in `eu-west-1`, but the stack only partially deploys, receives an error message, and then rolls back. Why would this template fail to deploy? (Select TWO.)
 
@@ -1111,8 +1111,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Inbound security group deny rule.
 - [ ] Outbound security group deny rule.
-- [ ] Network ACL inbound rules.
-- [x] Network ACL outbound rules.
+- [ ] Network `ACL` inbound rules.
+- [x] Network `ACL` outbound rules.
 
 ### A SysOps administrator needs to configure a solution that will deliver digital content to a set of authorized users through Amazon CloudFront. Unauthorized users must be restricted from access. Which solution will meet these requirements?
 
@@ -1205,7 +1205,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] A `CNAME` record for the domain's zone apex.
 - [x] An alias record for the domain's zone apex.
 
-### A SysOps administrator has created a VPC that contains a public subnet and a private subnet. Amazon EC2 instances that were launched in the private subnet cannot access the internet. The default network ACL is active on all subnets in the VPC, and all security groups allow all outbound traffic. Which solution will provide the EC2 instances in the private subnet with access to the internet?
+### A SysOps administrator has created a VPC that contains a public subnet and a private subnet. Amazon EC2 instances that were launched in the private subnet cannot access the internet. The default network `ACL` is active on all subnets in the VPC, and all security groups allow all outbound traffic. Which solution will provide the EC2 instances in the private subnet with access to the internet?
 
 - [x] Create a `NAT` gateway in the public subnet. Create a route from the private subnet to the `NAT` gateway.
 - [ ] Create a `NAT` gateway in the public subnet. Create a route from the public subnet to the `NAT` gateway.
@@ -1335,8 +1335,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A SysOps administrator must configure Amazon S3 to host a simple nonproduction webpage. The SysOps administrator has created an empty S3 bucket from the AWS Management Console. The S3 bucket has the default configuration in place. Which combination of actions should the SysOps administrator take to complete this process? (Choose two.)
 
 - [ ] Configure the S3 bucket by using the `Redirect requests for an object` functionality to point to the bucket root URL.
-- [ ] Turn off the `Block all public access` setting. Allow public access by using a bucket ACL that contains `<Permission>WEBSITE</Permission>`.
-- [ ] Turn off the `Block all public access` setting. Allow public access by using a bucket ACL that allows access to the AuthenticatedUsers grantee.
+- [ ] Turn off the `Block all public access` setting. Allow public access by using a bucket `ACL` that contains `<Permission>WEBSITE</Permission>`.
+- [ ] Turn off the `Block all public access` setting. Allow public access by using a bucket `ACL` that allows access to the AuthenticatedUsers grantee.
 - [x] Turn off the `Block all public access` setting. Set a bucket policy that allows `Principal:` the `s3:GetObject` action.
 - [x] Create an `index.html` document. Configure static website hosting, and upload the index document to the S3 bucket.
 
@@ -1805,7 +1805,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Examine the expiration date on the certificate on the origin site. Validate that the certificate has not expired. Replace the certificate if necessary.
 - [ ] Examine the hostname on the certificate on the origin site. Validate that the hostname matches one of the hostnames on the CloudFront distribution. Replace the certificate if necessary.
 - [ ] Examine the firewall rules that are associated with the origin server. Validate that port `443` is open for inbound traffic from the internet. Create an inbound rule if necessary.
-- [ ] Examine the network ACL rules that are associated with the CloudFront distribution. Validate that port `443` is open for outbound traffic to the origin server. Create an outbound rule if necessary.
+- [ ] Examine the network `ACL` rules that are associated with the CloudFront distribution. Validate that port `443` is open for outbound traffic to the origin server. Create an outbound rule if necessary.
 
 ### An Amazon CloudFront distribution has a single Amazon S3 bucket as its origin. A SysOps administrator must ensure that users can access the S3 bucket only through requests from the CloudFront endpoint. Which solution will meet these requirements?
 
@@ -1877,8 +1877,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [x] Ensure that the inbound rules of the instance's security group allow traffic on ports `80` and `443`.
 - [ ] Ensure that the outbound rules of the instance's security group allow traffic on ports `80` and `443`.
-- [ ] Ensure that ephemeral ports `1024-65535` are allowed in the inbound rules of the network ACL that is associated with the instance's subnet.
-- [x] Ensure that ephemeral ports `1024-65535` are allowed in the outbound rules of the network ACL that is associated with the instance's subnet.
+- [ ] Ensure that ephemeral ports `1024-65535` are allowed in the inbound rules of the network `ACL` that is associated with the instance's subnet.
+- [x] Ensure that ephemeral ports `1024-65535` are allowed in the outbound rules of the network `ACL` that is associated with the instance's subnet.
 - [x] Ensure that the filtering rules for any firewalls that are running on the instance allow inbound traffic on ports `80` and `443`.
 - [ ] Ensure that AWS WAF is turned on for the instance and is blocking web traffic.
 
@@ -2024,7 +2024,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] A security group deny rule is blocking traffic on port `443`.
 - [ ] The EC2 instance is shut down.
-- [x] The network ACL is blocking `HTTPS` traffic.
+- [x] The network `ACL` is blocking `HTTPS` traffic.
 - [ ] The VPC has no internet gateway attached.
 
 ### A company has created a `NAT` gateway in a public subnet in a VPC. The VPC also contains a private subnet that includes Amazon EC2 instances. The EC2 instances use the `NAT` gateway to access the internet to download patches and updates. The company has configured a VPC flow log for the elastic network interface of the `NAT` gateway. The company is publishing the output to Amazon CloudWatch Logs. A SysOps administrator must identify the top five internet destinations that the EC2 instances in the private subnet communicate with for downloads. What should the SysOps administrator do to meet this requirement in the MOST operationally efficient way?
@@ -2208,9 +2208,9 @@ Automation custom runbook for remediation.
 - [ ] Amazon GuardDuty is turned on for all the accounts.
 - [ ] The company has not configured an AWS Config rule to monitor billing.
 
-### A SysOps administrator is troubleshooting a VPC with public and private subnets that leverage custom network ACLs. Instances in the private subnet are unable to access the internet. There is an internet gateway attached to the public subnet. The private subnet has a route to a `NAT` gateway that is also attached to the public subnet. The Amazon EC2 instances are associated with the default security group for the VPC. What is causing the issue in this scenario?
+### A SysOps administrator is troubleshooting a VPC with public and private subnets that leverage custom network `ACL`s. Instances in the private subnet are unable to access the internet. There is an internet gateway attached to the public subnet. The private subnet has a route to a `NAT` gateway that is also attached to the public subnet. The Amazon EC2 instances are associated with the default security group for the VPC. What is causing the issue in this scenario?
 
-- [x] There is a network ACL on the private subnet set to deny all outbound traffic.
+- [x] There is a network `ACL` on the private subnet set to deny all outbound traffic.
 - [ ] There is no `NAT` gateway deployed in the private subnet of the VPC.
 - [ ] The default security group for the VPC blocks all inbound traffic to the EC2 instances.
 - [ ] The default security group for the VPC blocks all outbound traffic from the EC2 instances.
@@ -2484,7 +2484,7 @@ Automation custom runbook for remediation.
 
 ### A SysOps administrator has an Amazon S3 website and wants to restrict access to a single Amazon CloudFront distribution. Visitors to the website should not be able to circumvent CloudFront or view the S3 website directly from the bucket. Which AWS service or feature will meet these requirements?
 
-- [ ] S3 bucket ACL.
+- [ ] S3 bucket `ACL`.
 - [ ] AWS Firewall Manager.
 - [ ] Amazon Route 53 private hosted zone.
 - [x] Origin Access Identity (OAI).
@@ -2523,3 +2523,10 @@ Automation custom runbook for remediation.
 - [x] Assign the `AmazonSSMManagedInstanceCore` managed policy to the EC2 instance profile for the Ubuntu instance.
 - [ ] Configure the SSM Agent to log in with a user name of `ubuntu`.
 - [ ] Generate a new key pair, configure Session Manager to use this new key pair, and provide the private key to the users.
+
+### A SysOps administrator is creating a simple, public-facing website running on Amazon EC2. The SysOps administrator created the EC2 instance in an existing public subnet and assigned an Elastic IP address to the instance. Next, the SysOps administrator created and applied a new security group to the instance to allow incoming `HTTP` traffic from `0.0.0.0/0`. Finally, the SysOps administrator created a new network `ACL` and applied it to the subnet to allow incoming `HTTP` traffic from `0.0.0.0/0`. However, the website cannot be reached from the internet. What is the cause of this issue?
+
+- [x] The SysOps administrator did not create an outbound rule that allows ephemeral port return traffic in the new network `ACL`.
+- [ ] The SysOps administrator did not create an outbound rule in the security group that allows `HTTP` traffic from port 80.
+- [ ] The Elastic IP address assigned to the EC2 instance has changed.
+- [ ] There is an additional network `ACL` associated with the subnet that includes a rule that denies inbound `HTTP` traffic from port 80.
