@@ -412,10 +412,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ![Question 58](images/question58_74_155.png)
 
-- [ ] In the security group of the EC2 instance, allow inbound ICMP traffic.
-- [ ] In the security group of the EC2 instance, allow outbound ICMP traffic.
-- [ ] In the VPC's N`ACL`, allow inbound ICMP traffic.
-- [x] In the VPC's N`ACL`, allow outbound ICMP traffic.
+- [ ] In the security group of the EC2 instance, allow inbound `ICMP` traffic.
+- [ ] In the security group of the EC2 instance, allow outbound `ICMP` traffic.
+- [ ] In the VPC's `NACL`, allow inbound `ICMP` traffic.
+- [x] In the VPC's `NACL`, allow outbound `ICMP` traffic.
 
 ### A global company handles a large amount of personally identifiable information (Pll) through an internal web portal. The company's application runs in a corporate data center that is connected to AWS through an AWS Direct Connect connection. The application stores the Pll in Amazon S3. According to a compliance requirement, traffic from the web portal to Amazon S3 must not travel across the internet. What should a SysOps administrator do to meet the compliance requirement?
 
