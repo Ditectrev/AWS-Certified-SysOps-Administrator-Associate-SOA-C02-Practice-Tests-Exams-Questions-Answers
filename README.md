@@ -246,10 +246,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ![Question 35](images/question35.jpg)
 
-- [ ] Users that assume an IAM role with a logical ID that begins with `Production` are prevented from running the update-stack command.
+- [ ] Users that assume an IAM role with a logical ID that begins with `Production` are prevented from running the `update-stack` command.
 - [x] Users can update all resources in the stack except for resources that have a logical ID that begins with `Production`.
 - [ ] Users can update all resources in the stack except for resources that have an attribute that begins with `Production`.
-- [ ] Users in an IAM group with a logical ID that begins with `Production` are prevented from running the update-stack command.
+- [ ] Users in an IAM group with a logical ID that begins with `Production` are prevented from running the `update-stack` command.
 
 ### A SysOps administrator is deploying an application on 10 Amazon EC2 instances. The application must be highly available. The instances must be placed on distinct underlying hardware. What should the SysOps administrator do to meet these requirements?
 
@@ -1905,9 +1905,9 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### An application running on Amazon EC2 instances in an Auto Scaling group across multiple Availability Zones was deployed using an AWS CloudFormation template. The SysOps team has patched the Amazon Machine Image (AMI) version and must update all the EC2 instances to use the new AMI. How can the SysOps Administrator use CloudFormation to apply the new AMI while maintaining a minimum level of active instances to ensure service continuity?
 
-- [ ] Run the aws cloudfomation update-stack command with the `rollback-configuration` option
-- [ ] Update the CloudFormation template with the new AMI ID, then reboot the EC2 instances
-- [ ] Deploy a second CloudFormation stack and use Amazon Route 53 to redirect traffic to the new stack
+- [ ] Run the aws cloudfomation `update-stack` command with the `rollback-configuration` option.
+- [ ] Update the CloudFormation template with the new AMI ID, then reboot the EC2 instances.
+- [ ] Deploy a second CloudFormation stack and use Amazon Route 53 to redirect traffic to the new stack.
 - [x] Set an `AutoScalingRollingUpdate` policy in the CloudFormation template to update the stack.
 
 ### A company hosts an internal application on Amazon EC2 On-Demand Instances behind an Application Load Balancer (ALB). The instances are in an Amazon EC2 Auto Scaling group. Employees use the application to provide product prices to potential customers. The Auto Scaling group is configured with a dynamic scaling policy and tracks average CPU utilization of the instances. Employees have noticed that sometimes the application becomes slow or unresponsive. A SysOps administrator finds that some instances are experiencing a high CPU load. The Auto Scaling group cannot scale out because the company is reaching the EC2 instance service quota. The SysOps administrator needs to implement a solution that provides a notification when the company reaches `70%` or more of the EC2 instance service quota. Which solution will meet these requirements in the MOST operationally efficient manner?
@@ -2530,3 +2530,10 @@ Automation custom runbook for remediation.
 - [ ] The SysOps administrator did not create an outbound rule in the security group that allows `HTTP` traffic from port 80.
 - [ ] The Elastic IP address assigned to the EC2 instance has changed.
 - [ ] There is an additional network `ACL` associated with the subnet that includes a rule that denies inbound `HTTP` traffic from port 80.
+
+### A company's application infrastructure was deployed using AWS CloudFormation and is composed of Amazon EC2 instances behind an Application Load Balancer. The instances run in an EC2 Auto Scaling group across multiple Availability Zones. When releasing a new version of the application, the update deployment must avoid DNS changes and allow rollback. Which solution should a SysOps administrator use to meet the deployment requirements for this new release?
+
+- [ ] Configure the Auto Scaling group to use lifecycle hooks. Deploy new instances with the new application version. Complete the lifecycle hook action once healthy.
+- [ ] Create a new Amazon Machine Image (AMI) containing the updated code. Create a launch configuration with the AMI. Update the Auto Scaling group to use the new launch configuration.
+- [ ] Deploy a second CloudFormation stack. Wait for the application to be available. Cut over to the new Application Load Balancer.
+- [x] Modify the CloudFormation template to use an `AutoScalingReplacingUpdate` policy. Update the stack. Perform a second update with the new release.
