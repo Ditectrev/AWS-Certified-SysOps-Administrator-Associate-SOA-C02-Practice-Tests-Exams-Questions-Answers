@@ -1917,7 +1917,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Use the Service Quotas console to create an Amazon CloudWatch alarm for the EC2 instances. Configure the alarm with quota utilization equal to or greater than `70%`. Configure the alarm to publish an Amazon Simple Notification Service (Amazon SNS) notification when the alarm enters `ALARM` state.
 - [ ] Create an Amazon CloudWatch alarm. Configure the alarm with a threshold of `70%` for the `CPUUtilization` metric for the EC2 instances. Configure the alarm to publish an Amazon Simple Notification Service (Amazon SNS) notification when the alarm enters `ALARM` state.
 
-### A team of developers is using several Amazon S3 buckets as centralized repositories. Users across the world upload large sets of files to these repositories. The development team's applications later process these files. A SysOps administrator sets up a new S3 bucket, `DOC-EXAMPLE-BUCKET`, to support a new workload, The rew S3 bucket also receives regular uploads cf large sets of files from users worldwide. When the new S3 bucket is put into production, the upload performance from certain geographic areas is lower than the upload performance that the existing S3 buckets provide. What should the SysOps administrator do to remediate this issue?
+### A team of developers is using several Amazon S3 buckets as centralized repositories. Users across the world upload large sets of files to these repositories. The development team's applications later process these files. A SysOps administrator sets up a new S3 bucket, `DOC-EXAMPLE-BUCKET`, to support a new workload. The new S3 bucket also receives regular uploads of large sets of files from users worldwide. When the new S3 bucket is put into production, the upload performance from certain geographic areas is lower than the upload performance that the existing S3 buckets provide. What should the SysOps administrator do to remediate this issue?
 
 - [ ] Provision an Amazon ElastiCache for Redis cluster for the new S3 bucket. Provide the developers with the configuration endpoint of the cluster for use in their API calls
 - [ ] Add the new S3 bucket to a new Amazon CloudFront distribution. Provide the developers with the domain name of the new distribution for use in their API calls.
@@ -2537,3 +2537,10 @@ Automation custom runbook for remediation.
 - [ ] Create a new Amazon Machine Image (AMI) containing the updated code. Create a launch configuration with the AMI. Update the Auto Scaling group to use the new launch configuration.
 - [ ] Deploy a second CloudFormation stack. Wait for the application to be available. Cut over to the new Application Load Balancer.
 - [x] Modify the CloudFormation template to use an `AutoScalingReplacingUpdate` policy. Update the stack. Perform a second update with the new release.
+
+### A company uses an Amazon S3 bucket to store data files. The S3 bucket contains hundreds of objects. The company needs to replace a tag on all the objects in the S3 bucket with another tag. What is the MOST operationally efficient way to meet this requirement?
+
+- [x] Use S3 Batch Operations. Specify the operation to replace all object tags.
+- [ ] Use the AWS CLI to get the tags for each object. Save the tags in a list. Use S3 Batch Operations. Specify the operation to delete all object tags. Use the AWS CLI and the list to retag the objects.
+- [ ] Use the AWS CLI to get the tags for each object. Save the tags in a list. Use the AWS CLI and the list to remove the object tags. Use the AWS CLI and the list to retag the objects.
+- [ ] Use the AWS CLI to copy the objects to another S3 bucket. Add the new tag to the copied objects. Delete the original objects.
