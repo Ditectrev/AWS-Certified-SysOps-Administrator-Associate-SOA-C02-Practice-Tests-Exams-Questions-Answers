@@ -49,12 +49,12 @@
 - [ ] Encrypt the standby replica in the secondary Availability Zone and promote it to the primary instance.
 - [x] Take a snapshot of the RDS instance, copy and encrypt the snapshot, and then restore to the new RDS instance.
 
-### A SysOps administrator receives an alert from Amazon GuardDuty about suspicious network activity on an Amazon FC2 instance. The GuardDuty finding lists a new external IP address as a traffic destination. The SysOps administrator does not recognize the external IP address. The SysOps administrator must block traffic to the external IP address that GuardDuty identified Which solution will meet this requirement?
+### A SysOps administrator receives an alert from Amazon GuardDuty about suspicious network activity on an Amazon EC2 instance. The GuardDuty finding lists a new external IP address as a traffic destination. The SysOps administrator does not recognize the external IP address. The SysOps administrator must block traffic to the external IP address that GuardDuty identified Which solution will meet this requirement?
 
 - [ ] Create a new security group to block traffic to the external IP address. Assign the new security group to the EC2 instance.
 - [ ] Use VPC flow logs with Amazon Athena to block traffic to the external IP address.
-- [x] Create a network `ACL` Add an outbound deny rule for traffic to the external IP address.
-- [ ] Create a new security group to block traffic to the external IP address Assign the new security group to the entire VPC.
+- [x] Create a network `ACL`. Add an outbound deny rule for traffic to the external IP address.
+- [ ] Create a new security group to block traffic to the external IP address. Assign the new security group to the entire VPC.
 
 ### A web application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances run in an Auto Scaling group across multiple Availability Zones. A SysOps administrator notices that some of these EC2 instances show up as healthy in the Auto Scaling group but show up as unhealthy in the `ALB` target group. What is a possible reason for this issue?
 
@@ -91,7 +91,7 @@ Configure the rule to invoke an AWS Lambda function to enable CloudTrail.
 - [ ] Create a new EFS file system that uses Max I/O performance mode. Use AWS DataSync to migrate data to the new EFS file system.
 - [ ] Create an EFS lifecycle policy to transition future files to the Infrequent Access (IA) storage class to improve performance. Use AWS DataSync to migrate existing data to IA storage.
 - [ ] Modify the existing EFS file system and activate Max I/O performance mode.
-- [x] Modify the existing EFS file system and activate Provisioned Throughput mode.
+- [x] Modify the existing EFS file system and activate `Provisioned Throughput` mode.
 
 ### A company needs to restrict access to an Amazon S3 bucket to Amazon EC2 instances in a VPC only. All traffic must be over the AWS private network. What actions should the SysOps administrator take to meet these requirements?
 
@@ -594,7 +594,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company is using Amazon Elastic File System (Amazon EFS) to share a file system among several Amazon EC2 instances. As usage increases, users report that file retrieval from the EFS file system is slower than normal. Which action should a SysOps administrator take to improve the performance of the file system?
 
-- [x] Configure the file system for Provisioned Throughput.
+- [x] Configure the file system for `Provisioned Throughput`.
 - [ ] Enable encryption in transit on the file system.
 - [ ] Identify any unused files in the file system, and remove the unused files.
 - [ ] Resize the Amazon Elastic Block Store (Amazon EBS) volume of each of the EC2 instances.
@@ -1809,7 +1809,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### An Amazon CloudFront distribution has a single Amazon S3 bucket as its origin. A SysOps administrator must ensure that users can access the S3 bucket only through requests from the CloudFront endpoint. Which solution will meet these requirements?
 
-- [ ] Configure S3 Block Public Access on the S3 bucket. Update the S3 bucket policy to allow the GetObject action from only the CloudFront distribution.
+- [ ] Configure S3 Block Public Access on the S3 bucket. Update the S3 bucket policy to allow the `GetObject` action from only the CloudFront distribution.
 - [ ] Configure Origin Shield in the CloudFront distribution. Update the CloudFront origin to include a custom `Origin_Shield` header.
 - [x] Create an Origin Access Identity (OAI). Assign the OAI to the CloudFront distribution. Update the S3 bucket policy to restrict access to the OAI.
 - [ ] Create an Origin Access Identity (OAI). Assign the OAI to the S3 bucket. Update the CloudFront origin to include a custom `Origin` header with the OAI value.
@@ -2057,7 +2057,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company is storing media content in an Amazon S3 bucket and uses Amazon CloudFront to distribute the content to its users. Due to licensing terms, the company is not authorized to distribute the content in some countries. A SysOps administrator must restrict access to certain countries. What is the MOST operationally efficient solution that meets these requirements?
 
-- [ ] Configure the S3 bucket policy to deny the GetObject operation based on the `s3:LocationConstraint` condition.
+- [ ] Configure the S3 bucket policy to deny the `GetObject` operation based on the `s3:LocationConstraint` condition.
 - [ ] Create a secondary Origin Access Identity (OAI). Configure the S3 bucket policy to prevent access from unauthorized countries.
 - [x] Enable the geo restriction feature in the CloudFront distribution to prevent access from unauthorized countries.
 - [ ] Update the application to generate signed CloudFront URLs only for IP addresses in authorized counties.
@@ -2551,3 +2551,39 @@ Automation custom runbook for remediation.
 - [ ] Restore each snapshot onto an unencrypted EBS volume. Encrypt the EBS volume when the performance stabilizes.
 - [ ] Format the EBS volumes as XFS file systems before restoring the snapshots.
 - [ ] Increase the Linux read-ahead buffer to 1 MiB.
+
+### Website users report that an application's pages are loading slowly at the beginning of the workday. The application runs on Amazon EC2 instances, and data is stored in an Amazon RDS database. The SysOps Administrator suspects the issue is related to high CPU usage on a component of this application. How can the Administrator find out which component is causing the performance bottleneck?
+
+- [ ] Use AWS CloudTrail to review the resource usage history for each component.
+- [x] Use Amazon CloudWatch metrics to examine the resource usage of each component.
+- [ ] Use Amazon Inspector to view the resource usage details for each component.
+- [ ] Use Amazon CloudWatch Events to examine the high usage events for each component.
+
+### A company has an Amazon S3 bucket that contains sensitive data. The data must be encrypted in transit and at rest. The company encrypts the data in the S3 bucket by using an AWS Key Management Service (AWS KMS) key. A developer needs to grant several other AWS accounts the permission to use the S3 `GetObject` operation to retrieve the data from the S3 bucket. How can the developer enforce that all requests to retrieve the data provide encryption in transit?
+
+- [x] Define a resource-based policy on the S3 bucket to deny access when a request meets the condition `aws:SecureTransport`: `false`.
+- [ ] Define a resource-based policy on the S3 bucket to allow access when a request meets the condition `aws:SecureTransport`: `false`.
+- [ ] Define a role-based policy on the other accounts' roles to deny access when a request meets the condition of `aws:SecureTransport`: `false`.
+- [ ] Define a resource-based policy on the KMS key to deny access when a request meets the condition of `aws:SecureTransport`: `false`.
+
+### A developer has an application that stores data in an Amazon S3 bucket. The application uses an `HTTP` API to store and retrieve objects. When the `PutObject` API operation adds objects to the S3 bucket the developer must encrypt these objects at rest by using server-side encryption with Amazon S3 managed keys (SSE-S3). Which solution will meet this requirement?
+
+- [ ] Create an AWS Key Management Service (AWS KMS) key. Assign the KMS key to the S3 bucket.
+- [x] Set the `x-amz-server-side-encryption` header when invoking the `PutObject` API operation.
+- [ ] Provide the encryption key in the `HTTP` header of every request.
+- [ ] Apply TLS to encrypt the traffic to the S3 bucket.
+
+### A SysOps Administrator is maintaining a web application using an Amazon CloudFront web distribution, an Application Load Balancer (ALB), Amazon RDS, and Amazon EC2 in a VPC. All services have logging enabled. The Administrator needs to investigate HTTP Layer 7 status codes from the web application. Which log sources contain the status codes? (Choose two.)
+
+- [ ] VPC Flow Logs.
+- [ ] AWS CloudTrail logs.
+- [x] ALB access logs.
+- [x] CloudFront access logs.
+- [ ] RDS logs.
+
+### After a network change, application servers cannot connect to the corresponding Amazon RDS MySQL database. What should the SysOps Administrator analyze?
+
+- [x] VPC Flow Logs.
+- [ ] Elastic Load Balancing logs.
+- [ ] Amazon CloudFront logs.
+- [ ] Amazon RDS MySQL error logs.
