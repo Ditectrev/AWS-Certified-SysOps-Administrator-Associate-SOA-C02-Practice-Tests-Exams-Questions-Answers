@@ -1999,8 +1999,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company's SysOps administrator is troubleshooting communication between the components of an application. The company configured VPC flow logs to be published to Amazon CloudWatch Logs. However, there are no logs in CloudWatch Logs. What could be blocking the VPC flow logs from being published to CloudWatch Logs?
 
-- [x] The IAM policy that is attached to the IAM role for the flow log is missing the logs CreateLogGroup permission.
-- [ ] The IAM policy that is attached to the IAM role for the flow log is missing the logs CreateExportTask permission.
+- [x] The IAM policy that is attached to the IAM role for the flow log is missing the logs `CreateLogGroup` permission.
+- [ ] The IAM policy that is attached to the IAM role for the flow log is missing the logs `CreateExportTask` permission.
 - [ ] The VPC is configured for IPv6 addresses.
 - [ ] The VPC is peered with another VPC in the AWS account.
 
@@ -2587,3 +2587,10 @@ Automation custom runbook for remediation.
 - [ ] Elastic Load Balancing logs.
 - [ ] Amazon CloudFront logs.
 - [ ] Amazon RDS MySQL error logs.
+
+### A SysOps administrator configured VPC flow logs by using the default format. The SysOps administrator specified Amazon CloudWatch Logs as the destination. This solution has worked successfully for several months. However, because of additional troubleshooting requirements, the SysOps administrator needs to include the `tcp-flags` field on the flow logs. What should the SysOps administrator do to meet this requirement?
+
+- [x] Create a new flow log. Include the `tcp-flags` field in the custom log format. Delete the original flow log.
+- [ ] In the CloudWatch Logs log group, modify the filter to include the `tcp-flags` field and the type field.
+- [ ] In CloudWatch Metrics, modify the metric configuration to include the `tcp-flags` field.
+- [ ] Modify the existing flow log. Include the `tcp-flags` field and the type field in the custom log format. Save the configuration.
