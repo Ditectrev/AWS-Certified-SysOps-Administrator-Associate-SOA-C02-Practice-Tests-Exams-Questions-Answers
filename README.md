@@ -621,12 +621,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Implement Amazon Inspector to inspect objects uploaded to the S3 bucket to make sure that they are encrypted.
 - [x] Implement S3 bucket policies to deny unencrypted objects from being uploaded to the buckets.
 
-### A SysOps administrator is reviewing VPC Flow Logs to troubleshoot connectivity issues in a VPC. While reviewing the togs the SysOps administrator notices that rejected traffic is not listed. What should the SysOps administrator do to ensure that all traffic is logged?
-
-- [ ] Create a new flow tog that has a titter setting to capture all traffic.
-- [ ] Create a new flow log set the tog record format to a custom format. Select the proper fields to include in the tog.
-- [x] Edit the existing flow log. Change the fitter setting to capture all traffic.
-- [ ] Edit the existing flow log. Set the log record format to a custom format. Select the proper fields to include in the tog.
+### ...
 
 ### A company wants to collect data from an application to use for analytics. For the first 90 days, the data will be infrequently accessed but must remain highly available. During this time, the company's analytics team requires access to the data in milliseconds. However, after 90 days, the company must retain the data for the long term at a lower cost. The retrieval time after 90 days must be less than 5 hours. Which solution will meet these requirements MOST cost-effectively?
 
