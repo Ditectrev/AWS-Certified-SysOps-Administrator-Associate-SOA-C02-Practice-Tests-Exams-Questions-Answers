@@ -7,7 +7,7 @@
 - [x] A route for `0.0.0.0/0` that points to an internet gateway.
 - [ ] A route for `0.0.0.0/0` that points to an elastic network interface.
 
-### A SysOps administrator launches an Amazon EC2 instance in a private subnet of a VPC. When the SysOps administrator attempts a curl command from the command line of the EC2 instance, the SysOps administrator cannot connect to `https:www.example.com`. What should the SysOps administrator do to resolve this issue?
+### A SysOps administrator launches an Amazon EC2 instance in a private subnet of a `VPC`. When the SysOps administrator attempts a curl command from the command line of the EC2 instance, the SysOps administrator cannot connect to `https:www.example.com`. What should the SysOps administrator do to resolve this issue?
 
 - [x] Ensure that there is an outbound security group for port `443` to `0.0.0.0/0`.
 - [ ] Ensure that there is an inbound security group for port `443` from `0.0.0.0/0`.
@@ -52,9 +52,9 @@
 ### A SysOps administrator receives an alert from Amazon GuardDuty about suspicious network activity on an Amazon EC2 instance. The GuardDuty finding lists a new external IP address as a traffic destination. The SysOps administrator does not recognize the external IP address. The SysOps administrator must block traffic to the external IP address that GuardDuty identified Which solution will meet this requirement?
 
 - [ ] Create a new security group to block traffic to the external IP address. Assign the new security group to the EC2 instance.
-- [ ] Use VPC flow logs with Amazon Athena to block traffic to the external IP address.
+- [ ] Use `VPC` flow logs with Amazon Athena to block traffic to the external IP address.
 - [x] Create a network `ACL`. Add an outbound deny rule for traffic to the external IP address.
-- [ ] Create a new security group to block traffic to the external IP address. Assign the new security group to the entire VPC.
+- [ ] Create a new security group to block traffic to the external IP address. Assign the new security group to the entire `VPC`.
 
 ### A web application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances run in an Auto Scaling group across multiple Availability Zones. A SysOps administrator notices that some of these EC2 instances show up as healthy in the Auto Scaling group but show up as unhealthy in the `ALB` target group. What is a possible reason for this issue?
 
@@ -93,20 +93,20 @@ Configure the rule to invoke an AWS Lambda function to enable CloudTrail.
 - [ ] Modify the existing EFS file system and activate Max I/O performance mode.
 - [x] Modify the existing EFS file system and activate `Provisioned Throughput` mode.
 
-### A company needs to restrict access to an Amazon S3 bucket to Amazon EC2 instances in a VPC only. All traffic must be over the AWS private network. What actions should the SysOps administrator take to meet these requirements?
+### A company needs to restrict access to an Amazon S3 bucket to Amazon EC2 instances in a `VPC` only. All traffic must be over the AWS private network. What actions should the SysOps administrator take to meet these requirements?
 
-- [ ] Create a VPC endpoint for the S3 bucket, and create an IAM policy that conditionally limits all S3 actions on the bucket to the VPC endpoint as the source.
-- [x] Create a VPC endpoint for the S3 bucket, and create an S3 bucket policy that conditionally limits all S3 actions on the bucket to the VPC endpoint as the source.
+- [ ] Create a `VPC` endpoint for the S3 bucket, and create an IAM policy that conditionally limits all S3 actions on the bucket to the `VPC` endpoint as the source.
+- [x] Create a `VPC` endpoint for the S3 bucket, and create an S3 bucket policy that conditionally limits all S3 actions on the bucket to the `VPC` endpoint as the source.
 - [ ] Create a service-linked role for Amazon EC2 that allows the EC2 instances to interact directly with Amazon S3, and attach an IAM policy to the role that allows the EC2 instances full access to the S3 bucket.
-- [ ] Create a `NAT` gateway in the VPC, and modify the VPC route table to route all traffic destined for Amazon S3 through the `NAT` gateway.
+- [ ] Create a `NAT` gateway in the `VPC`, and modify the `VPC` route table to route all traffic destined for Amazon S3 through the `NAT` gateway.
 
-### A company is managing multiple AWS accounts in AWS Organizations. The company is reviewing internal security of its AWS environment. The company's security administrator has their own AWS account and wants to review the VPC configuration of developer AWS accounts. Which solution will meet these requirements in the MOST secure manner?
+### A company is managing multiple AWS accounts in AWS Organizations. The company is reviewing internal security of its AWS environment. The company's security administrator has their own AWS account and wants to review the `VPC` configuration of developer AWS accounts. Which solution will meet these requirements in the MOST secure manner?
 
-- [ ] Create an IAM policy in each developer account that has read-only access related to VPC resources Assign the policy to an IAM user. Share the user credentials with the security administrator.
-- [ ] Create an IAM policy in each developer account that has administrator access to all Amazon EC2 actions, including VPC actions. Assign the policy to an IAM user. Share the user credentials with the security administrator.
+- [ ] Create an IAM policy in each developer account that has read-only access related to `VPC` resources Assign the policy to an IAM user. Share the user credentials with the security administrator.
+- [ ] Create an IAM policy in each developer account that has administrator access to all Amazon EC2 actions, including `VPC` actions. Assign the policy to an IAM user. Share the user credentials with the security administrator.
 - [ ] Create an IAM policy in each developer account that has administrator access related to
 VPC resources. Assign the policy to a cross-account IAM role. Ask the security administrator to assume the role from their account.
-- [x] Create an IAM policy in each developer account that has read-only access related to VPC resources. Assign the policy to a cross-account IAM role. Ask the security administrator to assume the role from their account.
+- [x] Create an IAM policy in each developer account that has read-only access related to `VPC` resources. Assign the policy to a cross-account IAM role. Ask the security administrator to assume the role from their account.
 
 ### A company migrated an I/O intensive application to an Amazon EC2 general purpose instance. The EC2 instance has a single General Purpose SSD Amazon Elastic Block Store (Amazon EBS) volume attached. Application users report that certain actions that require intensive reading and writing to the disk are taking much longer than normal or are failing completely. After reviewing the performance metrics of the EBS volume, a SysOps administrator notices that the `VolumeQueueLength` metric is consistently high during the same times in which the users are reporting issues. The SysOps administrator needs to resolve this problem to restore full performance to the application. Which action will meet these requirements?
 
@@ -115,12 +115,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Modify the volume properties to increase the IOPS.
 - [ ] Modify the instance to enable enhanced networking.
 
-### A company has multiple AWS Site-to-Site VPN connections between a VPC and its branch offices. The company manages an Amazon Elasticsearch Service (Amazon ES) domain that is configured with public access. The Amazon ES domain has an open domain access policy. A SysOps administrator needs to ensure that Amazon ES can be accessed only from the branch offices while preserving existing data. Which solution will meet these requirements?
+### A company has multiple AWS Site-to-Site VPN connections between a `VPC` and its branch offices. The company manages an Amazon Elasticsearch Service (Amazon ES) domain that is configured with public access. The Amazon ES domain has an open domain access policy. A SysOps administrator needs to ensure that Amazon ES can be accessed only from the branch offices while preserving existing data. Which solution will meet these requirements?
 
 - [ ] Configure an identity-based access policy on Amazon ES. Add an allow statement to the policy that includes the Amazon Resource Name (ARN) for each branch office VPN connection.
 - [x] Configure an IP-based domain access policy on Amazon ES. Add an allow statement to the policy that includes the private IP `CIDR` blocks from each branch office network.
-- [ ] Deploy a new Amazon ES domain in private subnets in a VPC, and import a snapshot from the old domain. Create a security group that allows inbound traffic from the branch office `CIDR` blocks.
-- [ ] Reconfigure the Amazon ES domain in private subnets in a VPC. Create a security group that allows inbound traffic from the branch office `CIDR` blocks.
+- [ ] Deploy a new Amazon ES domain in private subnets in a `VPC`, and import a snapshot from the old domain. Create a security group that allows inbound traffic from the branch office `CIDR` blocks.
+- [ ] Reconfigure the Amazon ES domain in private subnets in a `VPC`. Create a security group that allows inbound traffic from the branch office `CIDR` blocks.
 
 ### A company is managing many accounts by using a single organization in AWS Organizations. The organization has all features enabled. The company wants to turn on AWS Config in all the accounts of the organization and in all AWS Regions. What should a Sysops administrator do to meet these requirements in the MOST operationally efficient way?
 
@@ -171,7 +171,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Modify the instance security group to allow inbound `SSH` traffic from the SysOps administrator's IP address.
 - [ ] Modify the instance security group to allow outbound `SSH` traffic to the SysOps administrator's IP address.
 
-### A company wants to use only IPv6 for all its Amazon EC2 instances. The EC2 instances must not be accessible from the internet, but the EC2 instances must be able to access the internet. The company creates a dual-stack VPC and IPv6-only subnets. How should a SysOps administrator configure the VPC to meet these requirements?
+### A company wants to use only IPv6 for all its Amazon EC2 instances. The EC2 instances must not be accessible from the internet, but the EC2 instances must be able to access the internet. The company creates a dual-stack `VPC` and IPv6-only subnets. How should a SysOps administrator configure the `VPC` to meet these requirements?
 
 - [ ] Create and attach a `NAT` gateway. Create a custom route table that includes an entry to point all IPv6 traffic to the `NAT` gateway. Attach the custom route table to the IPv6-only subnets.
 - [ ] Create and attach an internet gateway. Create a custom route table that includes an entry to point all IPv6 traffic to the internet gateway. Attach the custom route table to the IPv6-only subnets.
@@ -221,14 +221,14 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Add additional `t2.large` instances to the application.
 - [ ] Purchase Reserved Instances.
 
-### A company recently migrated its application to a VPC on AWS. An AWS Site-to-Site VPN connection connects the company's on-premises network to the VPC. The application retrieves customer data from another system that resides on premises. The application uses an on-premises `DNS` server to resolve domain records. After the migration, the application is not able to connect to the customer data because of name resolution errors. Which solution will give the application the ability to resolve the internal domain names?
+### A company recently migrated its application to a `VPC` on AWS. An AWS Site-to-Site VPN connection connects the company's on-premises network to the `VPC`. The application retrieves customer data from another system that resides on premises. The application uses an on-premises `DNS` server to resolve domain records. After the migration, the application is not able to connect to the customer data because of name resolution errors. Which solution will give the application the ability to resolve the internal domain names?
 
-- [ ] Launch EC2 instances in the VPC. On the EC2 instances, deploy a custom `DNS` forwarder that forwards all `DNS` requests to the on-premises `DNS` server. Create an Amazon Route 53 private hosted zone that uses the EC2 instances for name servers.
+- [ ] Launch EC2 instances in the `VPC`. On the EC2 instances, deploy a custom `DNS` forwarder that forwards all `DNS` requests to the on-premises `DNS` server. Create an Amazon Route 53 private hosted zone that uses the EC2 instances for name servers.
 - [x] Create an Amazon Route 53 Resolver outbound endpoint. Configure the outbound endpoint to forward `DNS` queries against the on-premises domain to the on-premises `DNS` server.
-- [ ] Set up two AWS Direct Connect connections between the AWS environment and the on-premises network. Set up a link aggregation group (LAG) that includes the two connections. Change the VPC resolver address to point to the on-premises `DNS` server.
+- [ ] Set up two AWS Direct Connect connections between the AWS environment and the on-premises network. Set up a link aggregation group (LAG) that includes the two connections. Change the `VPC` resolver address to point to the on-premises `DNS` server.
 - [ ] Create an Amazon Route 53 public hosted zone for the on-premises domain. Configure the network `ACL`s to forward `DNS` requests against the on-premises domain to the Route 53 public hosted zone.
 
-### A SysOps administrator creates a new VPC that includes a public subnet and a private subnet. The SysOps administrator successfully launches 11 Amazon EC2 instances in the private subnet. The SysOps administrator attempts to launch one more EC2 instance in the same subnet. However, the SysOps administrator receives an error message that states that not enough free IP addresses are available. What must the SysOps administrator do to deploy more EC2 instances?
+### A SysOps administrator creates a new `VPC` that includes a public subnet and a private subnet. The SysOps administrator successfully launches 11 Amazon EC2 instances in the private subnet. The SysOps administrator attempts to launch one more EC2 instance in the same subnet. However, the SysOps administrator receives an error message that states that not enough free IP addresses are available. What must the SysOps administrator do to deploy more EC2 instances?
 
 - [ ] Edit the private subnet to change the `CIDR` block to `/27`.
 - [ ] Edit the private subnet to extend across a second Availability Zone.
@@ -293,7 +293,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] The member accounts do not have tags enabled for cost allocation.
 - [ ] The member accounts have not manually enabled trusted access for Compute Optimizer.
 
-### A SysOps administrator is attempting to download patches from the internet into an instance in a private subnet. An internet gateway exists for the VPC, and a `NAT` gateway has been deployed on the public subnet; however, the instance has no internet connectivity. The resources deployed into the private subnet must be inaccessible directly from the public internet. Public Subnet `(10.0.1.0/24)` Route Table: `Destination` - `Target`. `10.0.0.0/16` - `local`. `0.0.0.0/0` - `IGW`. Private Subnet (`10.0.2.0/24`) Route Table: `Destination` `Target`. `10.0.0.0/16` - `local`. What should be added to the private subnet's route table in order to address this issue, given the information provided?
+### A SysOps administrator is attempting to download patches from the internet into an instance in a private subnet. An internet gateway exists for the `VPC`, and a `NAT` gateway has been deployed on the public subnet; however, the instance has no internet connectivity. The resources deployed into the private subnet must be inaccessible directly from the public internet. Public Subnet `(10.0.1.0/24)` Route Table: `Destination` - `Target`. `10.0.0.0/16` - `local`. `0.0.0.0/0` - `IGW`. Private Subnet (`10.0.2.0/24`) Route Table: `Destination` `Target`. `10.0.0.0/16` - `local`. What should be added to the private subnet's route table in order to address this issue, given the information provided?
 
 - [ ] `0.0.0.0/0` IGW.
 - [x] `0.0.0.0/0` NAT.
@@ -346,7 +346,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### An application accesses data through a file system interface. The application runs on Amazon EC2 instances in multiple Availability Zones, all of which must share the same data. While the amount of data is currently small, the company anticipates that it will grow to tens of terabytes over the lifetime of the application. What is the MOST scalable storage solution to fulfill this requirement?
 
 - [ ] Connect a large Amazon EBS volume to multiple instances and schedule snapshots.
-- [x] Deploy Amazon EFS in the VPC and create mount targets in multiple subnets.
+- [x] Deploy Amazon EFS in the `VPC` and create mount targets in multiple subnets.
 - [ ] Launch an EC2 instance and share data using SMB/CIFS or NFS.
 - [ ] Deploy an AWS Storage Gateway cached volume on Amazon EC2.
 
@@ -362,7 +362,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Deploy a copy of the stack in the `us-west-2` Region. Create a single start of authority (`SOA`) record in Route 53 that includes the IP address from each ELB. Configure the `SOA` record with health checks. Use the ELB in `us-east-1` as the primary record and the ELB in `us-west-2` as the secondary record.
 - [x] Deploy a copy of the stack in the `us-west-2` Region. Create an additional `A` record in Route 53 that includes the ELB in `us-west-2` as an alias target. Configure the `A` records with a failover routing policy and health checks. Use the ELB in `us-east-1` as the primary record and the ELB in `us-west-2` as the secondary record.
 - [ ] Deploy a new group of EC2 instances in the `us-west-2` Region. Associate the new EC2 instances with the existing ELB, and configure load balancer health checks on all EC2 instances. Configure the ELB to update Route 53 when EC2 instances in `us-west-2` fail health checks.
-- [ ] Deploy a new group of EC2 instances in the `us-west-2` Region. Configure EC2 health checks on all EC2 instances in each Region. Configure a peering connection between the VPCs. Use the VPC in `us-east-1` as the primary record and the VPC in `us-west-2` as the secondary record.
+- [ ] Deploy a new group of EC2 instances in the `us-west-2` Region. Configure EC2 health checks on all EC2 instances in each Region. Configure a peering connection between the  `VPC`'s. Use the `VPC` in `us-east-1` as the primary record and the `VPC` in `us-west-2` as the secondary record.
 
 ### A company needs to view a list of security groups that are open to the internet on port `3389`. What should a SysOps administrator do to meet this requirement?
 
@@ -371,11 +371,11 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Use AWS Identity and Access Management Access Analyzer to find any instances that have unrestricted access on port `3389`.
 - [x] Use AWS Trusted Advisor to find security groups that allow unrestricted access on port `3389`.
 
-### A company has an AWS Site-to-Site VPN connection between on-premises resources and resources that are hosted in a VPC. A SysOps administrator launches an Amazon EC2 instance that has only a private IP address into a private subnet in the VPC. The EC2 instance runs Microsoft Windows Server. A security group for the EC2 instance has rules that allow inbound traffic from the on-premises network over the VPN connection. The on-premises environment contains a third-party network firewall. Rules in the third-party network firewall allow Remote Desktop Protocol (RDP) traffic to flow between the on-premises users over the VPN connection. The on-premises users are unable to connect to the EC2 instance and receive a timeout error. What should the SysOps administrator do to troubleshoot this issue?
+### A company has an AWS Site-to-Site VPN connection between on-premises resources and resources that are hosted in a `VPC`. A SysOps administrator launches an Amazon EC2 instance that has only a private IP address into a private subnet in the `VPC`. The EC2 instance runs Microsoft Windows Server. A security group for the EC2 instance has rules that allow inbound traffic from the on-premises network over the VPN connection. The on-premises environment contains a third-party network firewall. Rules in the third-party network firewall allow Remote Desktop Protocol (RDP) traffic to flow between the on-premises users over the VPN connection. The on-premises users are unable to connect to the EC2 instance and receive a timeout error. What should the SysOps administrator do to troubleshoot this issue?
 
 - [ ] Create Amazon CloudWatch logs for the EC2 instance to check for blocked traffic.
 - [ ] Create Amazon CloudWatch logs for the Site-to-Site VPN connection to check for blocked traffic.
-- [x] Create VPC flow logs for the EC2 instance's elastic network interface to check for rejected traffic.
+- [x] Create `VPC` flow logs for the EC2 instance's elastic network interface to check for rejected traffic.
 - [ ] Instruct users to use EC2 Instance Connect as a connection method.
 
 ### A recent organizational audit uncovered an existing Amazon RDS database that is not currently configured for high availability. Given the critical nature of this database, it must be configured for high availability as soon as possible. How can this requirement be met?
@@ -391,7 +391,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Attach a private address to the elastic network interface on the EC2 instance.
 - [ ] Attach an Elastic IP address to the internet gateway.
 - [x] Add an entry to the route table for the subnet that points to an internet gateway.
-- [x] Create an internet gateway and attach it to a VPC.
+- [x] Create an internet gateway and attach it to a `VPC`.
 
 ### A company is testing Amazon Elasticsearch Service (Amazon ES) as a solution for analyzing system logs from a fleet of Amazon EC2 instances. During the test phase, the domain operates on a single-node cluster. A SysOps administrator needs to transition the test domain into a highly available production-grade deployment. Which Amazon ES configuration should the SysOps administrator use to meet this requirement?
 
@@ -408,21 +408,21 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] The security group for the instance does not have an inbound rule on port `22`.
 - [ ] The security group for the instance does not have an outbound rule on port `3389`.
 
-### While securing the connection between a company's VPC and its on-premises data center, a security engineer sent a ping command from an on-premises host (IP address `203.0.113.12`) to an Amazon EC2 instance (IP address `172.31.16.139`). The ping command did not return a response. The flow log in the VPC showed the following. What action should be performed to allow the ping to work?
+### While securing the connection between a company's `VPC` and its on-premises data center, a security engineer sent a ping command from an on-premises host (IP address `203.0.113.12`) to an Amazon EC2 instance (IP address `172.31.16.139`). The ping command did not return a response. The flow log in the `VPC` showed the following. What action should be performed to allow the ping to work?
 
 ![Question 58](images/question58_74_155.png)
 
 - [ ] In the security group of the EC2 instance, allow inbound `ICMP` traffic.
 - [ ] In the security group of the EC2 instance, allow outbound `ICMP` traffic.
-- [ ] In the VPC's `NACL`, allow inbound `ICMP` traffic.
-- [x] In the VPC's `NACL`, allow outbound `ICMP` traffic.
+- [ ] In the `VPC`'s `NACL`, allow inbound `ICMP` traffic.
+- [x] In the `VPC`'s `NACL`, allow outbound `ICMP` traffic.
 
 ### A global company handles a large amount of personally identifiable information (Pll) through an internal web portal. The company's application runs in a corporate data center that is connected to AWS through an AWS Direct Connect connection. The application stores the Pll in Amazon S3. According to a compliance requirement, traffic from the web portal to Amazon S3 must not travel across the internet. What should a SysOps administrator do to meet the compliance requirement?
 
-- [x] Provision an interface VPC endpoint for Amazon S3. Modify the application to use the interface endpoint.
+- [x] Provision an interface `VPC` endpoint for Amazon S3. Modify the application to use the interface endpoint.
 - [ ] Configure AWS Network Firewall to redirect traffic to the internal S3 address.
 - [ ] Modify the application to use the S3 path-style endpoint.
-- [ ] Set up a range of VPC network `ACL`s to redirect traffic to the Internal S3 address.
+- [ ] Set up a range of `VPC` network `ACL`s to redirect traffic to the Internal S3 address.
 
 ### An application runs on multiple Amazon EC2 instances in an Auto Scaling group The Auto Scaling group is configured to use the latest version of a launch template A SysOps administrator must devise a solution that centrally manages the application logs and retains the logs for no more than 90 days. Which solution will meet these requirements?
 
@@ -464,7 +464,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A company is using Amazon Elastic Container Service (Amazon ECS) to run a containerized application on Amazon EC2 instances. A SysOps administrator needs to monitor only traffic flows between the ECS tasks. Which combination of steps should the SysOps administrator take to meet this requirement? (Select TWO.)
 
 - [ ] Configure Amazon CloudWatch Logs on the elastic network interface of each task.
-- [x] Configure VPC Flow Logs on the elastic network interface of each task.
+- [x] Configure `VPC` Flow Logs on the elastic network interface of each task.
 - [x] Specify the `awsvpc` network mode in the task definition.
 - [ ] Specify the `bridge` network mode in the task definition.
 - [ ] Specify the `host` network mode in the task definition.
@@ -504,10 +504,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Purchase RIs in the management account. Disable RI discount sharing in the management account.
 - [ ] Purchase RIs in the management account. Disable RI discount sharing in the member accounts.
 
-### A gaming application is deployed on four Amazon EC2 instances in a default VPC. The SysOps administrator has noticed consistently high latency in responses as data is transferred among the four instances. There is no way for the administrator to alter the application code. The MOST effective way to reduce latency is to relaunch the EC2 instances in:
+### A gaming application is deployed on four Amazon EC2 instances in a default `VPC`. The SysOps administrator has noticed consistently high latency in responses as data is transferred among the four instances. There is no way for the administrator to alter the application code. The MOST effective way to reduce latency is to relaunch the EC2 instances in:
 
-- [ ] Dedicated VPC.
-- [ ] Single subnet inside the VPC.
+- [ ] Dedicated `VPC`.
+- [ ] Single subnet inside the `VPC`.
 - [x] Placement group.
 - [ ] Single Availability Zone.
 
@@ -526,14 +526,14 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create a target tracking scaling policy with settings to make larger adjustments in capacity when the system is under heavy load.
 - [ ] Use Amazon EC2 Auto Scaling lifecycle hooks. Adjust the Auto Scaling group's maximum number of instances after every scaling event.
 
-### A VPC is connected to a company data center by a VPN. An Amazon EC2 instance with the IP address `172.31.16.139` is within a private subnet of the VPC. A SysOps Administrator issued a ping command to the EC2 instance from an on-premises computer with the IP address `203.0.113.12` and did not receive an acknowledgment. VPC Flow Logs were enabled and showed the following. What action will resolve the issue?
+### A `VPC` is connected to a company data center by a VPN. An Amazon EC2 instance with the IP address `172.31.16.139` is within a private subnet of the `VPC`. A SysOps Administrator issued a ping command to the EC2 instance from an on-premises computer with the IP address `203.0.113.12` and did not receive an acknowledgment. `VPC` Flow Logs were enabled and showed the following. What action will resolve the issue?
 
 ![Question 74](images/question58_74_155.png)
 
 - [ ] Modify the EC2 security group rules to allow inbound traffic from the on-premises computer.
 - [ ] Modify the EC2 security group rules to allow outbound traffic to the on-premises computer.
-- [ ] Modify the VPC network `ACL` rules to allow inbound traffic from the on-premises computer.
-- [x] Modify the VPC network `ACL` rules to allow outbound traffic to the on-premises computer.
+- [ ] Modify the `VPC` network `ACL` rules to allow inbound traffic from the on-premises computer.
+- [x] Modify the `VPC` network `ACL` rules to allow outbound traffic to the on-premises computer.
 
 ### A company's financial department needs to view the cost details of each project in an AWS account A SysOps administrator must perform the initial configuration that is required to view cost for each project in Cost Explorer. Which solution will meet this requirement?
 
@@ -551,9 +551,9 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company is expanding its fleet of Amazon EC2 instances before an expected increase of traffic. When a SysOps administrator attempts to add more instances, an `InstanceLimitExceeded` error is returned. What should the SysOps administrator do to resolve this error?
 
-- [ ] Add an additional `CIDR` block to the VPC.
+- [ ] Add an additional `CIDR` block to the `VPC`.
 - [ ] Launch the EC2 instances in a different Availability Zone.
-- [ ] Launch new EC2 instances in another VPC.
+- [ ] Launch new EC2 instances in another `VPC`.
 - [x] Use Service Quotas to request an EC2 quota increase.
 
 ### A SysOps Administrator maintains several Amazon EC2 instances that do not have access to the public internet. To patch operating systems, the instances require outbound internet connectivity. For security reasons, the instances should not be reachable from the public Internet. The Administrator deploys a `NAT` instance, updates the security groups, and configures the appropriate routes within the route table. However, the instances are still unable to reach the Internet. What should be done to resolve the issue?
@@ -621,7 +621,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Implement Amazon Inspector to inspect objects uploaded to the S3 bucket to make sure that they are encrypted.
 - [x] Implement S3 bucket policies to deny unencrypted objects from being uploaded to the buckets.
 
-### ...
+### A company needs to deploy a web application on two Amazon EC2 instances behind an Application Load Balancer (ALB). Two EC2 instances will also be deployed to host the database. The infrastructure needs to be designed across Availability Zones for high availability and must limit public access to the instances as much as possible. How should this be achieved within a `VPC`?
+
+- [ ] Create one public subnet for the Application Load Balancer, one public subnet for the web servers, and one private subnet for the database servers.
+- [ ] Create one public subnet for the Application Load Balancer, two public subnets for the web servers, and two private subnets for the database servers.
+- [x] Create two public subnets for the Application Load Balancer, two private subnets for the web servers, and two private subnets for the database servers.
+- [ ] Create two public subnets for the Application Load Balancer, two public subnets for the web servers, and two public subnets for the database servers.
 
 ### A company wants to collect data from an application to use for analytics. For the first 90 days, the data will be infrequently accessed but must remain highly available. During this time, the company's analytics team requires access to the data in milliseconds. However, after 90 days, the company must retain the data for the long term at a lower cost. The retrieval time after 90 days must be less than 5 hours. Which solution will meet these requirements MOST cost-effectively?
 
@@ -705,8 +710,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company is trying to connect two applications. One application runs in an on-premises data center that has a hostname of hostl .onprem.private. The other application runs on an Amazon EC2 instance that has a hostname of `hostl.awscloud.private`. An AWS Site-to-Site VPN connection is in place between the on-premises network and AWS. The application that runs in the data center tries to connect to the application that runs on the EC2 instance, but `DNS` resolution fails. A SysOps administrator must implement `DNS` resolution between on-premises and AWS resources. Which solution allows the on-premises application to resolve the EC2 instance hostname?
 
-- [ ] Set up an Amazon Route 53 inbound resolver endpoint with a forwarding rule for the onprem.private hosted zone. Associate the resolver with the VPC of the EC2 instance. Configure the on-premises `DNS` resolver to forward onprem.private `DNS` queries to the inbound resolver endpoint.
-- [x] Set up an Amazon Route 53 inbound resolver endpoint. Associate the resolver with the VPC of the EC2 instance. Configure the on-premises `DNS` resolver to forward awscloud.private `DNS` queries to the inbound resolver endpoint.
+- [ ] Set up an Amazon Route 53 inbound resolver endpoint with a forwarding rule for the onprem.private hosted zone. Associate the resolver with the `VPC` of the EC2 instance. Configure the on-premises `DNS` resolver to forward onprem.private `DNS` queries to the inbound resolver endpoint.
+- [x] Set up an Amazon Route 53 inbound resolver endpoint. Associate the resolver with the `VPC` of the EC2 instance. Configure the on-premises `DNS` resolver to forward awscloud.private `DNS` queries to the inbound resolver endpoint.
 - [ ] Set up an Amazon Route 53 outbound resolver endpoint with a forwarding rule for the onprem.private hosted zone. Associate the resolver with the AWS Region of the EC2 instance. Configure the on-premises `DNS` resolver to forward onprem.private `DNS` queries to the outbound resolver endpoint.
 - [ ] Set up an Amazon Route 53 outbound resolver endpoint. Associate the resolver with the AWS Region of the EC2 instance. Configure the on-premises `DNS` resolver to forward awscloud.private `DNS` queries to the outbound resolver endpoint.
 
@@ -784,7 +789,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### An Amazon S3 bucket in a SysOps Administrator's account can be accesses by users in other AWS accounts. How can the Administrator ensure that the bucket is only accessible to members of the Administrator's AWS account?
 
-- [ ] Move the S3 bucket from a public subnet to a private subnet in the Amazon VPC.
+- [ ] Move the S3 bucket from a public subnet to a private subnet in the Amazon `VPC`.
 - [x] Change the bucket Access Control List (`ACL`) to restrict access to the bucket owner.
 - [ ] Enable server-side encryption for all objects in the bucket.
 - [ ] Use only Amazon S3 presigned URLs for accessing objects in the bucket.
@@ -877,7 +882,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [x] Add a statement to the IAM role policy to allow the `ssm:StartSession` action on the instances. Instruct the team to use AWS Systems Manager Session Manager to connect to the Instances by using the assumed IAM role.
 - [ ] Associate an Elastic IP address and a security group with each instance. Add the engineers' IP addresses to the security group inbound rules. Add a statement to the IAM role policy to allow the `ec2:AuthoflzeSecurityGroupIngress` action so that the team can connect to the Instances.
-- [ ] Create a bastion host with an EC2 Instance, and associate the bastion host with the VPC. Add a statement to the IAM role policy to allow the `ec2:CreateVpnConnection` action on the bastion host. Instruct the team to use the bastion host endpoint to connect to the instances.
+- [ ] Create a bastion host with an EC2 Instance, and associate the bastion host with the `VPC`. Add a statement to the IAM role policy to allow the `ec2:CreateVpnConnection` action on the bastion host. Instruct the team to use the bastion host endpoint to connect to the instances.
 - [ ] Create an internet-facing Network Load Balancer. Use two listeners. Forward port `22` to a target group of Linux instances. Forward port `3389` to a target group of Windows Instances. Add a statement to the IAM role policy to allow the `ec2:CreateRoute` action so that the team can connect to the Instances.
 
 ### A company has an AWS CloudFormation template that creates an Amazon S3 bucket. A user authenticates to the corporate AWS account with their Active Directory credentials and attempts to deploy the CloudFormation template. However, the stack creation fails. Which factors could cause this failure? (Select TWO.)
@@ -1045,10 +1050,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company stores files on 50 Amazon S3 buckets in the same AWS Region The company wants to connect to the S3 buckets securely over a private connection from its Amazon EC2 instances. The company needs a solution that produces no additional cost. Which solution will meet these requirements?
 
-- [ ] Create a gateway VPC endpoint for each S3 bucket. Attach the gateway VPC endpoints to each subnet inside the VPC.
-- [ ] Create an interface VPC endpoint for each S3 bucket. Attach the interface VPC endpoints to each subnet inside the VPC.
-- [x] Create one gateway VPC endpoint for all the S3 buckets. Add the gateway VPC endpoint to the VPC route table.
-- [ ] Create one interface VPC endpoint for all the S3 buckets. Add the interface VPC endpoint to the VPC route table.
+- [ ] Create a gateway `VPC` endpoint for each S3 bucket. Attach the gateway `VPC` endpoints to each subnet inside the `VPC`.
+- [ ] Create an interface `VPC` endpoint for each S3 bucket. Attach the interface `VPC` endpoints to each subnet inside the `VPC`.
+- [x] Create one gateway `VPC` endpoint for all the S3 buckets. Add the gateway `VPC` endpoint to the `VPC` route table.
+- [ ] Create one interface `VPC` endpoint for all the S3 buckets. Add the interface `VPC` endpoint to the `VPC` route table.
 
 ### A company uses AWS CloudFormation to deploy its application infrastructure. Recently, a user accidentally changed a property of a database in a CloudFormation template and performed a stack update that caused an interruption to the application. A SysOps administrator must determine how to modify the deployment process to allow the DevOps team to continue to deploy the infrastructure, but prevent against accidental modifications to specific resources. Which solution will meet these requirements?
 
@@ -1125,12 +1130,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company hosts an internal application on Amazon EC2 instances. All application data and requests route through an AWS Site-to-Site VPN connection between the on-premises network and AWS. The company must monitor the application for changes that allow network access outside of the corporate network. Any change that exposes the application externally must be restricted automatically. Which solution meets these requirements in the MOST operationally efficient manner?
 
-- [ ] Create an AWS Lambda function that updates security groups that are associated with the elastic network interface to remove inbound rules with noncorporate `CIDR` ranges. Turn on VPC Flow Logs, and send the logs to Amazon CloudWatch Logs. Create an Amazon CloudWatch alarm that matches traffic from noncorporate `CIDR` ranges, and publish a message to an Amazon Simple Notification Service (Amazon SNS) topic with the Lambda function as a target.
+- [ ] Create an AWS Lambda function that updates security groups that are associated with the elastic network interface to remove inbound rules with noncorporate `CIDR` ranges. Turn on `VPC` Flow Logs, and send the logs to Amazon CloudWatch Logs. Create an Amazon CloudWatch alarm that matches traffic from noncorporate `CIDR` ranges, and publish a message to an Amazon Simple Notification Service (Amazon SNS) topic with the Lambda function as a target.
 - [ ] Create a scheduled Amazon EventBridge (Amazon CloudWatch Events) rule that targets an AWS Systems Manager Automation document to check for public IP addresses on the EC2 instances. If public IP addresses are found on the EC2 instances, initiate another Systems Manager Automation document to terminate the instances.
 - [x] Configure AWS Config and a custom rule to monitor whether a security group allows inbound requests from noncorporate `CIDR` ranges. Create an AWS Systems Manager Automation document to remove any noncorporate `CIDR` ranges from the application security groups.
 - [ ] Configure AWS Config and the managed rule for monitoring public IP associations with the EC2 instances by tag. Tag the EC2 instances with an identifier. Create an AWS Systems Manager Automation document to remove the public IP association from the EC2 instances.
 
-### A company has deployed an application on Amazon EC2 instances in a single VPC. The company has placed the EC2 instances in a private subnet in the VPC. The EC2 instances need access to Amazon S3 buckets that are in the same AWS Region as the EC2 instances. A SysOps administrator must provide the EC2 instances with access to the S3 buckets without requiring any changes to the EC2 instances or the application. The EC2 instances must not have access to the internet. Which solution will meet these requirements?
+### A company has deployed an application on Amazon EC2 instances in a single `VPC`. The company has placed the EC2 instances in a private subnet in the `VPC`. The EC2 instances need access to Amazon S3 buckets that are in the same AWS Region as the EC2 instances. A SysOps administrator must provide the EC2 instances with access to the S3 buckets without requiring any changes to the EC2 instances or the application. The EC2 instances must not have access to the internet. Which solution will meet these requirements?
 
 - [x] Create an S3 gateway endpoint that uses the default gateway endpoint policy. Associate the private subnet with the gateway endpoint.
 - [ ] Create an S3 interface endpoint. Associate the EC2 instances with the interface endpoint.
@@ -1165,7 +1170,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Pass `x-amz-object-lock-mode` as a request header during the object upload.
 - [ ] Pass `x-amz-server-side-encryption-customer-algorithm` as a request body during the object upload.
 
-### A company currently runs its infrastructure within a VPC in a single Availability Zone. The VPC is connected to the company's on-premises data center through an AWS Site-to-Site VPN connection attached to a virtual private gateway. The on-premises route tables route all VPC networks to the VPN connection. Communication between the two environments is working correctly. A SysOps administrator created new VPC subnets within a new Availability Zone, and deployed new resources within the subnets. However, communication cannot be established between the new resources and the on-premises environment. Which steps should the SysOps administrator take to resolve the issue?
+### A company currently runs its infrastructure within a `VPC` in a single Availability Zone. The `VPC` is connected to the company's on-premises data center through an AWS Site-to-Site VPN connection attached to a virtual private gateway. The on-premises route tables route all `VPC` networks to the VPN connection. Communication between the two environments is working correctly. A SysOps administrator created new `VPC` subnets within a new Availability Zone, and deployed new resources within the subnets. However, communication cannot be established between the new resources and the on-premises environment. Which steps should the SysOps administrator take to resolve the issue?
 
 - [x] Add a route to the route tables of the new subnets that send on-premises traffic to the virtual private gateway.
 - [ ] Create a ticket with AWS Support to request adding Availability Zones to the Site-to-Site VPN route configuration.
@@ -1200,7 +1205,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] A `CNAME` record for the domain's zone apex.
 - [x] An alias record for the domain's zone apex.
 
-### A SysOps administrator has created a VPC that contains a public subnet and a private subnet. Amazon EC2 instances that were launched in the private subnet cannot access the internet. The default network `ACL` is active on all subnets in the VPC, and all security groups allow all outbound traffic. Which solution will provide the EC2 instances in the private subnet with access to the internet?
+### A SysOps administrator has created a `VPC` that contains a public subnet and a private subnet. Amazon EC2 instances that were launched in the private subnet cannot access the internet. The default network `ACL` is active on all subnets in the `VPC`, and all security groups allow all outbound traffic. Which solution will provide the EC2 instances in the private subnet with access to the internet?
 
 - [x] Create a `NAT` gateway in the public subnet. Create a route from the private subnet to the `NAT` gateway.
 - [ ] Create a `NAT` gateway in the public subnet. Create a route from the public subnet to the `NAT` gateway.
@@ -1221,14 +1226,14 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Update the CloudFormation template to define an `AWS::CloudWatch::Dashboard` resource. Use the Intrinsic Ref function to reference the ID of the existing CloudWatch dashboard.
 - [ ] Update the CloudFormation template to define an `AWS::CloudWatch::Dashboard` resource. Specify the name of the existing dashboard in the `DashboardName` property.
 
-### A SysOps administrator is provisioning an Amazon Elastic File System (Amazon EFS) file system to provide shared storage across multiple Amazon EC2 instances. The instances all exist in the same VPC across multiple Availability Zones. There are two instances in each Availability Zone. The SysOps administrator must make the file system accessible to each instance with the lowest possible latency. Which solution will meet these requirements?
+### A SysOps administrator is provisioning an Amazon Elastic File System (Amazon EFS) file system to provide shared storage across multiple Amazon EC2 instances. The instances all exist in the same `VPC` across multiple Availability Zones. There are two instances in each Availability Zone. The SysOps administrator must make the file system accessible to each instance with the lowest possible latency. Which solution will meet these requirements?
 
-- [ ] Create a mount target for the EFS file system in the VPC. Use the mount target to mount the file system on each of the instances.
-- [ ] Create a mount target for the EFS file system in one Availability Zone of the VPC. Use the mount target to mount the file system on the instances in that Availability Zone. Share the directory with the other instances.
+- [ ] Create a mount target for the EFS file system in the `VPC`. Use the mount target to mount the file system on each of the instances.
+- [ ] Create a mount target for the EFS file system in one Availability Zone of the `VPC`. Use the mount target to mount the file system on the instances in that Availability Zone. Share the directory with the other instances.
 - [ ] Create a mount target for each instance. Use each mount target to mount the EFS file system on each respective instance.
-- [x] Create a mount target in each Availability Zone of the VPC. Use the mount target to mount the EFS file system on the instances in the respective Availability Zone.
+- [x] Create a mount target in each Availability Zone of the `VPC`. Use the mount target to mount the EFS file system on the instances in the respective Availability Zone.
 
-### A SysOps administrator has successfully deployed a VPC with an AWS CloudFormation template. The SysOps administrator wants to deploy the same template across multiple accounts that are managed through AWS Organizations. Which solution will meet this requirement with the LEAST operational overhead?
+### A SysOps administrator has successfully deployed a `VPC` with an AWS CloudFormation template. The SysOps administrator wants to deploy the same template across multiple accounts that are managed through AWS Organizations. Which solution will meet this requirement with the LEAST operational overhead?
 
 - [ ] Assume the `OrganizationAccountAccessRole` IAM role from the management account. Deploy the template in each of the accounts.
 - [ ] Create an AWS Lambda function to assume a role in each account. Deploy the template by using the AWS CloudFormation CreateStack API call.
@@ -1436,7 +1441,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] The Outputs section of the CloudFormation template was omitted.
 - [ ] The Parameters section of the CloudFormation template was omitted.
 - [x] The `PrivateDnsName` cannot be set from a CloudFormation template.
-- [ ] The VPC was not specified in the CloudFormation template.
+- [ ] The `VPC` was not specified in the CloudFormation template.
 
 ### A new application runs on Amazon EC2 instances and accesses data in an Amazon RDS database instance. When fully deployed in production, the application fails. The database can be queried from a console on a bastion host. When looking at the web server logs, the following error is repeated multiple times: `*** Error Establishing a Database Connection`. Which of the following may be causes of the connectivity problems? (Choose two.)
 
@@ -1458,12 +1463,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Move all of the EC2 instances behind a `NAT` gateway and provide the gateway IP address to the service.
 - [ ] Move all of the EC2 instances behind an internet gateway and provide the gateway IP address to the service.
 - [ ] Move all of the EC2 instances into a single Availability Zone and provide the Availability Zone IP address to the service.
-- [ ] Move all of the EC2 instances to a peered VPC and provide the VPC IP address to the service.
+- [ ] Move all of the EC2 instances to a peered `VPC` and provide the `VPC` IP address to the service.
 
 ### A company uses an Amazon CloudFront distribution to deliver its website. Traffic logs for the website must be centrally stored, and all data must be encrypted at rest. Which solution will meet these requirements?
 
 - [ ] Create an Amazon OpenSearch Service (Amazon Elasticsearch Service) domain with internet access and server-side encryption that uses the default AWS managed Customer Master Key (CMK). Configure CloudFront to use the Amazon OpenSearch Service (Amazon Elasticsearch Service) domain as a log destination.
-- [ ] Create an Amazon OpenSearch Service (Amazon Elasticsearch Service) domain with VPC access and server-side encryption that uses `AES-256`. Configure CloudFront to use the Amazon OpenSearch Service (Amazon Elasticsearch Service) domain as a log destination.
+- [ ] Create an Amazon OpenSearch Service (Amazon Elasticsearch Service) domain with `VPC` access and server-side encryption that uses `AES-256`. Configure CloudFront to use the Amazon OpenSearch Service (Amazon Elasticsearch Service) domain as a log destination.
 - [x] Create an Amazon S3 bucket that is configured with default server-side encryption that uses `AES-256`. Configure CloudFront to use the S3 bucket as a log destination.
 - [ ] Create an Amazon S3 bucket that is configured with no default encryption. Enable encryption in the CloudFront distribution, and use the S3 bucket as a log destination.
 
@@ -1486,7 +1491,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create an Amazon EventBridge (Amazon CloudWatch Events) rule to send all IAM events to an AWS Lambda function for analysis.
 - [ ] Query Amazon EC2 logs by using Amazon CloudWatch Logs Insights for all events initiated with the compromised access key within the suspected timeframe.
 - [x] Search AWS CloudTrail event history for all events initiated with the compromised access key within the suspected timeframe.
-- [ ] Search VPC Flow Logs for all events initiated with the compromised access key within the suspected timeframe.
+- [ ] Search `VPC` Flow Logs for all events initiated with the compromised access key within the suspected timeframe.
 
 ### A company runs a retail website on multiple Amazon EC2 instances behind an Application Load Balancer (ALB). The company must secure traffic to the website over an `HTTPS` connection. Which combination of actions should a SysOps administrator take to meet these requirements? (Choose two.)
 
@@ -1537,7 +1542,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] The Route 53 record set must be in the same region as the S3 bucket.
 - [x] The S3 bucket name must match the record set name in Route 53.
 
-### A SysOps administrator has used AWS CloudFormation to deploy a serverless application into a production VPC. The application consists of an AWS Lambda function, an Amazon DynamoDB table, and an Amazon API Gateway API. The SysOps administrator must delete the AWS CloudFormation stack without deleting the DynamoDB table. Which action should the SysOps administrator take before deleting the AWS CloudFormation stack?
+### A SysOps administrator has used AWS CloudFormation to deploy a serverless application into a production `VPC`. The application consists of an AWS Lambda function, an Amazon DynamoDB table, and an Amazon API Gateway API. The SysOps administrator must delete the AWS CloudFormation stack without deleting the DynamoDB table. Which action should the SysOps administrator take before deleting the AWS CloudFormation stack?
 
 - [x] Add a `Retain` deletion policy to the DynamoDB resource in the AWS CloudFormation stack.
 - [ ] Add a `Snapshot` deletion policy to the DynamoDB resource in the AWS CloudFormation stack.
@@ -1574,8 +1579,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company hosts its website on Amazon EC2 instances in the `us-east-1` Region. The company is preparing to extend its website into the `eu-central-1` Region, but the database must remain only in `us-east-1`. After deployment, the EC2 instances in `eu-central-1` are unable to connect to the database in `us-east-1`. What is the MOST operationally efficient solution that will resolve this connectivity issue?
 
-- [x] Create a VPC peering connection between the two Regions. Add the private IP address range of the instances to the inbound rule of the database security group.
-- [ ] Create a VPC peering connection between the two Regions. Add the security group of the instances in `eu-central-1` to the outbound rule of the database security group.
+- [x] Create a `VPC` peering connection between the two Regions. Add the private IP address range of the instances to the inbound rule of the database security group.
+- [ ] Create a `VPC` peering connection between the two Regions. Add the security group of the instances in `eu-central-1` to the outbound rule of the database security group.
 - [ ] Create a VPN connection between the two Regions. Add the private IP address range of the instances to the outbound rule of the database security group.
 - [ ] Create a VPN connection between the two Regions. Add the security group of the instances in `eu-central-1` to the inbound rule of the database security group.
 
@@ -1642,7 +1647,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Configure an S3 Origin Access Identity (OAI) to display only the updated files to users.
 - [ ] Disable S3 Versioning on the S3 bucket so that the updated files can replace the old files.
 
-### A company has two VPC networks named VPC A and VPC B. The VPC A `CIDR` block is `10.0.0.0/16` and the VPC B `CIDR` block is `172.31.0.0/16`. The company wants to establish a VPC peering connection named `pcx-12345` between both VPCs. Which rules should appear in the route table of VPC A after configuration? (Choose two.)
+### A company has two `VPC` networks named `VPC` A and `VPC` B. The `VPC` A `CIDR` block is `10.0.0.0/16` and the `VPC` B `CIDR` block is `172.31.0.0/16`. The company wants to establish a `VPC` peering connection named `pcx-12345` between both  `VPC`'s. Which rules should appear in the route table of `VPC` A after configuration? (Choose two.)
 
 - [x] `Destination`: `10.0.0.0/16`, `Target`: `Local`.
 - [ ] `Destination`: `172.31.0.0/16`, `Target`: `Local`.
@@ -1671,12 +1676,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Apply the SCPs to each developer account.
 - [ ] Enroll the accounts with AWS Control Tower. Apply the SCPs to the AWS Control Tower management account.
 
-### An application is running on an Amazon EC2 instance in a VPC with the default `DHCP` option set. The application connects to an on-premises Microsoft SQL. Server database with the `DNS` name `mssql.example.com`. The application is unable to resolve the database `DNS` name. Which solution will fix this problem?
+### An application is running on an Amazon EC2 instance in a `VPC` with the default `DHCP` option set. The application connects to an on-premises Microsoft SQL. Server database with the `DNS` name `mssql.example.com`. The application is unable to resolve the database `DNS` name. Which solution will fix this problem?
 
-- [ ] Create an Amazon Route 53 Resolver inbound endpoint. Add a forwarding rule for the domain `example.com`. Associate the forwarding rule with the VPC
-- [ ] Create an Amazon Route 53 Resolver inbound endpoint. Add a system rule for the domain `example.com`. Associate the system rule with the VPC.
-- [x] Create an Amazon Route 53 Resolver outbound endpoint. Add a forwarding rule for the domain `example.com`. Associate the forwarding rule with the VPC.
-- [ ] Create an Amazon Route 53 Resolver outbound endpoint. Add a system rule for the domain `example.com`. Associate the system rule with the VPC
+- [ ] Create an Amazon Route 53 Resolver inbound endpoint. Add a forwarding rule for the domain `example.com`. Associate the forwarding rule with the `VPC`.
+- [ ] Create an Amazon Route 53 Resolver inbound endpoint. Add a system rule for the domain `example.com`. Associate the system rule with the `VPC`.
+- [x] Create an Amazon Route 53 Resolver outbound endpoint. Add a forwarding rule for the domain `example.com`. Associate the forwarding rule with the `VPC`.
+- [ ] Create an Amazon Route 53 Resolver outbound endpoint. Add a system rule for the domain `example.com`. Associate the system rule with the `VPC`.
 
 ### A company's application is hosted by an internet provider at `app.example.com`. The company wants to access the application by using `www.company.com`, which the company owns and manages with Amazon Route 53. Which Route 53 record should be created to address this?
 
@@ -1861,12 +1866,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Call an AWS Systems Manager Automation runbook to close the port.
 - [ ] Call AWS Systems Manager Run Command to close the port.
 
-### A company has an application that is running on Amazon EC2 instances in a VPC. The application needs access to download software updates from the internet. The VPC has public subnets and private subnets. The company's security policy requires all EC2 instances to be deployed in private subnets. What should a SysOps administrator do to meet these requirements?
+### A company has an application that is running on Amazon EC2 instances in a `VPC`. The application needs access to download software updates from the internet. The `VPC` has public subnets and private subnets. The company's security policy requires all EC2 instances to be deployed in private subnets. What should a SysOps administrator do to meet these requirements?
 
-- [ ] Add an internet gateway to the VPC. In the route table for the private subnets, add a route to the internet gateway.
+- [ ] Add an internet gateway to the `VPC`. In the route table for the private subnets, add a route to the internet gateway.
 - [ ] Add a `NAT` gateway to a private subnet. In the route table for the private subnets, add a route to the `NAT` gateway.
 - [x] Add a `NAT` gateway to public subnet. In the route table for the private subnets, add a route to the `NAT` gateway.
-- [ ] Add two internet gateways to the VPC. In the route tables for the private subnets and public subnets, add a route to each internet gateway.
+- [ ] Add two internet gateways to the `VPC`. In the route tables for the private subnets and public subnets, add a route to each internet gateway.
 
 ### A SysOps administrator has set up a new Amazon EC2 instance as a web server in a public subnet. The instance uses `HTTP` port `80` and `HTTPS` port `443`. The SysOps administrator has confirmed internet connectivity by downloading operating system updates and software from public repositories. However, the SysOps administrator cannot access the instance from a web browser on the internet. Which combination of steps should the SysOps administrator take to troubleshoot this issue? (Choose three.)
 
@@ -1984,45 +1989,45 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Write an S3 bucket policy to allow only encrypted connections over `HTTPS` by using the `aws:SecureTransport` condition.
 - [ ] Configure S3 Block Public Access settings for the S3 bucket to allow only encrypted connections over `HTTPS`.
 
-### A SysOps Administrator found that a newly-deployed Amazon EC2 application server is unable to connect to an existing Amazon RDS database. After enabling VPC Flow Logs and confirming that the flow log is active on the console, the log group cannot be located in Amazon CloudWatch. What are the MOST likely reasons for this situation? (Choose two.)
+### A SysOps Administrator found that a newly-deployed Amazon EC2 application server is unable to connect to an existing Amazon RDS database. After enabling `VPC` Flow Logs and confirming that the flow log is active on the console, the log group cannot be located in Amazon CloudWatch. What are the MOST likely reasons for this situation? (Choose two.)
 
-- [ ] The Administrator must configure the VPC Flow Logs to have them sent to AWS CloudTrail.
+- [ ] The Administrator must configure the `VPC` Flow Logs to have them sent to AWS CloudTrail.
 - [x] The Administrator has waited less than ten minutes for the log group to be created in CloudWatch.
-- [ ] The account VPC Flow Logs have been disabled by using a Service Control Policy.
-- [x] No relevant traffic has been sent since the VPC Flow Logs were created.
+- [ ] The account `VPC` Flow Logs have been disabled by using a Service Control Policy.
+- [x] No relevant traffic has been sent since the `VPC` Flow Logs were created.
 - [ ] The account has Amazon GuardDuty enabled.
 
-### A company's SysOps administrator is troubleshooting communication between the components of an application. The company configured VPC flow logs to be published to Amazon CloudWatch Logs. However, there are no logs in CloudWatch Logs. What could be blocking the VPC flow logs from being published to CloudWatch Logs?
+### A company's SysOps administrator is troubleshooting communication between the components of an application. The company configured `VPC` flow logs to be published to Amazon CloudWatch Logs. However, there are no logs in CloudWatch Logs. What could be blocking the `VPC` flow logs from being published to CloudWatch Logs?
 
 - [x] The IAM policy that is attached to the IAM role for the flow log is missing the logs `CreateLogGroup` permission.
 - [ ] The IAM policy that is attached to the IAM role for the flow log is missing the logs `CreateExportTask` permission.
-- [ ] The VPC is configured for IPv6 addresses.
-- [ ] The VPC is peered with another VPC in the AWS account.
+- [ ] The `VPC` is configured for IPv6 addresses.
+- [ ] The `VPC` is peered with another `VPC` in the AWS account.
 
-### A SysOps administrator configures VPC flow logs to publish to Amazon CloudWatch Logs. The SysOps administrator reviews the logs in CloudWatch Logs and notices less traffic than expected. After the SysOps administrator compares the VPC flow logs to logs that were captured on premises, the SysOps administrator believes that the VPC flow logs are incomplete. Which of the following is a possible reason for the difference in traffic?
+### A SysOps administrator configures `VPC` flow logs to publish to Amazon CloudWatch Logs. The SysOps administrator reviews the logs in CloudWatch Logs and notices less traffic than expected. After the SysOps administrator compares the `VPC` flow logs to logs that were captured on premises, the SysOps administrator believes that the `VPC` flow logs are incomplete. Which of the following is a possible reason for the difference in traffic?
 
 - [ ] CloudWatch Logs throttling has been applied.
-- [ ] The CloudWatch IAM role does not have a trust relationship with the VPC flow logs service.
-- [ ] The VPC flow log is still in the process of being created.
-- [x] VPC flow logs cannot capture traffic from on-premises servers to a VPC.
+- [ ] The CloudWatch IAM role does not have a trust relationship with the `VPC` flow logs service.
+- [ ] The `VPC` flow log is still in the process of being created.
+- [x] `VPC` flow logs cannot capture traffic from on-premises servers to a `VPC`.
 
-### A SysOps administrator is reviewing VPC Flow Logs to troubleshoot connectivity issues in a VPC. While reviewing the logs, the SysOps administrator notices that rejected traffic is not listed. What should the SysOps administrator do to ensure that all traffic is logged?
+### A SysOps administrator is reviewing `VPC` Flow Logs to troubleshoot connectivity issues in a `VPC`. While reviewing the logs, the SysOps administrator notices that rejected traffic is not listed. What should the SysOps administrator do to ensure that all traffic is logged?
 
 - [x] Create a new flow log that has a filter setting to capture all traffic.
 - [ ] Create a new flow log. Set the log record format to a custom format. Select the proper fields to include in the log.
 - [ ] Edit the existing flow log. Change the filter setting to capture all traffic.
 - [ ] Edit the existing flow log. Set the log record format to a custom format. Select the proper fields to include in the log.
 
-### A company hosts a web application on an Amazon EC2 instance in a production VPC. Client connections to the application are failing. A SysOps administrator inspects the VPC flow logs and finds the following entry. What is a possible cause of these failed connections?
+### A company hosts a web application on an Amazon EC2 instance in a production `VPC`. Client connections to the application are failing. A SysOps administrator inspects the `VPC` flow logs and finds the following entry. What is a possible cause of these failed connections?
 
 ![Question 282](images/question282.png)
 
 - [ ] A security group deny rule is blocking traffic on port `443`.
 - [ ] The EC2 instance is shut down.
 - [x] The network `ACL` is blocking `HTTPS` traffic.
-- [ ] The VPC has no internet gateway attached.
+- [ ] The `VPC` has no internet gateway attached.
 
-### A company has created a `NAT` gateway in a public subnet in a VPC. The VPC also contains a private subnet that includes Amazon EC2 instances. The EC2 instances use the `NAT` gateway to access the internet to download patches and updates. The company has configured a VPC flow log for the elastic network interface of the `NAT` gateway. The company is publishing the output to Amazon CloudWatch Logs. A SysOps administrator must identify the top five internet destinations that the EC2 instances in the private subnet communicate with for downloads. What should the SysOps administrator do to meet this requirement in the MOST operationally efficient way?
+### A company has created a `NAT` gateway in a public subnet in a `VPC`. The `VPC` also contains a private subnet that includes Amazon EC2 instances. The EC2 instances use the `NAT` gateway to access the internet to download patches and updates. The company has configured a `VPC` flow log for the elastic network interface of the `NAT` gateway. The company is publishing the output to Amazon CloudWatch Logs. A SysOps administrator must identify the top five internet destinations that the EC2 instances in the private subnet communicate with for downloads. What should the SysOps administrator do to meet this requirement in the MOST operationally efficient way?
 
 - [ ] Use AWS CloudTrail Insights events to identify the top five internet destinations.
 - [ ] Use Amazon CloudFront standard logs (access logs) to identify the top five internet destinations.
@@ -2203,19 +2208,19 @@ Automation custom runbook for remediation.
 - [ ] Amazon GuardDuty is turned on for all the accounts.
 - [ ] The company has not configured an AWS Config rule to monitor billing.
 
-### A SysOps administrator is troubleshooting a VPC with public and private subnets that leverage custom network `ACL`s. Instances in the private subnet are unable to access the internet. There is an internet gateway attached to the public subnet. The private subnet has a route to a `NAT` gateway that is also attached to the public subnet. The Amazon EC2 instances are associated with the default security group for the VPC. What is causing the issue in this scenario?
+### A SysOps administrator is troubleshooting a `VPC` with public and private subnets that leverage custom network `ACL`s. Instances in the private subnet are unable to access the internet. There is an internet gateway attached to the public subnet. The private subnet has a route to a `NAT` gateway that is also attached to the public subnet. The Amazon EC2 instances are associated with the default security group for the `VPC`. What is causing the issue in this scenario?
 
 - [x] There is a network `ACL` on the private subnet set to deny all outbound traffic.
-- [ ] There is no `NAT` gateway deployed in the private subnet of the VPC.
-- [ ] The default security group for the VPC blocks all inbound traffic to the EC2 instances.
-- [ ] The default security group for the VPC blocks all outbound traffic from the EC2 instances.
+- [ ] There is no `NAT` gateway deployed in the private subnet of the `VPC`.
+- [ ] The default security group for the `VPC` blocks all inbound traffic to the EC2 instances.
+- [ ] The default security group for the `VPC` blocks all outbound traffic from the EC2 instances.
 
-### An organization is running multiple applications for their customers. Each application is deployed by running a base AWS CloudFormation template that configures a new VPC. All applications are run in the same AWS account and AWS Region. A SysOps Administrator has noticed that when trying to deploy the same AWS CloudFormation stack, it fails to deploy. What is likely to be the problem?
+### An organization is running multiple applications for their customers. Each application is deployed by running a base AWS CloudFormation template that configures a new `VPC`. All applications are run in the same AWS account and AWS Region. A SysOps Administrator has noticed that when trying to deploy the same AWS CloudFormation stack, it fails to deploy. What is likely to be the problem?
 
 - [ ] The Amazon Machine image used is not available in that region.
 - [ ] The AWS CloudFormation template needs to be updated to the latest version.
-- [ ] The VPC configuration parameters have changed and must be updated in the template.
-- [x] The account has reached the default limit for VPCs allowed.
+- [ ] The `VPC` configuration parameters have changed and must be updated in the template.
+- [x] The account has reached the default limit for  `VPC`'s allowed.
 
 ### A financial service company is running distributed computing software to manage a fleet of 20 servers for their calculations. There are 2 control nodes and 18 worker nodes to run the calculations. Worker nodes can be automatically started by the control nodes when required. Currently, all nodes are running on demand, and the worker nodes are used for approximately 4 hours each day. Which combination of actions will be MOST cost-effective? (Choose two.)
 
@@ -2340,7 +2345,7 @@ Automation custom runbook for remediation.
 
 ### A SysOps Administrator is maintaining an application that runs on Amazon EC2 instances behind an Application Load Balancer (ALB). Users are reporting errors when attempting to launch the application. The Administrator notices an increase in the `HTTPCode_ELB_5xx_Count` Amazon CloudWatch metric for the load balancer. What is a possible cause for this increase?
 
-- [ ] The `ALB` is associated with private subnets within the VPC.
+- [ ] The `ALB` is associated with private subnets within the `VPC`.
 - [ ] The `ALB` received a request from a client, but the client closed the connection.
 - [ ] The `ALB` security group is not configured to allow inbound traffic from the users.
 - [x] The `ALB` target group does not contain healthy EC2 instances.
@@ -2385,12 +2390,12 @@ Automation custom runbook for remediation.
 - [ ] Option D.
 ![Question 331 option D](images/question331_D.png)
 
-### A company is setting up a VPC peering connection between its VPC and a customer's VPC. The company VPC is an IPv4 CIDR block of `172.16.0.0/16`, and the customer's is an IPv4 CIDR block of `10.0.0.0/16`. The SysOps Administrator wants to be able to ping the customer's database private IP address from one of the company's Amazon EC2 instances. What action should be taken to meet the requirements?
+### A company is setting up a `VPC` peering connection between its `VPC` and a customer's `VPC`. The company `VPC` is an IPv4 CIDR block of `172.16.0.0/16`, and the customer's is an IPv4 CIDR block of `10.0.0.0/16`. The SysOps Administrator wants to be able to ping the customer's database private IP address from one of the company's Amazon EC2 instances. What action should be taken to meet the requirements?
 
-- [ ] Ensure that both accounts are linked and are part of consolidated billing to create a file sharing network, and then enable VPC peering.
-- [x] Ensure that both VPC owners manually add a route to the VPC route tables that points to the IP address range of the other VPC.
-- [ ] Instruct the customer to set up a VPC with the same IPv4 CIDR block as that of the source VPC: `172.16.0.0/16`.
-- [ ] Instruct the customer to create a virtual private gateway to link the two VPCs.
+- [ ] Ensure that both accounts are linked and are part of consolidated billing to create a file sharing network, and then enable `VPC` peering.
+- [x] Ensure that both `VPC` owners manually add a route to the `VPC` route tables that points to the IP address range of the other `VPC`.
+- [ ] Instruct the customer to set up a `VPC` with the same IPv4 CIDR block as that of the source `VPC`: `172.16.0.0/16`.
+- [ ] Instruct the customer to create a virtual private gateway to link the two  `VPC`'s.
 
 ### A company runs a web application that users access using the domain name `www.example.com`. The company manages the domain name using Amazon Route 53. The company created an Amazon CloudFront distribution in front of the application and would like `www.example.com` to access the application through CloudFront. What is the MOST cost-effective way to achieve this?
 
@@ -2568,9 +2573,9 @@ Automation custom runbook for remediation.
 - [ ] Provide the encryption key in the `HTTP` header of every request.
 - [ ] Apply TLS to encrypt the traffic to the S3 bucket.
 
-### A SysOps Administrator is maintaining a web application using an Amazon CloudFront web distribution, an Application Load Balancer (ALB), Amazon RDS, and Amazon EC2 in a VPC. All services have logging enabled. The Administrator needs to investigate HTTP Layer 7 status codes from the web application. Which log sources contain the status codes? (Choose two.)
+### A SysOps Administrator is maintaining a web application using an Amazon CloudFront web distribution, an Application Load Balancer (ALB), Amazon RDS, and Amazon EC2 in a `VPC`. All services have logging enabled. The Administrator needs to investigate HTTP Layer 7 status codes from the web application. Which log sources contain the status codes? (Choose two.)
 
-- [ ] VPC Flow Logs.
+- [ ] `VPC` Flow Logs.
 - [ ] AWS CloudTrail logs.
 - [x] ALB access logs.
 - [x] CloudFront access logs.
@@ -2578,14 +2583,21 @@ Automation custom runbook for remediation.
 
 ### After a network change, application servers cannot connect to the corresponding Amazon RDS MySQL database. What should the SysOps Administrator analyze?
 
-- [x] VPC Flow Logs.
+- [x] `VPC` Flow Logs.
 - [ ] Elastic Load Balancing logs.
 - [ ] Amazon CloudFront logs.
 - [ ] Amazon RDS MySQL error logs.
 
-### A SysOps administrator configured VPC flow logs by using the default format. The SysOps administrator specified Amazon CloudWatch Logs as the destination. This solution has worked successfully for several months. However, because of additional troubleshooting requirements, the SysOps administrator needs to include the `tcp-flags` field on the flow logs. What should the SysOps administrator do to meet this requirement?
+### A SysOps administrator configured `VPC` flow logs by using the default format. The SysOps administrator specified Amazon CloudWatch Logs as the destination. This solution has worked successfully for several months. However, because of additional troubleshooting requirements, the SysOps administrator needs to include the `tcp-flags` field on the flow logs. What should the SysOps administrator do to meet this requirement?
 
 - [x] Create a new flow log. Include the `tcp-flags` field in the custom log format. Delete the original flow log.
 - [ ] In the CloudWatch Logs log group, modify the filter to include the `tcp-flags` field and the type field.
 - [ ] In CloudWatch Metrics, modify the metric configuration to include the `tcp-flags` field.
 - [ ] Modify the existing flow log. Include the `tcp-flags` field and the type field in the custom log format. Save the configuration.
+
+### A company runs an application on hundreds of Amazon EC2 instances in three Availability Zones. The application calls a third-party API over the public internet. A SysOps administrator must provide the third party with a list of static IP addresses so that the third party can allow traffic from the application. Which solution will meet these requirements?
+
+- [x] Add a `NAT` gateway in the public subnet of each Availability Zone. Make the `NAT` gateway the default route of all private subnets in those Availability Zones.
+- [ ] Allocate one Elastic IP address in each Availability Zone. Associate the Elastic IP address with all the instances in the Availability Zone.
+- [ ] Place the instances behind a Network Load Balancer (NLB). Send the traffic to the internet through the private IP address of the NLB.
+- [ ] Update the main route table to send the traffic to the internet through an Elastic IP address that is assigned to each instance.
