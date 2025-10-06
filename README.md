@@ -2062,7 +2062,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Enable the geo restriction feature in the CloudFront distribution to prevent access from unauthorized countries.
 - [ ] Update the application to generate signed CloudFront URLs only for IP addresses in authorized counties.
 
-### A SysOps administrator is using IAM credentials to try to upload a file to a customer's Amazon S3 bucket that is named `DOC-EXAMPLE-BUCKET`. The SysOps administrator is receiving an AccessDenied message. Which combination of configuration changes will correct this problem? (Choose two.)
+### A SysOps administrator is using IAM credentials to try to upload a file to a customer's Amazon S3 bucket that is named `DOC-EXAMPLE-BUCKET`. The SysOps administrator is receiving an `AccessDenied` message. Which combination of configuration changes will correct this problem? (Choose two.)
 
 - [x] Add this IAM policy to the SysOps administrator user.
 ![Question 288 option A](images/question288_A.png)
