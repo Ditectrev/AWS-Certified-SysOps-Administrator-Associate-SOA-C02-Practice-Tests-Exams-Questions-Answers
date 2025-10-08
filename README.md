@@ -2601,3 +2601,10 @@ Automation custom runbook for remediation.
 - [ ] Allocate one Elastic IP address in each Availability Zone. Associate the Elastic IP address with all the instances in the Availability Zone.
 - [ ] Place the instances behind a Network Load Balancer (NLB). Send the traffic to the internet through the private IP address of the NLB.
 - [ ] Update the main route table to send the traffic to the internet through an Elastic IP address that is assigned to each instance.
+
+### A SysOps Administrator is managing an application that runs on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Auto Scaling group across multiple Availability Zones. The application stores data in an Amazon RDS MySQL DB instance. The Administrator must ensure that that application stays available if the database becomes unresponsive. How can these requirements be met?
+
+- [ ] Create read replicas for the RDS database and use them in case of a database failure.
+- [ ] Create a new RDS instance from the snapshot of the original RDS instance if a failure occurs.
+- [ ] Keep a separate RDS database running and switch the endpoint in the web application if a failure occurs.
+- [x] Modify the RDS instance to be a Multi-AZ deployment.
