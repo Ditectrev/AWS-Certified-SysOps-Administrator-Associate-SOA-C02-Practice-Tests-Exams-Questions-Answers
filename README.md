@@ -2107,7 +2107,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A company has an application that is running on an EC2 instance in one Availability Zone. A SysOps Administrator has been tasked with making the application highly available. The Administrator created a launch configuration from the running EC2 instance. The Administrator also properly configured a load balancer. What step should the Administrator complete next to make the application highly available?
 
 - [ ] Create an Auto Scaling group by using the launch configuration across at least `2` Availability Zones with a minimum size of `1`, desired capacity of `1`, and a maximum size of `1`.
-- [x] Create an Auto Scaling group by using the launch configuration across at least `3` Availability Zones with a minimum size of `2`, desired capacity of `2`, and a maximum of `2`.
+- [x] Create an Auto Scaling group by using the launch configuration across at least `3` Availability Zones with a minimum size of `2`, desired capacity of `2`, and a maximum size of `2`.
 - [ ] Create an Auto Scaling group by using the launch configuration across at least `2` regions with a minimum size of `1`, desired capacity of `1`, and a maximum size of `1`.
 - [ ] Create an Auto Scaling group by using the launch configuration across at least `3` regions with a minimum size of `2`, desired capacity of `2`, and a maximum size of `2`.
 
@@ -2353,7 +2353,7 @@ Automation custom runbook for remediation.
 ### A company has several member accounts that are in an organization in AWS Organizations. The company recently discovered that administrators have been using account root user credentials. The company must prevent the administrators from using root user credentials to perform any actions on Amazon EC2 instances. What should a SysOps administrator do to meet this requirement?
 
 - [ ] Create an identity-based IAM policy in each member account to deny actions on EC2 instances by the root user.
-- [x] In the organization's management account, create a service control policy (SCP) to deny actions on EC2 instances by the root user in all member accounts.
+- [x] In the organization's management account, create a Service Control Policy (SCP) to deny actions on EC2 instances by the root user in all member accounts.
 - [ ] Use AWS Config to prevent any actions on EC2 instances by the root user.
 - [ ] Use Amazon Inspector in each member account to scan for root user logins and to prevent any actions on EC2 instances by the root user
 
@@ -2449,7 +2449,7 @@ Automation custom runbook for remediation.
 ### A company manages its multi-account environment by using AWS Organizations. The company needs to automate the creation of daily incremental backups of any Amazon Elastic Block Store (Amazon EBS) volume that is marked with a Lifecycle: Production tag in one of its primary AWS accounts. The company wants to prevent users from using Amazon EC2 `*` permissions to delete any of these production snapshots. What should a SysOps administrator do to meet these requirements?
 
 - [ ] Create a daily snapshot of all EBS volumes by using Amazon Data Lifecycle Manager. Specify Lifecycle as the tag key. Specify Production as the tag value.
-- [x] Associate a service control policy (SCP) with the account to deny users the ability to delete EBS snapshots. Create an Amazon EventBridge rule with a 24-hour cron schedule. Configure EBS Create Snapshot as the target. Target all EBS volumes with the specified tags.
+- [x] Associate a Service Control Policy (SCP) with the account to deny users the ability to delete EBS snapshots. Create an Amazon EventBridge rule with a 24-hour cron schedule. Configure EBS Create Snapshot as the target. Target all EBS volumes with the specified tags.
 - [ ] Create a daily snapshot of all EBS volumes by using AWS Backup. Specify Lifecycle as the tag key. Specify Production as the tag value.
 - [ ] Create a daily Amazon Machine Image (AMI) of every production EC2 instance within the AWS account by using Amazon Data Lifecycle Manager.
 
@@ -2608,3 +2608,10 @@ Automation custom runbook for remediation.
 - [ ] Create a new RDS instance from the snapshot of the original RDS instance if a failure occurs.
 - [ ] Keep a separate RDS database running and switch the endpoint in the web application if a failure occurs.
 - [x] Modify the RDS instance to be a Multi-AZ deployment.
+
+### Development teams are maintaining several workloads on AWS. Company management is concerned about rising costs and wants the SysOps Administrator to configure alerts so teams are notified when spending approaches preset limits. Which AWS service will satisfy these requirements?
+
+- [x] AWS Budgets.
+- [ ] AWS Cost Explorer.
+- [ ] AWS Trusted Advisor.
+- [ ] AWS Cost and Usage report.
