@@ -2149,6 +2149,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### AnyCompany has acquired Example Corp and is attempting to consolidate the business systems of both companies. AnyCompany's IT department needs to integrate with Example Corp's IT ticketing system. A SysOps administrator must implement a solution that uses Amazon CloudWatch alarms for Amazon EC2 instances in AnyCompany's account to create new tickets in Example Corp's ticketing system. The ticketing system provides an `HTTPS` endpoint for the creation of new tickets. The ticketing system accepts messages in the following JSON format. Which approach to creating tickets from the CloudWatch alarms will meet these requirements with the LEAST development time?
 
+![Question 299](images/question299.png)
+
 - [ ] Create an Amazon EventBridge rule that filters appropriate events and specifies EventBridge API destinations as a target. Configure EventBridge API destinations to send events to the `HTTPS` endpoint. In the EventBridge rule, create an input transformer to convert the source to a compatible output for the ticketing system.
 - [ ] Create an Amazon EventBridge rule that filters appropriate events and specifies an Amazon Kinesis data stream as the target. Create an AWS Lambda function to receive events from the Kinesis data stream. Configure the Lambda function to start an AWS Glue job to transform the data and forward the output to the `HTTPS` endpoint.
 - [x] Create an Amazon EventBridge rule that filters appropriate events and specifies Amazon Simple Notification Service (Amazon SNS) as a target. Configure Amazon SNS to transform the events and send the events to the `HTTPS` endpoint.
