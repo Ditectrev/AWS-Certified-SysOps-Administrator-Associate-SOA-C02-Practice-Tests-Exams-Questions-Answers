@@ -2173,8 +2173,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A company has an application that collects notifications from thousands of alarm systems. The notifications include alarm notifications and information notifications. The information notifications include the system arming processes, disarming processes, and sensor status. All notifications are kept as messages in an Amazon Simple Queue Service (Amazon SQS) queue. Amazon EC2 instances that are in an Auto Scaling group process the messages. A SysOps administrator needs to implement a solution that prioritizes alarm notifications over information notifications. Which solution will meet these requirements?
 
 - [ ] Adjust the Auto Scaling group to scale faster when a high number of messages is in the queue.
-- [ ] Use the Amazon Simple Notification Service (Amazon SNS) fanout feature with Amazon SQS to send the notifications in parallel to all the C2 instances
-- [ ] Add an Amazon DynamoDB stream to accelerate the message processing
+- [ ] Use the Amazon Simple Notification Service (Amazon SNS) fanout feature with Amazon SQS to send the notifications in parallel to all the C2 instances.
+- [ ] Add an Amazon DynamoDB stream to accelerate the message processing.
 - [x] Create a queue for alarm notifications and a queue for information notifications. Update the application to collect messages from the alarm notifications queue first.
 
 ### A SysOps administrator is responsible for more than `50` Amazon EC2 instances that are deployed in a single production AWS account. The EC2 instances are running several different operating systems. The company's standards require patching to be completed at least once a month. The SysOps administrator wants to use AWS Systems Manager to reduce the number of hours the company spends on operating system patching each month. Which combination of steps should the SysOps administrator take to meet these requirements? (Choose three.)
