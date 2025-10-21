@@ -2190,12 +2190,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Create a custom AWS Lambda function to evaluate and remediate all DynamoDB tables. Create an Amazon EventBridge scheduled rule to invoke the Lambda function.
 - [ ] Create a custom AWS Lambda function to evaluate and remediate ail DynamoDB tables. Create an AWS Config custom rule to invoke the Lambda function.
-- [x] Use the `required-tags` AWS Config managed rule to evaluate all DynamoDB tables for the appropriate tags. Configure an automatic remediation action that uses an AWS
-Systems Manager Automation custom runbook.
-- [ ] Create an Amazon EventBridge managed rule to evaluate all DynamoDB tables for the appropriate tags. Configure the EventBridge rule to run an AWS Systems Manager
-Automation custom runbook for remediation.
+- [x] Use the `required-tags` AWS Config managed rule to evaluate all DynamoDB tables for the appropriate tags. Configure an automatic remediation action that uses an AWS Systems Manager Automation custom runbook.
+- [ ] Create an Amazon EventBridge managed rule to evaluate all DynamoDB tables for the appropriate tags. Configure the EventBridge rule to run an AWS Systems Manager Automation custom runbook for remediation.
 
-### A company has an application that uses Amazon DynamoDB tables. The tables are spread across AWS accounts and AWS Regions. The company uses AWS CloudFormation to deploy AWS resources. A new team at the company is deleting unused AWS resources. The team accidentally deletes several production DynamoDB tables by running an AWS Lambda function that makes a DynamoDB DeleteTable API call. The table deletions cause an application outage. A SysOps administrator must implement a solution that minimizes the chance of accidental deletions of tables. The solution also must minimize data loss that results from accidental deletions. Which combination of steps will meet these requirements? (Choose two.)
+### A company has an application that uses Amazon DynamoDB tables. The tables are spread across AWS accounts and AWS Regions. The company uses AWS CloudFormation to deploy AWS resources. A new team at the company is deleting unused AWS resources. The team accidentally deletes several production DynamoDB tables by running an AWS Lambda function that makes a DynamoDB `DeleteTable` API call. The table deletions cause an application outage. A SysOps administrator must implement a solution that minimizes the chance of accidental deletions of tables. The solution also must minimize data loss that results from accidental deletions. Which combination of steps will meet these requirements? (Choose two.)
 
 - [ ] Enable termination protection for the CloudFormation stacks that deploy the DynamoDB tables.
 - [x] Enable deletion protection for the DynamoDB tables.
