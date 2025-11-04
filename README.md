@@ -537,11 +537,11 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Modify the `VPC` network `ACL` rules to allow inbound traffic from the on-premises computer.
 - [x] Modify the `VPC` network `ACL` rules to allow outbound traffic to the on-premises computer.
 
-### A company's financial department needs to view the cost details of each project in an AWS account A SysOps administrator must perform the initial configuration that is required to view cost for each project in Cost Explorer. Which solution will meet this requirement?
+### A company's financial department needs to view the cost details of each project in an AWS account. A SysOps administrator must perform the initial configuration that is required to view cost for each project in Cost Explorer. Which solution will meet this requirement?
 
-- [x] Activate cost allocation tags Add a project tag to the appropriate resources.
-- [ ] Configure consolidated billing Create AWS Cost and Usage Reports.
-- [ ] Use AWS Budgets Create AWS Budgets reports.
+- [x] Activate cost allocation tags. Add a project tag to the appropriate resources.
+- [ ] Configure consolidated billing. Create AWS Cost and Usage Reports.
+- [ ] Use AWS Budgets. Create AWS Budgets reports.
 - [ ] Use cost categories to define custom groups that are based on AWS cost and usage dimensions.
 
 ### SysOps administrator needs to secure the credentials for an Amazon RDS database that is created by an AWS CloudFormation template. The solution must encrypt the credentials and must support automatic rotation. Which solution will meet these requirements?
@@ -1259,8 +1259,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company has a web application that is experiencing performance problems many times each night. A root cause analysis reveals sudden increases in CPU utilization that last 5 minutes on an Amazon EC2 Linux instance. A SysOps administrator must find the process ID (PID) of the service or process that is consuming more CPU. What should the SysOps administrator do to collect the process utilization information with the LEAST amount of effort?
 
+- [x] Configure the Amazon CloudWatch agent `procstat` plugin to capture CPU process metrics.
 - [ ] Configure an AWS Lambda function to run every minute to capture the PID and send a notification.
-- [x] Configure the `procstat` plugin to collect and send CPU metrics for the running processes.
 - [ ] Log in to the EC2 instance by using a `.pem` key each night. Then run the top command.
 - [ ] Use the default Amazon CloudWatch CPU utilization metric to capture the PID in CloudWatch.
 
@@ -2631,3 +2631,25 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create a snapshot of the running instance and copy the snapshot to the other regions. Create an AMI from the snapshots. Update the CloudFormation template for each region to use the new AMI.
 - [ ] Run the existing CloudFormation template in each additional region based on the success of the template used currently in `us-east-1`.
 - [ ] Update the CloudFormation template to include the additional regions in the Auto Scaling group. Update the existing stack in `us-east-1`.
+
+### A company is attempting to manage its costs in the AWS Cloud. A SysOps administrator needs specific company-defined tags that are assigned to resources to appear on the billing report. What should the SysOps administrator do to meet this requirement?
+
+- [ ] Activate the tags as AWS generated cost allocation tags.
+- [x] Activate the tags as user-defined cost allocation tags.
+- [ ] Create a new cost category. Select the account billing dimension.
+- [ ] Create a new AWS Cost and Usage Report. Include the resource IDs.
+
+### A company has Sales department and Marketing department. The company uses one AWS account. There is a need to determine what charges are incurred on the AWS platform by each department. There is also a need to receive notifications when a specified cost level is approached or exceeded. Which two actions must a SysOps Administrator take to achieve both requirements with the LEAST amount of administrative overhead? (Choose two.)
+
+- [ ] Use AWS Trusted Advisor to obtain a report containing the checked items in the Cost Optimization pillar.
+- [ ] Download the detailed billing report, upload it to a database, and match the line items with a list of known resources by department.
+- [x] Create a script by using the AWS CLI to automatically apply tags to existing resources to each department. Schedule the script to run weekly.
+- [ ] Use AWS Organizations to create a department Organizational Unit and allow only authorized personnel in each department to create resources.
+- [x] Create a Budget from the Billing and Cost Management console. Specify the budget type a Cost, assign tags for each department, define notifications, and specify any other options as required.
+
+### The chief financial officer (CFO) of an organization has seen a spike in Amazon S3 storage costs over the last few months. A SysOps administrator suspects that these costs are related to storage for older versions of S3 objects from one of its S3 buckets. What can the administrator do to confirm this suspicion?
+
+- [x] Enable Amazon S3 inventory and then query the inventory to identify the total storage of previous object versions.
+- [ ] Use object-level cost allocation tags to identify the total storage of previous object versions.
+- [ ] Enable the Amazon S3 analytics feature for the bucket to identify the total storage of previous object versions.
+- [ ] Use Amazon CloudWatch storage metrics for the S3 bucket to identify the total storage of previous object versions.
