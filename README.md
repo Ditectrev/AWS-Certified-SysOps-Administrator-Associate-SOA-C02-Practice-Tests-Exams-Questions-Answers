@@ -864,7 +864,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Copy the source region's Amazon Machine Image (AMI) to the destination region and assign it the same ID.
 - [ ] Edit the AWS CloudFormatton template to specify the region code as part of the fully qualified AMI ID.
 - [ ] Edit the AWS CloudFormatton template to offer a drop-down list of all AMIs to the user by using the `AWS::EC2::AMI::ImageID` control.
-- [x] Modify the AWS CloudFormation template by including the AMI IDs in the 'Mappings' section. Refer to the proper mapping within the template for the proper AMI ID.
+- [x] Modify the AWS CloudFormation template by including the AMI IDs in the `Mappings` section. Refer to the proper mapping within the template for the proper AMI ID.
 
 ### A company runs us Infrastructure on Amazon EC2 Instances that run In an Auto Scaling group. Recently, the company promoted faulty code to the entire EC2 fleet. This faulty code caused the Auto Scaling group to scale the instances before any of the application logs could be retrieved. What should a SysOps administrator do to retain the application logs after instances are terminated?
 
@@ -1440,8 +1440,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ![Question 201](images/question201.jpg)
 
-- [ ] The Outputs section of the CloudFormation template was omitted.
-- [ ] The Parameters section of the CloudFormation template was omitted.
+- [ ] The `Outputs` section of the CloudFormation template was omitted.
+- [ ] The `Parameters` section of the CloudFormation template was omitted.
 - [x] The `PrivateDnsName` cannot be set from a CloudFormation template.
 - [ ] The `VPC` was not specified in the CloudFormation template.
 
@@ -1617,7 +1617,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A company runs an application that hosts critical data for several clients. The company uses AWS CloudTrail to track user activities on various AWS resources. To meet new security requirements, the company needs to protect the CloudTrail log files from being modified, deleted, or forged. Which solution will meet these requirement?
 
 - [x] Enable CloudTrail log file integrity validation.
-- [ ] Use Amazon S3 MFA Delete on the S3 bucket where the CloudTrail log files are stored.
+- [ ] Use Amazon S3 `MFA Delete` on the S3 bucket where the CloudTrail log files are stored.
 - [ ] Use Amazon S3 Versioning to keep all versions of the CloudTrail log files.
 - [ ] Use AWS Key Management Service (AWS KMS) security keys to secure the CloudTrail log files.
 
@@ -1900,7 +1900,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company hosts an application on Amazon EC2 instances. The instances are in an Amazon EC2 Auto Scaling group that uses a launch template. The amount of application traffic changes throughout the day. Scaling events happen frequently. A SysOps administrator needs to help developers troubleshoot the application. When a scaling event removes an instance, EC2 Auto Scaling terminates the instance before the developers can log in to the instance to diagnose issues. Which solution will prevent termination of the instance so that the developers can log in to the instance?
 
-- [ ] Ensure that the Delete on termination setting is turned off in the UserData section of the launch template.
+- [ ] Ensure that the Delete on termination setting is turned off in the `UserData` section of the launch template.
 - [x] Update the Auto Scaling group by enabling instance scale-in protection for newly launched instances.
 - [ ] Use Amazon Inspector to configure a rules package to protect the instances from termination.
 - [ ] Use Amazon GuardDuty to configure rules to protect the instances from termination.
@@ -2101,7 +2101,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company using AWS Organizations requires that no Amazon S3 buckets in its production accounts should ever be deleted. What is the SIMPLEST approach the SysOps Administrator can take to ensure S3 buckets in those accounts can never be deleted?
 
-- [ ] Set up MFA Delete on all the S3 buckets to prevent the buckets from being deleted.
+- [ ] Set up `MFA Delete` on all the S3 buckets to prevent the buckets from being deleted.
 - [x] Use Service Control Policies to deny the `s3:DeleteBucket` action on all buckets in production accounts.
 - [ ] Create an IAM group that has an IAM policy to deny the `s3:DeleteBucket` action on all buckets in production accounts.
 - [ ] Use AWS Shield to deny the `s3:DeleteBucket` action on the AWS account instead of all S3 buckets.
@@ -2267,13 +2267,13 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Detach the EBS volume, resize it, and attach it.
 - [ ] Take an EBS snapshot and restore it to the bigger volume.
 
-### Recently several critical files were mistakenly deleted from a shared Amazon S3 bucket. A SysOps Administrator needs to prevent accidental deletions from occurring in the future by enabling MFA Delete. Once enabled, which bucket activities will require MFA authentication? (Choose two.)
+### Recently several critical files were mistakenly deleted from a shared Amazon S3 bucket. A SysOps Administrator needs to prevent accidental deletions from occurring in the future by enabling `MFA Delete`. Once enabled, which bucket activities will require MFA authentication? (Choose two.)
 
 - [x] Permanently removing an object version from the bucket.
 - [ ] Disabling default object encryption for the bucket.
 - [ ] Listing all versions of deleted objects in the bucket.
 - [x] Suspending versioning on the bucket.
-- [ ] Enabling MFA Add on the bucket.
+- [ ] Enabling `MFA Add` on the bucket.
 
 ### A SysOps administrator is testing an application that is hosted on five Amazon EC2 instances. The instances run in an Auto Scaling group behind an Application Load Balancer (`ALB`). High CPU utilization during load testing is causing the Auto Scaling group to scale out. The SysOps administrator must troubleshoot to find the root cause of the high CPU utilization before the Auto Scaling group scales out. Which action should the SysOps administrator take to meet these requirements?
 
@@ -2653,3 +2653,17 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Use object-level cost allocation tags to identify the total storage of previous object versions.
 - [ ] Enable the Amazon S3 analytics feature for the bucket to identify the total storage of previous object versions.
 - [ ] Use Amazon CloudWatch storage metrics for the S3 bucket to identify the total storage of previous object versions.
+
+### A company is running a new promotion that will result in a massive spike in traffic for a single application. The SysOps Administrator must prepare the application and ensure that the customers have a great experience. The application is heavy on memory and is running behind an AWS Application Load Balancer (ALB). The ALB has been pre-warmed, and the application is in an Auto Scaling group. What built-in metric should be used to control the Auto Scaling group's scaling policy?
+
+- [ ] `RejectedConnectionCount`.
+- [x] `RequestCountPerTarget`.
+- [ ] `CPUUtilization`.
+- [ ] `MemoryUtilization`.
+
+### A company is planning to expand into an additional AWS Region for disaster recovery purposes. The company uses AWS CloudFormation, and its infrastructure is well-defined as code. The company would like to reuse as much of its existing code as possible when deploying resources to additional Regions. A SysOps Administrator is reviewing how Amazon Machine Images (AMIs) are selected in AWS CloudFormation, but is having trouble making the same stack work in the new Region. Which action would make it easier to manage multiple Regions?
+
+- [ ] Name each AMI in the new Region exactly the same as the equivalent AMI in the first Region.
+- [ ] Duplicate the stack so unique AMI names can be coded into the appropriate stack.
+- [ ] Create an alias for each AMI so that an AMI can be referenced by a common name across Regions.
+- [x] Create a `Mappings` section in the stack, and define the Region to AMI associations.
