@@ -2343,7 +2343,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create one S3 bucket named `example.com` for both the domain and subdomain.
 - [ ] Create one S3 bucket with a wildcard named `*.example.com` for both the domain and subdomain.
 - [x] Create two S3 buckets named `example.com` and `www.example.com`. Configure the subdomain bucket to redirect requests to the domain bucket.
-- [ ] Create two S3 buckets named `http://example.com` and `http://*.example.com`. Configure the wildcard (*) bucket to redirect requests to the domain bucket.
+- [ ] Create two S3 buckets named `http://example.com` and `http://*.example.com`. Configure the wildcard (`*`) bucket to redirect requests to the domain bucket.
 
 ### A SysOps Administrator is maintaining an application that runs on Amazon EC2 instances behind an Application Load Balancer (ALB). Users are reporting errors when attempting to launch the application. The Administrator notices an increase in the `HTTPCode_ELB_5xx_Count` Amazon CloudWatch metric for the load balancer. What is a possible cause for this increase?
 
@@ -2667,3 +2667,17 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Duplicate the stack so unique AMI names can be coded into the appropriate stack.
 - [ ] Create an alias for each AMI so that an AMI can be referenced by a common name across Regions.
 - [x] Create a `Mappings` section in the stack, and define the Region to AMI associations.
+
+### A SysOps Administrator is managing an AWS account where Developers are authorized to launch Amazon EC2 instances to test new code. To limit costs, the Administrator must ensure that the EC2 instances in the account are terminated 24 hours after launch. How should the Administrator meet these requirements?
+
+- [ ] Create an Amazon CloudWatch alarm based on the `CPUUtilization` metric. When the metric is `0%` for 24 hours, trigger an action to terminate the EC2 instance when the alarm is triggered.
+- [x] Create an AWS Lambda function to check all EC2 instances and terminate instances running more than 24 hours. Trigger the function with an Amazon CloudWatch Events event every 15 minutes.
+- [ ] Add an action to AWS Trusted Advisor to turn off EC2 instances based on the Low Utilization Amazon EC2 Instances check, terminating instances identified by Trusted Advisor as running for more than 24 hours.
+- [ ] Install the unified Amazon CloudWatch agent on every EC2 instance. Configure the agent to terminate instances after they have been running for 24 hours.
+
+### A company is storing monthly reports on Amazon S3. The company's security requirement states that traffic from the client VPC to Amazon S3 cannot traverse the internet. What should the SysOps Administrator do to meet this requirement?
+
+- [ ] Use AWS Direct Connect and a public virtual interface to connect to Amazon S3.
+- [ ] Use a managed NAT gateway to connect to Amazon S3.
+- [x] Deploy a VPC endpoint to connect to Amazon S3.
+- [ ] Deploy an internet gateway to connect to Amazon S3.
