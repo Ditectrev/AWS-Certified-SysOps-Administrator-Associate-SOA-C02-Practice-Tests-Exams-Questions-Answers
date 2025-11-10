@@ -2367,7 +2367,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Reset the password of the account root user.
 - [x] Create an IAM user that has administrator privileges in the new account.
 
-### A company hosts its website in the `us-east-1` Region. The company is preparing to deploy its website into the eu-central-1 Region. Website visitors who are located in Europe should access the website that is hosted in eu-central-1. All other visitors access the website that is hosted in `us-east-1`. The company uses Amazon Route 53 to manage the website's `DNS` records. Which routing policy should a SysOps administrator apply to the Route 53 record set to meet these requirements?
+### A company hosts its website in the `us-east-1` Region. The company is preparing to deploy its website into the `eu-central-1` Region. Website visitors who are located in Europe should access the website that is hosted in `eu-central-1`. All other visitors access the website that is hosted in `us-east-1`. The company uses Amazon Route 53 to manage the website's `DNS` records. Which routing policy should a SysOps administrator apply to the Route 53 record set to meet these requirements?
 
 - [x] Geolocation routing policy.
 - [ ] Geoproximity routing policy.
@@ -2681,3 +2681,26 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Use a managed NAT gateway to connect to Amazon S3.
 - [x] Deploy a VPC endpoint to connect to Amazon S3.
 - [ ] Deploy an internet gateway to connect to Amazon S3.
+
+### A company runs an application on Amazon EC2 instances. The EC2 instances are in an Auto Scaling group and run behind an Application Load Balancer (ALB). The application experiences errors when total requests exceed 100 requests per second. A SysOps administrator must collect information about total requests for a 2-week period to determine when requests exceeded this threshold. What should the SysOps administrator do to collect this data?
+
+- [x] Use the ALB's `RequestCount` metric. Configure a time range of 2 weeks and a period of 1 minute. Examine the chart to determine peak traffic times and volumes.
+- [ ] Use Amazon CloudWatch metric math to generate a sum of request counts for all the EC2 instances over a 2-week period. Sort by a 1-minute interval.
+- [ ] Create Amazon CloudWatch custom metrics on the EC2 launch configuration templates to create aggregated request metrics across all the EC2 instances.
+- [ ] Create an Amazon EventBridge (Amazon CloudWatch Events) rule. Configure an EC2 event matching pattern that creates a metric that is based on EC2 requests. Display the data in a graph.
+
+### A SysOps administrator needs to create a report that shows how many bytes are sent to and received from each target group member for an Application Load Balancer (ALB). Which combination of steps should the SysOps administrator take to meet these requirements? (Choose two.)
+
+- [x] Enable access logging for the ALB. Save the logs to an Amazon S3 bucket.
+- [ ] Install the Amazon CloudWatch agent on the instances in the target group.
+- [x] Use Amazon Athena to query the ALB logs. Query the table. Use the `received_bytes` and `sent_bytes` fields to calculate the total bytes grouped by the target port field.
+- [ ] Use Amazon Athena to query the ALB logs. Query the table. Use the `received_bytes` and `sent_bytes` fields to calculate the total bytes grouped by the client port field.
+- [ ] Create an Amazon CloudWatch dashboard that shows the Sum statistic of the ProcessedBytes metric for the ALB.
+
+### A company's SysOps administrator manages a fleet of Windows Amazon EC2 instances that run in a single AWS account. The instances have a tag that includes a key of `OS` and a value of `Windows`. The company uses AWS Systems Manager to patch the instances. The company has installed the Amazon CloudWatch agent on the instances, but the configuration is inconsistent. The SysOps administrator needs to reconfigure every instance to use the same predefined CloudWatch configuration. Which combination of steps will meet these requirements? (Choose two.)
+
+- [ ] Store the CloudWatch agent configuration file in an Amazon S3 bucket.
+- [ ] Store the contents of the CloudWatch agent configuration file in Systems Manager OpsCenter.
+- [x] Store the contents of the CloudWatch agent configuration file in Systems Manager Parameter Store.
+- [x] Create a Systems Manager State Manager association to run the `AmazonCloudWatch-ManageAgent` Systems Manager Run Command document. Select Systems Manager as an optional configuration source. Target the instances based on tag values.
+- [ ] Create a Systems Manager State Manager association to run the `AmazonCloudWatch-ManageAgent` Systems Manager Run Command document. Configure the document to use the S3 bucket location as the configuration source. Target the instances based on tag value.
