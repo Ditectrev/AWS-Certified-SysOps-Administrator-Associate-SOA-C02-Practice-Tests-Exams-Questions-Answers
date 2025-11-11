@@ -2385,7 +2385,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [x] Option A.
 ![Question 331 option A](images/question331_A.png)
-- [x] Option B.
+- [ ] Option B.
 ![Question 331 option B](images/question331_B.png)
 - [ ] Option C.
 ![Question 331 option C](images/question331_C.png)
@@ -2408,10 +2408,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A SysOps administrator needs to deploy an application in multiple AWS Regions. The SysOps administrator must implement a solution that routes users to the Region with the lowest latency. In case of failure, the solution must automatically route requests to a Region with a healthy instance of the application. The company needs a solution with the shortest time to failover. Which solution will meet these requirements?
 
-- [ ] Create Amazon Route 53 A records that have the same name for each endpoint. Use a latency routing policy. Associate a health check with each record.
-- [ ] Create Amazon Route 53 A records that have the same name for each endpoint. Use a failover routing policy. Associate a health check with each record.
+- [ ] Create Amazon Route 53 `A` records that have the same name for each endpoint. Use a latency routing policy. Associate a health check with each record.
+- [ ] Create Amazon Route 53 `A` records that have the same name for each endpoint. Use a failover routing policy. Associate a health check with each record.
 - [x] Create an AWS Global Accelerator standard accelerator. Create an endpoint group for each Region. Add a listener to the accelerator. Associate the endpoint group with the listener.
-- [ ] Create Amazon Route 53 A records that have the same name for each endpoint. Use a geolocation routing policy. Associate a health check with each record.
+- [ ] Create Amazon Route 53 `A` records that have the same name for each endpoint. Use a geolocation routing policy. Associate a health check with each record.
 
 ### A company is using Amazon CloudWatch alarms to monitor Amazon Elastic Kubernetes Service (Amazon EKS) workloads. The alarms are initiated through a threshold definition and are not helping the EKS cluster operate more efficiently. A SysOps administrator must implement a solution that identifies anomalies and generates recommendations for how to address the anomalies. Which solution will meet these requirements?
 
@@ -2533,7 +2533,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] The Elastic IP address assigned to the EC2 instance has changed.
 - [ ] There is an additional network `ACL` associated with the subnet that includes a rule that denies inbound `HTTP` traffic from port 80.
 
-### A company's application infrastructure was deployed using AWS CloudFormation and is composed of Amazon EC2 instances behind an Application Load Balancer. The instances run in an EC2 Auto Scaling group across multiple Availability Zones. When releasing a new version of the application, the update deployment must avoid DNS changes and allow rollback. Which solution should a SysOps administrator use to meet the deployment requirements for this new release?
+### A company's application infrastructure was deployed using AWS CloudFormation and is composed of Amazon EC2 instances behind an Application Load Balancer. The instances run in an EC2 Auto Scaling group across multiple Availability Zones. When releasing a new version of the application, the update deployment must avoid `DNS` changes and allow rollback. Which solution should a SysOps administrator use to meet the deployment requirements for this new release?
 
 - [ ] Configure the Auto Scaling group to use lifecycle hooks. Deploy new instances with the new application version. Complete the lifecycle hook action once healthy.
 - [ ] Create a new Amazon Machine Image (AMI) containing the updated code. Create a launch configuration with the AMI. Update the Auto Scaling group to use the new launch configuration.
@@ -2579,7 +2579,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] `VPC` Flow Logs.
 - [ ] AWS CloudTrail logs.
-- [x] ALB access logs.
+- [x] `ALB` access logs.
 - [x] CloudFront access logs.
 - [ ] RDS logs.
 
@@ -2654,7 +2654,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Enable the Amazon S3 analytics feature for the bucket to identify the total storage of previous object versions.
 - [ ] Use Amazon CloudWatch storage metrics for the S3 bucket to identify the total storage of previous object versions.
 
-### A company is running a new promotion that will result in a massive spike in traffic for a single application. The SysOps Administrator must prepare the application and ensure that the customers have a great experience. The application is heavy on memory and is running behind an AWS Application Load Balancer (ALB). The ALB has been pre-warmed, and the application is in an Auto Scaling group. What built-in metric should be used to control the Auto Scaling group's scaling policy?
+### A company is running a new promotion that will result in a massive spike in traffic for a single application. The SysOps Administrator must prepare the application and ensure that the customers have a great experience. The application is heavy on memory and is running behind an AWS Application Load Balancer (ALB). The `ALB` has been pre-warmed, and the application is in an Auto Scaling group. What built-in metric should be used to control the Auto Scaling group's scaling policy?
 
 - [ ] `RejectedConnectionCount`.
 - [x] `RequestCountPerTarget`.
@@ -2684,18 +2684,18 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company runs an application on Amazon EC2 instances. The EC2 instances are in an Auto Scaling group and run behind an Application Load Balancer (ALB). The application experiences errors when total requests exceed 100 requests per second. A SysOps administrator must collect information about total requests for a 2-week period to determine when requests exceeded this threshold. What should the SysOps administrator do to collect this data?
 
-- [x] Use the ALB's `RequestCount` metric. Configure a time range of 2 weeks and a period of 1 minute. Examine the chart to determine peak traffic times and volumes.
+- [x] Use the `ALB`'s `RequestCount` metric. Configure a time range of 2 weeks and a period of 1 minute. Examine the chart to determine peak traffic times and volumes.
 - [ ] Use Amazon CloudWatch metric math to generate a sum of request counts for all the EC2 instances over a 2-week period. Sort by a 1-minute interval.
 - [ ] Create Amazon CloudWatch custom metrics on the EC2 launch configuration templates to create aggregated request metrics across all the EC2 instances.
 - [ ] Create an Amazon EventBridge (Amazon CloudWatch Events) rule. Configure an EC2 event matching pattern that creates a metric that is based on EC2 requests. Display the data in a graph.
 
 ### A SysOps administrator needs to create a report that shows how many bytes are sent to and received from each target group member for an Application Load Balancer (ALB). Which combination of steps should the SysOps administrator take to meet these requirements? (Choose two.)
 
-- [x] Enable access logging for the ALB. Save the logs to an Amazon S3 bucket.
+- [x] Enable access logging for the `ALB`. Save the logs to an Amazon S3 bucket.
 - [ ] Install the Amazon CloudWatch agent on the instances in the target group.
-- [x] Use Amazon Athena to query the ALB logs. Query the table. Use the `received_bytes` and `sent_bytes` fields to calculate the total bytes grouped by the target port field.
-- [ ] Use Amazon Athena to query the ALB logs. Query the table. Use the `received_bytes` and `sent_bytes` fields to calculate the total bytes grouped by the client port field.
-- [ ] Create an Amazon CloudWatch dashboard that shows the Sum statistic of the ProcessedBytes metric for the ALB.
+- [x] Use Amazon Athena to query the `ALB` logs. Query the table. Use the `received_bytes` and `sent_bytes` fields to calculate the total bytes grouped by the target port field.
+- [ ] Use Amazon Athena to query the `ALB` logs. Query the table. Use the `received_bytes` and `sent_bytes` fields to calculate the total bytes grouped by the client port field.
+- [ ] Create an Amazon CloudWatch dashboard that shows the Sum statistic of the ProcessedBytes metric for the `ALB`.
 
 ### A company's SysOps administrator manages a fleet of Windows Amazon EC2 instances that run in a single AWS account. The instances have a tag that includes a key of `OS` and a value of `Windows`. The company uses AWS Systems Manager to patch the instances. The company has installed the Amazon CloudWatch agent on the instances, but the configuration is inconsistent. The SysOps administrator needs to reconfigure every instance to use the same predefined CloudWatch configuration. Which combination of steps will meet these requirements? (Choose two.)
 
@@ -2704,3 +2704,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Store the contents of the CloudWatch agent configuration file in Systems Manager Parameter Store.
 - [x] Create a Systems Manager State Manager association to run the `AmazonCloudWatch-ManageAgent` Systems Manager Run Command document. Select Systems Manager as an optional configuration source. Target the instances based on tag values.
 - [ ] Create a Systems Manager State Manager association to run the `AmazonCloudWatch-ManageAgent` Systems Manager Run Command document. Configure the document to use the S3 bucket location as the configuration source. Target the instances based on tag value.
+
+### A company has an application that runs behind an Application Load Balancer (ALB) in the `us-west-2` Region. An Amazon Route 53 record set contains an alias record for `app.anycompany.com` that references the `ALB` in `us-west-2` and uses a simple routing policy. The application is experiencing an increase in users from other locations in the world. These users are experiencing high latency. Most of the new users are close to the `ap-southeast-2` Region. The company deploys a copy of the application to `ap-southeast-2`. A SysOps administrator must implement a solution that automatically routes requests to the lowest latency endpoint for users without changing the URL. Which solution will meet these requirements?
+
+- [ ] Add a new value to the existing alias record for `app.anycompany.com` with the `DNS` name of the new `ALB` in `ap-southeast-2`.
+- [ ] Change the existing alias record to use a geolocation routing policy. Create two geolocation records, one record that references each ALSelect the location that is closest to each Region.
+- [x] Change the existing alias record to use a latency routing policy. Create two latency records, one record that references each `ALB`.
+- [ ] Change the existing alias record to use a multivalue routing policy Add the `DNS` name of each `ALB` to the record.
