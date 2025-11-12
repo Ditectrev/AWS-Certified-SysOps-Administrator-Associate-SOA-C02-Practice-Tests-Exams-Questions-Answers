@@ -7,7 +7,7 @@
 - [x] A route for `0.0.0.0/0` that points to an internet gateway.
 - [ ] A route for `0.0.0.0/0` that points to an elastic network interface.
 
-### A SysOps administrator launches an Amazon EC2 instance in a private subnet of a `VPC`. When the SysOps administrator attempts a curl command from the command line of the EC2 instance, the SysOps administrator cannot connect to `https:www.example.com`. What should the SysOps administrator do to resolve this issue?
+### A SysOps administrator launches an Amazon EC2 instance in a private subnet of a `VPC`. When the SysOps administrator attempts a `curl` command from the command line of the EC2 instance, the SysOps administrator cannot connect to `https:www.example.com`. What should the SysOps administrator do to resolve this issue?
 
 - [x] Ensure that there is an outbound security group for port `443` to `0.0.0.0/0`.
 - [ ] Ensure that there is an inbound security group for port `443` from `0.0.0.0/0`.
@@ -143,7 +143,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Elastic Load Balancing.
 - [ ] Amazon Cognito.
 
-### An Amazon EC2 instance is running an application that uses Amazon Simple Queue Service (Amazon SQS) queues A SysOps administrator must ensure that the application can read, write, and delete messages from the SQS queues. Which solution will meet these requirements in the MOST secure manner?
+### An Amazon EC2 instance is running an application that uses Amazon Simple Queue Service (Amazon SQS) queues. A SysOps administrator must ensure that the application can read, write, and delete messages from the SQS queues. Which solution will meet these requirements in the MOST secure manner?
 
 - [ ] Create an IAM user with an IAM policy that allows the `sqs:SendMessage` permission, the `sqs:ReceiveMessage` permission, and the `sqs:DeleteMessage` permission to the appropriate queues Embed the IAM user's credentials in the application's configuration.
 - [ ] Create an IAM user with an IAM policy that allows the `sqs:SendMessage` permission, the `sqs:ReceiveMessage` permission, and the `sqs:DeleteMessage` permission to the appropriate queues Export the IAM user's access key and secret access key as environment variables on the EC2 instance.
@@ -1223,7 +1223,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A SysOps administrator creates an AWS CloudFormation template to define an application stack that can be deployed in multiple AWS Regions. The SysOps administrator also creates an Amazon CloudWatch dashboard by using the AWS Management Console. Each deployment of the application requires its own CloudWatch dashboard. How can the SysOps administrator automate the creation of the CloudWatch dashboard each time the application is deployed?
 
-- [ ] Create a script by using the AWS CLI to run the aws cloudformation put-dashboard command with the name of the dashboard. Run the command each time a new CloudFormation stack is created.
+- [ ] Create a script by using the AWS CLI to run the aws cloudformation `put-dashboard` command with the name of the dashboard. Run the command each time a new CloudFormation stack is created.
 - [x] Export the existing CloudWatch dashboard as JSON. Update the CloudFormation template to define an `AWS::CloudWatch::Dashboard` resource. Include the exported JSON in the resource's `DashboardBody` property.
 - [ ] Update the CloudFormation template to define an `AWS::CloudWatch::Dashboard` resource. Use the Intrinsic Ref function to reference the ID of the existing CloudWatch dashboard.
 - [ ] Update the CloudFormation template to define an `AWS::CloudWatch::Dashboard` resource. Specify the name of the existing dashboard in the `DashboardName` property.
@@ -1786,7 +1786,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Attach an IAM role to control access to the EC2 instances.
 - [ ] Create a placement group for the EC2 instances and add a specific tag.
 - [ ] Create a service account and attach it to the EC2 instances that need to be controlled.
-- [x] Create an IAM policy that grants access to any EC2 instances with a tag specified in the Condition element.
+- [x] Create an IAM policy that grants access to any EC2 instances with a tag specified in the `Condition` element.
 
 ### A company has an AWS Lambda function in Account A. The Lambda function needs to read the objects in an Amazon S3 bucket in Account B. A SysOps administrator must create corresponding IAM roles in both accounts. Which solution will meet these requirements?
 
@@ -2424,7 +2424,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Turn on AWS CloudTrail. Generate a policy by using AWS Security Hub.
 - [ ] Turn on Amazon EventBridge (Amazon CloudWatch Events). Generate a policy by using AWS Identity and Access Management Access Analyzer.
-- [ ] Use the AWS CLI to run the get-generated-policy command in AWS Identity and Access Management Access Analyzer.
+- [ ] Use the AWS CLI to run the `get-generated-policy` command in AWS Identity and Access Management Access Analyzer.
 - [x] Turn on AWS CloudTrail. Generate a policy by using AWS Identity and Access Management Access Analyzer.
 
 ### A company stores sensitive data in an Amazon S3 bucket. The company must log all access attempts to the S3 bucket. The company's risk team must receive immediate notification about any delete events. Which solution will meet these requirements?
