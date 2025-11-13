@@ -2443,10 +2443,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company recently deployed MySQL on an Amazon EC2 instance with a default boot volume. The company intends to restore a 1.75 TB database. A SysOps administrator needs to provision the correct Amazon Elastic Block Store (Amazon EBS) volume. The database will require read performance of up to 10,000 IOPS and is not expected to grow in size. Which solution will provide the required performance at the LOWEST cost?
 
-- [ ] Deploy a 2 TB Cold HDD (sc1) volume.
-- [ ] Deploy a 2 TB Throughput Optimized HDD (st1) volume.
-- [x] Deploy a 2 TB General Purpose SSD (gp3) volume. Set the IOPS to 10,000.
-- [ ] Deploy a 2 TB Provisioned IOPS SSD (io2) volume. Set the IOPS to 10,000.
+- [ ] Deploy a 2 TB `Cold HDD (sc1)` volume.
+- [ ] Deploy a 2 TB `Throughput Optimized HDD (st1)` volume.
+- [x] Deploy a 2 TB `General Purpose SSD (gp3)` volume. Set the IOPS to 10,000.
+- [ ] Deploy a 2 TB `Provisioned IOPS SSD (io2)` volume. Set the IOPS to 10,000.
 
 ### A company manages its multi-account environment by using AWS Organizations. The company needs to automate the creation of daily incremental backups of any Amazon Elastic Block Store (Amazon EBS) volume that is marked with a Lifecycle: Production tag in one of its primary AWS accounts. The company wants to prevent users from using Amazon EC2 `*` permissions to delete any of these production snapshots. What should a SysOps administrator do to meet these requirements?
 
