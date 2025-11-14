@@ -2711,3 +2711,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Change the existing alias record to use a geolocation routing policy. Create two geolocation records, one record that references each ALSelect the location that is closest to each Region.
 - [x] Change the existing alias record to use a latency routing policy. Create two latency records, one record that references each `ALB`.
 - [ ] Change the existing alias record to use a multivalue routing policy Add the `DNS` name of each `ALB` to the record.
+
+### A company has two AWS accounts: development and production. All applications send logs to a specific Amazon S3 bucket for each account, and the Developers are requesting access to the production account S3 buckets to view the logs. Which is the MOST efficient way to provide the Developers with access?
+
+- [ ] Create an AWS Lambda function with an IAM role attached to it that has access to both accounts' S3 buckets. Pull the logs from the production S3 bucket to the development S3 bucket.
+- [ ] Create IAM users for each Developer on the production account, and add the Developers to an IAM group that provides read-only access to the S3 log bucket.
+- [ ] Create an Amazon EC2 bastion host with an IAM role attached to it that has access to the production S3 log bucket, and then provision access for the Developers on the host.
+- [x] Create a resource-based policy for the S3 bucket on the production account that grants access to the development account, and then delegate access in the development account.
