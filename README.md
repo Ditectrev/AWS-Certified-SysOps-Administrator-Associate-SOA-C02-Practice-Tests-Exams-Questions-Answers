@@ -2514,7 +2514,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A SysOps administrator needs to collect the content of log files from a custom application that is deployed across hundreds of Amazon EC2 instances running Ubuntu. The log files need to be stored in Amazon CloudWatch Logs. How should the SysOps administrator collect the application log files with the LOWEST operational overhead?
 
-- [ ] Configure the syslogd service on each EC2 instance to collect and send the application log files to CloudWatch Logs.
+- [ ] Configure the `syslogd` service on each EC2 instance to collect and send the application log files to CloudWatch Logs.
 - [ ] Install the CloudWatch agent by using the Amazon Linux package manager on each EC2 instance. Configure each agent to collect the application log files.
 - [ ] Install the CloudWatch agent on each EC2 instance by using AWS Systems Manager. Create an agent configuration on each instance by using the CloudWatch configuration wizard. Configure each agent to collect the application log files.
 - [x] Store a CloudWatch agent configuration in the AWS Systems Manager Parameter Store. Install the CloudWatch agent on each EC2 instance by using Systems Manager. Configure each agent to collect the application log files.
@@ -2718,3 +2718,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create IAM users for each Developer on the production account, and add the Developers to an IAM group that provides read-only access to the S3 log bucket.
 - [ ] Create an Amazon EC2 bastion host with an IAM role attached to it that has access to the production S3 log bucket, and then provision access for the Developers on the host.
 - [x] Create a resource-based policy for the S3 bucket on the production account that grants access to the development account, and then delegate access in the development account.
+
+### A company has a policy that all Amazon EC2 instance logs must be published to Amazon CloudWatch Logs. A SysOps administrator is troubleshooting an EC2 instance that is running Amazon Linux 2. The EC2 instance is not publishing logs to CloudWatch Logs. The Amazon CloudWatch agent is running on the EC2 instance, and the agent configuration file is correct. What should the SysOps administrator do to resolve the issue?
+
+- [ ] Configure the AWS CLI on the EC2 instance. Create a cron job that calls the `PutLogEvents` API operation to push the log files to CloudWatch every 5 minutes.
+- [ ] Inspect the retention period of the CloudWatch Logs log group. Ensure that the retention period is set to a value that is greater than 1 day.
+- [ ] Set up an Amazon Kinesis data stream that is running in the same AWS Region as the EC2 instance. Configure the CloudWatch agent on the EC2 instance to send CloudWatch events to the data stream.
+- [x] Ensure that the IAM role that is attached to the EC2 instance has permissions in CloudWatch Logs for the `CreateLogGroup`, `CreateLogStream`, `PutLogEvents`, and `DescribeLogStreams` actions.
