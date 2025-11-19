@@ -757,7 +757,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A company wants to build a solution for its business-critical Amazon RDS for MySQL database. The database requires high availability across different geographic locations. A SysOps administrator must build a solution to handle a Disaster Recovery (DR) scenario with the lowest Recovery Time Objective (RTO) and Recovery Point Objective (RPO). Which solution meets these requirements?
 
 - [ ] Create automated snapshots of the database on a schedule. Copy the snapshots to the DR Region.
-- [x] Create a cross-Region read replica for the database.
+- [x] Create a Cross-Region read replica for the database.
 - [ ] Create a Multi-AZ read replica for the database.
 - [ ] Schedule AWS Lambda functions to create snapshots of the source database and to copy the snapshots to a DR Region.
 
@@ -2725,3 +2725,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Inspect the retention period of the CloudWatch Logs log group. Ensure that the retention period is set to a value that is greater than 1 day.
 - [ ] Set up an Amazon Kinesis data stream that is running in the same AWS Region as the EC2 instance. Configure the CloudWatch agent on the EC2 instance to send CloudWatch events to the data stream.
 - [x] Ensure that the IAM role that is attached to the EC2 instance has permissions in CloudWatch Logs for the `CreateLogGroup`, `CreateLogStream`, `PutLogEvents`, and `DescribeLogStreams` actions.
+
+### A company is running a popular social media site on EC2 instances. The application stores data in an Amazon RDS for MySQL DB instance and has implemented read caching by using an ElastiCache for Redis (cluster mode enabled) cluster to improve read times. A social event is happening over the weekend, and the SysOps Administrator expects website traffic to triple. What can a SysOps Administrator do to ensure improved read times for users during the social event?
+
+- [ ] Use Amazon RDS Multi-AZ.
+- [x] Add shards to the existing Redis cluster.
+- [ ] Offload static data to Amazon S3.
+- [ ] Launch a second Multi-AZ Redis cluster.
