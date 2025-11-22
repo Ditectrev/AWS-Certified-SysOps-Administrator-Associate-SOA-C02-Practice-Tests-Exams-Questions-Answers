@@ -2568,14 +2568,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Define a role-based policy on the other accounts' roles to deny access when a request meets the condition of `aws:SecureTransport`: `false`.
 - [ ] Define a resource-based policy on the KMS key to deny access when a request meets the condition of `aws:SecureTransport`: `false`.
 
-### A developer has an application that stores data in an Amazon S3 bucket. The application uses an `HTTP` API to store and retrieve objects. When the `PutObject` API operation adds objects to the S3 bucket the developer must encrypt these objects at rest by using server-side encryption with Amazon S3 managed keys (SSE-S3). Which solution will meet this requirement?
-
-- [ ] Create an AWS Key Management Service (AWS KMS) key. Assign the KMS key to the S3 bucket.
-- [x] Set the `x-amz-server-side-encryption` header when invoking the `PutObject` API operation.
-- [ ] Provide the encryption key in the `HTTP` header of every request.
-- [ ] Apply TLS to encrypt the traffic to the S3 bucket.
-
-### A SysOps Administrator is maintaining a web application using an Amazon CloudFront web distribution, an Application Load Balancer (ALB), Amazon RDS, and Amazon EC2 in a `VPC`. All services have logging enabled. The Administrator needs to investigate HTTP Layer 7 status codes from the web application. Which log sources contain the status codes? (Choose two.)
+### A SysOps Administrator is maintaining a web application using an Amazon CloudFront web distribution, an Application Load Balancer (ALB), Amazon RDS, and Amazon EC2 in a `VPC`. All services have logging enabled. The Administrator needs to investigate `HTTP` Layer 7 status codes from the web application. Which log sources contain the status codes? (Choose two.)
 
 - [ ] `VPC` Flow Logs.
 - [ ] AWS CloudTrail logs.
@@ -2675,11 +2668,11 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Add an action to AWS Trusted Advisor to turn off EC2 instances based on the Low Utilization Amazon EC2 Instances check, terminating instances identified by Trusted Advisor as running for more than 24 hours.
 - [ ] Install the unified Amazon CloudWatch agent on every EC2 instance. Configure the agent to terminate instances after they have been running for 24 hours.
 
-### A company is storing monthly reports on Amazon S3. The company's security requirement states that traffic from the client VPC to Amazon S3 cannot traverse the internet. What should the SysOps Administrator do to meet this requirement?
+### A company is storing monthly reports on Amazon S3. The company's security requirement states that traffic from the client `VPC` to Amazon S3 cannot traverse the internet. What should the SysOps Administrator do to meet this requirement?
 
 - [ ] Use AWS Direct Connect and a public virtual interface to connect to Amazon S3.
 - [ ] Use a managed NAT gateway to connect to Amazon S3.
-- [x] Deploy a VPC endpoint to connect to Amazon S3.
+- [x] Deploy a `VPC` endpoint to connect to Amazon S3.
 - [ ] Deploy an internet gateway to connect to Amazon S3.
 
 ### A company runs an application on Amazon EC2 instances. The EC2 instances are in an Auto Scaling group and run behind an Application Load Balancer (ALB). The application experiences errors when total requests exceed 100 requests per second. A SysOps administrator must collect information about total requests for a 2-week period to determine when requests exceeded this threshold. What should the SysOps administrator do to collect this data?
@@ -2732,3 +2725,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Add shards to the existing Redis cluster.
 - [ ] Offload static data to Amazon S3.
 - [ ] Launch a second Multi-AZ Redis cluster.
+
+### A SysOps administrator is re-architecting an application. The SysOps administrator has moved the database from a public subnet, where the database used a public endpoint, into a private subnet to restrict access from the public network. After this change, an AWS Lambda function that requires read access to the database cannot connect to the database. The SysOps administrator must resolve this issue without compromising security. Which solution meets these requirements?
+
+- [x] Create an AWS PrivateLink interface endpoint for the Lambda function. Connect to the database using its private endpoint.
+- [ ] Connect the Lambda function to the database `VPC`. Connect to the database using its private endpoint.
+- [ ] Attach an IAM role to the Lambda function with read permissions to the database.
+- [ ] Move the database to a public subnet. Use security groups for secure access.
