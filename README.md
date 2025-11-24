@@ -2597,7 +2597,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Place the instances behind a Network Load Balancer (NLB). Send the traffic to the internet through the private IP address of the NLB.
 - [ ] Update the main route table to send the traffic to the internet through an Elastic IP address that is assigned to each instance.
 
-### A SysOps Administrator is managing an application that runs on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Auto Scaling group across multiple Availability Zones. The application stores data in an Amazon RDS MySQL DB instance. The Administrator must ensure that that application stays available if the database becomes unresponsive. How can these requirements be met?
+### A SysOps Administrator is managing an application that runs on Amazon EC2 instances behind an Application Load Balancer. The instances run in an Auto Scaling group across multiple Availability Zones. The application stores data in an Amazon RDS MySQL DB instance. The Administrator must ensure that application stays available if the database becomes unresponsive. How can these requirements be met?
 
 - [ ] Create read replicas for the RDS database and use them in case of a database failure.
 - [ ] Create a new RDS instance from the snapshot of the original RDS instance if a failure occurs.
@@ -2732,3 +2732,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Connect the Lambda function to the database `VPC`. Connect to the database using its private endpoint.
 - [ ] Attach an IAM role to the Lambda function with read permissions to the database.
 - [ ] Move the database to a public subnet. Use security groups for secure access.
+
+### A SysOps Administrator has implemented a `VPC` network design with the following requirements: Two Availability Zones (`AZ`s). Two private subnets. Two public subnets. One internet gateway. One NAT gateway. What would potentially cause applications in the `VPC` to fail during an `AZ` outage?
+
+- [ ] A single virtual private gateway, because it can be associated with a single `AZ` only.
+- [ ] A single internet gateway, because it is not redundant across both `AZ`s.
+- [x] A single `NAT` gateway, because it is not redundant across both `AZ`s.
+- [ ] The default `VPC` route table, because it can be associated with a single `AZ` only.
