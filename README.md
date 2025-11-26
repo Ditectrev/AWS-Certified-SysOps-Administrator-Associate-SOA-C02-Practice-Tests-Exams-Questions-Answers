@@ -937,7 +937,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Develop CloudFormation nested stacks.
 - [ ] Develop CloudFormation stack sets.
 
-### A company has deployed AWS Security Hub and AWS Config in a newly implemented organization in AWS Organizations. A SysOps administrator must implement a solution to restrict all member accounts in the organization from deploying Amazon EC2 resources in the ap-southeast-2 Region. The solution must be implemented from a single point and must govern an current and future accounts. The use of root credentials also must be restricted in member accounts. Which AWS feature should the SysOps administrator use to meet these requirements?
+### A company has deployed AWS Security Hub and AWS Config in a newly implemented organization in AWS Organizations. A SysOps administrator must implement a solution to restrict all member accounts in the organization from deploying Amazon EC2 resources in the `ap-southeast-2` Region. The solution must be implemented from a single point and must govern an current and future accounts. The use of root credentials also must be restricted in member accounts. Which AWS feature should the SysOps administrator use to meet these requirements?
 
 - [ ] AWS Config aggregator.
 - [ ] IAM user permissions boundaries.
@@ -2739,3 +2739,18 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] A single internet gateway, because it is not redundant across both `AZ`s.
 - [x] A single `NAT` gateway, because it is not redundant across both `AZ`s.
 - [ ] The default `VPC` route table, because it can be associated with a single `AZ` only.
+
+### An organization stores sensitive customer in S3 buckets protected by bucket policies. Recently, there have been reports that unauthorized entities within the company have been trying to access the data on those S3 buckets. The Chief Information Security Officer (CISO) would like to know which buckets are being targeted and determine who is responsible for trying to access that information. Which steps should a SysOps Administrator take to meet the CISO's requirement? (Choose two.)
+
+- [ ] Enable Amazon S3 Analytics on all affected S3 buckets to obtain a report of which buckets are being accessed without authorization.
+- [x] Enable Amazon S3 Server Access Logging on all affected S3 buckets and have the logs stored in a bucket dedicated for logs.
+- [ ] Use Amazon Athena to query S3 Analytics report for `HTTP` `403` errors, and determine the IAM user or role making the requests.
+- [x] Use Amazon Athena to query the S3 Server Access Logs for `HTTP` `403` errors, and determine the IAM user or role making the requests.
+- [ ] Use Amazon Athena to query the S3 Server Access Logs for `HTTP` `503` errors, and determine the IAM user or role making the requests.
+
+### A company is preparing for a marketing campaign that will increase traffic to a new web application. The application uses Amazon API Gateway and AWS Lambda for the application logic. The application stores relevant user data in an Amazon Aurora MySQL DB cluster that has one Aurora Replica. Database queries for the application are `5%` write and `95%` read. What should a SysOps administrator do to scale the database when traffic increases?
+
+- [x] Configure Aurora Auto Scaling to add or remove Aurora Replicas in the cluster based on the average CPU utilization of the Aurora Replicas.
+- [ ] Configure Aurora Auto Scaling to increase or decrease the size of the Aurora Replicas based on the average CPU utilization of the Aurora Replicas.
+- [ ] Configure AWS Auto Scaling to monitor the Aurora cluster. Configure AWS Auto Scaling to add or remove Aurora Replicas in the cluster based on the average CPU utilization of the primary instance.
+- [ ] Configure AWS Auto Scaling to monitor the Aurora cluster. Configure AWS Auto Scaling to add or remove Aurora Replicas in the cluster based on the average CPU utilization of the existing Aurora Replica.
