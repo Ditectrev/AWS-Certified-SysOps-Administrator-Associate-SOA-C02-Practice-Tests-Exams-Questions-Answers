@@ -40,7 +40,7 @@
 - [x] Create a new KMS key. Add the vendor's IAM role ARN to the KMS key policy. Provide the new KMS key ARN to the vendor.
 - [ ] Create a new KMS key. Create a new IAM user. Add the vendor's IAM role ARN to an inline policy that is attached to the IAM user. Provide the new IAM user ARN to the vendor.
 - [ ] Configure encryption using the KMS managed S3 key. Add the vendor's IAM role ARN to the KMS managed S3 key policy. Provide the KMS managed S3 key ARN to the vendor.
-- [ ] Configure encryption using the KMS managed S3 key. Create an S3 bucket. Add the vendor's IAM role ARN to the S3 bucket policy. Provide the S3 bucket ARN to the vendor.
+- [ ] Configure encryption using the KMS managed S3 key. Create a S3 bucket. Add the vendor's IAM role ARN to the S3 bucket policy. Provide the S3 bucket ARN to the vendor.
 
 ### A database is running on an Amazon RDS Multi-AZ DB instance. A recent security audit found the database to be out of compliance because it was not encrypted. Which approach will resolve the encryption requirement?
 
@@ -96,7 +96,7 @@ Configure the rule to invoke an AWS Lambda function to enable CloudTrail.
 ### A company needs to restrict access to an Amazon S3 bucket to Amazon EC2 instances in a `VPC` only. All traffic must be over the AWS private network. What actions should the SysOps administrator take to meet these requirements?
 
 - [ ] Create a `VPC` endpoint for the S3 bucket, and create an IAM policy that conditionally limits all S3 actions on the bucket to the `VPC` endpoint as the source.
-- [x] Create a `VPC` endpoint for the S3 bucket, and create an S3 bucket policy that conditionally limits all S3 actions on the bucket to the `VPC` endpoint as the source.
+- [x] Create a `VPC` endpoint for the S3 bucket, and create a S3 bucket policy that conditionally limits all S3 actions on the bucket to the `VPC` endpoint as the source.
 - [ ] Create a service-linked role for Amazon EC2 that allows the EC2 instances to interact directly with Amazon S3, and attach an IAM policy to the role that allows the EC2 instances full access to the S3 bucket.
 - [ ] Create a `NAT` gateway in the `VPC`, and modify the `VPC` route table to route all traffic destined for Amazon S3 through the `NAT` gateway.
 
@@ -330,11 +330,11 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Use Amazon Inspector to search for S3 buckets and to automatically reset S3 `ACL`s if any public S3 buckets are found.
 - [ ] Use S3 Object Lambda to examine S3 `ACL`s and to change any public S3 `ACL`s to private.
 
-### An Amazon S3 Inventory report reveals that more than 1 million objects in an S3 bucket are not encrypted These objects must be encrypted, and all future objects must be encrypted at the time they are written. Which combination of actions should a SysOps administrator take to meet these requirements? (Select TWO)
+### An Amazon S3 Inventory report reveals that more than 1 million objects in a S3 bucket are not encrypted These objects must be encrypted, and all future objects must be encrypted at the time they are written. Which combination of actions should a SysOps administrator take to meet these requirements? (Select TWO)
 
 - [ ] Create an AWS Config rule that runs evaluations against configuration changes to the S3 bucket. When an unencrypted object is found run an AWS Systems Manager Automation document to encrypt the object in place.
 - [x] Edit the properties of the S3 bucket to enable default server-side encryption.
-- [x] Filter the S3 Inventory report by using S3 Select to find all objects that are not encrypted. Create an S3 Batch Operations job to copy each object in place with en cryption enabled.
+- [x] Filter the S3 Inventory report by using S3 Select to find all objects that are not encrypted. Create a S3 Batch Operations job to copy each object in place with en cryption enabled.
 - [ ] Filter the S3 Inventory report by using S3 Select to find all objects that are not encrypted. Send each object name as a message to an Amazon Simple Queue Service (Amazon SQS) queue. Use the SQS queue to invoke an AWS Lambda function to tag each object with a key of `Encryption` and a value of `SSE-KMS`
 - [ ] Use S3 Event Notifications to invoke an AWS Lambda function on all new object-created events for the S3 bucket. Configure the Lambda function to check whether the object is encrypted and to run an AWS Systems Manager Automation document to encrypt the object in place when an unencrypted object is found.
 
@@ -473,10 +473,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company has a mobile app that uses Amazon S3 to store images The images are popular for a week, and then the number of access requests decreases over time The images must be highly available and must be immediately accessible upon request A SysOps administrator must reduce S3 storage costs for the company. Which solution will meet these requirements MOST cost-effectively?
 
-- [ ] Create an S3 Lifecycle policy to transition the images to S3 Glacier after 7 days.
-- [ ] Create an S3 Lifecycle policy to transition the images to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 7 days.
-- [ ] Create an S3 Lifecycle policy to transition the images to S3 Standard after 7 days.
-- [x] Create an S3 Lifecycle policy to transition the images to S3 Standard-Infrequent Access (S3 Standard-IA) after 7 days.
+- [ ] Create a S3 Lifecycle policy to transition the images to S3 Glacier after 7 days.
+- [ ] Create a S3 Lifecycle policy to transition the images to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 7 days.
+- [ ] Create a S3 Lifecycle policy to transition the images to S3 Standard after 7 days.
+- [x] Create a S3 Lifecycle policy to transition the images to S3 Standard-Infrequent Access (S3 Standard-IA) after 7 days.
 
 ### A SysOps administrator is unable to authenticate an AWS CLI call to an AWS service. Which of the following is the cause of this issue?
 
@@ -587,12 +587,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] CloudFormation will prompt the user to roll back the stack or continue.
 - [ ] CloudFormation will successfully complete the stack but will report a failed status for the DB instance.
 
-### A SysOps administrator manages a company's Amazon S3 buckets. The SysOps administrator has identified `5 GB` of incomplete multipart uploads in an S3 bucket in the company's AWS account. The SysOps administrator needs to reduce the number of incomplete multipart upload objects in the S3 bucket. Which solution will meet this requirement?
+### A SysOps administrator manages a company's Amazon S3 buckets. The SysOps administrator has identified `5 GB` of incomplete multipart uploads in a S3 bucket in the company's AWS account. The SysOps administrator needs to reduce the number of incomplete multipart upload objects in the S3 bucket. Which solution will meet this requirement?
 
-- [x] Create an S3 Lifecycle rule on the S3 bucket to delete expired markers or incomplete multipart uploads.
+- [x] Create a S3 Lifecycle rule on the S3 bucket to delete expired markers or incomplete multipart uploads.
 - [ ] Require users that perform uploads of files into Amazon S3 to use the S3 TransferUtility.
 - [ ] Enable S3 Versioning on the S3 bucket that contains the incomplete multipart uploads.
-- [ ] Create an S3 Object Lambda Access Point to delete incomplete multipart uploads.
+- [ ] Create a S3 Object Lambda Access Point to delete incomplete multipart uploads.
 
 ### A company is using Amazon Elastic File System (Amazon EFS) to share a file system among several Amazon EC2 instances. As usage increases, users report that file retrieval from the EFS file system is slower than normal. Which action should a SysOps administrator take to improve the performance of the file system?
 
@@ -615,7 +615,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create an alias record for each server with `Evaluate Target Health` set to `Yes`. Associate the records with the Route 53 `HTTP` health check.
 - [ ] Create an alias record for each server with `Evaluate Target Health` set to `Yes`. Associate the records with the Route 53 `TCP` health check.
 
-### A company must ensure that any objects uploaded to an S3 bucket are encrypted. Which of the following actions will meet this requirement? (Choose two.)
+### A company must ensure that any objects uploaded to a S3 bucket are encrypted. Which of the following actions will meet this requirement? (Choose two.)
 
 - [ ] Implement AWS Shield to protect against unencrypted objects stored in S3 buckets.
 - [ ] Implement Object Access Control List (`ACL`) to deny unencrypted objects from being uploaded to the S3 bucket.
@@ -632,10 +632,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company wants to collect data from an application to use for analytics. For the first 90 days, the data will be infrequently accessed but must remain highly available. During this time, the company's analytics team requires access to the data in milliseconds. However, after 90 days, the company must retain the data for the long term at a lower cost. The retrieval time after 90 days must be less than 5 hours. Which solution will meet these requirements MOST cost-effectively?
 
-- [x] Store the data in S3 Standard-Infrequent Access (S3 Standard-IA) for the first 90 days. Set up an S3 Lifecycle rule to move the data to S3 Glacier Flexible Retrieval after 90 days.
-- [ ] Store the data in S3 One Zone-Infrequent Access (S3 One Zone-IA) for the first 90 days. Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90 days.
-- [ ] Store the data in S3 Standard for the first 90 days. Set up an S3 Lifecycle rule to move the data to S3 Glacier Flexible Retrieval after 90 days.
-- [ ] Store the data in S3 Standard for the first 90 days. Set up an S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90 days.
+- [x] Store the data in S3 Standard-Infrequent Access (S3 Standard-IA) for the first 90 days. Set up a S3 Lifecycle rule to move the data to S3 Glacier Flexible Retrieval after 90 days.
+- [ ] Store the data in S3 One Zone-Infrequent Access (S3 One Zone-IA) for the first 90 days. Set up a S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90 days.
+- [ ] Store the data in S3 Standard for the first 90 days. Set up a S3 Lifecycle rule to move the data to S3 Glacier Flexible Retrieval after 90 days.
+- [ ] Store the data in S3 Standard for the first 90 days. Set up a S3 Lifecycle rule to move the data to S3 Glacier Deep Archive after 90 days.
 
 ### A manufacturing company uses an Amazon RDS DB instance to store inventory of all stock items. The company maintains several AWS Lambda functions that interact with the database to add, update, and delete items. The Lambda functions use hardcoded credentials to connect to the database. A SysOps administrator must ensure that the database credentials are never stored in plaintext and that the password is rotated every 30 days. Which solution will meet these requirements in the MOST operationally efficient manner?
 
@@ -668,7 +668,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A company stores its data in an Amazon S3 bucket. The company is required to classify the data and find any sensitive personal information in its S3 files. Which solution will meet these requirements?
 
 - [ ] Create an AWS Config rule to discover sensitive personal information in the S3 files and mark them as noncompliant.
-- [ ] Create an S3 event-driven artificial intelligence/machine learning (AI/ML) pipeline to classify sensitive personal information by using Amazon Recognition.
+- [ ] Create a S3 event-driven artificial intelligence/machine learning (AI/ML) pipeline to classify sensitive personal information by using Amazon Recognition.
 - [ ] Enable Amazon GuardDuty. Configure S3 protection to monitor all data inside Amazon S3.
 - [x] Enable Amazon Macie. Create a discovery job that uses the managed data identifier.
 
@@ -1139,8 +1139,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company has deployed an application on Amazon EC2 instances in a single `VPC`. The company has placed the EC2 instances in a private subnet in the `VPC`. The EC2 instances need access to Amazon S3 buckets that are in the same AWS Region as the EC2 instances. A SysOps administrator must provide the EC2 instances with access to the S3 buckets without requiring any changes to the EC2 instances or the application. The EC2 instances must not have access to the internet. Which solution will meet these requirements?
 
-- [x] Create an S3 gateway endpoint that uses the default gateway endpoint policy. Associate the private subnet with the gateway endpoint.
-- [ ] Create an S3 interface endpoint. Associate the EC2 instances with the interface endpoint.
+- [x] Create a S3 gateway endpoint that uses the default gateway endpoint policy. Associate the private subnet with the gateway endpoint.
+- [ ] Create a S3 interface endpoint. Associate the EC2 instances with the interface endpoint.
 - [ ] Configure a `NAT` gateway. Associate the private subnet with the `NAT` gateway.
 - [ ] Configure a proxy EC2 instance. Update the private subnet route tables to route traffic through the proxy EC2 instance. Configure the proxy to route all S3 requests to the target S3 bucket.
 
@@ -1160,10 +1160,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company has scientists who upload large data objects to an Amazon S3 bucket. The scientists upload the objects as multipart uploads. The multipart uploads often fail because of poor end-client connectivity. The company wants to optimize storage costs that are associated with the data. A SysOps administrator must implement a solution that presents metrics for incomplete uploads. The solution also must automatically delete any incomplete uploads after 7 days. Which solution will meet these requirements?
 
-- [x] Review the Incomplete Multipart Upload Bytes metric in the S3 Storage Lens dashboard. Create an S3 Lifecycle policy to automatically delete any incomplete multipart uploads after 7 days.
-- [ ] Implement S3 Intelligent-Tiering to move data into lower-cost storage classes after 7 days. Create an S3 Storage Lens policy to automatically delete any incomplete multipart uploads after 7 days.
+- [x] Review the Incomplete Multipart Upload Bytes metric in the S3 Storage Lens dashboard. Create a S3 Lifecycle policy to automatically delete any incomplete multipart uploads after 7 days.
+- [ ] Implement S3 Intelligent-Tiering to move data into lower-cost storage classes after 7 days. Create a S3 Storage Lens policy to automatically delete any incomplete multipart uploads after 7 days.
 - [ ] Access the S3 console. Review the Metrics tab to check the storage that incomplete multipart uploads are consuming. Create an AWS Lambda function to delete any incomplete multipart uploads after 7 days.
-- [ ] Use the S3 analytics storage class analysis tool to identify and measure incomplete multipart uploads. Configure an S3 bucket policy to enforce restrictions on multipart uploads to delete incomplete multipart uploads after 7 days.
+- [ ] Use the S3 analytics storage class analysis tool to identify and measure incomplete multipart uploads. Configure a S3 bucket policy to enforce restrictions on multipart uploads to delete incomplete multipart uploads after 7 days.
 
 ### A company is uploading important files as objects to Amazon S3. The company needs to be informed if an object is corrupted during the upload. What should a SysOps administrator do to meet this requirement?
 
@@ -1250,9 +1250,9 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Use Spot Instances for the control nodes. Use On-Demand Instances if there is no Spot availability.
 - [x] Use Spot Instances for the task nodes. Use On-Demand Instances if there is no Spot availability.
 
-### A company is supposed to receive a data file every hour in an Amazon S3 bucket. An S3 event notification invokes an AWS Lambda function each time a file arrives. The function processes the data for use by an application. The application team notices that sometimes the file does not arrive. The application team wants to receive a notification whenever the file does not arrive. What is the MOST operationally efficient solution that meets these requirements?
+### A company is supposed to receive a data file every hour in an Amazon S3 bucket. A S3 event notification invokes an AWS Lambda function each time a file arrives. The function processes the data for use by an application. The application team notices that sometimes the file does not arrive. The application team wants to receive a notification whenever the file does not arrive. What is the MOST operationally efficient solution that meets these requirements?
 
-- [ ] Add an S3 Lifecycle rule on the S3 bucket with a scope that is limited to objects that were created in the last hour. Configure another S3 event notification to be invoked by the lifecycle transition when the number of objects transitioned is zero. Publish a message to an Amazon Simple Notification Service (Amazon SNS) topic to notify the application team.
+- [ ] Add a S3 Lifecycle rule on the S3 bucket with a scope that is limited to objects that were created in the last hour. Configure another S3 event notification to be invoked by the lifecycle transition when the number of objects transitioned is zero. Publish a message to an Amazon Simple Notification Service (Amazon SNS) topic to notify the application team.
 - [ ] Configure another S3 event notification to invoke a Lambda function that posts a message to an Amazon Simple Queue Service (Amazon SQS) queue. Create an Amazon CloudWatch alarm to publish a message to an Amazon Simple Notification Service (Amazon SNS) topic to notify the application team when the ApproximateAgeOfOldestMessage metric of the queue is greater than 1 hour.
 - [x] Create an Amazon CloudWatch alarm to publish a message to an Amazon Simple Notification Service (Amazon SNS) topic to alert the application team when the Invocations metric of the Lambda function is zero for an hour. Configure the alarm to treat missing data as breaching.
 - [ ] Create a new Lambda function to get the timestamp of the newest file in the S3 bucket. If the timestamp is more than 1 hour ago, publish a message to an Amazon Simple Notification Service (Amazon SNS) topic to notify the application team. Create an Amazon EventBridge (Amazon CloudWatch Events) rule to invoke the new function hourly.
@@ -1360,8 +1360,8 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Create an Amazon Data Lifecycle Manager (Amazon DLM) lifecycle policy for the S3 bucket. Add a rule to the lifecycle policy to delete noncurrent objects after 90 days.
 - [ ] Create an AWS Backup policy for the S3 bucket. Create a backup rule that includes a lifecycle to expire noncurrent objects after 90 days.
-- [ ] Enable S3 Cross-Region Replication on the S3 bucket. Create an S3 Lifecycle policy for the bucket to expire noncurrent objects after 90 days.
-- [x] Enable S3 Versioning on the S3 bucket. Create an S3 Lifecycle policy for the bucket to expire noncurrent objects after 90 days.
+- [ ] Enable S3 Cross-Region Replication on the S3 bucket. Create a S3 Lifecycle policy for the bucket to expire noncurrent objects after 90 days.
+- [x] Enable S3 Versioning on the S3 bucket. Create a S3 Lifecycle policy for the bucket to expire noncurrent objects after 90 days.
 
 ### A company uses AWS Organizations to manage multiple AWS accounts. Corporate policy mandates that only specific AWS Regions can be used to store and process customer data. A SysOps administrator must prevent the provisioning of Amazon EC2 instances in unauthorized Regions by anyone in the company. What is the MOST operationally efficient solution that meets these requirements?
 
@@ -1646,7 +1646,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [x] Create a CloudFront invalidation, and add the path of the updated files.
 - [ ] Create a CloudFront signed URL to update each object immediately.
-- [ ] Configure an S3 Origin Access Identity (OAI) to display only the updated files to users.
+- [ ] Configure a S3 Origin Access Identity (OAI) to display only the updated files to users.
 - [ ] Disable S3 Versioning on the S3 bucket so that the updated files can replace the old files.
 
 ### A company has two `VPC` networks named `VPC` A and `VPC` B. The `VPC` A `CIDR` block is `10.0.0.0/16` and the `VPC` B `CIDR` block is `172.31.0.0/16`. The company wants to establish a `VPC` peering connection named `pcx-12345` between both  `VPC`'s. Which rules should appear in the route table of `VPC` A after configuration? (Choose two.)
@@ -1849,7 +1849,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A company maintains a large set of sensitive data in an Amazon S3 bucket. The company's security team asks a SysOps administrator to help verify that all current objects in the S3 bucket are encrypted. What is the MOST operationally efficient solution that meets these requirements?
 
 - [ ] Create a script that runs against the S3 bucket and outputs the status of each object.
-- [x] Create an S3 Inventory configuration on the S3 bucket. Include the appropriate status fields.
+- [x] Create a S3 Inventory configuration on the S3 bucket. Include the appropriate status fields.
 - [ ] Provide the security team with an IAM user that has read access to the S3 bucket.
 - [ ] Use the AWS CLI to output a list of all objects in the S3 bucket.
 
@@ -1985,10 +1985,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 ### A company has an application that uses an Amazon S3 bucket for object storage. A developer needs to configure in-transit encryption for the S3 bucket. All the S3 objects containing personal data needs to be encrypted at rest with AWS Key Management Service (AWS KMS) keys, which can be rotated on demand. Which combination of steps will meet these requirements? (Choose two.)
 
-- [ ] Write an S3 bucket policy to allow only encrypted connections over `HTTPS` by using permissions boundary.
-- [ ] Configure an S3 bucket policy to enable client-side encryption for the objects containing personal data by using an AWS KMS customer managed key.
+- [ ] Write a S3 bucket policy to allow only encrypted connections over `HTTPS` by using permissions boundary.
+- [ ] Configure a S3 bucket policy to enable client-side encryption for the objects containing personal data by using an AWS KMS customer managed key.
 - [x] Configure the application to encrypt the objects by using an AWS KMS customer managed key before uploading the objects containing personal data to Amazon S3.
-- [x] Write an S3 bucket policy to allow only encrypted connections over `HTTPS` by using the `aws:SecureTransport` condition.
+- [x] Write a S3 bucket policy to allow only encrypted connections over `HTTPS` by using the `aws:SecureTransport` condition.
 - [ ] Configure S3 Block Public Access settings for the S3 bucket to allow only encrypted connections over `HTTPS`.
 
 ### A SysOps Administrator found that a newly-deployed Amazon EC2 application server is unable to connect to an existing Amazon RDS database. After enabling `VPC` Flow Logs and confirming that the flow log is active on the console, the log group cannot be located in Amazon CloudWatch. What are the MOST likely reasons for this situation? (Choose two.)
@@ -2481,7 +2481,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 
 - [ ] Create an Amazon EventBridge (Amazon CloudWatch Events) rule that has an event pattern for Amazon S3 and the Lambda function as a target.
 - [x] Create an Amazon EventBridge (Amazon CloudWatch Events) rule that has a schedule and the Lambda function as a target.
-- [ ] Create an S3 event notification to invoke the Lambda function whenever objects change in the S3 bucket.
+- [ ] Create a S3 event notification to invoke the Lambda function whenever objects change in the S3 bucket.
 - [ ] Deploy an Amazon EC2 instance with a cron job to invoke the Lambda function.
 
 ### A SysOps administrator has an Amazon S3 website and wants to restrict access to a single Amazon CloudFront distribution. Visitors to the website should not be able to circumvent CloudFront or view the S3 website directly from the bucket. Which AWS service or feature will meet these requirements?
@@ -2754,3 +2754,10 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Configure Aurora Auto Scaling to increase or decrease the size of the Aurora Replicas based on the average CPU utilization of the Aurora Replicas.
 - [ ] Configure AWS Auto Scaling to monitor the Aurora cluster. Configure AWS Auto Scaling to add or remove Aurora Replicas in the cluster based on the average CPU utilization of the primary instance.
 - [ ] Configure AWS Auto Scaling to monitor the Aurora cluster. Configure AWS Auto Scaling to add or remove Aurora Replicas in the cluster based on the average CPU utilization of the existing Aurora Replica.
+
+### An Amazon EC2 instance in a private subnet needs to copy data to an Amazon S3 bucket. For security reasons, the connection from the EC2 instance to Amazon S3 must not traverse across the Internet. What action should the SysOps Administrator take to accomplish this?
+
+- [ ] Create a `NAT` instance and route traffic destined to Amazon S3 through it.
+- [ ] Create a `VPN` connection between the EC2 instance and Amazon S3.
+- [x] Create an S3 `VPC` endpoint in the `VPC` where the EC2 instance resides.
+- [ ] Use AWS Direct Connect to maximize throughput and keep the traffic private.
