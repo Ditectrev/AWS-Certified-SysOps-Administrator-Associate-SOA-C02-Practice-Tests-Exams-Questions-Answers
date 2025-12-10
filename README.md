@@ -2761,3 +2761,18 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Create a `VPN` connection between the EC2 instance and Amazon S3.
 - [x] Create an S3 `VPC` endpoint in the `VPC` where the EC2 instance resides.
 - [ ] Use AWS Direct Connect to maximize throughput and keep the traffic private.
+
+### A company has an existing public web application for `www.example.com`. The Application Load Balancer (ALB) is configured with a single `HTTP` `80` listener. A SysOps administrator must ensure that all web requests to `www.example.com` are encrypted between the client and the `ALB`. The SysOps administrator already has requested and validated a public certificate for `www.example.com` in AWS Certificate Manager (ACM). Existing users of the application must not be required to change the endpoint to which they are connecting. Which additional set of steps should the SysOps administrator take to meet these requirements?
+
+- [ ] Create an additional `ALB` listener for `HTTPS` on port `443`. Set the default action to forward all traffic to the target group. Specify the ACM certificate that was created for `www.example.com` as the default SSL certificate.
+- [ ] Create an additional `ALB` listener for `HTTPS` on port `443`. Set the default action to forward all traffic to the target group. Specify the ACM certificate that was created for `www.example.com` as the default SSL certificate. Delete the original HTTP listener on port 80.
+- [ ] Modify the `ALB` default rule for the HTTP port 80 listener. Create a rule in the listener to forward all traffic for the host www example.com to the target group. Specify the ACM certificate that was created for `www.example.com` as the default SSL certificate.
+- [x] Modify the `ALB` default rule for the HTTP port `80` listener to redirect to `HTTPS` on port `443`. Create an additional `HTTPS` listener on port `443`. Set the default action to forward all traffic to the target group. Specify the ACM certificate that was created for `www.example.com` as the default SSL certificate.
+
+### A SysOps administrator needs to configure the Amazon Route 53 hosted zone for `example.com` and `www.example.com` to point to an Application Load Balancer (ALB). Which combination of actions should the SysOps administrator take to meet these requirements? (Choose two.)
+
+- [ ] Configure an `A` record for `example.com` to point to the IP address of the `ALB`.
+- [ ] Configure an `A` record for `www.example.com` to point to the IP address of the `ALB`.
+- [x] Configure an alias record for `example.com` to point to the `CNAME` of the `ALB`.
+- [x] Configure an alias record for `www.example.com` to point to the Route 53 `example.com` record.
+- [ ] Configure a `CNAME` record for `example.com` to point to the `CNAME` of the `ALB`.
