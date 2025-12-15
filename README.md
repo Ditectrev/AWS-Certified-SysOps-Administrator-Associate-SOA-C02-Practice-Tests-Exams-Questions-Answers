@@ -1,3 +1,7 @@
+# ⬆️ Amazon Web Services Certified (AWS Certified) CloudOps Engineer Associate (SOA-C03) Practice Tests Exams Questions & Answers
+
+![Promotional image](images/promotional.png)
+
 ### An Amazon EC2 instance needs to be reachable from the internet. The EC2 instance is in a subnet with the following route table. Which entry must a SysOps administrator add to the route table to meet this requirement?
 
 ![Question 1](images/question1.jpg)
