@@ -2780,3 +2780,11 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Configure an alias record for `example.com` to point to the `CNAME` of the `ALB`.
 - [x] Configure an alias record for `www.example.com` to point to the Route 53 `example.com` record.
 - [ ] Configure a `CNAME` record for `example.com` to point to the `CNAME` of the `ALB`.
+
+### A sysops administrator created an AWS Lambda function within a `VPC` with no access to the Internet. The Lambda function pulls messages from an Amazon SQS queue and stores them in an Amazon RDS instance in the same `VPC`. After executing the Lambda function, the data is not showing up on the RDS instance. Which of the following are possible causes for this? (Choose two.)
+
+- [ ] A `VPC` endpoint has not been created for Amazon RDS.
+- [x] A `VPC` endpoint has not been created for Amazon SQS.
+- [x] The RDS security group is not allowing connections from the Lambda function.
+- [ ] The subnet associated with the Lambda function does not have an internet gateway attached.
+- [ ] The subnet associated with the Lambda function has a NAT gateway.
