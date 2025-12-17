@@ -2675,7 +2675,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A company is storing monthly reports on Amazon S3. The company's security requirement states that traffic from the client `VPC` to Amazon S3 cannot traverse the internet. What should the SysOps Administrator do to meet this requirement?
 
 - [ ] Use AWS Direct Connect and a public virtual interface to connect to Amazon S3.
-- [ ] Use a managed NAT gateway to connect to Amazon S3.
+- [ ] Use a managed `NAT` gateway to connect to Amazon S3.
 - [x] Deploy a `VPC` endpoint to connect to Amazon S3.
 - [ ] Deploy an internet gateway to connect to Amazon S3.
 
@@ -2737,7 +2737,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Attach an IAM role to the Lambda function with read permissions to the database.
 - [ ] Move the database to a public subnet. Use security groups for secure access.
 
-### A SysOps Administrator has implemented a `VPC` network design with the following requirements: Two Availability Zones (`AZ`s). Two private subnets. Two public subnets. One internet gateway. One NAT gateway. What would potentially cause applications in the `VPC` to fail during an `AZ` outage?
+### A SysOps Administrator has implemented a `VPC` network design with the following requirements: Two Availability Zones (`AZ`s). Two private subnets. Two public subnets. One internet gateway. One `NAT` gateway. What would potentially cause applications in the `VPC` to fail during an `AZ` outage?
 
 - [ ] A single virtual private gateway, because it can be associated with a single `AZ` only.
 - [ ] A single internet gateway, because it is not redundant across both `AZ`s.
@@ -2787,4 +2787,11 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] A `VPC` endpoint has not been created for Amazon SQS.
 - [x] The RDS security group is not allowing connections from the Lambda function.
 - [ ] The subnet associated with the Lambda function does not have an internet gateway attached.
-- [ ] The subnet associated with the Lambda function has a NAT gateway.
+- [ ] The subnet associated with the Lambda function has a `NAT` gateway.
+
+### A user has created a `VPC` with public and private subnets using the `VPC` wizard. Which of the below mentioned statements is not true in this scenario?
+
+- [x] The `VPC` will create a routing instance and attach it with a public subnet.
+- [ ] The `VPC` will create two subnets.
+- [ ] The `VPC` will create one internet gateway and attach it to `VPC`.
+- [ ] The `VPC` will launch one NAT instance with an elastic IP.
