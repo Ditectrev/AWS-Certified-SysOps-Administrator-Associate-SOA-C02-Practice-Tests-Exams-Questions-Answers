@@ -368,7 +368,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Deploy a copy of the stack in the `us-west-2` Region. Create a single start of authority (`SOA`) record in Route 53 that includes the IP address from each ELB. Configure the `SOA` record with health checks. Use the ELB in `us-east-1` as the primary record and the ELB in `us-west-2` as the secondary record.
 - [x] Deploy a copy of the stack in the `us-west-2` Region. Create an additional `A` record in Route 53 that includes the ELB in `us-west-2` as an alias target. Configure the `A` records with a failover routing policy and health checks. Use the ELB in `us-east-1` as the primary record and the ELB in `us-west-2` as the secondary record.
 - [ ] Deploy a new group of EC2 instances in the `us-west-2` Region. Associate the new EC2 instances with the existing ELB, and configure load balancer health checks on all EC2 instances. Configure the ELB to update Route 53 when EC2 instances in `us-west-2` fail health checks.
-- [ ] Deploy a new group of EC2 instances in the `us-west-2` Region. Configure EC2 health checks on all EC2 instances in each Region. Configure a peering connection between the  `VPC`'s. Use the `VPC` in `us-east-1` as the primary record and the `VPC` in `us-west-2` as the secondary record.
+- [ ] Deploy a new group of EC2 instances in the `us-west-2` Region. Configure EC2 health checks on all EC2 instances in each Region. Configure a peering connection between the `VPC`'s. Use the `VPC` in `us-east-1` as the primary record and the `VPC` in `us-west-2` as the secondary record.
 
 ### A company needs to view a list of security groups that are open to the internet on port `3389`. What should a SysOps administrator do to meet this requirement?
 
@@ -1653,7 +1653,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Configure a S3 Origin Access Identity (OAI) to display only the updated files to users.
 - [ ] Disable S3 Versioning on the S3 bucket so that the updated files can replace the old files.
 
-### A company has two `VPC` networks named `VPC` A and `VPC` B. The `VPC` A `CIDR` block is `10.0.0.0/16` and the `VPC` B `CIDR` block is `172.31.0.0/16`. The company wants to establish a `VPC` peering connection named `pcx-12345` between both  `VPC`'s. Which rules should appear in the route table of `VPC` A after configuration? (Choose two.)
+### A company has two `VPC` networks named `VPC` A and `VPC` B. The `VPC` A `CIDR` block is `10.0.0.0/16` and the `VPC` B `CIDR` block is `172.31.0.0/16`. The company wants to establish a `VPC` peering connection named `pcx-12345` between both `VPC`'s. Which rules should appear in the route table of `VPC` A after configuration? (Choose two.)
 
 - [x] `Destination`: `10.0.0.0/16`, `Target`: `Local`.
 - [ ] `Destination`: `172.31.0.0/16`, `Target`: `Local`.
@@ -2226,7 +2226,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] The Amazon Machine image used is not available in that region.
 - [ ] The AWS CloudFormation template needs to be updated to the latest version.
 - [ ] The `VPC` configuration parameters have changed and must be updated in the template.
-- [x] The account has reached the default limit for  `VPC`'s allowed.
+- [x] The account has reached the default limit for `VPC`'s allowed.
 
 ### A financial service company is running distributed computing software to manage a fleet of 20 servers for their calculations. There are 2 control nodes and 18 worker nodes to run the calculations. Worker nodes can be automatically started by the control nodes when required. Currently, all nodes are running on demand, and the worker nodes are used for approximately 4 hours each day. Which combination of actions will be MOST cost-effective? (Choose two.)
 
@@ -2396,12 +2396,12 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] Option D.
 ![Question 331 option D](images/question331_D.png)
 
-### A company is setting up a `VPC` peering connection between its `VPC` and a customer's `VPC`. The company `VPC` is an IPv4 CIDR block of `172.16.0.0/16`, and the customer's is an IPv4 CIDR block of `10.0.0.0/16`. The SysOps Administrator wants to be able to ping the customer's database private IP address from one of the company's Amazon EC2 instances. What action should be taken to meet the requirements?
+### A company is setting up a `VPC` peering connection between its `VPC` and a customer's `VPC`. The company `VPC` is an IPv4 `CIDR` block of `172.16.0.0/16`, and the customer's is an IPv4 `CIDR` block of `10.0.0.0/16`. The SysOps Administrator wants to be able to ping the customer's database private IP address from one of the company's Amazon EC2 instances. What action should be taken to meet the requirements?
 
 - [ ] Ensure that both accounts are linked and are part of consolidated billing to create a file sharing network, and then enable `VPC` peering.
 - [x] Ensure that both `VPC` owners manually add a route to the `VPC` route tables that points to the IP address range of the other `VPC`.
-- [ ] Instruct the customer to set up a `VPC` with the same IPv4 CIDR block as that of the source `VPC`: `172.16.0.0/16`.
-- [ ] Instruct the customer to create a virtual private gateway to link the two  `VPC`'s.
+- [ ] Instruct the customer to set up a `VPC` with the same IPv4 `CIDR` block as that of the source `VPC`: `172.16.0.0/16`.
+- [ ] Instruct the customer to create a virtual private gateway to link the two `VPC`'s.
 
 ### A company runs a web application that users access using the domain name `www.example.com`. The company manages the domain name using Amazon Route 53. The company created an Amazon CloudFront distribution in front of the application and would like `www.example.com` to access the application through CloudFront. What is the MOST cost-effective way to achieve this?
 
@@ -2533,9 +2533,9 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A SysOps administrator is creating a simple, public-facing website running on Amazon EC2. The SysOps administrator created the EC2 instance in an existing public subnet and assigned an Elastic IP address to the instance. Next, the SysOps administrator created and applied a new security group to the instance to allow incoming `HTTP` traffic from `0.0.0.0/0`. Finally, the SysOps administrator created a new network `ACL` and applied it to the subnet to allow incoming `HTTP` traffic from `0.0.0.0/0`. However, the website cannot be reached from the internet. What is the cause of this issue?
 
 - [x] The SysOps administrator did not create an outbound rule that allows ephemeral port return traffic in the new network `ACL`.
-- [ ] The SysOps administrator did not create an outbound rule in the security group that allows `HTTP` traffic from port 80.
+- [ ] The SysOps administrator did not create an outbound rule in the security group that allows `HTTP` traffic from port `80`.
 - [ ] The Elastic IP address assigned to the EC2 instance has changed.
-- [ ] There is an additional network `ACL` associated with the subnet that includes a rule that denies inbound `HTTP` traffic from port 80.
+- [ ] There is an additional network `ACL` associated with the subnet that includes a rule that denies inbound `HTTP` traffic from port `80`.
 
 ### A company's application infrastructure was deployed using AWS CloudFormation and is composed of Amazon EC2 instances behind an Application Load Balancer. The instances run in an EC2 Auto Scaling group across multiple Availability Zones. When releasing a new version of the application, the update deployment must avoid `DNS` changes and allow rollback. Which solution should a SysOps administrator use to meet the deployment requirements for this new release?
 
@@ -2769,9 +2769,9 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 ### A company has an existing public web application for `www.example.com`. The Application Load Balancer (ALB) is configured with a single `HTTP` `80` listener. A SysOps administrator must ensure that all web requests to `www.example.com` are encrypted between the client and the `ALB`. The SysOps administrator already has requested and validated a public certificate for `www.example.com` in AWS Certificate Manager (ACM). Existing users of the application must not be required to change the endpoint to which they are connecting. Which additional set of steps should the SysOps administrator take to meet these requirements?
 
 - [ ] Create an additional `ALB` listener for `HTTPS` on port `443`. Set the default action to forward all traffic to the target group. Specify the ACM certificate that was created for `www.example.com` as the default SSL certificate.
-- [ ] Create an additional `ALB` listener for `HTTPS` on port `443`. Set the default action to forward all traffic to the target group. Specify the ACM certificate that was created for `www.example.com` as the default SSL certificate. Delete the original HTTP listener on port 80.
-- [ ] Modify the `ALB` default rule for the HTTP port 80 listener. Create a rule in the listener to forward all traffic for the host www example.com to the target group. Specify the ACM certificate that was created for `www.example.com` as the default SSL certificate.
-- [x] Modify the `ALB` default rule for the HTTP port `80` listener to redirect to `HTTPS` on port `443`. Create an additional `HTTPS` listener on port `443`. Set the default action to forward all traffic to the target group. Specify the ACM certificate that was created for `www.example.com` as the default SSL certificate.
+- [ ] Create an additional `ALB` listener for `HTTPS` on port `443`. Set the default action to forward all traffic to the target group. Specify the ACM certificate that was created for `www.example.com` as the default SSL certificate. Delete the original `HTTP` listener on port `80`.
+- [ ] Modify the `ALB` default rule for the `HTTP` port `80` listener. Create a rule in the listener to forward all traffic for the host www example.com to the target group. Specify the ACM certificate that was created for `www.example.com` as the default SSL certificate.
+- [x] Modify the `ALB` default rule for the `HTTP` port `80` listener to redirect to `HTTPS` on port `443`. Create an additional `HTTPS` listener on port `443`. Set the default action to forward all traffic to the target group. Specify the ACM certificate that was created for `www.example.com` as the default SSL certificate.
 
 ### A SysOps administrator needs to configure the Amazon Route 53 hosted zone for `example.com` and `www.example.com` to point to an Application Load Balancer (ALB). Which combination of actions should the SysOps administrator take to meet these requirements? (Choose two.)
 
@@ -2781,7 +2781,7 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [x] Configure an alias record for `www.example.com` to point to the Route 53 `example.com` record.
 - [ ] Configure a `CNAME` record for `example.com` to point to the `CNAME` of the `ALB`.
 
-### A sysops administrator created an AWS Lambda function within a `VPC` with no access to the Internet. The Lambda function pulls messages from an Amazon SQS queue and stores them in an Amazon RDS instance in the same `VPC`. After executing the Lambda function, the data is not showing up on the RDS instance. Which of the following are possible causes for this? (Choose two.)
+### A SysOps administrator created an AWS Lambda function within a `VPC` with no access to the Internet. The Lambda function pulls messages from an Amazon SQS queue and stores them in an Amazon RDS instance in the same `VPC`. After executing the Lambda function, the data is not showing up on the RDS instance. Which of the following are possible causes for this? (Choose two.)
 
 - [ ] A `VPC` endpoint has not been created for Amazon RDS.
 - [x] A `VPC` endpoint has not been created for Amazon SQS.
@@ -2795,3 +2795,38 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] The `VPC` will create two subnets.
 - [ ] The `VPC` will create one internet gateway and attach it to `VPC`.
 - [ ] The `VPC` will launch one NAT instance with an elastic IP.
+
+### A company has an application that uses a scheduled AWS Lambda function to retrieve datasets from external sources over the internet. The function is not associated with a `VPC`. The company is modifying the application to store the information that the Lambda function retrieves on an Amazon RDS DB instance in a private subnet. The `VPC` has two public subnets and two private subnets. A SysOps administrator must deploy a solution that allows the Lambda function to access the new database and continue to access the internet. Which solution meets these requirements?
+
+- [ ] Create a new Lambda function with `VPC` access and an Elastic IP address. Attach the function to public subnets in two Availability Zones. Associate a security group with the Elastic IP address. Configure the security group outbound rules to allow Lambda to access the required resources.
+- [ ] Create a new Lambda function with `VPC` access and two public IP addresses. Attach the function to public subnets in the same Availability Zones that the database uses. Associate a security group with the function. Configure the security group inbound rules to allow Lambda to access the required resources.
+- [x] Reconfigure the Lambda function for `VPC` access. Add `NAT` gateways to the public subnets in the VPAdd route table entries in the private subnets to route through the `NAT` gateways to the internet. Attach the function to the private subnets that support the database. Associate a security group with the function. Configure the security group outbound rules to allow Lambda to access the internet.
+- [ ] Reconfigure the Lambda function for `VPC` access. Attach the function to the private subnets. Add route table entries in the private subnets to route through the internet gateway to the internet. Associate a security group with the subnets. Configure the security group inbound rules to allow Lambda to access the required resources through the internet gateway.
+
+### A user has created a `VPC` with public and private subnets using the `VPC` wizard. The `VPC` has `CIDR` `20.0.0.0/16`. The private subnet uses `CIDR` `20.0.0.0/24`. The `NAT` instance ID is `i-a12345`. Which of the below mentioned entries are required in the main route table attached with the private subnet to allow instances to connect with the internet?
+
+- [x] Destination: `0.0.0.0/0` and Target: `i-a12345`.
+- [ ] Destination: `20.0.0.0/0` and Target: `80`.
+- [ ] Destination: `20.0.0.0/0` and Target: `i-a12345`.
+- [ ] Destination: `20.0.0.0/24` and Target: `i-a12345`.
+
+### A user has created a `VPC` with public and private subnets using the `VPC` wizard. Which of the below mentioned statements is true in this scenario?
+
+- [ ] The AWS `VPC` will automatically create a `NAT` instance with the micro size.
+- [x] `VPC` bounds the main route table with a private subnet and a custom route table with a public subnet.
+- [ ] The user has to manually create a `NAT` instance.
+- [ ] `VPC` bounds the main route table with a public subnet and a custom route table with a private subnet.
+
+### A user has created a `VPC` with public and private subnets using the `VPC` Wizard. The `VPC` has `CIDR` `20.0.0.0/16`. The private subnet uses `CIDR` `20.0.0.0/24`. Which of the below mentioned entries are required in the main route table to allow the instances in `VPC` to communicate with each other?
+
+- [ ] Destination: `20.0.0.0/24` and Target: `VPC`.
+- [x] Destination: `20.0.0.0/16` and Target: `Local`.
+- [ ] Destination: `20.0.0.0/0` and Target: `ALL`.
+- [ ] Destination: `20.0.0.0/24` and Target: `Local`.
+
+### A user has created a `VPC` with public and private subnets using the `VPC` wizard. The user has not launched any instance manually and is trying to delete the `VPC`. What will happen in this scenario?
+
+- [ ] It will not allow to delete the `VPC` as it has subnets with route tables.
+- [ ] It will not allow to delete the `VPC` since it has a running route instance.
+- [ ] It will terminate the `VPC` along with all the instances launched by the wizard.
+- [x] It will not allow to delete the `VPC` since it has a running `NAT` instance.
