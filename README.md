@@ -34,7 +34,7 @@
 
 ### With the threat of ransomware viruses encrypting and holding company data hostage, which action should be taken to protect an Amazon S3 bucket?
 
-- [ ] Deny Post. Put. and Delete on the bucket.
+- [ ] Deny Post, Put, and Delete on the bucket.
 - [x] Enable server-side encryption on the bucket.
 - [ ] Enable Amazon S3 versioning on the bucket.
 - [ ] Enable snapshots on the bucket.
@@ -2830,3 +2830,24 @@ VPC resources. Assign the policy to a cross-account IAM role. Ask the security a
 - [ ] It will not allow to delete the `VPC` since it has a running route instance.
 - [ ] It will terminate the `VPC` along with all the instances launched by the wizard.
 - [x] It will not allow to delete the `VPC` since it has a running `NAT` instance.
+
+### A user has created a `VPC` with the public and private subnets using the `VPC` wizard. The `VPC` has `CIDR` `20.0.0.0/16`. The public subnet uses `CIDR` `20.0.1.0/24`. The user is planning to host a web server in the public subnet (port `80`) and a DB server in the private subnet (port `3306`). The user is configuring a security group for the public subnet (`WebSecGrp`) and the private subnet (`DBSecGrp`). Which of the below mentioned entries is required in the web server security group (`WebSecGrp`)?
+
+- [ ] Configure `Destination` as DB Security group ID (`DbSecGrp`) for port `3306` outbound.
+- [ ] `80` for `Destination` `0.0.0.0/0` outbound.
+- [ ] Configure port `3306` for source `20.0.0.0/24` inbound.
+- [x] Configure port `80` inbound for source `20.0.0.0/16`.
+
+### A user has created a `VPC` with `CIDR` `20.0.0.0/16` using the wizard. The user has created a public subnet `CIDR` `20.0.0.0/24` and `VPN` only subnets `CIDR` `20.0.1.0/24` along with the `VPN` gateway `vgw-12345` to connect to the user's data center. Which of the below mentioned options is a valid entry for the main route table in this scenario?
+
+- [ ] Destination: `20.0.0.0/24` and Target: `vgw-12345`.
+- [ ] Destination: `20.0.0.0/16` and Target: `ALL`.
+- [ ] Destination: `20.0.1.0/16` and Target: `vgw-12345`.
+- [x] Destination: `0.0.0.0/0` and Target: `vgw-12345`.
+
+### A user has created a `VPC` with the public and private subnets using the `VPC` wizard. The `VPC` has `CIDR` `20.0.0.0/16`. The public subnet uses `CIDR` `20.0.1.0/24`. The user is planning to host a web server in the public subnet (port `80`) and a DB server in the private subnet (port `3306`). The user is configuring a security group for the public subnet (`WebSecGrp`) and the private subnet (`DBSecGrp`). Which of the below mentioned entries is required in the private subnet database security group (`DBSecGrp`)?
+
+- [x] Allow inbound on port `3306` for source Web Server Security Group (`WebSecGrp`).
+- [ ] Allow inbound on port `3306` from source `20.0.0.0/16`.
+- [ ] Allow outbound on port `3306` for destination Web Server Security Group (`WebSecGrp`).
+- [ ] Allow outbound on port `80` for destination `NAT` Instance IP.
