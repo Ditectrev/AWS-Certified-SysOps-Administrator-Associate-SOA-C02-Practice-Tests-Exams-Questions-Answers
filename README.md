@@ -2,6 +2,83 @@
 
 ![Promotional image](images/promotional.png)
 
+## ❣️ Support
+
+There are many ways to support us; in exchange, you'll get this material in a proper format:
+
+- ❤️ [shop.ditectrev.com, in EPUB or PDF formats, with answers marked](https://shop.ditectrev.com),
+- ❤️ [shop.ditectrev.com, in EPUB or PDF formats, without answers marked](https://shop.ditectrev.com),
+- 📖 [Udemy is the only one to have explanations for questions](https://www.udemy.com/user/social-ditectrev),
+- 📚 [Google Play Books, in PDF format, with answers marked](https://play.google.com/store/books/author?id=Daniel+Danielecki),
+- 📚 [Google Play Books, in PDF format, without answers marked](https://play.google.com/store/books/author?id=Daniel+Danielecki),
+- 🛍️ [Etsy, in PDF format, with answers marked](https://ditectrev.etsy.com),
+- 🛍️ [Etsy, in PDF format, without answers marked](https://ditectrev.etsy.com),
+- 🛒 [eBay, in PDF format, with answers marked](https://www.ebay.com/usr/ditectrev),
+- 🛒 [eBay, in PDF format, without answers marked](https://www.ebay.com/usr/ditectrev),
+- 🔄 [Patreon subscription allows you to get access to all of the materials in EPUB and PDF formats. You can also buy separate items on Patreon, but the subscription technically allows us to include all updates for EPUB and PDF formats. Hence, you get EPUB and PDF updates when you subscribe to Patreon](https://patreon.com/Ditectrev?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink).
+
+💰 If you work for a company, you could probably easily claim this expense while preparing for your exam. For us, it's about being in the game or not.
+
+⭐ Good ratings & reviews help us to survive. Please don't forget to leave a nice one when you purchase an item.
+
+## 👩‍💻 & 👨‍💻 Interactive Course(s)
+
+It's great to learn these questions as your exam preparation, and, yes, you should pass just based on that. However, we highly recommend more interactive learning if you want to become an expert. Currently, we're recommending those courses:
+
+- 🎬 [Coursera: video-based, official course by Amazon Web Services (AWS)](https://imp.i384100.net/kO5mJV).
+- 📖 [Educative: text-based, video-free course, including set up out-of-the-box for you Cloud Labs to practice hands-on without the need to set up an environment (and payments). The link includes the highest available discount Educative offers](https://www.educative.io/courses/aws-certified-sysops-administrator-associate-exam-prep?aff=VALz).
+
+Yes, we have a little commission from these links. Therefore, by using these links, you're supporting us.
+
+## ✨ This course is unlike any Amazon Web Services Certified (AWS Certified) CloudOps Engineer Associate (SOA-C03) course you will find online.
+
+✋ Join a live online community and a course taught by industry experts and pass the Amazon Web Services Certified (AWS Certified) CloudOps Engineer Associate (SOA-C03) confidently. We aim to build an ecosystem of Information Technology (IT) certifications and online courses in cooperation with the technology industry. We believe it will give our students 100% confidence in the pacing market in an open-source environment. We are just at the beginning of our way, so it's even better for you to join now!
+
+[![Join our Discord](images/discord.png 'Join our Discord')](https://discord.gg/RFjtXKfJy3)
+
+## ⌛️ Short and to the point; why should you take the course:
+
+1. Always happy to answer your questions on Udemy's Q&A's and outside :)
+2. Failed? Please submit a screenshot of your exam result and request a refund (via our upcoming platform, not possible on Udemy); we'll always accept it.
+3. Learn about topics, such as:
+   - Access Control;
+   - Amazon CloudFront;
+   - Amazon CloudWatch;
+   - Amazon DynamoDB;
+   - Amazon Elastic Block Store (Amazon EBS);
+   - Amazon Elastic Compute Cloud (Amazon EC2);
+   - Amazon Relational Database Service (Amazon RDS);
+   - Amazon Resource Names (ARN);
+   - Amazon Route 53;
+   - Amazon Simple Storage Service (Amazon S3);
+   - Amazon Simple Queue Service (Amazon SQS);
+   - Availability Zones;
+   - AWS Certificate Manager (ACM);
+   - AWS CloudFormation;
+   - AWS CloudTrail;
+   - AWS Identity and Access Management (AWS IAM);
+   - AWS Key Management Service (AWS KMS);
+   - AWS Organizations;
+   - Cloud Concepts;
+   - Compliancy, Governance, Identity & Privacy;
+   - Elastic IP (EIP);
+   - Inbound Data Traffic & Outbound Data Traffic;
+   - Input/Output operations Per Second (IOPS);
+   - Network Address Translation (NAT);
+   - Public & Private Cloud;
+   - Virtual Private Clouds (VPC);
+   - **Much More!**
+4. Questions are similar to the actual exam, without duplications (like in other courses ;-)).
+5. The Practice Tests Exams simulate the actual exam's content, timing, and percentage required to pass the exam.
+6. This course is **not** an Amazon Web Services Certified (AWS Certified) CloudOps Engineer Associate (SOA-C03) Exam Dump. Some people use brain dumps or exam dumps, but that's absurd, which we don't practice.
+7. 398 **unique** questions.
+
+## ☝️ Course Updates
+
+**[v1.0.0](../../releases/tag/v1.0.0): December X, 2025.**
+
+- Launch of the course.
+
 ### An Amazon EC2 instance needs to be reachable from the internet. The EC2 instance is in a subnet with the following route table. Which entry must a SysOps administrator add to the route table to meet this requirement?
 
 ![Question 1](images/question1.jpg)
