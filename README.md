@@ -79,6 +79,35 @@ Yes, we have a little commission from these links. Therefore, by using these lin
 
 - Launch of the course.
 
+## 🙋‍♀️ & 🙋‍♂️ Contribution
+
+We are so thankful for every contribution, which makes sure we can deliver top-notch content. Whenever you find a missing resource, broken link in a [Table of Contents](#table-of-contents), the wrong answer, please submit an [issue](../../issues). Even better would be a [Pull Request (PR)](../../pulls).
+
+## Who this course is for:
+
+- 👨‍🎓 Students preparing for the Amazon Web Services Certified (AWS Certified) CloudOps Engineer Associate (SOA-C03) Exam;
+- 👨‍🎓 Amazon Web Services (AWS) Engineers;
+- 👨‍🎓 Azure Engineers;
+- 👨‍🎓 Cloud Architects;
+- 👨‍🎓 Cloud Engineers;
+- 👨‍🎓 DevOps Engineers;
+- 👨‍🎓 Enterprise Architects;
+- 👨‍🎓 Google Cloud Platform (GCP) Engineers;
+- 👨‍🎓 Infrastructure Engineers;
+- 👨‍🎓 Lead Engineers;
+- 👨‍🎓 Product Architects;
+- 👨‍🎓 Security Engineers;
+- 👨‍🎓 Site Reliability Engineers;
+- 👨‍🎓 Software Developers/Engineers;
+- 👨‍🎓 Solution Architects;
+- 👨‍🎓 Team Leaders.
+
+## Requirements
+
+- 🤩 Excitement to learn!
+- 0️⃣ Prior knowledge is required;
+- ✅ You can pass the Amazon Web Services Certified (AWS Certified) CloudOps Engineer Associate (SOA-C03) Exam solely based on our Practice Tests Exams.
+
 ### An Amazon EC2 instance needs to be reachable from the internet. The EC2 instance is in a subnet with the following route table. Which entry must a CloudOps Engineer add to the route table to meet this requirement?
 
 ![Question 1](images/question1.jpg)
