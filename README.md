@@ -6,13 +6,13 @@
 
 There are many ways to support us; in exchange, you'll get this material in a proper format:
 
-- ❤️ [shop.ditectrev.com, in EPUB or PDF formats, with answers marked](https://shop.ditectrev.com),
-- ❤️ [shop.ditectrev.com, in EPUB or PDF formats, without answers marked](https://shop.ditectrev.com),
-- 📖 [Udemy is the only one to have explanations for questions](https://www.udemy.com/user/social-ditectrev),
-- 📚 [Google Play Books, in PDF format, with answers marked](https://play.google.com/store/books/author?id=Daniel+Danielecki),
-- 📚 [Google Play Books, in PDF format, without answers marked](https://play.google.com/store/books/author?id=Daniel+Danielecki),
-- 🛍️ [Etsy, in PDF format, with answers marked](https://ditectrev.etsy.com),
-- 🛍️ [Etsy, in PDF format, without answers marked](https://ditectrev.etsy.com),
+- ❤️ [shop.ditectrev.com, in EPUB or PDF formats, with answers marked](https://shop.ditectrev.com/product/amazon-web-services-certified-aws-certified-cloudops-engineer-associate-soa-c03-practice-tests-exams-questions-answers),
+- ❤️ [shop.ditectrev.com, in EPUB or PDF formats, without answers marked](https://shop.ditectrev.com/product/amazon-web-services-certified-aws-certified-cloudops-engineer-associate-soa-c03-practice-tests-exams-questions-no-answers),
+- 📖 [Udemy is the only one to have explanations for questions](https://www.udemy.com/course/aws-certified-cloudops-engineer-associate-soa-c03-exams/?referralCode=E56EAAAC9DB6808F89A4),
+- 📚 [Google Play Books, in PDF format, with answers marked](https://play.google.com/store/books/details?id=O2ulEQAAQBAJ),
+- 📚 [Google Play Books, in PDF format, without answers marked](https://play.google.com/store/books/details?id=MWulEQAAQBAJ),
+- 🛍️ [Etsy, in PDF format, with answers marked](https://ditectrev.etsy.com/listing/4431622443),
+- 🛍️ [Etsy, in PDF format, without answers marked](https://ditectrev.etsy.com/listing/4431629834),
 - 🛒 [eBay, in PDF format, with answers marked](https://ebay.us/m/qmnYDa),
 - 🛒 [eBay, in PDF format, without answers marked](https://ebay.us/m/4FMvqD),
 - 🔄 [Patreon subscription allows you to get access to all of the materials in EPUB and PDF formats. You can also buy separate items on Patreon, but the subscription technically allows us to include all updates for EPUB and PDF formats. Hence, you get EPUB and PDF updates when you subscribe to Patreon](https://patreon.com/Ditectrev?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink).
@@ -75,7 +75,7 @@ Yes, we have a little commission from these links. Therefore, by using these lin
 
 ## ☝️ Course Updates
 
-**[v1.0.0](../../releases/tag/v1.0.0): December X, 2025.**
+**[v1.0.0](../../releases/tag/v1.0.0): January 1, 2026.**
 
 - Launch of the course.
 
